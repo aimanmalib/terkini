@@ -97,3 +97,23 @@ change it.
   the connection) and 0 were missed, for 4 credits.
 - **Would change if.** A blocked site starts to answer scripts. Then its pages get the full check. Until then a
   blocked page could still be stale in the extract, so those 6 keys are also read by hand before each eval run.
+
+## D-012 · Model gateway and model choice
+
+- **Decision.** Every model call goes through Bifrost v2.5.1, the official image pinned by digest in
+  `docker-compose.yml`. `scripts/bifrost-bootstrap.py` creates one OpenAI-compatible provider and one virtual key with
+  a daily budget and a rate limit (`config/bifrost.toml`). Terkini sends the virtual key as `x-bf-vk`, asks for
+  non-streaming answers and passes a fallback list (`src/terkini/gateway.py`). The eval models are
+  `gcli/grok-4.7` (xAI), `rv/moonshotai/Kimi-K3.1-Pro` (Moonshot AI) and `rv/deepseek-ai/DeepSeek-V4.1-Flash-1017`
+  (DeepSeek). Claim extraction and the verdict use `rv/GLM-5.3` (Zhipu AI). Fallbacks are
+  `rv/Qwen/Qwen3.8-27B-FP8`, `cf/@cf/meta/llama-3.3-70b-instruct-fp8-fast` and `rv/zai-org/GLM-5.3-Flash`
+  (`config/models.toml`).
+- **Why.** On 2026-11-20 we sent a one-line request straight to the provider for 18 model ids. Nine answered. Claude, GPT and Gemini ids
+  timed out or were refused by the provider at that time, so they are not in the list. Through the gateway, the first
+  try failed with "failed to unmarshal response" for every model except Grok: without `"stream": false` in the body
+  the provider appends an SSE `data: [DONE]` line to a JSON answer, and the gateway drops that field. An
+  `Accept: application/json` header on the provider (`extra_headers` in `config/bifrost.toml`) fixes it; after that
+  all seven ids answered through the gateway. The judge comes from a fourth vendor so no eval model grades its own
+  answer.
+- **Would change if.** A Claude, GPT or Gemini id answers reliably before the eval run. Then it replaces one eval model
+  and this entry is updated with the run date.

@@ -133,3 +133,20 @@ change it.
   from the SQLite cache at no cost. Gateway or Tavily errors are reported per claim and never cached.
 - **Would change if.** The eval shows many correct claims marked `unverifiable` because pages write dates in a form
   the judge rewrites. Then the prompt is tightened first; the code check stays.
+
+## D-014 · Snippet fallback and recorded runs
+
+- **Decision.** Copies of one page (`http` and `https`, trailing slash) are sent to Extract once, as `https`. When
+  every official page refuses extraction, the judge reads the Tavily Search snippets from those official pages
+  instead. The quote check still runs on that text, and the claim is marked "search snippet". A gateway timeout
+  now fails one claim, not the whole run. The client waits up to 300 s for a model answer.
+- **Why.** In the first live runs on 20 Nov 2026, the minimum wage and EPF pages refused Tavily Extract. Search
+  had already returned the relevant official text. Without the fallback, every claim on those sites was
+  `unverifiable`. One judge call also stalled past 120 s and stopped the run.
+- **Recorded runs.** `scripts/record-run.py` asks one eval model a pack question, checks the answer live and saves
+  the run to `tests/fixtures/runs/`. A recording keeps search snippets, model answers and windows of at most 500
+  characters around each quote the judge cited. It keeps no keys, headers or full pages. The script replays the
+  run offline right away and deletes it if the report differs. `terkini check` replays these runs when no Tavily
+  key is set.
+- **Would change if.** Snippets turn out to cut quotes short often. Then Search with `include_raw_content` is
+  measured against Extract.

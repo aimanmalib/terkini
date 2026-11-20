@@ -1,0 +1,32 @@
+# Freshness score weights (PRD D8). src/terkini/score.py reads this file; the formula lives in code, the numbers here.
+#   q = base + government * (source on a "government" domain) + quote * (evidence quote passed the exact-quote check)
+#   current      = round(current      * q * r)
+#   unverifiable = round(unverifiable * r)
+#   outdated     = round(outdated     * (1 - q))
+# Rounding is half-up so the same inputs always give the same score.
+
+[quality]
+base = 0.6
+government = 0.2
+quote = 0.2
+
+[scale]
+current = 100
+unverifiable = 50
+outdated = 30
+
+# r = recency of the evidence, by the age of the source in days on the day of the check.
+# Bands are checked in order; the first band whose max_days is not exceeded wins.
+[[recency]]
+max_days = 30
+r = 1.0
+
+[[recency]]
+max_days = 365
+r = 0.9
+
+[recency_other]
+# Evidence older than the last band.
+older = 0.75
+# Source with no published date.
+undated = 0.8

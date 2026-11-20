@@ -21,10 +21,17 @@ class Limits(BaseModel):
     per_day: PositiveInt
 
 
+class Costs(BaseModel):
+    search_basic: PositiveInt
+    search_advanced: PositiveInt
+    extract_urls_per_credit: PositiveInt
+
+
 class TavilyBudget(BaseModel):
     monthly_credits: PositiveInt
     allocation: Allocation
     limits: Limits
+    costs: Costs
 
     @model_validator(mode="after")
     def _fits(self) -> "TavilyBudget":

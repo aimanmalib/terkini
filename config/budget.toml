@@ -16,3 +16,11 @@ reserve = 250
 per_run = 120
 # Hard stop for all runs in one UTC day.
 per_day = 400
+
+# Credits per call, used to refuse a call that would cross a limit before it is made.
+# The amount actually charged is read from each response afterwards (D-010).
+[tavily.costs]
+search_basic = 1
+search_advanced = 2
+# One extract credit per this many successful URLs (rounded up).
+extract_urls_per_credit = 5

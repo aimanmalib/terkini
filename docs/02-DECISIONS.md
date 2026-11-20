@@ -117,3 +117,19 @@ change it.
   answer.
 - **Would change if.** A Claude, GPT or Gemini id answers reliably before the eval run. Then it replaces one eval model
   and this entry is updated with the run date.
+
+## D-013 · How one claim is verified and scored
+
+- **Decision.** Each claim goes through the same steps: search on the pack domains only, one `advanced` retry when no
+  official page comes back, extract the top two official pages, ask the judge model, then check its quote in code.
+  The verdict stands only if the quote is on the page the judge names. If the judge gives an effective date, that
+  date must be written inside the quote; otherwise the claim is `unverifiable`. A date with no quoted text is dropped.
+  Scores round half up, so 37.5 is always 38. A Tavily `434` answer is retried once without `max_age_hours` and the
+  result is marked as a Tavily cached copy.
+- **Why.** The judge can invent quotes and dates. Checking both against the extracted text means every shown value
+  traces back to an official page. Half-up rounding gives the same score on every machine.
+- **Credits.** A call is refused before it is sent if its worst-case cost would cross the run or daily limit in
+  `config/budget.toml`. The run then stops and lists the claims it did not check. A claim verified today is reused
+  from the SQLite cache at no cost. Gateway or Tavily errors are reported per claim and never cached.
+- **Would change if.** The eval shows many correct claims marked `unverifiable` because pages write dates in a form
+  the judge rewrites. Then the prompt is tightened first; the code check stays.

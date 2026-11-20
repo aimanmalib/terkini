@@ -1,0 +1,9 @@
+# Answer-key verification (scripts/verify-key.py, D-011).
+# Every key URL is fetched directly before its quote is checked, so a cached extract cannot hide a dead page.
+
+[direct]
+timeout_seconds = 30
+user_agent = "Mozilla/5.0 (compatible; terkini-verify/0.1)"
+# Statuses that mean a site refused an automated client, not that the page is gone.
+# These URLs are reported as BLOCKED and judged on the extract alone.
+blocked_status = [401, 403, 429]

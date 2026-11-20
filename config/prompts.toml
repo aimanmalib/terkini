@@ -1,0 +1,54 @@
+# Prompts for the claim extractor and the judge (PRD §3 P0.2–P0.3). Both run through the Bifrost gateway.
+# Placeholders use $name (Python string.Template). Both models must answer with one JSON object only.
+
+[extractor]
+system = """
+You extract factual claims about rules in $country from an AI answer.
+Return one JSON object: {"claims": [ ... ]}. Each claim has these fields:
+- "claim": one short self-contained sentence, in English, that states the rule as the answer states it.
+- "category": one of these ids: $categories. Use "other" if none fits.
+- "entity": who or what the rule applies to (for example "employers with 5 or more workers").
+- "value": the number, rate or threshold the answer gives, as written (for example "RM1,700"). Empty string if none.
+- "unit": the unit of the value (for example "MYR per month", "percent"). Empty string if none.
+- "stated_date": the date or year the answer gives for the rule, as written. Empty string if none.
+- "time_sensitive": true if the rule is a rate, amount, threshold, deadline or date that a government can change.
+Only extract claims the answer actually makes. Do not add facts. Do not judge whether a claim is true.
+"""
+user = """
+Original question (may be empty): $question
+
+AI answer:
+$answer
+"""
+
+[judge]
+system = """
+You compare one claim with official $country government pages and decide whether the claim is still true.
+Today is $today. Use only the pages below. Do not use your own knowledge.
+Return one JSON object with these fields:
+- "verdict": "current" if the pages show the claim is still true, "outdated" if the pages show a newer rule or value
+  that replaces it, "unverifiable" if the pages do not settle it.
+- "current_value": the value the pages give today, as written. Empty string if unknown.
+- "evidence_quote": a sentence copied exactly, character for character, from one page, that supports the verdict.
+  Empty string if there is none. Do not paraphrase, translate, shorten or fix typos.
+- "effective_date_text": the date from which the current rule applies, copied exactly as it appears inside evidence_quote.
+  Empty string if the quote does not state it.
+- "effective_date": the same date as YYYY-MM-DD. Empty string if effective_date_text is empty.
+- "source_url": the URL of the page the quote is copied from. It must be one of the page URLs below.
+"""
+user = """
+Claim: $claim
+Category: $category
+Value in the claim: $value $unit
+Date in the claim: $stated_date
+
+Official pages:
+$pages
+"""
+page = """
+--- PAGE $n
+URL: $url
+Published: $published
+Text:
+$text
+"""

@@ -7,3 +7,32 @@ user_agent = "Mozilla/5.0 (compatible; terkini-verify/0.1)"
 # Statuses that mean a site refused an automated client, not that the page is gone.
 # These URLs are reported as BLOCKED and judged on the extract alone.
 blocked_status = [401, 403, 429]
+
+# Claim verification (PRD §3 P0.3, D5, D6). src/terkini/verify.py reads these values.
+[search]
+topic = "general"
+include_domains_mode = "restrict"
+search_depth = "basic"
+# Depth for the single retry when the first search finds no official page.
+retry_depth = "advanced"
+max_results = 5
+include_published_date = true
+# Sent as max_age_hours for categories marked volatile in the pack (live results, no cached copy).
+volatile_max_age_hours = 0
+# Tavily caps the query length; longer claims are cut at a word boundary.
+max_query_chars = 380
+# HTTP status Tavily returns when live capacity is full. The search is retried once without max_age_hours
+# and the evidence is marked as a Tavily cached copy.
+capacity_status = 434
+
+[extract]
+# Official result pages extracted for each claim (PDFs included).
+max_urls = 2
+
+[judge]
+# Characters of each extracted page passed to the judge model.
+max_page_chars = 12000
+
+[cache]
+# SQLite cache of verified claims, keyed by (normalised claim, pack, UTC date). Ignored by git.
+path = "data/cache.sqlite"

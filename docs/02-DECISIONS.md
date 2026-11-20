@@ -84,3 +84,16 @@ change it.
 - **Why.** During the first key-building session the account counter at `GET /usage` stayed at 0 after 35 credits
   of calls. The per-response field was present on every call.
 - **Would change if.** `GET /usage` updates promptly. Then it becomes the single source.
+
+## D-011 · Answer-key pages are also fetched directly
+
+- **Decision.** `scripts/verify-key.py` fetches every key URL directly from the official site before it checks the
+  quote in the Tavily extract. A 4xx or 5xx status, or a URL in Tavily's `failed_results`, is a miss. Statuses that
+  mean a site refuses scripts (`config/verify.toml`, now 401, 403 and 429) and refused connections are reported as
+  `BLOCKED` and judged on the extract alone.
+- **Why.** On 2026-11-20 the key for my-17 pointed to a HASiL PDF that returned 404, but Tavily Extract still
+  returned its text. HASiL had replaced that guideline with one dated 21.09.2026. The key now cites the new PDF, which
+  states the same 10% rate. On the re-run, 17 keys were ok, 6 were blocked (KWSP returns 403, the AGC law site resets
+  the connection) and 0 were missed, for 4 credits.
+- **Would change if.** A blocked site starts to answer scripts. Then its pages get the full check. Until then a
+  blocked page could still be stale in the extract, so those 6 keys are also read by hand before each eval run.

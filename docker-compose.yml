@@ -1,0 +1,21 @@
+# Terkini model gateway: the official, unmodified Bifrost image (pinned by digest).
+# Every model call Terkini makes goes through this gateway with a virtual key.
+# Start: docker compose up -d   ·   Seed provider + virtual key: uv run scripts/bifrost-bootstrap.py
+# Stop and remove everything: docker compose down -v
+name: ${COMPOSE_PROJECT_NAME:-terkini}
+
+services:
+  terkini-bifrost:
+    container_name: terkini-bifrost
+    image: maximhq/bifrost@sha256:5ec9873acaf1687556b6e4dd854b92b539d9debf87a5a683b66338648b84d3c8 # v2.5.1
+    environment:
+      BIFROST_SETUP_TOKEN: ${BIFROST_SETUP_TOKEN:?set BIFROST_SETUP_TOKEN in .env (see .env.example)}
+    ports:
+      - "127.0.0.1:${BIFROST_PORT:-18471}:8080"
+    # Lets the gateway reach an OpenAI-compatible provider that runs on the Docker host.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    tmpfs:
+      - /app/data:uid=1000,gid=0,mode=0770
+    cpus: 1.0
+    mem_limit: 768m

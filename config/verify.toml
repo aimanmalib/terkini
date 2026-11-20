@@ -36,3 +36,7 @@ max_page_chars = 12000
 [cache]
 # SQLite cache of verified claims, keyed by (normalised claim, pack, UTC date). Ignored by git.
 path = "data/cache.sqlite"
+
+[replay]
+# Recorded runs that replay mode reads (no key, no network). Written by scripts/record-run.py.
+runs_dir = "tests/fixtures/runs"

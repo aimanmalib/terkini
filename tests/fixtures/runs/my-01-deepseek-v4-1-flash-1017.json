@@ -1,0 +1,348 @@
+{
+  "name": "my-01-deepseek-v4-1-flash-1017",
+  "pack": "my",
+  "recorded_at": "2026-11-20T23:13:51Z",
+  "checked_on": "2026-11-20",
+  "question_id": "my-01",
+  "question": "What is the national minimum monthly wage in Malaysia?",
+  "answer_model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answer": "As of February 2025, Malaysia's national minimum wage is RM1,700 per month, effective from 1 February 2025 under the Minimum Wages Order 2024. For employers with fewer than five employees, the RM1,700 rate applies from 1 August 2025. The minimum wage also applies on a daily and hourly basis, and covers all workers regardless of nationality, except domestic servants and apprentices under contract.",
+  "ask": {
+    "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "text": "As of February 2025, Malaysia's national minimum wage is RM1,700 per month, effective from 1 February 2025 under the Minimum Wages Order 2024. For employers with fewer than five employees, the RM1,700 rate applies from 1 August 2025. The minimum wage also applies on a daily and hourly basis, and covers all workers regardless of nationality, except domestic servants and apprentices under contract.",
+    "error": "",
+    "prompt_tokens": 2037,
+    "completion_tokens": 90,
+    "seconds": 2.24
+  },
+  "chats": [
+    {
+      "model": "rv/GLM-5.3",
+      "answered_by": "GLM-5.3",
+      "text": "{\"claims\": [{\"claim\": \"Malaysia's national minimum wage is RM1,700 per month, effective from 1 February 2025 under the Minimum Wages Order 2024.\", \"category\": \"wages\", \"entity\": \"employers in Malaysia (national minimum wage)\", \"value\": \"RM1,700\", \"unit\": \"MYR per month\", \"stated_date\": \"1 February 2025\", \"time_sensitive\": true}, {\"claim\": \"For employers with fewer than five employees, the RM1,700 minimum wage rate applies from 1 August 2025.\", \"category\": \"wages\", \"entity\": \"employers with fewer than five employees\", \"value\": \"RM1,700\", \"unit\": \"MYR per month\", \"stated_date\": \"1 August 2025\", \"time_sensitive\": true}, {\"claim\": \"The minimum wage also applies on a daily and hourly basis.\", \"category\": \"wages\", \"entity\": \"workers covered by the minimum wage in Malaysia\", \"value\": \"\", \"unit\": \"\", \"stated_date\": \"\", \"time_sensitive\": true}, {\"claim\": \"The minimum wage covers all workers regardless of nationality, except domestic servants and apprentices under contract.\", \"category\": \"wages\", \"entity\": \"all workers in Malaysia except domestic servants and apprentices under contract\", \"value\": \"\", \"unit\": \"\", \"stated_date\": \"\", \"time_sensitive\": false}]}",
+      "error": "",
+      "prompt_tokens": 2377,
+      "completion_tokens": 1074,
+      "seconds": 12.08
+    },
+    {
+      "model": "rv/GLM-5.3",
+      "answered_by": "GLM-5.3",
+      "text": "{\n  \"verdict\": \"current\",\n  \"current_value\": \"RM1,700\",\n  \"evidence_quote\": \"Gaji minimum RM1,700 berkuat kuasa Februari 2025.\",\n  \"effective_date_text\": \"Februari 2025\",\n  \"effective_date\": \"2025-02-01\",\n  \"source_url\": \"https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025\"\n}",
+      "error": "",
+      "prompt_tokens": 2749,
+      "completion_tokens": 3244,
+      "seconds": 42.44
+    },
+    {
+      "model": "rv/GLM-5.3",
+      "answered_by": "",
+      "text": "",
+      "error": "gateway request failed: ReadTimeout",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "seconds": 0.0
+    },
+    {
+      "model": "rv/GLM-5.3",
+      "answered_by": "GLM-5.3",
+      "text": "{\"verdict\": \"unverifiable\", \"current_value\": \"\", \"evidence_quote\": \"\", \"effective_date_text\": \"\", \"effective_date\": \"\", \"source_url\": \"\"}",
+      "error": "",
+      "prompt_tokens": 2642,
+      "completion_tokens": 390,
+      "seconds": 6.54
+    }
+  ],
+  "searches": [
+    {
+      "query": "Malaysia's national minimum wage is RM1,700 per month, effective from 1 February 2025 under the Minimum Wages Order 2024.",
+      "search_depth": "basic",
+      "results": [
+        {
+          "url": "http://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025",
+          "title": "Gaji minimum RM1,700 berkuat kuasa Februari 2025",
+          "content": "Gaji minimum RM1,700 berkuat kuasa Februari 2025 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM). JABATAN TENAGA KERJA SEMENANJUNG MALAYSIA. * Perumahan, Penginapan dan Kemudahan Pekerja. * Perumahan, Penginapan dan Kemudahan Pekerja. * Akta Kerja 1955 (Pindaan) 2022. * Alamat Ibu pejabat dan Cawangan. * Sistem Pengurusan Aduan Awam (SisPAA). * Pengiraan Anggaran Gaji Bekerja Tidak Cukup Sebulan. * Pengiraan Anggaran Bayaran Bekerja Lebih Masa (Bergaji Bulanan). * Pengiraan Anggaran Gaji Gan",
+          "score": 0.6489114,
+          "published_date": null
+        },
+        {
+          "url": "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025",
+          "title": "Gaji minimum RM1,700 berkuat kuasa Februari 2025 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)",
+          "content": "Title: Gaji minimum RM1,700 berkuat kuasa Februari 2025 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)\n# PORTAL RASMI JABATAN TENAGA KERJA SEMENANJUNG MALAYSIA KEMENTERIAN SUMBER MANUSIA. # Gaji minimum RM1,700 berkuat kuasa Februari 2025. ## Media. ## Main navigation. ### Apakah Pendapat Anda Tentang Laman Web Ini?",
+          "score": 0.6281794,
+          "published_date": null
+        },
+        {
+          "url": "http://jtksm.mohr.gov.my/ms/media/keratan-akhbar/minimum-wage-increased-rm1700",
+          "title": "Minimum wage increased to RM1,700 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)",
+          "content": "Title: Minimum wage increased to RM1,700 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)\n# PORTAL RASMI JABATAN TENAGA KERJA SEMENANJUNG MALAYSIA KEMENTERIAN SUMBER MANUSIA. # Minimum wage increased to RM1,700. ## Media. ## Main navigation. ### Apakah Pendapat Anda Tentang Laman Web Ini?",
+          "score": 0.54010534,
+          "published_date": null
+        },
+        {
+          "url": "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/minimum-wage-increased-rm1700",
+          "title": "Minimum wage increased to RM1,700 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)",
+          "content": "Title: Minimum wage increased to RM1,700 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)\n# PORTAL RASMI JABATAN TENAGA KERJA SEMENANJUNG MALAYSIA KEMENTERIAN SUMBER MANUSIA. # Minimum wage increased to RM1,700. ## Media. ## Main navigation. ### Apakah Pendapat Anda Tentang Laman Web Ini?",
+          "score": 0.54010534,
+          "published_date": null
+        },
+        {
+          "url": "https://secure.kwsp.gov.my/KWSP_files/contributionCalculator/index_en.html",
+          "title": "Contribution Calculator - KWSP",
+          "content": "# Contribution Calculator. This calculator is provided as guidance to assist employer to calculate contribution amount for an employee. Notes: This calculation is not applicable to non-Malaysian employee who had opted to contribute before 1 August 1998. Your contribution amount are as follows:. * The amount generated from this calculation is based on the information entered by employer as at the calculation date/time. * This calculation is not applicable to non-Malaysian employee who had opted t",
+          "score": 0.29961726,
+          "published_date": null
+        }
+      ],
+      "credits": 1,
+      "error_status": 0,
+      "error": ""
+    },
+    {
+      "query": "For employers with fewer than five employees, the RM1,700 minimum wage rate applies from 1 August 2025.",
+      "search_depth": "basic",
+      "results": [
+        {
+          "url": "http://jtksm.mohr.gov.my/ms/media/keratan-akhbar/minimum-wage-increased-rm1700",
+          "title": "Minimum wage increased to RM1,700 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)",
+          "content": "Title: Minimum wage increased to RM1,700 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)\n# PORTAL RASMI JABATAN TENAGA KERJA SEMENANJUNG MALAYSIA KEMENTERIAN SUMBER MANUSIA. # Minimum wage increased to RM1,700. ## Media. ## Main navigation. ### Apakah Pendapat Anda Tentang Laman Web Ini?",
+          "score": 0.38450763,
+          "published_date": null
+        },
+        {
+          "url": "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/minimum-wage-increased-rm1700",
+          "title": "Minimum wage increased to RM1,700 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)",
+          "content": "Title: Minimum wage increased to RM1,700 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)\n# PORTAL RASMI JABATAN TENAGA KERJA SEMENANJUNG MALAYSIA KEMENTERIAN SUMBER MANUSIA. # Minimum wage increased to RM1,700. ## Media. ## Main navigation. ### Apakah Pendapat Anda Tentang Laman Web Ini?",
+          "score": 0.38450763,
+          "published_date": null
+        },
+        {
+          "url": "http://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025",
+          "title": "Gaji minimum RM1,700 berkuat kuasa Februari 2025",
+          "content": "Gaji minimum RM1,700 berkuat kuasa Februari 2025 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM). JABATAN TENAGA KERJA SEMENANJUNG MALAYSIA. * Perumahan, Penginapan dan Kemudahan Pekerja. * Perumahan, Penginapan dan Kemudahan Pekerja. * Akta Kerja 1955 (Pindaan) 2022. * Alamat Ibu pejabat dan Cawangan. * Sistem Pengurusan Aduan Awam (SisPAA). * Pengiraan Anggaran Gaji Bekerja Tidak Cukup Sebulan. * Pengiraan Anggaran Bayaran Bekerja Lebih Masa (Bergaji Bulanan). * Pengiraan Anggaran Gaji Gan",
+          "score": 0.3588023,
+          "published_date": null
+        },
+        {
+          "url": "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025",
+          "title": "Gaji minimum RM1,700 berkuat kuasa Februari 2025 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)",
+          "content": "Title: Gaji minimum RM1,700 berkuat kuasa Februari 2025 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)\n# PORTAL RASMI JABATAN TENAGA KERJA SEMENANJUNG MALAYSIA KEMENTERIAN SUMBER MANUSIA. # Gaji minimum RM1,700 berkuat kuasa Februari 2025. ## Media. ## Main navigation. ### Apakah Pendapat Anda Tentang Laman Web Ini?",
+          "score": 0.3413629,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution",
+          "title": "Employer Mandatory Contribution",
+          "content": "Subject to the provisions of section 52, every employee and every employer of a person who is an employee within the meaning of this Act shall be liable to pay monthly contributions on the amount of wages at the rate respectively set out in the Third Schedule. The latest contribution rate for employees and employers effective October 2025 'salary/wage' can be referred in the Third Schedule, EPF Act 1991.Employers are required to remit EPF contributions based on this schedule. Late Payment Charge",
+          "score": 0.042642392,
+          "published_date": null
+        }
+      ],
+      "credits": 1,
+      "error_status": 0,
+      "error": ""
+    },
+    {
+      "query": "The minimum wage also applies on a daily and hourly basis.",
+      "search_depth": "basic",
+      "results": [
+        {
+          "url": "https://www.kwsp.gov.my/en/employer/responsibilities/contributing-more-than-the-statutory-rate",
+          "title": "i-Topup: Employer's Guide - EPF",
+          "content": "Yes, if an employee works any day in a month and receives wages in excess of RM10.00 (whether of daily, hourly or piece-rated salary), he/she is liable to make",
+          "score": 0.26246357,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/employer/introduction",
+          "title": "Employer Overview - KWSP Malaysia - EPF",
+          "content": "Yes, if an employee works any day in a month and receives wages in excess of RM10.00 (whether of daily, hourly or piece-rated salary), he/she",
+          "score": 0.23828422,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution",
+          "title": "Mandatory Contribution - Employer - EPF",
+          "content": "Yes, if an employee works any day in a month and receives wages in excess of RM10.00 (whether of daily, hourly or piece-rated salary), he/she is liable to make",
+          "score": 0.20450072,
+          "published_date": null
+        },
+        {
+          "url": "https://hrdcorp.gov.my/wp-content/uploads/2022/05/Allowable-Cost-Matrix-Booklet_May2022.pdf",
+          "title": "HRD CORP ALLOWABLE COST MATRIX",
+          "content": "Training session must be at least four (4) hours. RM1,300/pax/day … a maximum daily allowance of RM150/pax/day. For training conducted at least four (4) hours",
+          "score": 0.019271137,
+          "published_date": null
+        },
+        {
+          "url": "https://hrdcorp.gov.my/faq",
+          "title": "Employers FAQ - HRD Corp",
+          "content": "Now I know my company is liable under PSMB Act, 2001, to pay the HRD Levy every month, how do I register?",
+          "score": 0.012479699,
+          "published_date": null
+        }
+      ],
+      "credits": 1,
+      "error_status": 0,
+      "error": ""
+    }
+  ],
+  "extracts": [
+    {
+      "urls": [
+        "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025",
+        "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/minimum-wage-increased-rm1700"
+      ],
+      "excerpts": {},
+      "failed": [
+        "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/minimum-wage-increased-rm1700",
+        "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025"
+      ],
+      "credits": 1
+    },
+    {
+      "urls": [
+        "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/minimum-wage-increased-rm1700",
+        "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025"
+      ],
+      "excerpts": {},
+      "failed": [
+        "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025",
+        "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/minimum-wage-increased-rm1700"
+      ],
+      "credits": 1
+    },
+    {
+      "urls": [
+        "https://www.kwsp.gov.my/en/employer/responsibilities/contributing-more-than-the-statutory-rate",
+        "https://www.kwsp.gov.my/en/employer/introduction"
+      ],
+      "excerpts": {},
+      "failed": [
+        "https://www.kwsp.gov.my/en/employer/responsibilities/contributing-more-than-the-statutory-rate",
+        "https://www.kwsp.gov.my/en/employer/introduction"
+      ],
+      "credits": 1
+    }
+  ],
+  "usage_before": {
+    "key": {
+      "usage": 39,
+      "search_usage": 28,
+      "crawl_usage": 0,
+      "extract_usage": 11,
+      "map_usage": 0,
+      "research_usage": 0
+    },
+    "account": {
+      "plan_usage": 39,
+      "plan_limit": 1000,
+      "search_usage": 28,
+      "crawl_usage": 0,
+      "extract_usage": 11,
+      "map_usage": 0,
+      "research_usage": 0,
+      "paygo_usage": 0
+    }
+  },
+  "usage_after": {
+    "key": {
+      "usage": 39,
+      "search_usage": 28,
+      "crawl_usage": 0,
+      "extract_usage": 11,
+      "map_usage": 0,
+      "research_usage": 0
+    },
+    "account": {
+      "plan_usage": 39,
+      "plan_limit": 1000,
+      "search_usage": 28,
+      "crawl_usage": 0,
+      "extract_usage": 11,
+      "map_usage": 0,
+      "research_usage": 0,
+      "paygo_usage": 0
+    }
+  },
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-20",
+    "results": [
+      {
+        "claim": {
+          "claim": "Malaysia's national minimum wage is RM1,700 per month, effective from 1 February 2025 under the Minimum Wages Order 2024.",
+          "category": "wages",
+          "entity": "employers in Malaysia (national minimum wage)",
+          "value": "RM1,700",
+          "unit": "MYR per month",
+          "stated_date": "1 February 2025",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "RM1,700",
+        "evidence_quote": "Gaji minimum RM1,700 berkuat kuasa Februari 2025.",
+        "effective_date": "2025-02-01",
+        "source_url": "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-20",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "The minimum wage also applies on a daily and hourly basis.",
+          "category": "wages",
+          "entity": "workers covered by the minimum wage in Malaysia",
+          "value": "",
+          "unit": "",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The judge cited a page that was not extracted.",
+        "context": [],
+        "checked_on": "2026-11-20",
+        "credits": 2
+      }
+    ],
+    "not_checked": [],
+    "errors": [
+      {
+        "claim": {
+          "claim": "For employers with fewer than five employees, the RM1,700 minimum wage rate applies from 1 August 2025.",
+          "category": "wages",
+          "entity": "employers with fewer than five employees",
+          "value": "RM1,700",
+          "unit": "MYR per month",
+          "stated_date": "1 August 2025",
+          "time_sensitive": true
+        },
+        "error": "gateway request failed: ReadTimeout"
+      }
+    ],
+    "stopped": "",
+    "skipped": 1,
+    "credits": 4,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

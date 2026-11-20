@@ -1,0 +1,446 @@
+{
+  "name": "my-12-kimi-k3-1-pro",
+  "pack": "my",
+  "recorded_at": "2026-11-20T23:06:25Z",
+  "checked_on": "2026-11-20",
+  "question_id": "my-12",
+  "question": "Do employers in Malaysia have to make EPF contributions for foreign (non-Malaysian) workers, and at what rate?",
+  "answer_model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "answer": "It depends on the wage period and the worker’s EPF status. Under the long-standing rules, a non-Malaysian who was not a Malaysian permanent resident generally had to opt into EPF. Once covered, the employer also had to contribute. For workers registered on or after 1 August 1998, the employer’s contribution was a flat **RM5 per month**, while the employee generally contributed **11% of monthly wages**. Different rates apply to older memberships and permanent residents.\n\nUnder the newer phased mandatory scheme for non-Malaysian employees, the initial rate is **2% of wages from the employer and 2% from the employee**. Employers should check KWSP’s current foreign-worker notice for the effective wage month, exclusions and transitional rules, rather than applying either RM5 or 2% to every foreign worker.",
+  "ask": {
+    "model": "rv/moonshotai/Kimi-K3.1-Pro",
+    "answered_by": "moonshotai/Kimi-K3.1-Pro",
+    "text": "It depends on the wage period and the worker’s EPF status. Under the long-standing rules, a non-Malaysian who was not a Malaysian permanent resident generally had to opt into EPF. Once covered, the employer also had to contribute. For workers registered on or after 1 August 1998, the employer’s contribution was a flat **RM5 per month**, while the employee generally contributed **11% of monthly wages**. Different rates apply to older memberships and permanent residents.\n\nUnder the newer phased mandatory scheme for non-Malaysian employees, the initial rate is **2% of wages from the employer and 2% from the employee**. Employers should check KWSP’s current foreign-worker notice for the effective wage month, exclusions and transitional rules, rather than applying either RM5 or 2% to every foreign worker.",
+    "prompt_tokens": 2144,
+    "completion_tokens": 5207,
+    "seconds": 55.6
+  },
+  "chats": [
+    {
+      "model": "rv/GLM-5.3",
+      "answered_by": "GLM-5.3",
+      "text": "{\"claims\": [{\"claim\": \"A non-Malaysian who was not a Malaysian permanent resident generally had to opt into EPF.\", \"category\": \"retirement-savings\", \"entity\": \"non-Malaysian workers who are not Malaysian permanent residents\", \"value\": \"\", \"unit\": \"\", \"stated_date\": \"\", \"time_sensitive\": false}, {\"claim\": \"Once a non-Malaysian worker was covered by EPF, the employer also had to contribute.\", \"category\": \"retirement-savings\", \"entity\": \"employers of covered non-Malaysian workers\", \"value\": \"\", \"unit\": \"\", \"stated_date\": \"\", \"time_sensitive\": false}, {\"claim\": \"For non-Malaysian workers registered on or after 1 August 1998, the employer's EPF contribution was a flat RM5 per month.\", \"category\": \"retirement-savings\", \"entity\": \"employers of non-Malaysian workers registered on or after 1 August 1998\", \"value\": \"RM5\", \"unit\": \"MYR per month\", \"stated_date\": \"1 August 1998\", \"time_sensitive\": true}, {\"claim\": \"Non-Malaysian workers registered on or after 1 August 1998 generally contributed 11% of monthly wages to EPF.\", \"category\": \"retirement-savings\", \"entity\": \"non-Malaysian employees registered on or after 1 August 1998\", \"value\": \"11%\", \"unit\": \"percent\", \"stated_date\": \"1 August 1998\", \"time_sensitive\": true}, {\"claim\": \"Different EPF contribution rates apply to older memberships and permanent residents.\", \"category\": \"retirement-savings\", \"entity\": \"older EPF memberships and Malaysian permanent residents\", \"value\": \"\", \"unit\": \"\", \"stated_date\": \"\", \"time_sensitive\": false}, {\"claim\": \"Under the newer phased mandatory scheme for non-Malaysian employees, the initial employer EPF contribution rate is 2% of wages.\", \"category\": \"retirement-savings\", \"entity\": \"employers of non-Malaysian employees under the phased mandatory scheme\", \"value\": \"2%\", \"unit\": \"percent\", \"stated_date\": \"\", \"time_sensitive\": true}, {\"claim\": \"Under the newer phased mandatory scheme for non-Malaysian employees, the initial employee EPF contribution rate is 2% of wages.\", \"category\": \"retirement-savings\", \"entity\": \"non-Malaysian employees under the phased mandatory scheme\", \"value\": \"2%\", \"unit\": \"percent\", \"stated_date\": \"\", \"time_sensitive\": true}]}",
+      "prompt_tokens": 2477,
+      "completion_tokens": 2435,
+      "seconds": 26.3
+    },
+    {
+      "model": "rv/GLM-5.3",
+      "answered_by": "GLM-5.3",
+      "text": "{\n  \"verdict\": \"outdated\",\n  \"current_value\": \"Employers are only required to register and contribute for their non-Malaysian citizen employees starting 1 October 2025\",\n  \"evidence_quote\": \"Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025.\",\n  \"effective_date_text\": \"1 October 2025\",\n  \"effective_date\": \"2025-10-01\",\n  \"source_url\": \"https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees\"\n}",
+      "prompt_tokens": 3084,
+      "completion_tokens": 2149,
+      "seconds": 27.4
+    },
+    {
+      "model": "rv/GLM-5.3",
+      "answered_by": "GLM-5.3",
+      "text": "{\n  \"verdict\": \"outdated\",\n  \"current_value\": \"\",\n  \"evidence_quote\": \"Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025.\",\n  \"effective_date_text\": \"1 October 2025\",\n  \"effective_date\": \"2025-10-01\",\n  \"source_url\": \"https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees\"\n}",
+      "prompt_tokens": 3088,
+      "completion_tokens": 5003,
+      "seconds": 33.37
+    },
+    {
+      "model": "rv/GLM-5.3",
+      "answered_by": "GLM-5.3",
+      "text": "{\n  \"verdict\": \"unverifiable\",\n  \"current_value\": \"\",\n  \"evidence_quote\": \"\",\n  \"effective_date_text\": \"\",\n  \"effective_date\": \"\",\n  \"source_url\": \"\"\n}",
+      "prompt_tokens": 3086,
+      "completion_tokens": 1077,
+      "seconds": 19.38
+    },
+    {
+      "model": "rv/GLM-5.3",
+      "answered_by": "GLM-5.3",
+      "text": "{\n  \"verdict\": \"unverifiable\",\n  \"current_value\": \"\",\n  \"evidence_quote\": \"\",\n  \"effective_date_text\": \"\",\n  \"effective_date\": \"\",\n  \"source_url\": \"\"\n}",
+      "prompt_tokens": 3086,
+      "completion_tokens": 762,
+      "seconds": 6.49
+    }
+  ],
+  "searches": [
+    {
+      "query": "For non-Malaysian workers registered on or after 1 August 1998, the employer's EPF contribution was a flat RM5 per month.",
+      "search_depth": "basic",
+      "results": [
+        {
+          "url": "https://www.kwsp.gov.my/en/member/overview/contribution",
+          "title": "Contribute as a Member - KWSP Malaysia",
+          "content": "Title: Contribute as a Member - KWSP Malaysia\nHow To Register & Benefits Of Becoming A Member Grow Your Savings. Convenience At Your Fingertips Non-Malaysian Citizen Employees. ## Contribute as a Member. #### Register As A Member. As a member, you are eligible to not only enjoy annual dividends on your retirement savings, but also the many withdrawal options and benefits that come with being an EPF Member. What Our Members & Employers Contribute. ## Member - Overview - Who Can Contribute Accordi",
+          "score": 0.65665823,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+          "title": "Contribution For Non-Malaysian Citizen Employees",
+          "content": "As an employer, you are responsible for ensuring that all non-Malaysian citizen employees with a valid work pass are registered and contribute to the EPF in accordance with the law. Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025. Where can employers get more information on mandatory EPF contributions for non-Malaysian citizen employees? Employers are required to register and contribute for non-Malaysian citizen employe",
+          "score": 0.35678276,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/news/epf-expands-mandatory-contribution-to-non-malaysians",
+          "title": "EPF Ramps Up Readiness Measures for Expansion of Mandatory Contribution Coverage to Non-Malaysian Citizen Employees",
+          "content": "Title: EPF Ramps Up Readiness Measures for Expansion of Mandatory Contribution Coverage to Non-Malaysian Citizen Employees\nSmiling person holding coin jar on blue-green gradient with “Making The Most Of Akaun Fleksibel” text, positive tone. EPF & Belanjawan 2026Woman in blue hijab thinking, text “EPF & Belanjawan 2026: What You Should Know” on purple gradient background. Hand holding smartphone showing EPF Auto Simpan setup screen, text “Guide To Set Up EPF Auto Simpan” on teal background. ## EP",
+          "score": 0.32402146,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/infographic/non-malaysian-citizen-employees-dos-and-donts",
+          "title": "Employer Guide: Do's & Don'ts For Non-Malaysian EPF Contributions - KWSP Malaysia",
+          "content": "## Menu Display. How To Register & Benefits Of Becoming A Member Grow Your Savings. Mandatory Contribution & Voluntary Contribution, i-Saraan, i-Invest, i-Sayang, i-Suri Financial Life Stages. Akaun Fleksibel, Education, Hajj, Age 50, Age 55/60 & More Than RM1 Million Withdrawals Health Protection. Members Protection Plan, Critical Illness, Fertility Treatment & Incapacitation Withdrawals Home Ownership. Choices Of Housing Withdrawals Manage Your EPF Account. Manage Account, Account Closure & Tr",
+          "score": 0.30819026,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/video/non-malaysian-citizen-employees",
+          "title": "Employer Guide: Mandatory Contribution for Non-Malaysian Citizen Employees - KWSP Malaysia",
+          "content": "## Menu Display. How To Register & Benefits Of Becoming A Member Grow Your Savings. Mandatory Contribution & Voluntary Contribution, i-Saraan, i-Saraan Plus, i-Invest, i-Sayang, i-Suri Financial Life Stages. Akaun Fleksibel, Education, Hajj, Age 50, Age 55/60 & More Than RM1 Million Withdrawals Health Protection. Members Protection Plan, Critical Illness, Fertility Treatment & Incapacitation Withdrawals Home Ownership. Choices Of Housing Withdrawals Manage Your EPF Account. Manage Account, Accou",
+          "score": 0.289874,
+          "published_date": null
+        }
+      ],
+      "credits": 1,
+      "error_status": 0,
+      "error": ""
+    },
+    {
+      "query": "Non-Malaysian workers registered on or after 1 August 1998 generally contributed 11% of monthly wages to EPF.",
+      "search_depth": "basic",
+      "results": [
+        {
+          "url": "https://secure.kwsp.gov.my/KWSP_files/contributionCalculator/index_en.html",
+          "title": "Contribution Calculator - KWSP",
+          "content": "# Contribution Calculator. This calculator is provided as guidance to assist employer to calculate contribution amount for an employee. Notes: This calculation is not applicable to non-Malaysian employee who had opted to contribute before 1 August 1998. Your contribution amount are as follows:. * The amount generated from this calculation is based on the information entered by employer as at the calculation date/time. * This calculation is not applicable to non-Malaysian employee who had opted t",
+          "score": 0.49235976,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+          "title": "Contribution For Non-Malaysian Citizen Employees",
+          "content": "As an employer, you are responsible for ensuring that all non-Malaysian citizen employees with a valid work pass are registered and contribute to the EPF in accordance with the law. Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025. Where can employers get more information on mandatory EPF contributions for non-Malaysian citizen employees? Employers are required to register and contribute for non-Malaysian citizen employe",
+          "score": 0.36920136,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/news/epf-begins-mandatory-contributions-for-non-malaysian-citizen-employees-effective-october-2025",
+          "title": "EPF Begins Mandatory Contributions For Non-Malaysian Citizen Employees Effective October 2025",
+          "content": "Back Register As A Member How To Register & Benefits Of Becoming A MemberGrow Your Savings Mandatory Contribution & Voluntary Contribution, i-Saraan, i-Saraan Plus, i-Invest, i-Sayang, i-Suri, i-TopupFinancial Life Stages Akaun Fleksibel, Education, Hajj, Age 50, Age 55/60, i-Legasi & More Than RM1 Million+ WithdrawalsHealth Protection Members Protection Plan, Critical Illness, Fertility Treatment & Incapacitation WithdrawalsHome Ownership Choices Of Housing WithdrawalsManage Your EPF Account Ma",
+          "score": 0.3672703,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/news/epf-expands-mandatory-contribution-to-non-malaysians",
+          "title": "EPF Ramps Up Readiness Measures for Expansion of Mandatory Contribution Coverage to Non-Malaysian Citizen Employees",
+          "content": "Title: EPF Ramps Up Readiness Measures for Expansion of Mandatory Contribution Coverage to Non-Malaysian Citizen Employees\nSmiling person holding coin jar on blue-green gradient with “Making The Most Of Akaun Fleksibel” text, positive tone. EPF & Belanjawan 2026Woman in blue hijab thinking, text “EPF & Belanjawan 2026: What You Should Know” on purple gradient background. Hand holding smartphone showing EPF Auto Simpan setup screen, text “Guide To Set Up EPF Auto Simpan” on teal background. ## EP",
+          "score": 0.32305968,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/infographic/non-malaysian-citizen-employees-dos-and-donts",
+          "title": "Employer Guide: Do's & Don'ts For Non-Malaysian EPF Contributions - KWSP Malaysia",
+          "content": "## Menu Display. How To Register & Benefits Of Becoming A Member Grow Your Savings. Mandatory Contribution & Voluntary Contribution, i-Saraan, i-Invest, i-Sayang, i-Suri Financial Life Stages. Akaun Fleksibel, Education, Hajj, Age 50, Age 55/60 & More Than RM1 Million Withdrawals Health Protection. Members Protection Plan, Critical Illness, Fertility Treatment & Incapacitation Withdrawals Home Ownership. Choices Of Housing Withdrawals Manage Your EPF Account. Manage Account, Account Closure & Tr",
+          "score": 0.27357438,
+          "published_date": null
+        }
+      ],
+      "credits": 1,
+      "error_status": 0,
+      "error": ""
+    },
+    {
+      "query": "Under the newer phased mandatory scheme for non-Malaysian employees, the initial employer EPF contribution rate is 2% of wages.",
+      "search_depth": "basic",
+      "results": [
+        {
+          "url": "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+          "title": "Contribution For Non-Malaysian Citizen Employees",
+          "content": "As an employer, you are responsible for ensuring that all non-Malaysian citizen employees with a valid work pass are registered and contribute to the EPF in accordance with the law. Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025. Where can employers get more information on mandatory EPF contributions for non-Malaysian citizen employees? Employers are required to register and contribute for non-Malaysian citizen employe",
+          "score": 0.58195657,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/news/epf-begins-mandatory-contributions-for-non-malaysian-citizen-employees-effective-october-2025",
+          "title": "EPF Begins Mandatory Contributions For Non-Malaysian Citizen Employees Effective October 2025",
+          "content": "Back Register As A Member How To Register & Benefits Of Becoming A MemberGrow Your Savings Mandatory Contribution & Voluntary Contribution, i-Saraan, i-Saraan Plus, i-Invest, i-Sayang, i-Suri, i-TopupFinancial Life Stages Akaun Fleksibel, Education, Hajj, Age 50, Age 55/60, i-Legasi & More Than RM1 Million+ WithdrawalsHealth Protection Members Protection Plan, Critical Illness, Fertility Treatment & Incapacitation WithdrawalsHome Ownership Choices Of Housing WithdrawalsManage Your EPF Account Ma",
+          "score": 0.43338183,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/news/epf-expands-mandatory-contribution-to-non-malaysians",
+          "title": "EPF Ramps Up Readiness Measures for Expansion of Mandatory Contribution Coverage to Non-Malaysian Citizen Employees",
+          "content": "Title: EPF Ramps Up Readiness Measures for Expansion of Mandatory Contribution Coverage to Non-Malaysian Citizen Employees\nSmiling person holding coin jar on blue-green gradient with “Making The Most Of Akaun Fleksibel” text, positive tone. EPF & Belanjawan 2026Woman in blue hijab thinking, text “EPF & Belanjawan 2026: What You Should Know” on purple gradient background. Hand holding smartphone showing EPF Auto Simpan setup screen, text “Guide To Set Up EPF Auto Simpan” on teal background. ## EP",
+          "score": 0.4279943,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/video/non-malaysian-citizen-employees",
+          "title": "Employer Guide: Mandatory Contribution for Non-Malaysian Citizen Employees - KWSP Malaysia",
+          "content": "## Menu Display. How To Register & Benefits Of Becoming A Member Grow Your Savings. Mandatory Contribution & Voluntary Contribution, i-Saraan, i-Saraan Plus, i-Invest, i-Sayang, i-Suri Financial Life Stages. Akaun Fleksibel, Education, Hajj, Age 50, Age 55/60 & More Than RM1 Million Withdrawals Health Protection. Members Protection Plan, Critical Illness, Fertility Treatment & Incapacitation Withdrawals Home Ownership. Choices Of Housing Withdrawals Manage Your EPF Account. Manage Account, Accou",
+          "score": 0.3125798,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution",
+          "title": "Employer Mandatory Contribution",
+          "content": "Subject to the provisions of section 52, every employee and every employer of a person who is an employee within the meaning of this Act shall be liable to pay monthly contributions on the amount of wages at the rate respectively set out in the Third Schedule. The latest contribution rate for employees and employers effective October 2025 'salary/wage' can be referred in the Third Schedule, EPF Act 1991.Employers are required to remit EPF contributions based on this schedule. Late Payment Charge",
+          "score": 0.24274375,
+          "published_date": null
+        }
+      ],
+      "credits": 1,
+      "error_status": 0,
+      "error": ""
+    },
+    {
+      "query": "Under the newer phased mandatory scheme for non-Malaysian employees, the initial employee EPF contribution rate is 2% of wages.",
+      "search_depth": "basic",
+      "results": [
+        {
+          "url": "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+          "title": "Contribution For Non-Malaysian Citizen Employees",
+          "content": "As an employer, you are responsible for ensuring that all non-Malaysian citizen employees with a valid work pass are registered and contribute to the EPF in accordance with the law. Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025. Where can employers get more information on mandatory EPF contributions for non-Malaysian citizen employees? Employers are required to register and contribute for non-Malaysian citizen employe",
+          "score": 0.57648236,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/news/epf-begins-mandatory-contributions-for-non-malaysian-citizen-employees-effective-october-2025",
+          "title": "EPF Begins Mandatory Contributions For Non-Malaysian Citizen Employees Effective October 2025",
+          "content": "Back Register As A Member How To Register & Benefits Of Becoming A MemberGrow Your Savings Mandatory Contribution & Voluntary Contribution, i-Saraan, i-Saraan Plus, i-Invest, i-Sayang, i-Suri, i-TopupFinancial Life Stages Akaun Fleksibel, Education, Hajj, Age 50, Age 55/60, i-Legasi & More Than RM1 Million+ WithdrawalsHealth Protection Members Protection Plan, Critical Illness, Fertility Treatment & Incapacitation WithdrawalsHome Ownership Choices Of Housing WithdrawalsManage Your EPF Account Ma",
+          "score": 0.43200347,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/news/epf-expands-mandatory-contribution-to-non-malaysians",
+          "title": "EPF Ramps Up Readiness Measures for Expansion of Mandatory Contribution Coverage to Non-Malaysian Citizen Employees",
+          "content": "Title: EPF Ramps Up Readiness Measures for Expansion of Mandatory Contribution Coverage to Non-Malaysian Citizen Employees\nSmiling person holding coin jar on blue-green gradient with “Making The Most Of Akaun Fleksibel” text, positive tone. EPF & Belanjawan 2026Woman in blue hijab thinking, text “EPF & Belanjawan 2026: What You Should Know” on purple gradient background. Hand holding smartphone showing EPF Auto Simpan setup screen, text “Guide To Set Up EPF Auto Simpan” on teal background. ## EP",
+          "score": 0.42459092,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/w/video/non-malaysian-citizen-employees",
+          "title": "Employer Guide: Mandatory Contribution for Non-Malaysian Citizen Employees - KWSP Malaysia",
+          "content": "## Menu Display. How To Register & Benefits Of Becoming A Member Grow Your Savings. Mandatory Contribution & Voluntary Contribution, i-Saraan, i-Saraan Plus, i-Invest, i-Sayang, i-Suri Financial Life Stages. Akaun Fleksibel, Education, Hajj, Age 50, Age 55/60 & More Than RM1 Million Withdrawals Health Protection. Members Protection Plan, Critical Illness, Fertility Treatment & Incapacitation Withdrawals Home Ownership. Choices Of Housing Withdrawals Manage Your EPF Account. Manage Account, Accou",
+          "score": 0.30125925,
+          "published_date": null
+        },
+        {
+          "url": "https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution",
+          "title": "Employer Mandatory Contribution",
+          "content": "Subject to the provisions of section 52, every employee and every employer of a person who is an employee within the meaning of this Act shall be liable to pay monthly contributions on the amount of wages at the rate respectively set out in the Third Schedule. The latest contribution rate for employees and employers effective October 2025 'salary/wage' can be referred in the Third Schedule, EPF Act 1991.Employers are required to remit EPF contributions based on this schedule. Late Payment Charge",
+          "score": 0.22524615,
+          "published_date": null
+        }
+      ],
+      "credits": 1,
+      "error_status": 0,
+      "error": ""
+    }
+  ],
+  "extracts": [
+    {
+      "urls": [
+        "https://www.kwsp.gov.my/en/member/overview/contribution",
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees"
+      ],
+      "excerpts": {},
+      "failed": [
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+        "https://www.kwsp.gov.my/en/member/overview/contribution"
+      ],
+      "credits": 1
+    },
+    {
+      "urls": [
+        "https://secure.kwsp.gov.my/KWSP_files/contributionCalculator/index_en.html",
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees"
+      ],
+      "excerpts": {},
+      "failed": [
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+        "https://secure.kwsp.gov.my/KWSP_files/contributionCalculator/index_en.html"
+      ],
+      "credits": 1
+    },
+    {
+      "urls": [
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+        "https://www.kwsp.gov.my/en/w/news/epf-begins-mandatory-contributions-for-non-malaysian-citizen-employees-effective-october-2025"
+      ],
+      "excerpts": {},
+      "failed": [
+        "https://www.kwsp.gov.my/en/w/news/epf-begins-mandatory-contributions-for-non-malaysian-citizen-employees-effective-october-2025",
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees"
+      ],
+      "credits": 1
+    },
+    {
+      "urls": [
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+        "https://www.kwsp.gov.my/en/w/news/epf-begins-mandatory-contributions-for-non-malaysian-citizen-employees-effective-october-2025"
+      ],
+      "excerpts": {},
+      "failed": [
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+        "https://www.kwsp.gov.my/en/w/news/epf-begins-mandatory-contributions-for-non-malaysian-citizen-employees-effective-october-2025"
+      ],
+      "credits": 1
+    }
+  ],
+  "usage_before": {
+    "key": {
+      "usage": 39,
+      "search_usage": 28,
+      "crawl_usage": 0,
+      "extract_usage": 11,
+      "map_usage": 0,
+      "research_usage": 0
+    },
+    "account": {
+      "plan_usage": 39,
+      "plan_limit": 1000,
+      "search_usage": 28,
+      "crawl_usage": 0,
+      "extract_usage": 11,
+      "map_usage": 0,
+      "research_usage": 0,
+      "paygo_usage": 0
+    }
+  },
+  "usage_after": {
+    "key": {
+      "usage": 39,
+      "search_usage": 28,
+      "crawl_usage": 0,
+      "extract_usage": 11,
+      "map_usage": 0,
+      "research_usage": 0
+    },
+    "account": {
+      "plan_usage": 39,
+      "plan_limit": 1000,
+      "search_usage": 28,
+      "crawl_usage": 0,
+      "extract_usage": 11,
+      "map_usage": 0,
+      "research_usage": 0,
+      "paygo_usage": 0
+    }
+  },
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-20",
+    "results": [
+      {
+        "claim": {
+          "claim": "For non-Malaysian workers registered on or after 1 August 1998, the employer's EPF contribution was a flat RM5 per month.",
+          "category": "retirement-savings",
+          "entity": "employers of non-Malaysian workers registered on or after 1 August 1998",
+          "value": "RM5",
+          "unit": "MYR per month",
+          "stated_date": "1 August 1998",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "Employers are only required to register and contribute for their non-Malaysian citizen employees starting 1 October 2025",
+        "evidence_quote": "Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025.",
+        "effective_date": "2025-10-01",
+        "source_url": "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-20",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "Non-Malaysian workers registered on or after 1 August 1998 generally contributed 11% of monthly wages to EPF.",
+          "category": "retirement-savings",
+          "entity": "non-Malaysian employees registered on or after 1 August 1998",
+          "value": "11%",
+          "unit": "percent",
+          "stated_date": "1 August 1998",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "",
+        "evidence_quote": "Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025.",
+        "effective_date": "2025-10-01",
+        "source_url": "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-20",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "Under the newer phased mandatory scheme for non-Malaysian employees, the initial employer EPF contribution rate is 2% of wages.",
+          "category": "retirement-savings",
+          "entity": "employers of non-Malaysian employees under the phased mandatory scheme",
+          "value": "2%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The judge cited a page that was not extracted.",
+        "context": [],
+        "checked_on": "2026-11-20",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "Under the newer phased mandatory scheme for non-Malaysian employees, the initial employee EPF contribution rate is 2% of wages.",
+          "category": "retirement-savings",
+          "entity": "non-Malaysian employees under the phased mandatory scheme",
+          "value": "2%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The judge cited a page that was not extracted.",
+        "context": [],
+        "checked_on": "2026-11-20",
+        "credits": 2
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 3,
+    "credits": 8,
+    "outdated": 2,
+    "as_of_before": "2025-10-01",
+    "as_of_mixed": false
+  }
+}

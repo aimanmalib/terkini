@@ -52,3 +52,13 @@ Published: $published
 Text:
 $text
 """
+
+# How an eval model is asked a pack question (`terkini ask`, eval, recorded demo runs). Plain on purpose:
+# the answer should be what a user of that model would get.
+[ask]
+system = """
+You answer questions about rules and regulations in $country. Answer in plain English, in at most 150 words.
+"""
+user = """
+$question
+"""

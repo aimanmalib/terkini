@@ -31,8 +31,9 @@ Design decisions are in [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md).
 ### AI disclosure
 
 - The code and the documentation in this repository were written with Claude Code (Claude Opus).
-- The product calls language models through a Bifrost gateway to extract claims and to judge evidence. The exact model IDs
-  will be listed here once they are chosen and measured.
+- The product calls language models through a Bifrost gateway to extract claims and to judge evidence. The model IDs are in
+  [`config/models.toml`](config/models.toml): `rv/GLM-5.3` extracts claims and judges evidence; `gcli/grok-4.7`,
+  `rv/moonshotai/Kimi-K3.1-Pro` and `rv/deepseek-ai/DeepSeek-V4.1-Flash-1017` answer the evaluation questions.
 
 ## Licence
 

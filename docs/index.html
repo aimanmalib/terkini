@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terkini: is this AI answer still true where you live?</title>
+<meta name="description" content="Terkini checks AI answers about Malaysian rules against official government pages, with exact quotes and a freshness score.">
+<style>
+  :root {
+    --ink: #14213d; --muted: #4a5568; --paper: #fbfaf6; --line: #d9d4c7;
+    --fresh: #1f7a4d; --stale: #b3261e; --unsure: #9a6700;
+    --measure: 40rem;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 17px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: var(--measure); margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  .mark { display: flex; gap: .375rem; margin-bottom: 1.5rem; }
+  .mark span { width: .75rem; height: .75rem; border-radius: 50%; }
+  h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -.01em; }
+  .tag { font-size: 1.125rem; color: var(--muted); margin: 0 0 2rem; }
+  section { border-top: 1px solid var(--line); padding-top: 1.25rem; margin-top: 1.5rem; }
+  h2 { font-size: .8125rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 .5rem; }
+  p { margin: 0 0 .75rem; overflow-wrap: anywhere; }
+  .note { font-size: .9375rem; color: var(--muted); }
+  a { color: var(--ink); text-underline-offset: .15em; }
+  a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark" aria-hidden="true">
+    <span style="background:var(--fresh)"></span><span style="background:var(--unsure)"></span><span style="background:var(--stale)"></span>
+  </div>
+  <h1>Terkini</h1>
+  <p class="tag">Is this AI answer still true where you live?</p>
+
+  <section lang="en">
+    <h2>English</h2>
+    <p>Terkini checks an AI answer about a Malaysian rule against official government pages. Each claim gets the exact quote
+      from the source and a freshness score.</p>
+    <p class="note">Work in progress. A recorded-run demo is coming to this page.</p>
+  </section>
+
+  <section lang="ms">
+    <h2>Bahasa Melayu</h2>
+    <p>Terkini menyemak jawapan AI tentang peraturan Malaysia dengan laman rasmi kerajaan. Setiap dakwaan diberi petikan
+      tepat dari sumber dan skor kesegaran.</p>
+    <p class="note">Masih dibina. Demo larian yang dirakam akan dipaparkan di halaman ini.</p>
+  </section>
+
+  <section>
+    <p class="note"><strong>Not legal advice.</strong> Confirm anything important with the agency.
+      <span lang="ms">Bukan nasihat undang-undang.</span></p>
+    <p class="note"><a href="https://github.com/aimanmalib/terkini">Source on GitHub</a></p>
+  </section>
+</main>
+</body>
+</html>

@@ -55,3 +55,32 @@ change it.
 - **Decision.** Apache-2.0.
 - **Why.** The same licence as Bifrost, and it carries an explicit patent grant.
 - **Would change if.** Nothing planned.
+
+## D-008 · Country pack and answer key format
+
+- **Decision.** `packs/my.toml` lists official domains with a label (`government` or `utility`), categories with a
+  `volatile` flag, and one canonical official page per category. Questions are in `eval/my/questions.yaml`. The answer
+  key in `eval/my/key.yaml` gives, for each question, the current value, the official page, an exact quote from that
+  page's extracted text, the effective date when the quote states it, and the date the page was read. Questions we
+  could not key are listed under `dropped` with the reason.
+- **Why.** The key has to be checkable by anyone. `scripts/verify-key.py` re-reads every page through Tavily Extract
+  and checks each quote with the same whitespace-normalised substring test the checker uses (D-004).
+- **Would change if.** A pack needs a domain label other than government or utility.
+
+## D-009 · Official pages are reachable through Tavily search
+
+- **Decision.** Search uses `include_domains` with the pack domains and `include_domains_mode: restrict`. The canonical
+  pages in the pack are a fallback, not the main path.
+- **Why.** On 2026-11-20 we ran 10 restricted searches, one per sample question. All 10 returned official pages, and
+  each had at least one page that answered the question. Subdomains such as `mysst.customs.gov.my` and
+  `lom.agc.gov.my` are matched by their parent domain.
+- **Would change if.** A later run shows search missing pages that the canonical list has. Then the checker extracts
+  the canonical page directly.
+
+## D-010 · Credits are counted from each response
+
+- **Decision.** The checker sums the `usage.credits` field that Tavily returns with each search and extract, and also
+  reads `GET /usage` before and after a run.
+- **Why.** During the first key-building session the account counter at `GET /usage` stayed at 0 after 35 credits
+  of calls. The per-response field was present on every call.
+- **Would change if.** `GET /usage` updates promptly. Then it becomes the single source.

@@ -1,0 +1,141 @@
+# Malaysia country pack. Code reads this file; it holds no domains or questions of its own.
+# Only pages on these domains (and their subdomains) can decide a verdict (D-003).
+
+id = "my"
+name = "Malaysia"
+# Languages the checker may search in. Official pages are in English, Malay or both.
+query_languages = ["en", "ms"]
+questions = "eval/my/questions.yaml"
+key = "eval/my/key.yaml"
+
+[[domains]]
+domain = "hasil.gov.my"
+label = "government"
+agency = "Inland Revenue Board of Malaysia (LHDN)"
+
+[[domains]]
+domain = "customs.gov.my"
+label = "government"
+agency = "Royal Malaysian Customs Department (SST, tourism tax)"
+
+[[domains]]
+domain = "mof.gov.my"
+label = "government"
+agency = "Ministry of Finance (budget documents, press releases)"
+
+[[domains]]
+domain = "kwsp.gov.my"
+label = "government"
+agency = "Employees Provident Fund (EPF / KWSP)"
+
+[[domains]]
+domain = "perkeso.gov.my"
+label = "government"
+agency = "Social Security Organisation (SOCSO / PERKESO)"
+
+[[domains]]
+domain = "mohr.gov.my"
+label = "government"
+agency = "Ministry of Human Resources and its Labour Department (JTKSM)"
+
+[[domains]]
+domain = "agc.gov.my"
+label = "government"
+agency = "Attorney General's Chambers (Laws of Malaysia online)"
+
+[[domains]]
+domain = "hrdcorp.gov.my"
+label = "government"
+agency = "HRD Corp (training levy)"
+
+[[domains]]
+domain = "st.gov.my"
+label = "government"
+agency = "Energy Commission (electricity tariffs)"
+
+[[domains]]
+domain = "motac.gov.my"
+label = "government"
+agency = "Ministry of Tourism, Arts and Culture"
+
+[[domains]]
+domain = "kpdn.gov.my"
+label = "government"
+agency = "Ministry of Domestic Trade and Cost of Living"
+
+[[domains]]
+domain = "tnb.com.my"
+label = "utility"
+agency = "Tenaga Nasional Berhad (electricity utility)"
+
+# volatile = rates, tariffs and limits. Searches for these ask Tavily for a live copy of each page (max_age_hours = 0).
+[[categories]]
+id = "wages"
+name_en = "Minimum wage"
+name_ms = "Gaji minimum"
+volatile = true
+
+[[categories]]
+id = "employment"
+name_en = "Employment terms"
+name_ms = "Terma pekerjaan"
+volatile = false
+
+[[categories]]
+id = "social-security"
+name_en = "Social security (SOCSO, EIS)"
+name_ms = "Keselamatan sosial (PERKESO, SIP)"
+volatile = true
+
+[[categories]]
+id = "retirement-savings"
+name_en = "Retirement savings (EPF)"
+name_ms = "Simpanan persaraan (KWSP)"
+volatile = true
+
+[[categories]]
+id = "income-tax"
+name_en = "Income tax"
+name_ms = "Cukai pendapatan"
+volatile = true
+
+[[categories]]
+id = "indirect-tax"
+name_en = "Sales, service and tourism tax"
+name_ms = "Cukai jualan, perkhidmatan dan pelancongan"
+volatile = true
+
+[[categories]]
+id = "e-invoice"
+name_en = "e-Invoice"
+name_ms = "e-Invois"
+volatile = true
+
+# One canonical official page per category. Used when search finds nothing (risk R1).
+[[canonical_sources]]
+category = "wages"
+url = "https://www.mohr.gov.my/images/mpgn/FAQ%202024.pdf"
+
+[[canonical_sources]]
+category = "employment"
+url = "https://lom.agc.gov.my/ilims/upload/portal/akta/outputaktap/1744567_BI/Reprint%20Act%20265%20%28Final%29.pdf"
+
+[[canonical_sources]]
+category = "social-security"
+url = "https://www.perkeso.gov.my/en/our-services/employer-employee/contributions.html"
+
+[[canonical_sources]]
+category = "retirement-savings"
+url = "https://www.kwsp.gov.my/en/epf-act-1991-third-schedule"
+
+[[canonical_sources]]
+category = "income-tax"
+url = "https://www.hasil.gov.my/en/individu/kadar-cukai"
+
+[[canonical_sources]]
+category = "indirect-tax"
+url = "https://mysst.customs.gov.my/faq-services-tax"
+
+[[canonical_sources]]
+category = "e-invoice"
+url = "https://www.hasil.gov.my/en/e-invois/pelaksanaan-e-invois-di-malaysia/garis-masa-pelaksanaan-e-invois"

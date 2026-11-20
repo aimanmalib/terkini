@@ -1,0 +1,72 @@
+# Malaysia eval questions. Written before any model answer was seen (D9). Keys: key.yaml, same ids.
+pack: my
+questions:
+- id: my-01
+  category: wages
+  question: What is the national minimum monthly wage in Malaysia?
+- id: my-02
+  category: wages
+  question: Do Malaysian employers with fewer than five employees have to pay the national minimum wage, and from when?
+- id: my-03
+  category: indirect-tax
+  question: What is the standard service tax rate in Malaysia?
+- id: my-04
+  category: indirect-tax
+  question: What service tax rate applies to food and beverage services in Malaysia?
+- id: my-05
+  category: indirect-tax
+  question: When did Malaysia's standard service tax rate last change, and to what rate?
+- id: my-06
+  category: indirect-tax
+  question: What are the sales tax rates on goods in Malaysia?
+- id: my-07
+  category: indirect-tax
+  question: Above what annual sales value must a manufacturer of taxable goods register for sales tax in Malaysia?
+- id: my-08
+  category: indirect-tax
+  question: How much tourism tax is charged per room per night in Malaysia?
+- id: my-09
+  category: e-invoice
+  question: Below what annual turnover are Malaysian businesses exempt from e-Invoicing?
+- id: my-10
+  category: e-invoice
+  question: 'A Malaysian business whose annual revenue first reached RM3 million in YA2024: from what date must it implement e-Invoicing?'
+- id: my-11
+  category: retirement-savings
+  question: How are new EPF contributions split between member accounts in Malaysia?
+- id: my-12
+  category: retirement-savings
+  question: Do employers in Malaysia have to make EPF contributions for foreign (non-Malaysian) workers, and at what rate?
+- id: my-13
+  category: social-security
+  question: What is the Employment Insurance System (EIS) contribution rate in Malaysia?
+- id: my-14
+  category: social-security
+  question: What is the monthly salary cap used to calculate EIS contributions in Malaysia?
+- id: my-15
+  category: social-security
+  question: Are Malaysian employees covered by SOCSO for accidents outside work, and since when?
+- id: my-16
+  category: income-tax
+  question: Is dividend income taxed for individuals in Malaysia, and at what rate?
+- id: my-17
+  category: income-tax
+  question: What is the capital gains tax rate on the disposal of unlisted shares acquired in 2024 or later in Malaysia?
+- id: my-18
+  category: income-tax
+  question: What income tax rate do Malaysian small and medium companies pay on the first RM150,000 of chargeable income?
+- id: my-19
+  category: employment
+  question: How many days of maternity leave are employees entitled to under Malaysia's Employment Act?
+- id: my-20
+  category: employment
+  question: How many days of paid paternity leave does a married male employee get under Malaysia's Employment Act?
+- id: my-21
+  category: employment
+  question: What are the maximum normal working hours per week under Malaysia's Employment Act?
+- id: my-22
+  category: employment
+  question: Above what monthly wage are non-manual employees in Peninsular Malaysia not entitled to Employment Act overtime claims?
+- id: my-23
+  category: employment
+  question: What is the minimum retirement age for private sector employees in Malaysia?

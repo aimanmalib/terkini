@@ -1,0 +1,139 @@
+# Answer key for eval/my/questions.yaml (D9). Each entry: current official value, the official page,
+# an exact quote from that page's extracted text (checked after whitespace normalisation), the effective
+# date when the quote states one, and the date the page was read. Built before any model answer was seen
+# and not changed after seeing results.
+pack: my
+keys:
+- id: my-01
+  value: RM1,700 per month
+  url: https://www.mohr.gov.my/images/mpgn/FAQ%202024.pdf
+  quote: Kadar gaji minimum adalah RM1,700 sebulan bagi seluruh negara
+  read_at: '2026-11-20'
+- id: my-02
+  value: Yes, RM1,700 per month for all employers from 1 August 2025
+  url: https://www.mohr.gov.my/images/mpgn/FAQ%202024.pdf
+  quote: Pada 1 Ogos 2025, pelaksanaan gaji minimum RM1,700 sebulan kepada semua majikan yang menggajikan pekerja
+  effective_date: '2025-08-01'
+  read_at: '2026-11-20'
+- id: my-03
+  value: 8%
+  url: https://mysst.customs.gov.my/faq-services-tax
+  quote: The tax rate is 8% for all taxable services except;
+  read_at: '2026-11-20'
+- id: my-04
+  value: 6%
+  url: https://mysst.customs.gov.my/faq-services-tax
+  quote: F&B, Logistics, Telecommunications, and Parking are at a rate of 6%.
+  read_at: '2026-11-20'
+- id: my-05
+  value: From 6% to 8% on 1 March 2024
+  url: https://mysst.customs.gov.my/faq-services-tax
+  quote: The effective date of the change in the service tax rate from 6% to 8% is from 1st March 2024.
+  effective_date: '2024-03-01'
+  read_at: '2026-11-20'
+- id: my-06
+  value: 5%, 10% or a specific rate
+  url: https://mysst.customs.gov.my/faq-sales-tax
+  quote: The sales tax rate is at 5%,10% or on a specific rate.
+  read_at: '2026-11-20'
+- id: my-07
+  value: RM500,000 in 12 months
+  url: https://mysst.customs.gov.my/registering-business
+  quote: SALES VALUE OF TAXABLE GOODS has exceeded RM500,000 for 12 months period
+  read_at: '2026-11-20'
+- id: my-08
+  value: RM10.00 per room per night
+  url: https://www.myttx.customs.gov.my/wp-content/uploads/2025/03/Guide-on-DPSP-11032025.pdf
+  quote: A registered DPSP is required to charge TTx at a fixed rate of RM10.00 per room per night
+  read_at: '2026-11-20'
+- id: my-09
+  value: Less than RM3,000,000
+  url: https://www.hasil.gov.my/en/e-invois/pelaksanaan-e-invois-di-malaysia/garis-masa-pelaksanaan-e-invois
+  quote: Taxpayers with an annual turnover or revenue of less than RM3,000,000 are exempted from e-Invoice implementation
+  read_at: '2026-11-20'
+- id: my-10
+  value: 1 July 2026
+  url: https://www.hasil.gov.my/wp-content/uploads/lhdnm-e-invoice-general-faqs.pdf
+  quote: If the taxpayer’s annual turnover or revenue subsequently reached / exceeded RM3 million in YA2023, YA2024 or YA2025, the taxpayer is required to implement e-Invoice starting from 1 July 2026.
+  effective_date: '2026-07-01'
+  read_at: '2026-11-20'
+- id: my-11
+  value: 75% Akaun Persaraan, 15% Akaun Sejahtera, 10% Akaun Fleksibel
+  url: https://www.kwsp.gov.my/en/w/article/akaun-fleksibel-dividend
+  quote: 'Akaun Fleksibel was introduced on 11 May 2024 as part of EPF’s account restructuring. Contributions are now distributed as follows: - 75% - Akaun Persaraan - 15% - Akaun Sejahtera - 10% - Akaun Fleksibel'
+  effective_date: '2024-05-11'
+  read_at: '2026-11-20'
+- id: my-12
+  value: Yes, 2% each from employer and employee
+  url: https://www.kwsp.gov.my/en/w/news/automatic-registration-eases-process-for-employers-of-non-malaysian-citizen-employees
+  quote: Both employer and employee are required to contribute 2% each of the employee’s wages.
+  read_at: '2026-11-20'
+- id: my-13
+  value: 0.4% of assumed monthly salary (0.2% employer, 0.2% employee)
+  url: https://www.perkeso.gov.my/en/our-services/employer-employee/contributions.html
+  quote: Contributions to the Employment Insurance System (EIS) are set at 0.4% of the employee’s assumed monthly salary.
+  read_at: '2026-11-20'
+- id: my-14
+  value: RM6,000
+  url: https://www.perkeso.gov.my/en/our-services/employer-employee/contributions.html
+  quote: Contribution rates are capped at an assumed monthly salary of RM6,000.
+  read_at: '2026-11-20'
+- id: my-15
+  value: Yes, the LINDUNG 24 Jam Scheme, from 1 June 2026
+  url: https://www.perkeso.gov.my/images/lindung/lindung-24-jam/25062026-FAQ_LINDUNG_24_JAM_EN.pdf
+  quote: The LINDUNG 24 Jam Scheme comes into effect on 1 June 2026.
+  effective_date: '2026-06-01'
+  read_at: '2026-11-20'
+- id: my-16
+  value: 2% on dividend income exceeding RM100,000
+  url: https://www.hasil.gov.my/wp-content/uploads/explanatorynotes_b2025_1.pdf
+  quote: The imposition of tax on individuals for dividend income exceeding RM100,000 is at a rate of 2% on taxable income related to dividend income
+  read_at: '2026-11-20'
+- id: my-17
+  value: 10% of chargeable income
+  url: https://www.hasil.gov.my/media/rgndkcuh/20250721-guidelines-on-capital-gains-tax-for-unlisted-shares.pdf
+  quote: the tax rate is 10% of chargeable income from disposal of capital assets.
+  read_at: '2026-11-20'
+- id: my-18
+  value: 15%
+  url: https://www.hasil.gov.my/wp-content/uploads/20250718-public-ruling-tax-treatment-for-micro-small-and-medium-enterprises.pdf
+  quote: For the first RM150,000 15% RM150,001 to RM600,000 17% Exceeding RM600,000 24%
+  read_at: '2026-11-20'
+- id: my-19
+  value: 98 consecutive days
+  url: https://lom.agc.gov.my/ilims/upload/portal/akta/outputaktap/1744567_BI/Reprint%20Act%20265%20%28Final%29.pdf
+  quote: “eligible period” means a period of maternity leave of not less than *ninety-eight consecutive days.
+  read_at: '2026-11-20'
+- id: my-20
+  value: 7 consecutive days per confinement
+  url: https://lom.agc.gov.my/ilims/upload/portal/akta/outputaktap/1744567_BI/Reprint%20Act%20265%20%28Final%29.pdf
+  quote: a married male employee shall be entitled to a paid paternity leave at his ordinary rate of pay for a period of seven consecutive days in respect of each confinement.
+  read_at: '2026-11-20'
+- id: my-21
+  value: 45 hours a week
+  url: https://lom.agc.gov.my/ilims/upload/portal/akta/outputaktap/1744567_BI/Reprint%20Act%20265%20%28Final%29.pdf
+  quote: no employee shall be required to work for more than nine hours in one day or forty-five hours in one week.
+  read_at: '2026-11-20'
+- id: my-22
+  value: More than RM4,000
+  url: http://jtksm.mohr.gov.my/en/services/labour-case
+  quote: 'EMPLOYEES EARNING MORE THAN RM4,000 (EXCEPT MANUAL EMPLOYEES) ARE NOT ELIGIBLE TO CLAIM FOR:'
+  read_at: '2026-11-20'
+- id: my-23
+  value: 60 years
+  url: https://lom.agc.gov.my/ilims/upload/portal/akta/LOM/EN/001%20-%20Act%20753-7_11_2016.pdf
+  quote: the minimum retirement age of an employee shall be upon the employee attaining the age of sixty years.
+  read_at: '2026-11-20'
+dropped:
+- topic: Peninsular Malaysia base electricity tariff
+  reason: The official tariff page shows the rate only inside an image, so no text quote could be checked.
+- topic: Top personal income tax rate
+  reason: The official rate page read on 2026-11-20 lists Years of Assessment 2023 to 2025 only, so it cannot confirm the current year.
+- topic: EPF employee contribution rate for Malaysians
+  reason: The rates are in linked schedule files, not in page text we could extract.
+- topic: SOCSO employee total rate after LINDUNG 24 Jam
+  reason: The figure appears only in a flattened table where the quote does not read as a sentence.
+- topic: HRD Corp levy rate
+  reason: Both official pages failed to extract.
+- topic: e-Invoice start date for businesses up to RM5 million
+  reason: Two official pages give different dates for overlapping groups (1 January 2026 and 1 July 2026).

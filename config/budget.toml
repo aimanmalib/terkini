@@ -1,0 +1,18 @@
+# Tavily credit limits (D11). The credit guard reads these; a run stops cleanly when a limit is reached.
+# Credits per call (Tavily docs): search basic 1, advanced 2; extract 1 per 5 successful URLs.
+
+[tavily]
+# Credits included in the current plan each month.
+monthly_credits = 1000
+
+# How the month's credits are split. Values must add up to monthly_credits or less.
+[tavily.allocation]
+build = 250
+eval_my = 400
+reserve = 250
+
+[tavily.limits]
+# Hard stop for one `check` or `eval` run.
+per_run = 120
+# Hard stop for all runs in one UTC day.
+per_day = 400

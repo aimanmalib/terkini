@@ -1,0 +1,27 @@
+# Nota dalaman (repo AWAM; PELAN K2)
+/docs/PRD.md
+/NEXT.md
+/CLAUDE.md
+/CLAUDE.local.md
+/dalaman/
+/docs/hantar/
+/.claude/
+/.autopilot/
+/PELAN-*.md
+/PASTE-*.md
+# Rahsia + data tempatan
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+/data/
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/

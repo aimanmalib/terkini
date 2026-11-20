@@ -6,6 +6,9 @@
 name = "openai"
 # Let the gateway call a provider on a private address (the Docker host).
 allow_private_network = true
+# Seconds the gateway waits for the upstream before it fails the call and tries the next fallback model.
+# A normal judge answer took up to 45 s; one call stalled for over 300 s (measured 2026-11-20).
+request_timeout_seconds = 90
 
 # Headers added to every upstream request. Without an explicit JSON Accept header, some OpenAI-compatible
 # providers append an SSE "data: [DONE]" line to a non-streaming answer, which the gateway cannot parse (D-012).
@@ -27,7 +30,8 @@ token_max_limit = 400000
 token_reset_duration = "1h"
 
 [client]
-# Seconds to wait for one model answer through the gateway.
-timeout_seconds = 120
+# Seconds to wait for one model answer through the gateway. The judge reads up to two long pages and
+# took longer than 120 s on some claims (measured 2026-11-20), so this is set well above that.
+timeout_seconds = 300
 # Seconds to wait for the gateway to report healthy after start.
 health_timeout_seconds = 180

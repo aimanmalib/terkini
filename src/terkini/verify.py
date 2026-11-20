@@ -69,6 +69,23 @@ def parse_day(value: str | None) -> date | None:
         return None
 
 
+def same_page(url: str) -> str:
+    """Key for one page: http and https copies of a URL, or a trailing slash, are the same page."""
+    rest = url.split("://", 1)[-1].rstrip("/")
+    host, _, path = rest.partition("/")
+    return f"{host.lower()}/{path}"
+
+
+def distinct_pages(hits: list[SearchHit]) -> list[SearchHit]:
+    """Drop duplicate copies of a page, keeping its first position and preferring the https copy."""
+    kept: dict[str, SearchHit] = {}
+    for h in hits:
+        k = same_page(h.url)
+        if k not in kept or h.url.startswith("https://") and not kept[k].url.startswith("https://"):
+            kept[k] = h
+    return list(kept.values())
+
+
 def build_query(claim: Claim, max_chars: int) -> str:
     q = " ".join(claim.claim.split())
     if len(q) <= max_chars:
@@ -133,18 +150,22 @@ class Verifier:
         query = build_query(claim, self.cfg.search.max_query_chars)
 
         hits, cached, credits = self._search(query, self.cfg.search.search_depth, volatile)
-        official = [h for h in hits if h.official]
+        official = distinct_pages([h for h in hits if h.official])
         context = [h for h in hits if not h.official]
         if not official:
             hits, cached2, more = self._search(query, self.cfg.search.retry_depth, volatile)
             cached, credits = cached or cached2, credits + more
-            official = [h for h in hits if h.official]
+            official = distinct_pages([h for h in hits if h.official])
             context = [h for h in hits if not h.official]
         if not official:
             return self._unverifiable(claim, "No official page found.", context, cached, credits)
 
         pages, more = self._extract(official)
         credits += more
+        snippets = not pages
+        if snippets:
+            # D-014: the official site refused the extract. Judge on the snippets Tavily Search returned from it.
+            pages = [Page(url=h.url, text=h.content, published=h.published_date) for h in official if h.content]
         if not pages:
             return self._unverifiable(claim, "Official pages could not be read.", context, cached, credits)
 
@@ -153,7 +174,8 @@ class Verifier:
                             max_page_chars=self.cfg.judge_max_page_chars, fallbacks=self.fallbacks, prompts=self.prompts)
         except ModelOutputError:
             return self._unverifiable(claim, "The judge model's answer could not be read.", context, cached, credits)
-        return self._accept(claim, j, pages, official, context, cached, credits)
+        return self._accept(claim, j, pages, official, context, cached, credits).model_copy(
+            update={"snippet_only": snippets})
 
     def _accept(self, claim: Claim, j: Judgement, pages: list[Page], official: list[SearchHit],
                 context: list[SearchHit], cached: bool, credits: int) -> ClaimResult:

@@ -85,3 +85,11 @@ def test_recorded_gateway_answer_parses():
         assert r.text.strip()
         assert r.prompt_tokens > 0 and r.completion_tokens > 0
         assert rec["request"]["model"].endswith(rec["upstream_model"])
+
+
+def test_timeout_is_a_gateway_error_so_one_claim_fails_not_the_run():
+    def slow(req):
+        raise httpx.ReadTimeout("timed out", request=req)
+    with pytest.raises(GatewayError) as e:
+        _gateway(slow).chat("kr/a", [{"role": "user", "content": "q"}])
+    assert "ReadTimeout" in str(e.value)

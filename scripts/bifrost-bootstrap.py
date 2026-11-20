@@ -60,7 +60,8 @@ def main() -> int:
         r = http.post("/api/providers", json={
             "provider": prov,
             "network_config": {"base_url": upstream, "allow_private_network": cfg.allow_private_network,
-                               "extra_headers": cfg.extra_headers},
+                               "extra_headers": cfg.extra_headers,
+                               "default_request_timeout_in_seconds": cfg.request_timeout_seconds},
         })
         if r.status_code != 200:
             sys.exit(f"bootstrap: provider create failed: HTTP {r.status_code}")

@@ -140,3 +140,35 @@ def test_build_query_cuts_at_a_word():
 ])
 def test_parse_day(raw, expected):
     assert parse_day(raw) == expected
+
+
+def test_http_and_https_copies_are_extracted_once(make_verifier, official, volatile_claim):
+    tv = FakeTavily()
+    http = official.replace("https://", "http://")
+    tv.searches.append(search_body((http, None), (official + "/", None)))
+    tv.extracts.append(extract_body({official + "/": PAGE}))
+    make_verifier(tv, FakeGateway(_judgement(official + "/"))).verify(volatile_claim)
+    assert tv.calls[1] == ("extract", {"urls": [official + "/"], "include_usage": True})
+
+
+def _refused_extract(official: str) -> tuple[FakeTavily, dict]:
+    tv = FakeTavily()
+    body = search_body((official, None))
+    body["results"][0]["content"] = f"News. {QUOTE} More."
+    tv.searches.append(body)
+    tv.extracts.append({"results": [], "failed_results": [{"url": official}], "usage": {"credits": 0}})
+    return tv, body
+
+
+def test_refused_extract_is_judged_on_the_official_snippet(make_verifier, official, volatile_claim):
+    tv, _ = _refused_extract(official)
+    gw = FakeGateway(_judgement(official))
+    res = make_verifier(tv, gw).verify(volatile_claim)
+    assert res.verdict == "outdated" and res.quote_ok and res.snippet_only
+    assert QUOTE in gw.calls[0]["messages"][1]["content"]
+
+
+def test_snippet_quote_still_has_to_match(make_verifier, official, volatile_claim):
+    tv, _ = _refused_extract(official)
+    res = make_verifier(tv, FakeGateway(_judgement(official, evidence_quote="RM1,800 per month"))).verify(volatile_claim)
+    assert res.verdict == "unverifiable" and not res.quote_ok

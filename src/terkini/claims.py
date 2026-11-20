@@ -65,6 +65,7 @@ class ClaimResult(BaseModel):
     source_label: str = ""  # pack label of the source domain: "government" or "utility"
     quote_ok: bool = False
     cached_copy: bool = False  # Tavily answered from its cache after a capacity error (D6)
+    snippet_only: bool = False  # judged on Tavily Search snippets because the official page refused extraction (D-014)
     score: int
     reason: str = ""  # why a claim ended up unverifiable, in plain words
     context: list[SearchHit] = []  # non-official pages: shown, never decide (D5)

@@ -52,6 +52,7 @@ class ModelsConfig(BaseModel):
 class GatewayConfig:
     provider_name: str
     allow_private_network: bool
+    request_timeout_seconds: int
     extra_headers: dict[str, str]
     virtual_key: dict
     timeout_seconds: float
@@ -77,6 +78,7 @@ def load_gateway_config(root: Path = REPO_ROOT) -> GatewayConfig:
     return GatewayConfig(
         provider_name=b["provider"]["name"],
         allow_private_network=bool(b["provider"].get("allow_private_network", False)),
+        request_timeout_seconds=int(b["provider"]["request_timeout_seconds"]),
         extra_headers={str(k): str(v) for k, v in b["provider"].get("extra_headers", {}).items()},
         virtual_key=b["virtual_key"],
         timeout_seconds=float(b["client"]["timeout_seconds"]),
@@ -129,7 +131,11 @@ class Gateway:
         if json_mode:
             body["response_format"] = {"type": "json_object"}
         t0 = time.monotonic()
-        r = self._client.post(f"{self._base}/v1/chat/completions", json=body, headers=self._headers)
+        try:
+            r = self._client.post(f"{self._base}/v1/chat/completions", json=body, headers=self._headers)
+        except httpx.HTTPError as e:
+            # A timeout or dropped connection fails this one call; the checker records it and goes on.
+            raise GatewayError(f"gateway request failed: {type(e).__name__}") from None
         took = time.monotonic() - t0
         if r.status_code != 200:
             raise GatewayError(f"gateway HTTP {r.status_code}: {_error_message(r)}")

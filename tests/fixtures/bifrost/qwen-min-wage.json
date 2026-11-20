@@ -1,0 +1,50 @@
+{
+  "recorded_at": "2026-11-20T21:53:30Z",
+  "gateway": "Bifrost v2.5.1 (official image, pinned digest)",
+  "upstream_model": "rv/Qwen/Qwen3.8-27B-FP8",
+  "seconds": 15.42,
+  "request": {
+    "model": "openai/rv/Qwen/Qwen3.8-27B-FP8",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the minimum monthly wage in Malaysia? Answer in at most two sentences."
+      }
+    ],
+    "stream": false,
+    "temperature": 0.0,
+    "fallbacks": [
+      "openai/cf/@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "openai/rv/zai-org/GLM-5.3-Flash"
+    ]
+  },
+  "response": {
+    "id": "chatcmpl-6b00c15a6cbc",
+    "object": "chat.completion",
+    "created": 1795211610,
+    "model": "Qwen/Qwen3.8-27B-FP8",
+    "choices": [
+      {
+        "index": 0,
+        "finish_reason": "stop",
+        "logprobs": null,
+        "message": {
+          "role": "assistant",
+          "content": "As of the latest official rate I can confirm, Malaysia’s minimum wage is RM1,500 per month, effective from 1 January 2024. Check the latest official announcement for any 2025/2026 revision."
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2068,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "completion_tokens": 4673,
+      "completion_tokens_details": {
+        "reasoning_tokens": 4616
+      },
+      "total_tokens": 6741
+    }
+  }
+}

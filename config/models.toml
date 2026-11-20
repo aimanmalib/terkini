@@ -1,0 +1,30 @@
+# Models Terkini calls through the Bifrost gateway (D4, D-012). Ids are the exact upstream ids of the
+# OpenAI-compatible provider; Bifrost addresses them as "<provider>/<id>" (provider slot in config/bifrost.toml).
+# Measured 2026-11-20: each id below answered a non-streaming request through the gateway.
+
+# The eval asks the same questions to each of these models (PRD H2). Three different vendors.
+models = [
+  "gcli/grok-4.7",
+  "rv/moonshotai/Kimi-K3.1-Pro",
+  "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+]
+
+# Tried in order when the requested model fails. Sent as Bifrost "fallbacks".
+fallbacks = [
+  "rv/Qwen/Qwen3.8-27B-FP8",
+  "cf/@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+  "rv/zai-org/GLM-5.3-Flash",
+]
+
+# Claim extraction and the verdict use a model from a fourth vendor, so no eval model grades its own answer.
+extractor = "rv/GLM-5.3"
+judge = "rv/GLM-5.3"
+
+[vendors]
+"gcli/grok-4.7" = "xAI"
+"rv/moonshotai/Kimi-K3.1-Pro" = "Moonshot AI"
+"rv/deepseek-ai/DeepSeek-V4.1-Flash-1017" = "DeepSeek"
+"rv/GLM-5.3" = "Zhipu AI"
+"rv/Qwen/Qwen3.8-27B-FP8" = "Alibaba (Qwen)"
+"cf/@cf/meta/llama-3.3-70b-instruct-fp8-fast" = "Meta"
+"rv/zai-org/GLM-5.3-Flash" = "Zhipu AI"

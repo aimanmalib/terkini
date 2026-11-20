@@ -1,0 +1,33 @@
+# Bifrost gateway setup (D4). scripts/bifrost-bootstrap.py reads this file.
+# The provider URL and key come from the environment (.env), never from this file.
+
+[provider]
+# Bifrost provider slot for an OpenAI-compatible upstream.
+name = "openai"
+# Let the gateway call a provider on a private address (the Docker host).
+allow_private_network = true
+
+# Headers added to every upstream request. Without an explicit JSON Accept header, some OpenAI-compatible
+# providers append an SSE "data: [DONE]" line to a non-streaming answer, which the gateway cannot parse (D-012).
+[provider.extra_headers]
+Accept = "application/json"
+
+[virtual_key]
+name = "terkini"
+
+# Spend cap on the virtual key, in US dollars, as Bifrost prices it.
+[[virtual_key.budgets]]
+max_limit = 5
+reset_duration = "1d"
+
+[virtual_key.rate_limit]
+request_max_limit = 120
+request_reset_duration = "1h"
+token_max_limit = 400000
+token_reset_duration = "1h"
+
+[client]
+# Seconds to wait for one model answer through the gateway.
+timeout_seconds = 120
+# Seconds to wait for the gateway to report healthy after start.
+health_timeout_seconds = 180

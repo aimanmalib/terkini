@@ -15,6 +15,9 @@ gerbang Bifrost.
 > **Bukan nasihat undang-undang.** Terkini membandingkan jawapan dengan apa yang laman rasmi katakan pada hari ia dijalankan.
 > Ia boleh terlepas sesuatu laman, tersalah baca, atau membaca laman yang sudah lapuk. Sahkan perkara penting dengan agensi.
 
+Video demo (72 s, Inggeris, sari kata dibakar): <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>. Suara
+naratif ialah klon AI suara saya sendiri (ElevenLabs), dinyatakan pada kad akhir.
+
 ## Status
 
 - **Sudah berfungsi:** semakan penuh dari baris arahan. Tiga larian sebenar pada 20 Nov 2026 dirakam dan boleh dimainkan
@@ -24,7 +27,7 @@ gerbang Bifrost.
   (precision 59%, recall 36%). Butiran dan kegagalan: [`docs/EVAL.md`](docs/EVAL.md) (Inggeris).
 - **Juga berfungsi:** halaman ulang tayang (enam larian dirakam, BM dan Inggeris), `POST /api/check`, yang
   memulangkan laporan yang sama sebagai JSON, dan demo satu arahan dengan Docker.
-- **Tidak dibina:** pek India (digugurkan supaya kekal dalam bajet kredit Tavily, D-017) dan video.
+- **Tidak dibina:** pek India (digugurkan supaya kekal dalam bajet kredit Tavily, D-017).
 
 ## Cuba
 

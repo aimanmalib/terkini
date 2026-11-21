@@ -23,6 +23,8 @@ First public version, built on 20 and 21 November 2026.
 - `POST /api/check` on `terkini serve`, sharing one code path with the command line.
 - `demo/run.sh`: the replay page and the API from a clean clone with Docker only.
 - Offline tests on recorded fixtures, run in CI on every push.
+- Demo video (`docs/media/terkini-demo.mp4`, 72 s, captions in `docs/media/terkini-demo.srt`), rendered from the
+  replay page and the eval numbers; source in `demo/video/` (D-019).
 
 ### Not included
 

@@ -18,7 +18,7 @@ calls go through a Bifrost gateway.
 
 - Replay page: <https://aimanmalib.github.io/terkini/> (six recorded runs, English and Bahasa Melayu, no key)
 - Slides (PDF): <https://aimanmalib.github.io/terkini/deck.pdf>
-- Video: not recorded yet.
+- Video (72 s, captions burned in, `.srt` beside it): <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>
 
 > **Not legal advice.** Terkini compares an answer with what official pages say on the day it runs. It can miss a page,
 > misread one, or check a page that is itself out of date. Confirm anything important with the agency.
@@ -39,7 +39,7 @@ Not finished. What works and what does not, as of today:
 - **Also works:** the replay page with six recorded runs in English and Malay, `POST /api/check`, which
   returns the same report as JSON for a team that checks answers before users see them, and a one-command
   demo with Docker.
-- **Not done:** the India pack (dropped to stay within the Tavily credit budget, D-017) and the video.
+- **Not done:** the India pack (dropped to stay within the Tavily credit budget, D-017).
 
 ## Try it in three steps
 
@@ -214,6 +214,8 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 - The code and the documentation in this repository were written with Claude Code (Claude Opus).
 - The eval labels in `eval/my/labels.yaml` were written with Claude Code, by reading each model answer against the key.
 - The product calls the language models listed above through a Bifrost gateway.
+- The narration in the demo video is an AI clone of my own voice (ElevenLabs). The end card says so. Source:
+  [`demo/video/`](demo/video/).
 
 ## Limitations
 

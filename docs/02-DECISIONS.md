@@ -221,3 +221,18 @@ change it.
   no secrets, no network calls from tests.
 - **No Dependabot yet.** It opens pull requests as soon as it is turned on. The pinned versions are tested together
   in `uv.lock`; dependency updates can wait for a quieter time.
+
+## D-019 · Demo video rendered from the real page, with a cloned voice
+
+- **Method.** The video is a web page drawn frame by frame (`demo/video/work/stage.html`, a pure function of time),
+  not a screen recording. Frames do not drop when the machine is busy, and one scene can be redrawn alone. The
+  replay page in the video is a capture of `docs/` served on localhost (`demo/video/tangkap.py`), so it shows what a
+  judge sees on Pages.
+- **Numbers on screen.** The capture script reads the domain list from `packs/my.toml` and the counts from
+  `eval/my/results.json`. The stage prints those values; it holds no counts of its own.
+- **Voice.** The narration is an AI clone of the builder's own voice (ElevenLabs), labelled on the end card and in
+  the README's AI disclosure. Captions are burned in, and the same lines are in `docs/media/terkini-demo.srt`.
+- **Format.** One 16:9 1080p file, 72 seconds. Loudness -16.5 LUFS, true peak under -1.5 dBTP. Music (CC BY 4.0,
+  credited on the end card) sits well under the voice.
+- **Not in the repository.** The video kit, the voice files and the frames. They are build tools and media, and
+  the voice files are biometric data.

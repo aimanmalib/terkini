@@ -89,7 +89,15 @@
    "trace_seconds": "{seconds} s",
    "trace_gateway_total": "{calls} gateway calls · {tokens_in} tokens in · {tokens_out} tokens out",
    "trace_fallbacks": "Fallback order sent with each call",
-   "trace_spend": "Virtual-key spend after the eval run: US${usd}. Bifrost has no price list for these model ids, so token counts are the cost measure."
+   "trace_spend": "Virtual-key spend after the eval run: US${usd}. Bifrost has no price list for these model ids, so token counts are the cost measure.",
+   "key_heading": "Checked against the answer key",
+   "key_value": "Official answer (answer key)",
+   "key_read": "Page read",
+   "key_note": "The answer key was written from official pages before any model answer was seen (docs/EVAL.md).",
+   "outcome_catch": "Terkini got this right: the answer is stale, and the official value Terkini found matches the key.",
+   "outcome_pass": "Terkini got this right: the answer matches the key, and Terkini marked it current.",
+   "outcome_catch_partial": "Right call, weak evidence: the answer is stale (the key says under RM3 million is exempt, not RM20 million). But the official text Terkini quotes is about the 2025 rollout, so its “Official now” line misses the RM3 million exemption.",
+   "outcome_false_alarm": "False alarm, kept on purpose: the answer already gives the current 2% rule and calls RM5 and 11% the old rates. Terkini still marked those old rates outdated. It can misread a claim that the answer puts in the past tense."
   },
   "ms": {
    "lang_name": "Bahasa Melayu",
@@ -176,7 +184,15 @@
    "trace_seconds": "{seconds} s",
    "trace_gateway_total": "{calls} panggilan gerbang · {tokens_in} token masuk · {tokens_out} token keluar",
    "trace_fallbacks": "Susunan fallback yang dihantar bersama setiap panggilan",
-   "trace_spend": "Perbelanjaan kunci maya selepas larian eval: US${usd}. Bifrost tiada senarai harga untuk id model ini, jadi kiraan token ialah ukuran kos."
+   "trace_spend": "Perbelanjaan kunci maya selepas larian eval: US${usd}. Bifrost tiada senarai harga untuk id model ini, jadi kiraan token ialah ukuran kos.",
+   "key_heading": "Disemak dengan kunci jawapan",
+   "key_value": "Jawapan rasmi (kunci jawapan)",
+   "key_read": "Halaman dibaca",
+   "key_note": "Kunci jawapan ditulis dari halaman rasmi sebelum mana-mana jawapan model dilihat (docs/EVAL.md).",
+   "outcome_catch": "Terkini betul di sini: jawapan itu lapuk, dan nilai rasmi yang Terkini jumpa sama dengan kunci.",
+   "outcome_pass": "Terkini betul di sini: jawapan sama dengan kunci, dan Terkini menandanya semasa.",
+   "outcome_catch_partial": "Keputusan betul, bukti lemah: jawapan itu lapuk (kunci kata bawah RM3 juta dikecualikan, bukan RM20 juta). Tetapi teks rasmi yang Terkini petik ialah tentang pelaksanaan 2025, jadi baris “Rasmi sekarang” tidak menyebut pengecualian RM3 juta.",
+   "outcome_false_alarm": "Amaran palsu, sengaja dikekalkan: jawapan sudah memberi peraturan 2% semasa dan menyebut RM5 dan 11% sebagai kadar lama. Terkini tetap menanda kadar lama itu lapuk. Ia boleh tersalah baca dakwaan yang jawapan letak dalam kala lampau."
   }
  }
 }

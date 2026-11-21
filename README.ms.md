@@ -55,7 +55,7 @@ kadar rasmi 8% sejak 1 Mac 2024, dengan petikan tepat dari panduan kastam. Kunci
 Positif palsu juga ada: `uv run terkini check --case my-12-kimi-k3-1-pro` memapar satu daripadanya (lihat
 [`docs/EVAL.md`](docs/EVAL.md)).
 
-Halaman ulang tayang yang sama (enam larian dirakam, BM dan Inggeris): <https://aimanmalib.github.io/terkini/>. Buka "Cara semakan ini dijalankan" di bawah setiap larian untuk melihat setiap pertanyaan Tavily, `include_domains` dan kreditnya, serta setiap panggilan Bifrost dengan model yang diminta, model yang menjawab dan token.
+Halaman ulang tayang yang sama (enam larian dirakam, BM dan Inggeris; setiap larian ditunjuk bersama kunci jawapan, termasuk satu amaran palsu): <https://aimanmalib.github.io/terkini/>. Buka "Cara semakan ini dijalankan" di bawah setiap larian untuk melihat setiap pertanyaan Tavily, `include_domains` dan kreditnya, serta setiap panggilan Bifrost dengan model yang diminta, model yang menjawab dan token.
 
 ## Demo satu arahan (Docker)
 

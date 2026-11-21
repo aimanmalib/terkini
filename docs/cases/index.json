@@ -12,28 +12,6 @@
    }
   },
   {
-   "id": "my-09-grok-4-7",
-   "question": "Below what annual turnover are Malaysian businesses exempt from e-Invoicing?",
-   "model": "grok-4.7",
-   "run_at": "2026-11-20T23:37:55Z",
-   "counts": {
-    "outdated": 1,
-    "current": 0,
-    "unverifiable": 2
-   }
-  },
-  {
-   "id": "my-12-kimi-k3-1-pro",
-   "question": "Do employers in Malaysia have to make EPF contributions for foreign (non-Malaysian) workers, and at what rate?",
-   "model": "Kimi-K3.1-Pro",
-   "run_at": "2026-11-20T23:06:25Z",
-   "counts": {
-    "outdated": 2,
-    "current": 0,
-    "unverifiable": 2
-   }
-  },
-  {
    "id": "my-20--grok-4-7",
    "question": "How many days of paid paternity leave does a married male employee get under Malaysia's Employment Act?",
    "model": "grok-4.7",
@@ -64,6 +42,28 @@
     "outdated": 0,
     "current": 1,
     "unverifiable": 1
+   }
+  },
+  {
+   "id": "my-09-grok-4-7",
+   "question": "Below what annual turnover are Malaysian businesses exempt from e-Invoicing?",
+   "model": "grok-4.7",
+   "run_at": "2026-11-20T23:37:55Z",
+   "counts": {
+    "outdated": 1,
+    "current": 0,
+    "unverifiable": 2
+   }
+  },
+  {
+   "id": "my-12-kimi-k3-1-pro",
+   "question": "Do employers in Malaysia have to make EPF contributions for foreign (non-Malaysian) workers, and at what rate?",
+   "model": "Kimi-K3.1-Pro",
+   "run_at": "2026-11-20T23:06:25Z",
+   "counts": {
+    "outdated": 2,
+    "current": 0,
+    "unverifiable": 2
    }
   }
  ]

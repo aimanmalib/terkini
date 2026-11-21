@@ -18,26 +18,34 @@ folders = ["cases", "fonts", "images"]
 # report shown is produced again by replaying it through the checker at build time. "eval" = a saved eval run in
 # eval/<pack>/runs, shown as it was checked live. The first case is the one the page opens on: a true catch that the
 # answer key confirms (D-023).
+# outcome = i18n key: how the run compares with the answer key. Mistakes stay on the page, labelled, last.
+
 [[cases]]
 id = "my-03--grok-4-7"
 source = "eval"
-
-[[cases]]
-id = "my-09-grok-4-7"
-source = "recording"
-
-[[cases]]
-id = "my-12-kimi-k3-1-pro"
-source = "recording"
+outcome = "outcome_catch"
 
 [[cases]]
 id = "my-20--grok-4-7"
 source = "eval"
+outcome = "outcome_catch"
 
 [[cases]]
 id = "my-21--grok-4-7"
 source = "eval"
+outcome = "outcome_catch"
 
 [[cases]]
 id = "my-01-deepseek-v4-1-flash-1017"
 source = "recording"
+outcome = "outcome_pass"
+
+[[cases]]
+id = "my-09-grok-4-7"
+source = "recording"
+outcome = "outcome_catch_partial"
+
+[[cases]]
+id = "my-12-kimi-k3-1-pro"
+source = "recording"
+outcome = "outcome_false_alarm"

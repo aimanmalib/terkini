@@ -83,5 +83,13 @@
  "trace_seconds": "{seconds} s",
  "trace_gateway_total": "{calls} gateway calls · {tokens_in} tokens in · {tokens_out} tokens out",
  "trace_fallbacks": "Fallback order sent with each call",
- "trace_spend": "Virtual-key spend after the eval run: US${usd}. Bifrost has no price list for these model ids, so token counts are the cost measure."
+ "trace_spend": "Virtual-key spend after the eval run: US${usd}. Bifrost has no price list for these model ids, so token counts are the cost measure.",
+ "key_heading": "Checked against the answer key",
+ "key_value": "Official answer (answer key)",
+ "key_read": "Page read",
+ "key_note": "The answer key was written from official pages before any model answer was seen (docs/EVAL.md).",
+ "outcome_catch": "Terkini got this right: the answer is stale, and the official value Terkini found matches the key.",
+ "outcome_pass": "Terkini got this right: the answer matches the key, and Terkini marked it current.",
+ "outcome_catch_partial": "Right call, weak evidence: the answer is stale (the key says under RM3 million is exempt, not RM20 million). But the official text Terkini quotes is about the 2025 rollout, so its “Official now” line misses the RM3 million exemption.",
+ "outcome_false_alarm": "False alarm, kept on purpose: the answer already gives the current 2% rule and calls RM5 and 11% the old rates. Terkini still marked those old rates outdated. It can misread a claim that the answer puts in the past tense."
 }

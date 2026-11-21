@@ -17,7 +17,7 @@ from pydantic import BaseModel
 
 from terkini.evaluate import Answer, AnswerRun, eval_dir, load_eval_config
 from terkini.gateway import load_gateway_config
-from terkini.packs import REPO_ROOT, load_pack
+from terkini.packs import REPO_ROOT, load_key, load_pack
 from terkini.replay import load_cassette
 from terkini.runner import replay, runs_dir
 from terkini.trace import trace_eval, trace_recording
@@ -27,6 +27,8 @@ class CaseRef(BaseModel):
     id: str
     source: Literal["recording", "eval"]
     pack: str = "my"
+    # i18n key of the line that says how this run compares with the answer key (right catch, false alarm, ...).
+    outcome: str = ""
 
 
 class ServeConfig(BaseModel):
@@ -71,6 +73,8 @@ def build_case(ref: CaseRef, root: Path = REPO_ROOT) -> dict:
     return {
         "id": ref.id,
         "source": ref.source,
+        "key": answer_key(ref, root),
+        "outcome": ref.outcome,
         "run_at": run_at,
         "question": question,
         "model": _model_label(model, vendors),
@@ -79,6 +83,15 @@ def build_case(ref: CaseRef, root: Path = REPO_ROOT) -> dict:
         "spans": claim_spans(answer, rep["results"]),
         "trace": trace,
     }
+
+
+def answer_key(ref: CaseRef, root: Path = REPO_ROOT) -> dict | None:
+    """The answer key entry for the case's question (eval/<pack>/key.yaml), so a visitor can judge the verdicts."""
+    qid = ref.id[:5]
+    for k in load_key(load_pack(ref.pack, root), root).keys:
+        if k.id == qid:
+            return k.model_dump(mode="json")
+    return None
 
 
 _BREAK = re.compile(r"(?<=[.!?])[ \t]+|\n+")  # a sentence ends at . ! ? before a space, or at a line end
@@ -149,10 +162,14 @@ def load_strings(languages: list[str], root: Path = REPO_ROOT) -> dict[str, dict
 def build_files(root: Path = REPO_ROOT) -> dict[str, str]:
     """Every page data file, keyed by path relative to the repo root."""
     cfg = load_pages_config(root)
+    strings = load_strings(cfg.languages, root)
+    missing = [r.outcome for r in cfg.cases if r.outcome and r.outcome not in strings[cfg.languages[0]]]
+    if missing:
+        raise ValueError(f"config/pages.toml outcome keys missing from i18n: {missing}")
     cases = [build_case(ref, root) for ref in cfg.cases]
     files = {f"{cfg.out_dir}/cases/{c['id']}.json": _dump(c) for c in cases}
     files[f"{cfg.out_dir}/cases/index.json"] = _dump({"cases": [case_summary(c) for c in cases]})
-    files[f"{cfg.out_dir}/i18n.json"] = _dump({"languages": cfg.languages, "strings": load_strings(cfg.languages, root)})
+    files[f"{cfg.out_dir}/i18n.json"] = _dump({"languages": cfg.languages, "strings": strings})
     return files
 
 

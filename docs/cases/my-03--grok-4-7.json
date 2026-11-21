@@ -1,6 +1,15 @@
 {
  "id": "my-03--grok-4-7",
  "source": "eval",
+ "key": {
+  "id": "my-03",
+  "value": "8%",
+  "url": "https://mysst.customs.gov.my/faq-services-tax",
+  "quote": "The tax rate is 8% for all taxable services except;",
+  "effective_date": null,
+  "read_at": "2026-11-20"
+ },
+ "outcome": "outcome_catch",
  "run_at": "2026-11-21T00:57:35Z",
  "question": "What is the standard service tax rate in Malaysia?",
  "model": {

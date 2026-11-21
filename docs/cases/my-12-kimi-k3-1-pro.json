@@ -1,6 +1,15 @@
 {
  "id": "my-12-kimi-k3-1-pro",
  "source": "recording",
+ "key": {
+  "id": "my-12",
+  "value": "Yes, 2% each from employer and employee",
+  "url": "https://www.kwsp.gov.my/en/w/news/automatic-registration-eases-process-for-employers-of-non-malaysian-citizen-employees",
+  "quote": "Both employer and employee are required to contribute 2% each of the employee’s wages.",
+  "effective_date": null,
+  "read_at": "2026-11-20"
+ },
+ "outcome": "outcome_false_alarm",
  "run_at": "2026-11-20T23:06:25Z",
  "question": "Do employers in Malaysia have to make EPF contributions for foreign (non-Malaysian) workers, and at what rate?",
  "model": {

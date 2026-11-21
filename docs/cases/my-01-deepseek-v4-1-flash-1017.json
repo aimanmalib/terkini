@@ -1,6 +1,15 @@
 {
  "id": "my-01-deepseek-v4-1-flash-1017",
  "source": "recording",
+ "key": {
+  "id": "my-01",
+  "value": "RM1,700 per month",
+  "url": "https://www.mohr.gov.my/images/mpgn/FAQ%202024.pdf",
+  "quote": "Kadar gaji minimum adalah RM1,700 sebulan bagi seluruh negara",
+  "effective_date": null,
+  "read_at": "2026-11-20"
+ },
+ "outcome": "outcome_pass",
  "run_at": "2026-11-20T23:13:51Z",
  "question": "What is the national minimum monthly wage in Malaysia?",
  "model": {

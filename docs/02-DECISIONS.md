@@ -346,3 +346,14 @@ change it.
 - **Default.** Off, so Terkini needs neither Node nor Bifrost Meter. Measured output (go, stop, and an `eval` stopped
   before any call) is in the README, from the pinned gateway on 21 Nov 2026.
 - **Rollback.** Set `enabled = false`, or revert `guard.py` and the five `preflight` calls; nothing else depends on it.
+
+## D-026 · Each run on the replay page is shown against the answer key
+
+- **Why.** The red team before submission (21 Nov 2026) found two runs that a reader could not judge alone: my-09 shows
+  an "Official now" line that misses the RM3 million exemption, and my-12 flags old rates the answer already calls old.
+  Hiding them would overstate how good the checker is.
+- **What.** `config/pages.toml` gives each case an `outcome` (an i18n key: right catch, right pass, right call with weak
+  evidence, false alarm). `pages.py` adds the question's answer key entry (`eval/my/key.yaml`: value, page, quote, date
+  read) to the case file, and the page shows both in a box under the run, in English and Malay. The two runs with a
+  mistake stay on the page, last, labelled. A missing outcome key in i18n stops the build.
+- **Rollback.** Remove the `outcome` lines and the `keyBox(c)` call; the case files still build without them.

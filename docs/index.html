@@ -97,6 +97,13 @@
   .asof { margin-top: .25rem; color: var(--stale); font-weight: 600; }
   .credits { margin-top: .25rem; color: var(--muted); font-size: .9375rem; }
 
+  .keybox { margin-top: 1rem; background: var(--sheet); border: 1px solid var(--line); border-left: 4px solid var(--fresh);
+    border-radius: var(--radius); padding: .875rem 1rem 1rem; }
+  .keybox.catch_partial { border-left-color: var(--unsure); }
+  .keybox.false_alarm { border-left-color: var(--stale); }
+  .key-h { margin: 0; font-size: .875rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .key-outcome { margin: .5rem 0 0; font-weight: 600; }
+  .key-note { margin: .75rem 0 0; color: var(--muted); font-size: .875rem; }
   .trace { margin-top: 1rem; background: var(--sheet); border: 1px solid var(--line); border-radius: var(--radius); }
   .trace summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: .125rem .75rem;
     padding: .75rem 1rem .75rem 2.25rem; position: relative; border-radius: var(--radius); }

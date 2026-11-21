@@ -1,6 +1,15 @@
 {
  "id": "my-21--grok-4-7",
  "source": "eval",
+ "key": {
+  "id": "my-21",
+  "value": "45 hours a week",
+  "url": "https://lom.agc.gov.my/ilims/upload/portal/akta/outputaktap/1744567_BI/Reprint%20Act%20265%20%28Final%29.pdf",
+  "quote": "no employee shall be required to work for more than nine hours in one day or forty-five hours in one week.",
+  "effective_date": null,
+  "read_at": "2026-11-20"
+ },
+ "outcome": "outcome_catch",
  "run_at": "2026-11-21T01:17:09Z",
  "question": "What are the maximum normal working hours per week under Malaysia's Employment Act?",
  "model": {

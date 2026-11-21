@@ -16,7 +16,7 @@ calls go through a Bifrost gateway.
 
 **Eval, 21 Nov 2026:** 28 of 68 answers from 3 models stated a Malaysian rule that differs from the current official value. With the hybrid step (the model proposes a current value, an official quote must state it), Terkini flagged 13 of them (precision 65%, recall 46%); v0.1.0 without it flagged 10 (59%, 36%). Every flag carries an exact official quote. Details and failures: [`docs/EVAL.md`](docs/EVAL.md).
 
-- Replay page: <https://aimanmalib.github.io/terkini/> (six recorded runs, English and Bahasa Melayu, no key). Open "How this check ran" under a run to see each Tavily query, its `include_domains` and credits, and each Bifrost call with the model asked for, the model that answered and the tokens.
+- Replay page: <https://aimanmalib.github.io/terkini/> (six recorded runs, English and Bahasa Melayu, no key; each run is shown against the answer key, including one false alarm). Open "How this check ran" under a run to see each Tavily query, its `include_domains` and credits, and each Bifrost call with the model asked for, the model that answered and the tokens.
 - Slides (PDF): <https://aimanmalib.github.io/terkini/deck.pdf>
 - Video (72 s, captions burned in, `.srt` beside it): <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>. It was recorded before the hybrid step and shows the v0.1.0 figures (10 of 17 flags right, 59% precision, 36% recall).
 

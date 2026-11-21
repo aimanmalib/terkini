@@ -1,6 +1,15 @@
 {
  "id": "my-09-grok-4-7",
  "source": "recording",
+ "key": {
+  "id": "my-09",
+  "value": "Less than RM3,000,000",
+  "url": "https://www.hasil.gov.my/en/e-invois/pelaksanaan-e-invois-di-malaysia/garis-masa-pelaksanaan-e-invois",
+  "quote": "Taxpayers with an annual turnover or revenue of less than RM3,000,000 are exempted from e-Invoice implementation",
+  "effective_date": null,
+  "read_at": "2026-11-20"
+ },
+ "outcome": "outcome_catch_partial",
  "run_at": "2026-11-20T23:37:55Z",
  "question": "Below what annual turnover are Malaysian businesses exempt from e-Invoicing?",
  "model": {

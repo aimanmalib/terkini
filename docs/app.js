@@ -221,6 +221,25 @@ function traceBox(tr, open) {
       gw.spend_usd !== null ? el("p", { class: "tr-note", text: t("trace_spend", { usd: gw.spend_usd }) }) : null));
 }
 
+// How the run compares with the answer key: the official value, its page, and one line on whether Terkini got it right.
+function keyBox(c) {
+  const k = c.key;
+  if (!k) return null;
+  const host = (() => { try { return new URL(k.url).hostname.replace(/^www\./, ""); } catch (_) { return k.url; } })();
+  const kind = c.outcome ? c.outcome.replace(/^outcome_/, "") : "";
+  return el("section", { class: `keybox ${kind}`, "aria-label": t("key_heading") },
+    el("h3", { class: "key-h", text: t("key_heading") }),
+    c.outcome ? el("p", { class: "key-outcome", text: t(c.outcome) }) : null,
+    el("dl", { class: "facts" },
+      fact("now", t("key_value"), k.value),
+      fact("", t("field_effective"), fmtDate(k.effective_date)),
+      fact("", t("key_read"), fmtDate(k.read_at))),
+    el("figure", { class: "quote" },
+      el("blockquote", { cite: k.url, text: k.quote }),
+      el("figcaption", {}, `${t("field_source")}: `, el("a", { href: k.url, rel: "noopener", text: host }))),
+    el("p", { class: "key-note", text: t("key_note") }));
+}
+
 function renderCase(c) {
   const r = c.report;
   const n = Object.fromEntries(VERDICTS.map((v) => [v, r.results.filter((x) => x.verdict === v).length]));
@@ -237,6 +256,7 @@ function renderCase(c) {
     el("p", { class: "summary", text: t("summary", { checked: r.results.length, ...n }) }),
     asof ? el("p", { class: "asof", text: asof }) : null,
     el("p", { class: "credits", text: t("credits", { credits: r.credits }) }),
+    keyBox(c),
     c.trace ? traceBox(c.trace, Boolean(document.querySelector("details.trace[open]"))) : null,
     el("h3", { class: "claims-h", text: t("claims_heading") }),
     el("ol", { class: "claims" }, r.results.map(claimCard)),

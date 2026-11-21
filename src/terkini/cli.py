@@ -28,7 +28,7 @@ def build_parser() -> argparse.ArgumentParser:
     c = sub.add_parser("check", help="check one AI answer, claim by claim")
     c.add_argument("answer", nargs="?", help="the AI answer to check (live mode, or a recorded answer in replay mode)")
     c.add_argument("--pack", default="my", help="country pack in packs/ (default: my)")
-    c.add_argument("--case", help="replay this recorded run (see --list)")
+    c.add_argument("--case", help="replay this recorded run, or show this saved eval run (see --list)")
     c.add_argument("--list", action="store_true", help="list recorded runs and exit")
     c.add_argument("--json", action="store_true", help="print the report as JSON")
     a = sub.add_parser("ask", help="ask the pack's eval questions to several models (writes eval/<pack>/answers/)")
@@ -79,11 +79,16 @@ def _check(args) -> int:
     from terkini.gateway import GatewayNotConfigured, load_env_file
     from terkini.replay import list_cassettes
     from terkini.runner import runs_dir
-    from terkini.service import NoRecording, UnknownPack, is_live, run
+    from terkini.service import NoRecording, UnknownPack, eval_run, eval_runs_folder, is_live, run
 
     if args.list:
         for c in list_cassettes(runs_dir(), args.pack):
-            print(f"{c.name}\t{c.answer_model or '-'}\t{c.recorded_at}\t{c.question or c.answer[:60]}")
+            print(f"{c.name}\trecorded\t{c.answer_model or '-'}\t{c.recorded_at}\t{c.question or c.answer[:60]}")
+        for path in sorted(eval_runs_folder(args.pack).glob("*.json")):
+            saved = eval_run(args.pack, path.stem)
+            if saved:
+                a, r = saved
+                print(f"{path.stem}\teval\t{a.model}\t{r.checked_at}\t{a.question}")
         return 0
 
     if not args.case:
@@ -107,8 +112,8 @@ def _check(args) -> int:
     if args.json:
         print(json.dumps({"mode": out.mode, **out.report.model_dump(mode="json")}, indent=2, ensure_ascii=False))
     else:
-        if out.recording:
-            print(f"Answer ({out.recording.answer_model or 'pasted'}):\n{out.recording.answer}\n")
+        if out.answer:
+            print(f"Answer ({out.answer_model or 'pasted'}):\n{out.answer}\n")
         print(render(out.report, out.mode))
     return 0
 

@@ -1,7 +1,8 @@
 """One check, shared by the CLI and `POST /api/check`: replay a recorded run, or check live with your own keys.
 
 Mode rule (same for both): a named recording always replays. Otherwise the check is live when TAVILY_API_KEY is set,
-and replays the recording whose answer matches when it is not.
+and replays the recording whose answer matches when it is not. A case name can also be a saved eval run
+(eval/<pack>/runs, D-023): its report is shown as it was checked live, since eval runs keep no Tavily responses.
 """
 
 from __future__ import annotations
@@ -48,9 +49,11 @@ def is_live(case: str | None) -> bool:
 
 @dataclass(frozen=True)
 class Outcome:
-    mode: str  # "live run" or "recorded run, <date>"
+    mode: str  # "live run", "recorded run, <date>" or "eval run, <date>"
     report: AnswerReport
     recording: Cassette | None = None  # the recorded run replayed, if any
+    answer: str = ""  # the answer checked, when it came from a recording or an eval run
+    answer_model: str = ""  # the model that wrote it
 
 
 def run(answer: str | None, *, pack: str, case: str | None = None, root: Path = REPO_ROOT) -> Outcome:
@@ -65,9 +68,14 @@ def run(answer: str | None, *, pack: str, case: str | None = None, root: Path = 
     cassettes = list_cassettes(runs_dir(root), pack)
     found = next((c for c in cassettes if c.name == case), None) if case else (
         find_by_answer(cassettes, answer) if answer else None)
-    if found is None:
+    if found is not None:
+        return Outcome(f"recorded run, {found.recorded_at[:10]}", replay(found, root), found, found.answer,
+                       found.answer_model)
+    saved = eval_run(pack, case, root) if case else None
+    if saved is None:
         raise NoRecording(case or "")
-    return Outcome(f"recorded run, {found.recorded_at[:10]}", replay(found, root), found)
+    answer, checked = saved
+    return Outcome(f"eval run, {checked.checked_at[:10]}", checked.report, None, answer.answer, answer.model)
 
 
 def _live(answer: str, pack_id: str, root: Path) -> AnswerReport:
@@ -83,3 +91,23 @@ def _live(answer: str, pack_id: str, root: Path) -> AnswerReport:
     with closing(Cache(root / load_verify_config(root).cache_path)) as cache:
         return run_check(answer, pack_id=pack_id, tavily=Tavily(), gateway=Gateway(), cache=cache, today=today, root=root,
                          hybrid=load_hybrid_config(root).enabled)
+
+
+def eval_runs_folder(pack: str, root: Path = REPO_ROOT) -> Path:
+    from terkini.evaluate import eval_dir, load_eval_config
+    from terkini.packs import load_pack
+
+    return eval_dir(load_pack(pack, root), root) / load_eval_config(root).runs_dir
+
+
+def eval_run(pack: str, case: str, root: Path = REPO_ROOT):
+    """(Answer, AnswerRun) of the saved eval run named `case`, or None. Names are file stems inside the pack's folders."""
+    from terkini.evaluate import Answer, AnswerRun, eval_dir, load_eval_config
+    from terkini.packs import load_pack
+
+    folder, cfg = eval_dir(load_pack(pack, root), root), load_eval_config(root)
+    run_path, answer_path = folder / cfg.runs_dir / f"{case}.json", folder / cfg.answers_dir / f"{case}.json"
+    if run_path.parent != folder / cfg.runs_dir or not (run_path.is_file() and answer_path.is_file()):
+        return None
+    return (Answer.model_validate_json(answer_path.read_text(encoding="utf-8")),
+            AnswerRun.model_validate_json(run_path.read_text(encoding="utf-8")))

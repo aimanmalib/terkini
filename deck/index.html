@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terkini: slides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="studio.css">
+<style>
+/* Terkini palette = docs/index.html: ink 14213d, paper fbfaf6, verdicts fresh 1f7a4d / unsure 9a6700 / stale b3261e.
+   Studio binary: ink surface with paper type, paper surface with ink type. Verdict colours only on paper. */
+:root{--ink:#14213D;--ink-alt:#1C2B4A;--acc:#FBFAF6;--acc-rgb:251,250,246;--body:#E8E6DF;--border-dark:#2E3C5C;--fresh:#1F7A4D;--unsure:#9A6700;--stale:#B3261E}
+.v{display:inline-block;font:900 30px/1 Barlow;letter-spacing:.03em;padding:12px 20px 10px;border:3px solid;border-radius:999px;background:#FBFAF6;text-transform:uppercase}
+.v.ok{color:var(--fresh)}.v.uns{color:var(--unsure)}.v.old{color:var(--stale)}
+.box{border:2px solid var(--ink);padding:18px 24px}
+.box b{font:900 30px/1.1 Barlow;text-transform:uppercase}
+.box div{font-size:25px;margin-top:6px}
+.box.fill{background:var(--ink)}
+.box.fill b{color:var(--acc)}.box.fill div{color:var(--body)}
+.arrow{height:30px;border-left:2px solid var(--ink);margin-left:56px}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:72px}
+blockquote{margin:0;font:500 50px/1.3 Barlow;color:var(--ink);border-left:6px solid var(--stale);padding-left:28px}
+blockquote.now{border-left-color:var(--fresh)}
+pre.code{font-size:23px;line-height:1.45}
+pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD27A}
+</style>
+</head>
+<body>
+<!-- Every number on these slides comes from README.md (recorded runs of 20 Nov 2026). Do not add numbers here. -->
+<div class="deck-viewport"><div class="deck-stage" id="stage">
+
+<!-- === 01 COVER === -->
+<section class="slide dark">
+  <div style="display:flex;flex-direction:column;gap:34px;margin-top:70px;max-width:1500px">
+    <h1 class="display" data-anim style="font-size:240px">Terkini</h1>
+    <p class="lead" data-anim style="--d:2;font-size:56px;color:var(--acc)">Is this AI answer still true where you live?</p>
+    <p class="p" data-anim style="--d:3;max-width:1300px">A stale-answer detector for local rules. It checks each claim in an AI answer about a Malaysian rule against official government pages, with the exact quote and the date the rule took effect.</p>
+  </div>
+  <div style="margin-top:auto;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--border-dark);padding-top:16px" class="cap">
+    <span>Global AI Hackathon<br>Tavily track, PS06</span>
+    <span style="text-align:center"><a href="https://aimanmalib.github.io/terkini/">aimanmalib.github.io/terkini</a><br>Apache-2.0</span>
+    <span style="text-align:right">Aiman Malib, solo<br><a href="https://github.com/aimanmalib/terkini">github.com/aimanmalib/terkini</a></span>
+  </div>
+</section>
+
+<!-- === 02 PROBLEM === -->
+<section class="slide light">
+  <div class="chrome"><span>Problem and potential impact</span><span>02 / 08</span></div>
+  <div class="body" style="gap:44px">
+    <h2 class="h2" data-anim>AI answers keep old rules alive</h2>
+    <div class="side">
+      <div data-anim style="--d:2;display:flex;flex-direction:column;gap:18px">
+        <p class="cap" style="margin:0;color:var(--on-light-2)">Kimi K3.1 Pro, asked about EPF for foreign workers</p>
+        <blockquote>"For workers registered on or after 1 August 1998, the employer's contribution was a flat RM5 per month."</blockquote>
+      </div>
+      <div data-anim style="--d:3;display:flex;flex-direction:column;gap:18px">
+        <p class="cap" style="margin:0;color:var(--on-light-2)">kwsp.gov.my, read through Tavily on 20 Nov 2026</p>
+        <blockquote class="now">"Employers are only required to register and contribute for their non-Malaysian citizen employees starting 1 October 2025."</blockquote>
+      </div>
+    </div>
+    <ul class="dash" data-anim style="--d:4;margin-top:auto;margin-bottom:10px">
+      <li>Minimum wage, EPF rates, tariffs and e-invoicing limits change by order. Models learned the old figure.</li>
+      <li>The people who ask are small employers and shop owners. A stale answer can mean a wrong payslip.</li>
+    </ul>
+  </div>
+  <div class="foot"><span>Terkini</span><span>Problem</span></div>
+</section>
+
+<!-- === 03 INNOVATION === -->
+<section class="slide dark">
+  <div class="chrome"><span>Innovation</span><span>03 / 08</span></div>
+  <div class="body" style="gap:50px">
+    <h2 class="h2" data-anim>Official pages decide. Code checks the quote.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:56px">
+      <div class="col on" data-anim style="--d:2"><h3 class="h3">Official domains only</h3><p class="p" style="font-size:28px">Tavily searches only the domains in the country pack. A blog or a news site can add context. It cannot decide a verdict.</p></div>
+      <div class="col on" data-anim style="--d:3"><h3 class="h3">No quote, no verdict</h3><p class="p" style="font-size:28px">The judge model must quote the official page. Code checks the quote word for word, and the date must sit inside it. Otherwise the claim is unverifiable.</p></div>
+      <div class="col on" data-anim style="--d:4"><h3 class="h3">A date, not just a flag</h3><p class="p" style="font-size:28px">The report says when the rule took effect, and the date the answer reads as if it were written before.</p></div>
+    </div>
+    <div data-anim style="--d:5;display:flex;gap:16px;margin-top:auto;margin-bottom:12px"><span class="v ok">current</span><span class="v uns">unverifiable</span><span class="v old">outdated</span></div>
+  </div>
+  <div class="foot"><span>Terkini</span><span>Verdict · quote · date</span></div>
+</section>
+
+<!-- === 04 TECHNICAL EXECUTION === -->
+<section class="slide light">
+  <div class="chrome"><span>Technical execution · Architecture</span><span>04 / 08</span></div>
+  <div class="body" style="display:grid;grid-template-columns:760px 1fr;gap:90px">
+    <div style="display:flex;flex-direction:column;gap:36px">
+      <h2 class="h2" data-anim>One claim, six steps</h2>
+      <ul class="dash" data-anim style="--d:2">
+        <li>Python, FastAPI, httpx and Pydantic. Every weight, limit, domain and model id lives in a config file.</li>
+        <li>The score is plain arithmetic from <span class="hl">config/score.toml</span>, so it is the same on every machine.</li>
+        <li>Tests run offline on recorded live runs. They hold no keys.</li>
+      </ul>
+    </div>
+    <div data-anim style="--d:3;display:flex;flex-direction:column">
+      <div class="box"><b>Extract claims</b><div>model via Bifrost, JSON</div></div><div class="arrow"></div>
+      <div class="box"><b>Tavily Search</b><div>official domains only, retry once deeper</div></div><div class="arrow"></div>
+      <div class="box"><b>Tavily Extract</b><div>top 2 official pages, PDFs included</div></div><div class="arrow"></div>
+      <div class="box"><b>Judge</b><div>model from another vendor, via Bifrost</div></div><div class="arrow"></div>
+      <div class="box fill"><b>Quote check in code</b><div>word for word on the named page</div></div><div class="arrow"></div>
+      <div class="box"><b>Score</b><div>fixed weights, effective date</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Terkini</span><span>Code has the last word</span></div>
+</section>
+
+<!-- === 05 USE OF AI: TAVILY + BIFROST === -->
+<section class="slide dark">
+  <div class="chrome"><span>Use of AI</span><span>05 / 08</span></div>
+  <div class="body" style="gap:44px">
+    <h2 class="h2" data-anim>How Tavily and Bifrost each contribute</h2>
+    <div class="side" style="flex:1">
+      <div class="col on" data-anim style="--d:2">
+        <h3 class="h3">Tavily: the evidence</h3>
+        <ul class="dash" style="gap:14px">
+          <li style="font-size:27px">Search with the pack's domains and <span class="hl">include_domains_mode = restrict</span>.</li>
+          <li style="font-size:27px"><span class="hl">max_age_hours = 0</span> for rules that change often; on HTTP 434, one retry marked "Tavily cached copy".</li>
+          <li style="font-size:27px">Extract reads the official pages and PDFs the quote is checked against.</li>
+          <li style="font-size:27px">Credits read from every response; a guard stops a run before a limit.</li>
+        </ul>
+      </div>
+      <div class="col on" data-anim style="--d:3">
+        <h3 class="h3">Bifrost: every model call</h3>
+        <ul class="dash" style="gap:14px">
+          <li style="font-size:27px">One virtual key with a daily budget and rate limits.</li>
+          <li style="font-size:27px">Fallback models on every request; an upstream timeout moves to the next one.</li>
+          <li style="font-size:27px">Three answering models from three vendors. The judge is from a fourth, so no model grades itself.</li>
+          <li style="font-size:27px">The official image, pinned by digest.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Terkini</span><span>Evidence · gateway</span></div>
+</section>
+
+<!-- === 06 USER EXPERIENCE · PROTOTYPE === -->
+<section class="slide light">
+  <div class="chrome"><span>User experience · Working prototype</span><span>06 / 08</span></div>
+  <div class="body" style="gap:30px">
+    <div style="display:grid;grid-template-columns:1fr 860px;gap:50px;align-items:end">
+      <h2 class="h2" data-anim>A recorded live run, replayed offline</h2>
+      <p class="p" data-anim style="--d:2;font-size:27px">No key needed:<br><span class="mono" style="font-size:24px">uv run terkini check --pack my --case my-12-kimi-k3-1-pro</span></p>
+    </div>
+<pre class="code" data-anim style="--d:3">Terkini · pack my · checked on 2026-11-20 (recorded run, 2026-11-20)
+
+<span class="old">OLD outdated      score   0</span>  For non-Malaysian workers registered on or after 1 August 1998,
+                             the employer's EPF contribution was a flat RM5 per month.
+      official now: Employers are only required to register and contribute for their
+                    non-Malaysian citizen employees starting 1 October 2025
+      in force from: 2025-10-01
+      source: https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees
+...
+4 claims checked, 2 outdated, 3 skipped, 8 Tavily credits
+<span class="uns">This answer reads as if written before 2025-10-01</span></pre>
+  </div>
+  <div class="foot"><span>Terkini</span><span>Command line today, web page next</span></div>
+</section>
+
+<!-- === 07 SCALABILITY === -->
+<section class="slide dark">
+  <div class="chrome"><span>Scalability and potential</span><span>07 / 08</span></div>
+  <div class="body" style="gap:44px">
+    <h2 class="h2" data-anim>A new country is a new pack file</h2>
+    <div class="side">
+      <ul class="dash" data-anim style="--d:2">
+        <li>A pack lists official domains, claim categories, which ones change often, and the evaluation questions. Code holds no domains.</li>
+        <li>A claim checked today is reused from a local cache at no cost.</li>
+        <li>Per-run and daily credit limits live in <span class="hl">config/budget.toml</span>.</li>
+      </ul>
+      <ul class="dash" data-anim style="--d:3">
+        <li>The same check can sit behind a chatbot or a help desk and flag a stale answer before it is sent.</li>
+        <li>Any OpenAI-compatible provider works behind Bifrost.</li>
+      </ul>
+    </div>
+    <div class="stats" style="grid-template-columns:repeat(3,1fr);margin-top:auto;margin-bottom:12px">
+      <div class="stat" data-anim style="--d:4"><b>12</b><span>official Malaysian domains in the pack</span></div>
+      <div class="stat" data-anim style="--d:5"><b>23</b><span>evaluation questions with an answer key</span></div>
+      <div class="stat" data-anim style="--d:6"><b>3</b><span>live runs recorded, replayed in tests</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>Terkini</span><span>Packs · cache · limits</span></div>
+</section>
+
+<!-- === 08 STATUS === -->
+<section class="slide light">
+  <div class="chrome"><span>Status</span><span>08 / 08</span></div>
+  <div class="body" style="gap:44px">
+    <h2 class="h2" data-anim>Where it stands</h2>
+    <div class="side">
+      <div class="col on" data-anim style="--d:2"><h3 class="h3">Works</h3><p class="p" style="font-size:28px">The full check from the command line, live and in replay. Three live runs from 20 Nov 2026, recorded.</p></div>
+      <div class="col" data-anim style="--d:3"><h3 class="h3">Not done yet</h3><p class="p" style="font-size:28px">The evaluation over the 23 questions, so no accuracy numbers yet. The web page for pasting an answer. The video.</p></div>
+    </div>
+    <p class="p" data-anim style="--d:4;margin-top:auto;font-size:27px"><span class="hl">Not legal advice.</span> Terkini compares an answer with what official pages say on the day it runs. Confirm anything important with the agency.</p>
+    <p class="cap" data-anim style="--d:5;margin:0;color:var(--on-light-2)"><a href="https://github.com/aimanmalib/terkini">github.com/aimanmalib/terkini</a> · <a href="https://aimanmalib.github.io/terkini/">aimanmalib.github.io/terkini</a></p>
+  </div>
+  <div class="foot"><span>Terkini</span><span>Built during the Global AI Hackathon, 21 Nov 2026</span></div>
+</section>
+
+</div></div>
+<script src="studio.js"></script>
+</body>
+</html>

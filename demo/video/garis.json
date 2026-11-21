@@ -219,28 +219,28 @@
    {
     "kata": [
      "jujur",
-     "17"
+     "20"
     ],
     "anjak": -0.1
    },
    {
     "kata": [
      "jujur",
-     "10"
+     "13"
     ],
     "anjak": -0.1
    },
    {
     "kata": [
      "jujur",
-     "59%"
+     "65%"
     ],
     "anjak": -0.1
    },
    {
     "kata": [
      "jujur",
-     "36%"
+     "46%"
     ],
     "anjak": -0.1
    }
@@ -399,7 +399,7 @@
     "Zhipu AI"
    ]
   ],
-  "k_jujur": "Eval · 68 answers · eval/my/results.json",
+  "k_jujur": "Eval · 68 answers · hybrid step · eval/my/results.json",
   "stat": [
    [
     "flagged",

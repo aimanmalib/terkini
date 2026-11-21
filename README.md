@@ -18,7 +18,7 @@ calls go through a Bifrost gateway.
 
 - Replay page: <https://aimanmalib.github.io/terkini/> (six recorded runs, English and Bahasa Melayu, no key; each run is shown against the answer key, including one false alarm). Open "How this check ran" under a run to see each Tavily query, its `include_domains` and credits, and each Bifrost call with the model asked for, the model that answered and the tokens.
 - Slides (PDF): <https://aimanmalib.github.io/terkini/deck.pdf>
-- Video (72 s, captions burned in, `.srt` beside it): <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>. It was recorded before the hybrid step and shows the v0.1.0 figures (10 of 17 flags right, 59% precision, 36% recall).
+- Video (72 s, captions burned in, `.srt` beside it): <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>. Its figures are the hybrid step's (13 of 20 flags right, 65% precision, 46% recall), the same as below.
 
 > **Not legal advice.** Terkini compares an answer with what official pages say on the day it runs. It can miss a page,
 > misread one, or check a page that is itself out of date. Confirm anything important with the agency.

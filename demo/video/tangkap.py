@@ -71,6 +71,8 @@ def main():
     kotak["domains"] = [d["domain"] for d in pack["domains"]]
     res = json.loads((ROOT / "eval" / "my" / "results.json").read_text())
     kotak["eval"] = {k: res[k] for k in ("answers", "detection", "per_model", "claims")}
+    # The honest-numbers scene shows the hybrid row (D-022), the figure the README leads with.
+    kotak["eval"]["detection"] = next(r for r in res["baselines"]["rows"] if r["name"] == "hybrid")
     (ASET / "kotak.json").write_text(json.dumps(kotak, indent=1))
     print("captured:", sorted(x.name for x in ASET.glob("*.png")))
 

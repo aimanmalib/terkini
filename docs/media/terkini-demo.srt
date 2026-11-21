@@ -91,17 +91,21 @@ We asked 3 models 23 questions.
 no longer current.
 
 24
-00:00:54,520 --> 00:00:56,400
-Terkini flagged 17 answers,
+00:00:54,520 --> 00:00:56,320
+Terkini flagged 20 answers,
 
 25
-00:00:56,400 --> 00:00:58,104
-and 10 were really stale.
+00:00:56,320 --> 00:00:58,267
+and 13 were really stale:
 
 26
-00:00:58,104 --> 00:01:01,560
-That is 59% precision and 36% recall.
+00:00:58,267 --> 00:00:59,840
+65% precision,
 
 27
-00:01:01,560 --> 00:01:03,520
+00:00:59,840 --> 00:01:01,340
+46% recall.
+
+28
+00:01:01,340 --> 00:01:03,440
 The misses are published too.

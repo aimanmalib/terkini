@@ -357,3 +357,14 @@ change it.
   read) to the case file, and the page shows both in a box under the run, in English and Malay. The two runs with a
   mistake stay on the page, last, labelled. A missing outcome key in i18n stops the build.
 - **Rollback.** Remove the `outcome` lines and the `keyBox(c)` call; the case files still build without them.
+
+## D-027 · The demo video shows the hybrid figures
+
+- **Why.** The README, the deck and the replay page lead with the hybrid step (13 of 20, 65% precision, 46% recall),
+  but the video still said 17 flagged, 10 right, 59% and 36%. A judge who watches the video and then reads the README
+  saw two sets of numbers.
+- **What.** Only the honest-numbers line changed: new narration (same cloned voice, shorter so it ends before the closing
+  scene), the four number events in `garis.json`, and `tangkap.py` now gives the stage the hybrid row of
+  `eval/my/results.json`. Page captures were not retaken, so every other scene is the same. Loudness -16.4 LUFS, peak
+  -2.9 dBFS; captions rebuilt with `srt.py`. Same URL.
+- **Rollback.** Revert this commit; the old file is in git history.

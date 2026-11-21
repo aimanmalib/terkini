@@ -1,5 +1,5 @@
 {
- "_note": "Narration for the Terkini demo video. Every number comes from eval/my/results.json (21 Nov 2026) or a recorded run in docs/cases/. Voice: AI clone of the builder's own voice, labelled on the end card.",
+ "_note": "Narration for the Terkini demo video. Every number comes from eval/my/results.json (21 Nov 2026; the honest-numbers line uses the hybrid row, D-022) or a recorded run in docs/cases/. Voice: AI clone of the builder's own voice, labelled on the end card.",
  "baris": [
   {
    "id": "hook",
@@ -36,8 +36,8 @@
   },
   {
    "id": "jujur",
-   "sari": "Terkini flagged 17 answers, and 10 were really stale. That is 59% precision and 36% recall. The misses are published too.",
-   "baca": "Terkini flagged seventeen answers, and ten were really stale. That is fifty-nine percent precision, and thirty-six percent recall. The misses are published too."
+   "sari": "Terkini flagged 20 answers, and 13 were really stale: 65% precision, 46% recall. The misses are published too.",
+   "baca": "Terkini flagged twenty answers, and thirteen were really stale: sixty-five percent precision, forty-six percent recall. The misses are published too."
   },
   {
    "id": "tutup",
@@ -50,14 +50,14 @@
   "23": "twenty-three",
   "28": "twenty-eight",
   "68": "sixty-eight",
-  "17": "seventeen",
-  "10": "ten",
-  "59%": "fifty-nine percent",
-  "36%": "thirty-six percent",
   "Tavily": "Tavvily",
   "6%.": "six percent.",
   "8%,": "eight percent,",
-  "2024.": "twenty twenty-four."
+  "2024.": "twenty twenty-four.",
+  "20": "twenty",
+  "13": "thirteen",
+  "65%": "sixty-five percent",
+  "46%": "forty-six percent"
  },
  "sebut": {}
 }

@@ -150,3 +150,23 @@ change it.
   key is set.
 - **Would change if.** Snippets turn out to cut quotes short often. Then Search with `include_raw_content` is
   measured against Extract.
+
+## D-015 · How the eval is run and scored
+
+- **Decision.** `terkini ask` puts each of the 23 questions to the three eval models through the gateway, with no
+  fallback, and saves one answer per question and model in `eval/my/answers/`. Each answer is then labelled
+  against `eval/my/key.yaml` in `eval/my/labels.yaml`: `stale: true` when it states a value or rule that differs from
+  the key, `false` when it states the key value, `null` when it gives no value. Labels were committed before the
+  checker ran on any answer. `terkini eval` checks every answer live and saves one run per answer in `eval/my/runs/`.
+  `results.json` is computed from the runs, the labels and the key only, and a test recomputes it.
+- **Scoring.** Detection is scored per answer: an answer is flagged when at least one of its claims is `outdated`.
+  Precision is flagged answers that are labelled stale over all flagged answers. Recall is flagged stale answers over
+  all stale answers. Claim counts, the share of claims decided with an exact quote, quoted effective dates against
+  the key, Tavily credits, model tokens and time per answer are reported next to it.
+- **Why.** The key holds one fact per question, not one per claim. Scoring per answer compares like with like and
+  needs no judgement about which claim maps to the key. A label of "differs from the key" also counts answers that
+  were never right; the label notes say which.
+- **Not changed after seeing results.** The checker, prompts and search settings were not tuned on these answers.
+  Failures found in the eval are listed in `docs/EVAL.md` and left for later work.
+- **Would change if.** The question set grows past one fact per question. Then claims are matched to key facts
+  and scored per claim.

@@ -17,7 +17,10 @@ gerbang Bifrost.
 
 - **Sudah berfungsi:** semakan penuh dari baris arahan. Tiga larian sebenar pada 20 Nov 2026 dirakam dan boleh dimainkan
   semula tanpa rangkaian.
-- **Belum siap:** penilaian atas 23 soalan Malaysia (belum ada angka ketepatan), halaman web untuk menampal jawapan, dan video.
+- **Penilaian, 21 Nov 2026:** 28 daripada 68 jawapan daripada 3 model menyatakan peraturan Malaysia
+  yang berbeza daripada nilai rasmi semasa; Terkini menanda 10 daripadanya dengan laman rasmi
+  (precision 59%, recall 36%). Butiran dan kegagalan: [`docs/EVAL.md`](docs/EVAL.md) (Inggeris).
+- **Belum siap:** halaman web untuk menampal jawapan, dan video.
 
 ## Cuba
 

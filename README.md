@@ -14,6 +14,8 @@ tariff or the turnover limit for e-invoicing. It pulls out each factual claim, c
 Tavily Search and Extract, and gives every claim a freshness score with the exact quote from the official source. All model
 calls go through a Bifrost gateway.
 
+**Eval, 21 Nov 2026:** 28 of 68 answers from 3 models stated a Malaysian rule that differs from the current official value; Terkini flagged 10 of them against official pages (precision 59%, recall 36%). Details and failures: [`docs/EVAL.md`](docs/EVAL.md).
+
 - Replay page: <https://aimanmalib.github.io/terkini/>
 - Slides (PDF): <https://aimanmalib.github.io/terkini/deck.pdf>
 - Video: not recorded yet.
@@ -30,9 +32,11 @@ Not finished. What works and what does not, as of today:
 
 - **Works:** the full check from the command line. Claim extraction and judging through Bifrost, Tavily Search and
   Extract on official domains only, the exact-quote check in code, and the freshness score. Three live runs from
-  20 Nov 2026 are recorded and replay offline.
-- **Not done yet:** the evaluation over the 23 Malaysian questions (there are no accuracy numbers yet), the web page
-  for pasting an answer, and the video. This section will change when they exist.
+  20 Nov 2026 are recorded and replay offline. The eval over the 23 Malaysian questions has run on 68 answers
+  from three models ([`docs/EVAL.md`](docs/EVAL.md)).
+- **Weak spots:** recall is 36%. Most missed answers end `unverifiable` because the official pages that
+  search returns do not settle the claim.
+- **Not done yet:** the web page for pasting an answer, and the video. This section will change when they exist.
 
 ## Try it in three steps
 
@@ -154,6 +158,7 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 ### AI disclosure
 
 - The code and the documentation in this repository were written with Claude Code (Claude Opus).
+- The eval labels in `eval/my/labels.yaml` were written with Claude Code, by reading each model answer against the key.
 - The product calls the language models listed above through a Bifrost gateway.
 
 ## Limitations
@@ -162,8 +167,8 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
   indexed, or that blocks extraction, cannot decide a verdict.
 - **Official pages go stale too.** A ministry page can lag behind a new order. Terkini reports the page it read and
   its date; it does not know about rules that no official page states yet.
-- **Many claims end up `unverifiable`.** In the recorded runs, the judge often cited a page that was not extracted, so
-  the claim was set aside. That is the intended failure: no quote, no verdict.
+- **Many claims end up `unverifiable`.** Often the official pages Tavily returns for a claim do not settle it, so the
+  claim is set aside. That is the intended failure: no quote, no verdict. See [`docs/EVAL.md`](docs/EVAL.md).
 - **The answer key is ours.** The evaluation key in `eval/my/key.yaml` was written by reading official pages before
   any model answer was seen. It can still contain mistakes.
 - **Not legal advice.** See the note at the top.
@@ -175,9 +180,9 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 | `src/terkini/` | The checker: claims, Tavily client, verifier, judge, quote check, score, cache, replay, CLI |
 | `config/` | Every tunable value: models, gateway, search parameters, score weights, credit limits, prompts |
 | `packs/` | Country packs (domains, categories) |
-| `eval/my/` | 23 Malaysian questions and their answer key |
+| `eval/my/` | 23 Malaysian questions, their answer key, model answers, labels, one run per answer, `results.json` |
 | `tests/` | Offline tests; `tests/fixtures/` holds recorded runs with no keys |
-| `scripts/` | Gateway setup, recording live runs, checking the answer key |
+| `scripts/` | Gateway setup, recording live runs, checking the answer key, eval tables |
 
 Design decisions are in [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md).
 
@@ -188,7 +193,7 @@ bash scripts/gerbang-ujian.sh   # pytest on recorded fixtures; no network, no ke
 ```
 
 The tests replay the three recorded live runs, and cover the quote check, the score table, the `434` retry, the credit
-guard and the gateway client.
+guard, the gateway client and the eval metrics. One test recomputes `eval/my/results.json` from the saved runs.
 
 ## Licence
 

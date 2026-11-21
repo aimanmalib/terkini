@@ -113,6 +113,41 @@
         ]
       },
       {
+        "name": "hybrid",
+        "note": "Main check, then the model proposes a current value and an official sentence must state it (D-022).",
+        "n_answers": 68,
+        "labelled": 68,
+        "stale": 28,
+        "current": 40,
+        "no_value": 0,
+        "flagged": 20,
+        "true_positive": 13,
+        "false_positive": 7,
+        "false_negative": 15,
+        "true_negative": 33,
+        "precision": 0.65,
+        "recall": 0.464,
+        "precision_text": "13 of 20",
+        "precision_ci95": [
+          0.433,
+          0.819
+        ],
+        "recall_text": "13 of 28",
+        "recall_ci95": [
+          0.295,
+          0.642
+        ],
+        "claims": {
+          "proposals": 48,
+          "searched": 43,
+          "quoted": 3,
+          "changed_to_outdated": 3,
+          "kept_by_date": 0,
+          "rejected_by_rules": 3
+        },
+        "credits_from_responses": 67
+      },
+      {
         "name": "model_only",
         "note": "Same judge model, same claims, no official pages, no quote check. 0 Tavily credits.",
         "n_answers": 68,

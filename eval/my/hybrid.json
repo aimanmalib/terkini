@@ -1,0 +1,911 @@
+{
+  "proposals": "eval baseline-model-only.json (config/prompts.toml [judge_no_evidence])",
+  "config": "config/hybrid.toml",
+  "credits_from_responses": 67,
+  "evidence": {
+    "a business whose annual revenue first reached rm3 million in ya2024 must implement e invoicing from 1 july 2025 => 1 January 2026": {
+      "proposed_value": "1 January 2026",
+      "query": "A business whose annual revenue first reached RM3 million in YA2024 must implement e-Invoicing from 1 January 2026.",
+      "urls": [
+        "https://www.hasil.gov.my/en/e-invoice/implementation-of-e-invoicing-in-malaysia/e-invoice-implementation-timeline#top",
+        "https://www.hasil.gov.my/en/e-invoice/implementation-of-e-invoicing-in-malaysia/e-invoice-implementation-timeline#site-content",
+        "https://www.hasil.gov.my/en/e-invoice/implementation-of-e-invoicing-in-malaysia"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "a non malaysian worker who opted into epf before october 2025 generally contributed 11% of monthly wages => 2% of monthly wages (mandatory employee EPF contribution for non-Malaysian workers, phased in from 1 October 2025, with employer also contributing 2%)": {
+      "proposed_value": "2%",
+      "query": "A non-Malaysian worker who opted into EPF before October 2025 generally contributed 2% of monthly wages.",
+      "urls": [
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+        "https://www.kwsp.gov.my/en/w/news/epf-begins-mandatory-contributions-for-non-malaysian-citizen-employees-effective-october-2025",
+        "https://www.kwsp.gov.my/en/w/news/epf-expands-mandatory-contribution-to-non-malaysians"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "businesses must register for service tax if their annual turnover exceeds rm500 000 => RM1,000,000 MYR per year for most taxable services (threshold raised from RM500,000 effective 1 March 2024); RM500,000 still applies to certain categories such as restaurants and gaming": {
+      "proposed_value": "RM1,000,000",
+      "query": "Businesses must register for service tax if their annual turnover exceeds RM1,000,000.",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official page found for the proposed value."
+    },
+    "chargeable income above rm600 000 is taxed at 24% => 26% for resident individuals in the RM600,001–RM2,000,000 band (higher rates apply above RM2,000,000)": {
+      "proposed_value": "26%",
+      "query": "Chargeable income above RM600,000 is taxed at 26%.",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official page found for the proposed value."
+    },
+    "e invoicing is mandatory for malaysian businesses with annual turnover at or above rm20 million per royal malaysian customs department rules => As of 21 Nov 2026, e-Invoicing is mandatory for essentially all Malaysian businesses regardless of turnover, per LHDN/RMCD phased implementation: turnover above RM100 million from 1 Aug 2024; RM25m–RM100m from 1 Jan 2025; RM5m–RM25m from 1 Jul 2025; RM1m–RM5m from 1 Jan 2026; and all remaining taxpayers (below RM1 million) from 1 Jul 2026. The RM20 million figure was never an official threshold; the current effective threshold is RM0 (all businesses).": {
+      "proposed_value": "21 Nov 2026, e-Invoi",
+      "query": "e-Invoicing is mandatory for Malaysian businesses with annual turnover at or above 21 Nov 2026, e-Invoi, per Royal Malaysian Customs Department rules.",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official page found for the proposed value."
+    },
+    "employees pay 0.5% of their monthly gross salary as the eis contribution => 0.2% of monthly wages (employee share; employer pays a matching 0.2%, capped at the RM4,000 wage ceiling)": {
+      "proposed_value": "0.2%",
+      "query": "Employees pay 0.2% of their monthly gross salary as the EIS contribution.",
+      "urls": [
+        "https://lmx.perkeso.gov.my/storage/2026/04/EIS-Weekly-Report-Week-13-as-of-27032026.pdf",
+        "https://lmx.perkeso.gov.my/storage/2026/02/EIS-Weekly-Report-Week-05-as-of-30012026.pdf",
+        "https://lmx.perkeso.gov.my/storage/2026/06/EIS-Weekly-Report-Week-25-as-of-19062026.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "employers must pay at least the rm1 500 minimum monthly wage => RM1,700 MYR per month": {
+      "proposed_value": "RM1,700",
+      "query": "Employers must pay at least the RM1,700 minimum monthly wage.",
+      "urls": [
+        "https://www.tnb.com.my/assets/newsclip/28102026a.pdf",
+        "https://www.perkeso.gov.my/images/arahan/Employer_Circular_No_2_2026-PekelilingLindung24Jam_English.pdf",
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "employers pay 0.5% of the employee s monthly gross salary as the eis contribution => 0.2% of the employee's monthly wages (employer share; employee also contributes 0.2%, for a total of 0.4%). The statutory rate of 0.25% per party (0.5% total) has been repeatedly deferred and the reduced 0.2% rate remains in effect.": {
+      "proposed_value": "0.2%",
+      "query": "Employers pay 0.2% of the employee's monthly gross salary as the EIS contribution.",
+      "urls": [
+        "https://lmx.perkeso.gov.my/storage/2026/02/EIS-Weekly-Report-Week-05-as-of-30012026.pdf",
+        "https://lmx.perkeso.gov.my/storage/2026/04/EIS-Weekly-Report-Week-13-as-of-27032026.pdf",
+        "https://lmx.perkeso.gov.my/storage/2026/04/EIS-Weekly-Report-Week-16-as-of-17042026.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "for epf members under 55 40% of new contributions are allocated to the investment account => No EPF 'Investment Account' exists. Since 11 May 2024, new contributions are allocated 75% to Akaun Persaraan (retirement, withdrawal at 55), 20% to Akaun Sejahtera (withdrawal at 50, with limited pre-50 access for housing/education/health), and 5% to Akaun Fleksibel (withdrawable anytime). Before that, the split was 70% Account I / 20% Account II / 10% Account III. A 40% allocation to an 'Investment Account' matches no known EPF rule; the closest real feature is the EPF Members Investment Scheme, which lets members under 55 invest up to 30% of Akaun Persaraan savings in excess of the Basic Savings amount through approved fund managers.": {
+      "proposed_value": "11 May 2024, new con",
+      "query": "For EPF members under 55, 11 May 2024, new con of new contributions are allocated to the Investment Account.",
+      "urls": [
+        "https://www.kwsp.gov.my/en/member/account-centre/account-restructuring",
+        "https://www.mof.gov.my/portal/en/news/press-citations/all-epf-contributions-to-be-credited-into-account-1-to-increase-savings-mohd-shahar",
+        "https://www.kwsp.gov.my/en/w/news/epf-records-total-investment-income-of-rm63-99-billion-for-9m-2025"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "for epf members under 55 60% of new contributions are allocated to the savings account => Since 11 May 2024, EPF members under 55 have new contributions allocated as: 75% to Akaun Persaraan (Retirement Account), 15% to Akaun Sejahtera (Wellbeing Account), and 10% to Akaun Fleksibel (Flexible Account). The 60% figure does not match the current structure (it also does not match the pre-2024 split of 70%/20%/10% for Accounts 1/2/3; a 60/40 two-account split only existed before the late 1990s).": {
+      "proposed_value": "11 May 2024, EPF mem",
+      "query": "For EPF members under 55, 11 May 2024, EPF mem of new contributions are allocated to the Savings Account.",
+      "urls": [
+        "https://www.kwsp.gov.my/en/member/account-centre/account-restructuring",
+        "https://www.mof.gov.my/portal/en/news/press-citations/all-epf-contributions-to-be-credited-into-account-1-to-increase-savings-mohd-shahar",
+        "https://www.mof.gov.my/portal/en/news/press-citations/over-200-000-epf-contributors-have-sufficient-basic-savings-before-age-55-mof"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "for unlisted shares acquired on or after 1 march 2024 the tax is 10% on the gain or 2% on the gross disposal price whichever is higher => For unlisted shares acquired on or after 1 March 2024, the 10% flat rate applied only to disposals before 1 January 2025. From 1 January 2025 (Budget 2025 / Finance (No. 2) Act 2024), individuals pay 10% on the first RM50,000 of chargeable gains and 15% on the portion exceeding RM50,000, or 2% of the gross disposal price, whichever is higher; companies are taxed at 24% of the gain (non-citizen individuals 30%).": {
+      "proposed_value": "1 March 2024, the 10",
+      "query": "",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 0,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "The model proposed the claim's own value."
+    },
+    "if a non malaysian worker who was not a permanent resident opted into epf before october 2025 the employer contributed rm5 per month => Since 1 October 2025, EPF contributions are mandatory for foreign workers (non-Malaysian citizens who are not permanent residents): the employer contributes 2% of monthly wages and the employee contributes 2%, replacing the previous voluntary opt-in scheme under which the employer paid a flat RM5 per month.": {
+      "proposed_value": "1 October 2025, EPF",
+      "query": "If a non-Malaysian worker who was not a permanent resident opted into EPF before October 2025, the employer contributed 1 October 2025, EPF per month.",
+      "urls": [
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+        "https://www.kwsp.gov.my/en/w/news/epf-begins-mandatory-contributions-for-non-malaysian-citizen-employees-effective-october-2025",
+        "https://www.kwsp.gov.my/en/w/news/epf-expands-mandatory-contribution-to-non-malaysians"
+      ],
+      "quote": "Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025.",
+      "source_url": "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+      "page_date": "2025-10-01",
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": ""
+    },
+    "in malaysia the capital gains tax on the disposal of unlisted shares acquired in 2024 or later is 0% no tax if the shares are held for more than 5 years => No 5-year holding-period exemption exists for capital gains tax (CGT) on unlisted shares in Malaysia. For unlisted shares acquired on or after 1 Jan 2024, disposals are taxed at 10% of the net gain or 2% of gross proceeds, whichever is higher. From YA 2025, disposals by companies are taxed at 10% on the first RM2.5 million of net gains and 15% on the excess, while disposals by individuals are taxed at progressive individual income tax rates (0%–30%) on the net gain. (The '0% after more than 5 years' rule the claim describes applies to the Real Property Gains Tax on real property for Malaysian citizens/individuals from 1 Jan 2024, not to CGT on unlisted shares.)": {
+      "proposed_value": "1 Jan 2024, disposal",
+      "query": "In Malaysia, the capital gains tax on the disposal of unlisted shares acquired in 2024 or later is 1 Jan 2024, disposal (no tax) if the shares are held for more than 5 years.",
+      "urls": [
+        "https://www.mof.gov.my/portal/en/news/press-citations/mof-says-will-further-study-cgt-exemption-for-companies-not-listed-on-bursa-malaysia",
+        "https://www.hasil.gov.my/en/rpgt",
+        "https://www.hasil.gov.my/en/tax-agent"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "in malaysia the capital gains tax on the disposal of unlisted shares acquired in 2024 or later is 10% of the gain if the shares are held for 2 to 5 years => For unlisted shares acquired on or after 1 March 2024, the capital gains tax is tiered by holding period: 30% of the net gain if held less than 3 years, 20% if held 3 to less than 4 years, 15% if held 4 to less than 5 years, and 10% only if held 5 years or more. (A flat 10% of the net gain applies only to unlisted shares acquired before 1 March 2024.)": {
+      "proposed_value": "1 March 2024, the ca",
+      "query": "In Malaysia, the capital gains tax on the disposal of unlisted shares acquired in 2024 or later is 1 March 2024, the ca of the gain if the shares are held for 2 to 5 years.",
+      "urls": [
+        "https://www.hasil.gov.my/en/forms/cgt-return-form-filing-programme",
+        "https://www.mof.gov.my/portal/en/news/press-citations/mof-says-will-further-study-cgt-exemption-for-companies-not-listed-on-bursa-malaysia",
+        "https://www.hasil.gov.my/en/rpgt"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "in malaysia the capital gains tax on the disposal of unlisted shares acquired in 2024 or later is 30% of the gain if the shares are held for 2 years or less => For unlisted shares in Malaysia acquired on or after 1 March 2024, the capital gains tax is 30% of the chargeable gain only if held for 1 year or less; 15% if held more than 1 year but not more than 3 years; and 10% if held more than 3 years. The claim's 2-year threshold for the 30% rate is incorrect.": {
+      "proposed_value": "1 March 2024, the ca",
+      "query": "In Malaysia, the capital gains tax on the disposal of unlisted shares acquired in 2024 or later is 1 March 2024, the ca of the gain if the shares are held for 2 years or less.",
+      "urls": [
+        "https://www.hasil.gov.my/en/forms/cgt-return-form-filing-programme",
+        "https://www.mof.gov.my/portal/en/news/press-citations/mof-says-will-further-study-cgt-exemption-for-companies-not-listed-on-bursa-malaysia",
+        "https://www.hasil.gov.my/en/rpgt"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "in malaysia the employment insurance system eis wage ceiling was rm5 000 per month before october 2024 => RM6,000 MYR per month": {
+      "proposed_value": "RM6,000",
+      "query": "In Malaysia, the Employment Insurance System (EIS) wage ceiling was RM6,000 per month before October 2024.",
+      "urls": [
+        "https://www.perkeso.gov.my/en/uncategorised/800-contribution-rate.html",
+        "https://perkeso.gov.my/en/rate-of-contribution.html",
+        "https://www.perkeso.gov.my/en/contribution-rate"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "malaysia applies a standard sales and service tax sst rate of 6% on goods => Malaysia's Sales Tax on goods is levied at 5% or 10% depending on the category of goods (with some goods exempt) — there is no 6% rate on goods. The 6% figure was the Service Tax rate, and since 1 March 2024 most services are taxed at 8%, with only certain services (e.g., food and beverage, telecommunications, parking, logistics) remaining at 6%.": {
+      "proposed_value": "5%",
+      "query": "Malaysia applies a standard Sales and Service Tax (SST) rate of 5% on goods.",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official page found for the proposed value."
+    },
+    "malaysian businesses with annual turnover below rm20 million are exempt from e invoicing => No turnover-based exemption exists. Malaysia's e-Invoicing mandate was rolled out in phases by LHDN/IRBM — taxpayers with turnover above RM100 million from 1 August 2024, above RM25 million from 1 January 2025, and all remaining taxpayers from 1 July 2025. Since 1 July 2025, e-Invoicing applies to all businesses regardless of annual turnover (with only specific category exemptions, e.g., certain individuals such as taxi/school bus drivers, small market traders, and room/property rental by individuals, plus B2C transactions handled via consolidated e-invoices).": {
+      "proposed_value": "RM100 million",
+      "query": "Malaysian businesses with annual turnover below RM100 million are exempt from e-Invoicing.",
+      "urls": [
+        "https://www.hasil.gov.my/en/e-invoice/implementation-of-e-invoicing-in-malaysia/e-invoice-implementation-timeline#top",
+        "https://www.hasil.gov.my/en/e-invoice/implementation-of-e-invoicing-in-malaysia/e-invoice-implementation-timeline#site-content"
+      ],
+      "quote": "Below is the e-Invoice implementation timeline:. | Taxpayers with an annual turnover or revenue of more than RM100 million | 1 Au",
+      "source_url": "https://www.hasil.gov.my/en/e-invoice/implementation-of-e-invoicing-in-malaysia/e-invoice-implementation-timeline#top",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": ""
+    },
+    "malaysian small and medium companies are those with paid up capital not exceeding rm2.5 million => Effective from Year of Assessment 2024 (Finance Act 2023), a 'small and medium company' (SMC) is defined as a resident company with gross income from business sources not exceeding RM50 million, replacing the previous paid-up capital criterion of RM2.5 million.": {
+      "proposed_value": "RM50 million",
+      "query": "Malaysian small and medium companies are those with paid-up capital not exceeding RM50 million.",
+      "urls": [
+        "https://lmx.perkeso.gov.my/wp-content/uploads/2024/02/Discussion-Paper-The-Extent-to-Which-Improving-Inter-Linkages-between-the-SME-and-Large-Enterprises-Bring-Economic-Benefits.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "malaysian small and medium companies with paid up capital not exceeding rm2.5 million pay 17% income tax on the first rm150 000 of chargeable income => 15% on the first RM150,000 of chargeable income (17% applies to the band from RM150,001 to RM600,000, and 24% above RM600,000) for qualifying SMEs with paid-up capital not exceeding RM2.5 million and gross business income not exceeding RM50 million. The 17% rate on the first RM150,000 applied only for YA 2020; it was reduced to 15% from YA 2021.": {
+      "proposed_value": "15%",
+      "query": "Malaysian small and medium companies with paid-up capital not exceeding RM2.5 million pay 15% income tax on the first RM150,000 of chargeable income.",
+      "urls": [
+        "https://phl.hasil.gov.my/pdf/pdfam/Budget_2019.pdf",
+        "https://www.hasil.gov.my/media/zteihign/20250718-public-ruling-tax-treatment-for-micro-small-and-medium-enterprises.pdf",
+        "https://www.hasil.gov.my/media/1offthzg/samplerf_c2025_2.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "maternity leave is paid at 90% of salary => 100% (full pay) — under the Employment Act 1955 as amended (effective 1 January 2023), eligible female employees receive 98 consecutive days of paid maternity leave at their ordinary rate of pay, i.e., full salary, not 90%.": {
+      "proposed_value": "100%",
+      "query": "Maternity leave is paid at 100% of salary.",
+      "urls": [
+        "https://www.kwsp.gov.my/en/w/article/workplace-benefits-for-moms",
+        "https://www.kwsp.gov.my/en/employer/responsibilities/payments",
+        "https://www.perkeso.gov.my/en?view=article&id=73%3Afrequently-asked-question&catid=36"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "non manual employees in peninsular malaysia are not entitled to overtime pay under the employment act 1955 if their monthly salary exceeds rm2 000 => RM4,000 MYR per month": {
+      "proposed_value": "RM4,000",
+      "query": "Non-manual employees in Peninsular Malaysia are not entitled to overtime pay under the Employment Act 1955 if their monthly salary exceeds RM4,000.",
+      "urls": [
+        "https://jtksm.mohr.gov.my/en/services/labour-case",
+        "https://jtksm.mohr.gov.my/en/borang/employment-act-1955",
+        "https://jtksm.mohr.gov.my/en/frequently-asked-questions/employees-retrenchment"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "non manual employees in peninsular malaysia earning rm2 000 or less per month can claim overtime after 48 hours at the act s rates => The 48-hour workweek still stands, but the wage threshold is outdated: since the Employment (Amendment) Act 2022 took effect on 1 January 2023, the Employment Act 1955 covers all employees, and overtime entitlement extends to non-manual employees earning RM4,000 or less per month (only those in managerial, executive, confidential, or security capacity earning above RM4,000, plus certain excluded categories like domestic servants, are exempt from the overtime provisions). Overtime is payable for work beyond the normal hours (max 48 hours/week) at 1.5x on normal days, 2x on rest days, and 3x on public holidays.": {
+      "proposed_value": "1 January 2023, the",
+      "query": "Non-manual employees in Peninsular Malaysia earning RM2,000 or less per month can claim overtime after 1 January 2023, the hours at the Act's rates.",
+      "urls": [
+        "https://mof.gov.my/portal/en/news/press-release/retail-price/government-raises-ron97-ron95-and-diesel-retail-prices-from-22-january-2026-to-28-january-2026",
+        "https://www.mof.gov.my/portal/en/component/tags/tag/price-of-petroleum?format=feed&type=atom",
+        "https://www.st.gov.my/en/contents/files/download/106/Peninsular_Malaysia_Electricity_Supply_Industry_Outlook_2019_compressed.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "paternity leave must be taken within 60 days of the child s birth or adoption placement => 30 days": {
+      "proposed_value": "30 days",
+      "query": "",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 0,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "The model's proposal has no amount, rate or date to look for."
+    },
+    "small employers generally had to comply with the national minimum wage from 1 july 2023 following a deferral from 1 january 2023 => RM1,700 per month under the Minimum Wages Order 2024, in force 1 February 2025; employers with fewer than 5 employees were covered from 1 August 2025. The 1 July 2023 date applied to the earlier RM1,500 order (Minimum Wages Order 2022), and that deferral actually ran from 1 May 2022, not 1 January 2023.": {
+      "proposed_value": "RM1,700",
+      "query": "Small employers generally had to comply with the national minimum wage from 1 July 2023, following a deferral from 1 January 2023. RM1,700",
+      "urls": [
+        "https://www.perkeso.gov.my/images/laporan_tahunan/LaporanTahunanPERKESO2024.pdf",
+        "https://hrdcorp.gov.my/wp-content/uploads/2025/06/HRD-Corp-Annual-Report-2024-Digital-Version.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the current national minimum wage rate is rm1 500 per month => RM1,700 MYR per month": {
+      "proposed_value": "RM1,700",
+      "query": "The current national minimum wage rate is RM1,700 per month.",
+      "urls": [
+        "https://www.perkeso.gov.my/images/dokumen/151124-Rate%20Contribution%20ACT%204.pdf",
+        "https://www.perkeso.gov.my/images/dokumen/151124-Rate%20Contribution%20ACT%20800.pdf",
+        "https://www.perkeso.gov.my/images/arahan/Employer_Circular_No_2_2026-PekelilingLindung24Jam_English.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the e invoicing mandate applies to businesses with annual revenue of rm3 million and above => RM1 million MYR per year (e-Invoicing has been mandatory for taxpayers with annual turnover above RM1 million since 1 July 2026, following the phased rollout: >RM100m from Aug 2024, >RM50m from Jan 2025, >RM25m from Jul 2025, >RM5m from Jan 2026, >RM1m from Jul 2026; from 1 January 2027 it extends to all taxpayers, with micro businesses below RM150,000 exempted)": {
+      "proposed_value": "RM1 million",
+      "query": "The e-Invoicing mandate applies to businesses with annual revenue of RM1 million and above.",
+      "urls": [
+        "https://hrdcorp.gov.my/wp-content/uploads/2025/04/NTI-2024.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the earlier exemption threshold for e invoicing in malaysia was rm150 000 => RM500,000 MYR per year": {
+      "proposed_value": "RM500,000",
+      "query": "The earlier exemption threshold for e-Invoicing in Malaysia was RM500,000.",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official page found for the proposed value."
+    },
+    "the employer epf contribution rate is 4% => 12% of monthly wages for wages above RM5,000; 13% for wages up to RM5,000 (the 4% rate was a temporary COVID-19 relief measure for certain affected sectors, which has expired)": {
+      "proposed_value": "12%",
+      "query": "The employer EPF contribution rate is 12%.",
+      "urls": [
+        "https://www.kwsp.gov.my/en/employer/responsibilities/mandatory-contribution",
+        "https://www.kwsp.gov.my/en/member/overview/contribution",
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the exemption threshold applies to taxpayers whose annual turnover or revenue does not exceed rm150 000 => RM500,000 per year (taxpayers with annual turnover or revenue not exceeding RM500,000 are exempted from mandatory e-invoicing, per the July 2025 announcement; the phased rollout applies RM1 million+ from 1 Jan 2026 and RM500,000+ from 1 July 2026)": {
+      "proposed_value": "RM500,000",
+      "query": "The exemption threshold applies to taxpayers whose annual turnover or revenue does not exceed RM500,000.",
+      "urls": [
+        "https://www.mof.gov.my/portal/en/news/press-citations/govt-introduces-e-invoice-voluntary-declarationprogramme-until-dec-31-2027-pm-anwar",
+        "https://www.hasil.gov.my/en/e-invoice/implementation-of-e-invoicing-in-malaysia/e-invoice-implementation-timeline#site-content",
+        "https://www.hasil.gov.my/en/e-invoice/implementation-of-e-invoicing-in-malaysia/e-invoice-implementation-timeline#top"
+      ],
+      "quote": "He said that in December 2025, the government had previously increased the income threshold for e-Invoice exemption from RM500,000 to RM1 million, benefiting more than one million tax payers.",
+      "source_url": "https://www.mof.gov.my/portal/en/news/press-citations/govt-introduces-e-invoice-voluntary-declarationprogramme-until-dec-31-2027-pm-anwar",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": ""
+    },
+    "the initial national minimum wage was rm920 per month => RM1,700 per month (effective 1 February 2025; employers with fewer than 5 employees from 1 August 2025)": {
+      "proposed_value": "RM1,700",
+      "query": "The initial national minimum wage was RM1,700 per month.",
+      "urls": [
+        "https://www.tnb.com.my/assets/newsclip/24022025c.pdf",
+        "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+        "https://www.perkeso.gov.my/images/dokumen/151124-Rate%20Contribution%20ACT%204.pdf"
+      ],
+      "quote": "Minimum wage now at RM1,700 per month.",
+      "source_url": "https://www.tnb.com.my/assets/newsclip/24022025c.pdf",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": ""
+    },
+    "the maximum normal working hours under malaysia s employment act 1955 are 48 hours per week => 45 hours per week": {
+      "proposed_value": "45 hours per week",
+      "query": "",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 0,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "The model's proposal has no amount, rate or date to look for."
+    },
+    "the national minimum monthly wage in malaysia is rm1 500 effective 1 january 2024 => RM1,700 per month (effective 1 February 2025 under the Minimum Wages Order 2024; employers with fewer than five employees from 1 August 2025)": {
+      "proposed_value": "RM1,700",
+      "query": "The national minimum monthly wage in Malaysia is RM1,700, effective 1 January 2024.",
+      "urls": [
+        "http://jtksm.mohr.gov.my/ms/media/keratan-akhbar/minimum-wage-increased-rm1700",
+        "https://www.perkeso.gov.my/images/arahan/Employer_Circular_No_2_2026-PekelilingLindung24Jam_English.pdf",
+        "https://www.perkeso.gov.my/images/dokumen/Rate_of_Contribution_ACT_4.pdf"
+      ],
+      "quote": "Title: Minimum wage increased to RM1,700 | Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)",
+      "source_url": "http://jtksm.mohr.gov.my/ms/media/keratan-akhbar/minimum-wage-increased-rm1700",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": ""
+    },
+    "the national minimum monthly wage was rm1 200 before the increase to rm1 500 => RM1,700 MYR per month": {
+      "proposed_value": "RM1,700",
+      "query": "The national minimum monthly wage was RM1,700 before the increase to RM1,500.",
+      "urls": [
+        "https://www.tnb.com.my/assets/newsclip/12102026d.pdf",
+        "https://www.perkeso.gov.my/images/arahan/Employer_Circular_No_2_2026-PekelilingLindung24Jam_English.pdf",
+        "https://www.perkeso.gov.my/images/dokumen/Rate_of_Contribution_ACT_4.pdf"
+      ],
+      "quote": "A key household measure was the increase in the monthly minimum wage from RM1,700 to RM2,",
+      "source_url": "https://www.tnb.com.my/assets/newsclip/12102026d.pdf",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": ""
+    },
+    "the national minimum wage requirement has been in force since 1 january 2016 => The national minimum wage has actually been in force since 1 January 2013 under the Minimum Wages Order 2012 (National Wages Consultative Council Act 2011), not 1 January 2016. The current minimum wage is RM1,700 per month under the Minimum Wages Order 2024, effective 1 February 2025 (1 August 2025 for employers with five or fewer employees).": {
+      "proposed_value": "1 January 2013 under",
+      "query": "The national minimum wage requirement has been in force since 1 January 2016. 1 January 2013 under",
+      "urls": [
+        "https://hrdcorp.gov.my/wp-content/uploads/2021/03/9-HRDF_Annual_Report_2015.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the previous eis salary cap was rm5 000 => RM6,000 MYR per month": {
+      "proposed_value": "RM6,000",
+      "query": "The previous EIS salary cap was RM6,000.",
+      "urls": [
+        "https://www.perkeso.gov.my/images/arahan/Employer_Circular_No_2_2026-PekelilingLindung24Jam_English.pdf",
+        "https://www.perkeso.gov.my/images/arahan/011024%20-%20EMPLOYERS%20CIRCULAR%20NO.%203%20YEAR%202024%20-%20INCREMENT%20OF%20THE%20WAGE%20CEILING%20FOR%20MONTHLY%20CONTRIBUTIONS%20FROM%20RM5K%20TO%20RM6K.pdf",
+        "https://www.perkeso.gov.my/images/dokumen/Rate_of_Contribution_ACT_4.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the remaining chargeable income of malaysian small and medium companies is taxed at 24% => 17% for chargeable income from RM150,001 to RM600,000 (first RM150,000 is taxed at 15%; the 24% rate applies only to chargeable income above RM600,000)": {
+      "proposed_value": "17%",
+      "query": "The remaining chargeable income of Malaysian small and medium companies is taxed at 17%.",
+      "urls": [
+        "https://hrdcorp.gov.my/wp-content/uploads/2025/06/HRD-Corp-Annual-Report-2024-Digital-Version.pdf",
+        "https://www.mof.gov.my/portal/arkib/news/2015/Sep/7sept_de1.pdf",
+        "https://hrdcorp.gov.my/wp-content/uploads/2024/06/HRD-Corp-Annual-Report-2023-Digital-Version.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the rm1 700 monthly minimum wage applies to employers with five or more employees and professional activity employers from 1 february 2025 => RM1,700 per month applies to ALL employers regardless of headcount; it took effect 1 December 2024 for employers with five or more employees (not 1 February 2025) and was extended to employers with fewer than five employees from 1 August 2025 under the Minimum Wages Order 2024": {
+      "proposed_value": "RM1,700",
+      "query": "",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 0,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "The model proposed the claim's own value."
+    },
+    "the tax rate on dividend income for resident individuals in malaysia is 0% => Under Budget 2025 (effective from Year of Assessment 2025), resident individual shareholders are subject to a 2% final tax on the portion of annual dividend income exceeding RM100,000; dividend income up to RM100,000 remains tax-exempt (0%).": {
+      "proposed_value": "2%",
+      "query": "The tax rate on dividend income for resident individuals in Malaysia is 2%.",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official page found for the proposed value."
+    },
+    "the tax rate on the portion of dividend income exceeding rm100 000 is 2% from year of assessment 2025 => 2% on the portion of an individual's annual dividend income exceeding RM100,000, but effective from year of assessment 2026 (implementation deferred from YA 2025 as announced during the Budget 2025 winding-up in November 2024)": {
+      "proposed_value": "2%",
+      "query": "",
+      "urls": [],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 0,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "The model proposed the claim's own value."
+    },
+    "the total eis contribution rate is 1% => 0.4% of monthly wages (0.2% employer + 0.2% employee)": {
+      "proposed_value": "0.4%",
+      "query": "The total EIS contribution rate is 0.4%.",
+      "urls": [
+        "https://lmx.perkeso.gov.my/storage/2026/03/EIS-Weekly-Report-Week-09-as-of-27022026.pdf",
+        "https://lmx.perkeso.gov.my/storage/2026/02/EIS-Weekly-Report-Week-07-as-of-13022026.pdf",
+        "https://lmx.perkeso.gov.my/storage/2026/05/EIS-Weekly-Report-Week-17-as-of-24042026.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the tourism tax in malaysia is 10% of the room rate per night for hotels and homestays => Flat RM10 per room per night (not a percentage), under the Tourism Tax Act 2017; since 1 January 2023 it applies to all guests including Malaysians, and this flat rate remains in effect": {
+      "proposed_value": "RM10",
+      "query": "The tourism tax in Malaysia is RM10 of the room rate per night for hotels and homestays.",
+      "urls": [
+        "https://www.motac.gov.my/en/budget-2023-support-the-sustainability-of-the-tourism-arts-and-culture-sectors",
+        "https://www.mof.gov.my/portal/en/news/press-citations/govt-provides-rm160-mln-to-implement-various-initiatives-for-local-artistes",
+        "https://hrdcorp.gov.my/wp-content/uploads/2025/04/NTI.2024-upd18042025.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the tourism tax in malaysia is rm1 per room per night for one star or unrated accommodation => RM2.50 per room per night for one-star and unrated (zero-star) accommodation": {
+      "proposed_value": "RM2.50",
+      "query": "The tourism tax in Malaysia is RM2.50 per room per night for one-star or unrated accommodation.",
+      "urls": [
+        "https://www.myttx.customs.gov.my?p=7200",
+        "https://www.motac.gov.my/en/perkhidmatan/senarai-semak-endosmen-program-malaysia-my-second-home-mm2h",
+        "https://www.motac.gov.my/en/services/registration/tourist-accommodation-premises"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the tourism tax in malaysia is rm10 per room per night for five star hotels => RM20 per room per night for five-star hotels (tiered rates effective 1 January 2025: RM10 for 1–3 star hotels, RM20 for 4–5 star hotels)": {
+      "proposed_value": "RM20",
+      "query": "The tourism tax in Malaysia is RM20 per room per night for five-star hotels.",
+      "urls": [
+        "https://hrdcorp.gov.my/wp-content/uploads/2024/06/HRD-Corp-Annual-Report-2023-Digital-Version.pdf",
+        "https://hrdcorp.gov.my/wp-content/uploads/2021/03/9-HRDF_Annual_Report_2015.pdf",
+        "https://hrdcorp.gov.my/wp-content/uploads/2025/04/NTI-2024.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the tourism tax in malaysia is rm3 per room per night for three star hotels => RM30 per room per night for three-star accommodation (under the tiered tourism tax rates effective 1 January 2023: five-star RM50, four-star RM40, three-star RM30, two-star RM20, one-star RM10, non-rated RM5)": {
+      "proposed_value": "RM30",
+      "query": "The tourism tax in Malaysia is RM30 per room per night for three-star hotels.",
+      "urls": [
+        "https://hrdcorp.gov.my/wp-content/uploads/2024/06/HRD-Corp-Annual-Report-2023-Digital-Version.pdf",
+        "https://hrdcorp.gov.my/wp-content/uploads/2021/03/9-HRDF_Annual_Report_2015.pdf",
+        "https://hrdcorp.gov.my/wp-content/uploads/2025/04/NTI.2024-upd18042025.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the tourism tax in malaysia is rm5 per room per night for four star hotels => RM15 per room per night for four-star hotels (tourism tax increased effective 1 January 2023; four- and five-star hotels pay RM15, while lower-rated hotels pay RM5)": {
+      "proposed_value": "RM15",
+      "query": "The tourism tax in Malaysia is RM15 per room per night for four-star hotels.",
+      "urls": [
+        "https://hrdcorp.gov.my/wp-content/uploads/2022/08/HRDCorp_AnnualReport_2021.pdf",
+        "https://hrdcorp.gov.my/wp-content/uploads/2025/04/NTI.2024-upd18042025.pdf",
+        "https://www.tnb.com.my/assets/newsclip/18072016d.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "the tourism tax is charged on top of a 6% service tax => 8% service tax on hotel accommodation (raised from 6% effective 1 March 2024; food and beverage services remain at 6%). The Tourism Tax itself remains RM10 per room per night for foreign guests, charged in addition to the service tax.": {
+      "proposed_value": "8%",
+      "query": "The tourism tax is charged on top of a 8% service tax.",
+      "urls": [
+        "https://lom.agc.gov.my/ilims/upload/portal/akta/outputaktap/1696026_BI/Act%20A1633y2021-unlocked.pdf",
+        "https://www.myttx.customs.gov.my/wp-content/uploads/2023/02/POLICY-TTX-NO.1-2023-DPSP-BI-1Jan-31-Mac-2023.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 1,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    },
+    "to qualify for paid paternity leave a married male employee must have worked for the employer for at least 12 months => No minimum service period is required. Under the Employment (Amendment) Act 2021 (effective 1 January 2022), a married male employee is entitled to 7 consecutive days of paid paternity leave (up to five confinements) regardless of length of service, provided he is married to the mother of the child and gives notice of the expected delivery to the employer. The previous 12-month service requirement (and the old 2-day entitlement) no longer applies.": {
+      "proposed_value": "1 January 2022), a m",
+      "query": "To qualify for paid paternity leave, a married male employee must have worked for the employer for at least 1 January 2022), a m.",
+      "urls": [
+        "https://lom.agc.gov.my/ilims/upload/portal/akta/outputaktap/1744567_BI/Reprint%20Act%20265%20%28Final%29.pdf",
+        "https://www.tnb.com.my/assets/annual_report/TNB_Sustainability_Report_2024.pdf",
+        "https://www.tnb.com.my/assets/annual_report/TNB_IAR2025_Sustainability_Statement.pdf"
+      ],
+      "quote": "",
+      "source_url": "",
+      "page_date": null,
+      "date_estimated": false,
+      "credits": 2,
+      "previous_verdict": "unverifiable",
+      "previous_quote": "",
+      "previous_url": "",
+      "previous_date": null,
+      "decision": "No official sentence states the proposed value for this rule."
+    }
+  },
+  "checked_at": "2026-11-21T07:44:09Z",
+  "tavily_usage": [
+    {
+      "before": {
+        "key": {
+          "usage": 336,
+          "search_usage": 294,
+          "crawl_usage": 0,
+          "extract_usage": 42,
+          "map_usage": 0,
+          "research_usage": 0
+        },
+        "account": {
+          "plan_usage": 336,
+          "plan_limit": 1000,
+          "search_usage": 294,
+          "crawl_usage": 0,
+          "extract_usage": 42,
+          "map_usage": 0,
+          "research_usage": 0,
+          "paygo_usage": 0
+        }
+      },
+      "after": {
+        "key": {
+          "usage": 336,
+          "search_usage": 294,
+          "crawl_usage": 0,
+          "extract_usage": 42,
+          "map_usage": 0,
+          "research_usage": 0
+        },
+        "account": {
+          "plan_usage": 336,
+          "plan_limit": 1000,
+          "search_usage": 294,
+          "crawl_usage": 0,
+          "extract_usage": 42,
+          "map_usage": 0,
+          "research_usage": 0,
+          "paygo_usage": 0
+        }
+      }
+    }
+  ]
+}

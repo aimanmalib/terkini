@@ -154,3 +154,17 @@ def test_eval_verdicts_from_saved_evidence(claim):
     verdicts, counts = hybrid_verdicts([Run], mo, saved)
     assert verdicts == {"my-01--m#0": "outdated"} and counts["changed_to_outdated"] == 1
     assert hybrid_verdicts([Run], mo, {"evidence": {}})[0] == {"my-01--m#0": "unverifiable"}
+
+
+def test_old_side_of_a_change_is_not_proof(cfg):
+    from terkini.hybrid import states_value
+    target = ("money", Decimal(1700))
+    assert states_value("The minimum wage rose from RM1,700 to RM2,000 per month.", target, cfg) is None
+    assert states_value("Gaji minimum dinaikkan daripada RM1,700 kepada RM2,000.", target, cfg) is None
+    assert states_value("The minimum wage rose from RM1,500 to RM1,700 per month.", target, cfg) is not None
+
+
+def test_proposal_must_be_of_the_claims_kind(make_verifier, claim, cfg):
+    tv = FakeTavily()
+    ev = prove(make_verifier(tv, FakeGateway()), claim, "Since 1 October 2025 the rule applies to all", cfg)
+    assert tv.calls == [] and ev.quote == "" and "kind" in ev.decision

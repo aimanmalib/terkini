@@ -44,6 +44,8 @@ class HybridConfig(BaseModel):
     max_quote_chars: int
     eval: HybridEvalConfig
     stop_words: frozenset[str]
+    old_before: tuple[str, ...]
+    old_after: tuple[str, ...]
     months: dict[str, int]
 
 
@@ -51,7 +53,9 @@ def load_hybrid_config(root: Path = REPO_ROOT) -> HybridConfig:
     with open(root / "config" / "hybrid.toml", "rb") as f:
         raw = tomllib.load(f)
     return HybridConfig(**{k: v for k, v in raw.items() if k not in ("words", "months")},
-                        stop_words=frozenset(raw["words"]["stop"]), months=raw["months"])
+                        stop_words=frozenset(raw["words"]["stop"]), months=raw["months"],
+                        old_before=tuple(raw["words"]["old_side_before"]),
+                        old_after=tuple(raw["words"]["old_side_after"]))
 
 
 # --- Values: money, percent, date ---------------------------------------------------------------------------------
@@ -110,10 +114,16 @@ def values_in(text: str, months: dict[str, int]) -> list[tuple[int, Value, str]]
     return sorted(out, key=lambda x: x[0])
 
 
-def first_value(text: str, months: dict[str, int]) -> tuple[Value, str] | None:
-    """The first money amount, percentage or date in the model's proposal, or None when it has none."""
-    found = values_in(text, months)
+def first_value(text: str, months: dict[str, int], kind: str | None = None) -> tuple[Value, str] | None:
+    """The first money amount, percentage or date in the model's proposal (of the given kind when one is given)."""
+    found = [f for f in values_in(text, months) if kind is None or f[1][0] == kind]
     return (found[0][1], found[0][2].strip()) if found else None
+
+
+def claim_kind(claim: Claim, months: dict[str, int]) -> str | None:
+    """Kind of the claim's own value ("money", "pct", "date"); a proposal must be of the same kind."""
+    got = first_value(claim.value, months)
+    return got[0][0] if got else None
 
 
 # --- Finding the quote ----------------------------------------------------------------------------------------------
@@ -135,13 +145,27 @@ def _sentences(text: str):
     yield start, text[start:]
 
 
+def states_value(sentence: str, target: Value, cfg: HybridConfig) -> int | None:
+    """Position of the target value in the sentence, skipping it where it is the old side of a change
+    ("from RM1,500 to RM1,700", "daripada ... kepada ..."). None when the sentence does not state it as current."""
+    for pos, v, written in values_in(sentence, cfg.months):
+        if v != target:
+            continue
+        before = sentence[:pos].rstrip().casefold().split()[-1:] or [""]
+        after = sentence[pos + len(written):].lstrip().casefold().split()[:1] or [""]
+        if before[0] in cfg.old_before and after[0] in cfg.old_after:
+            continue
+        return pos
+    return None
+
+
 def find_quote(pages: list[Page], target: Value, claim_words: set[str], cfg: HybridConfig
                ) -> tuple[Page, str, int] | None:
     """Best sentence on the pages that states the target value and shares the most words with the claim."""
     best = None
     for page in pages:
         for pos, sent in _sentences(page.text):
-            hit = next((p for p, v, _ in values_in(sent, cfg.months) if v == target), None)
+            hit = states_value(sent, target, cfg)
             if hit is None:
                 continue
             shared = len(words(sent, cfg) & claim_words)
@@ -180,9 +204,9 @@ def prove(verifier, claim: Claim, proposal: str, cfg: HybridConfig) -> HybridEvi
     """One Tavily Search + one Extract for the proposed value; the quote is found by code. Spends no credit when the
     proposal has no value or repeats the claim's value."""
     ev = HybridEvidence(proposed_value=proposal)
-    got = first_value(proposal, cfg.months)
+    got = first_value(proposal, cfg.months, claim_kind(claim, cfg.months))
     if got is None:
-        return ev.model_copy(update={"decision": "The model's proposal has no amount, rate or date to look for."})
+        return ev.model_copy(update={"decision": "The model's proposal has no amount, rate or date of the claim's kind."})
     target, text = got
     if target in {v for _, v, _ in values_in(f"{claim.value} {claim.claim}", cfg.months)}:
         return ev.model_copy(update={"proposed_value": text, "decision": "The model proposed the claim's own value."})

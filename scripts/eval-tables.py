@@ -71,6 +71,7 @@ def main() -> int:
         print(f"| {name} | {k[key]} |")
 
     names = {"terkini": "Terkini (Tavily evidence, judge, exact-quote check)",
+             "hybrid": "Hybrid: model proposes, official quote must state it (D-022)",
              "model_only": "Judge model alone, no official pages",
              "naive_page_rule": "Naive rule: value missing from the official quote"}
     print("\n| Method | Flagged | Precision (95% CI) | Recall (95% CI) |\n|---|---|---|---|")

@@ -17,7 +17,15 @@ from pathlib import Path
 from terkini.baseline import claim_key
 from terkini.claims import HybridEvidence
 from terkini.credits import CreditLimitReached
-from terkini.hybrid import HybridConfig, decide, prove
+from terkini.hybrid import (
+    HybridConfig,
+    claim_kind,
+    decide,
+    first_value,
+    load_hybrid_config,
+    prove,
+    states_value,
+)
 from terkini.tavily import TavilyHTTPError
 
 QUOTE_CHARS = 500
@@ -75,8 +83,10 @@ def run_hybrid(runs, model_only: dict, verifier, cfg: HybridConfig, path: Path, 
     return failed
 
 
-def hybrid_verdicts(runs, model_only: dict, saved: dict) -> tuple[dict[str, str], dict]:
-    """Verdict of every claim after the hybrid step (main verdict where it did not run), plus counts."""
+def hybrid_verdicts(runs, model_only: dict, saved: dict, cfg: HybridConfig | None = None) -> tuple[dict[str, str], dict]:
+    """Verdict of every claim after the hybrid step (main verdict where it did not run), plus counts.
+    Saved quotes are checked again with the current rules, so a stricter rule needs no new search."""
+    cfg = cfg or load_hybrid_config()
     verdicts = {claim_key(r.answer, i): x.verdict for r in runs for i, x in enumerate(r.report.results)}
     counts = {"proposals": 0, "searched": 0, "quoted": 0, "changed_to_outdated": 0, "kept_by_date": 0}
     for key, _, x, proposal in candidates(runs, model_only):
@@ -85,6 +95,10 @@ def hybrid_verdicts(runs, model_only: dict, saved: dict) -> tuple[dict[str, str]
         if raw is None:
             continue
         ev = HybridEvidence.model_validate(raw)
+        target = first_value(ev.proposed_value, cfg.months, claim_kind(x.claim, cfg.months))
+        if ev.quote and (target is None or states_value(ev.quote, target[0], cfg) is None):
+            ev = ev.model_copy(update={"quote": ""})
+            counts["rejected_by_rules"] = counts.get("rejected_by_rules", 0) + 1
         counts["searched"] += bool(ev.query)
         counts["quoted"] += bool(ev.quote)
         verdict, _ = decide(x, ev)

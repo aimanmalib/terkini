@@ -6,7 +6,7 @@
 # src/terkini/hybrid.py reads these values.
 
 # Live `terkini check` runs the hybrid step when true. Replays of recorded runs never do (they hold no such calls).
-enabled = false
+enabled = true
 # Tavily Search depth for the one search per proposed value.
 search_depth = "basic"
 # Official result pages extracted for a proposed value.
@@ -32,6 +32,11 @@ stop = ["with", "from", "that", "this", "than", "have", "been", "were", "will", 
         "which", "into", "only", "more", "less", "each", "every", "also", "such", "applies", "apply", "malaysia",
         "malaysian", "current", "currently", "rate", "rates", "year", "years", "month", "months", "per", "since",
         "effective", "from", "after", "before", "until", "above", "below", "least", "most", "over", "other"]
+
+# A value written as the old side of a change ("from RM1,500 to RM1,700", "daripada ... kepada ...") is not
+# proof that it applies today: the word just before it and the word just after it are checked.
+old_side_before = ["from", "daripada", "dari"]
+old_side_after = ["to", "kepada", "ke"]
 
 # Month names in the languages official pages use (English and Malay), for document dates in page text.
 [months]

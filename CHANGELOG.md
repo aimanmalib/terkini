@@ -5,6 +5,20 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-21
+
+### Added
+
+- Hybrid step for live checks (D-022): for a claim not marked outdated, the judge model proposes a current value; one
+  more Tavily search on the pack's official domains looks for a sentence that states it, found by code. A claim turns
+  `outdated` only when such an official sentence exists; against a `current` verdict with its own quote, the new page
+  must also be dated later. The model's guess alone never becomes a verdict. Settings in `config/hybrid.toml` and `config/prompts.toml`.
+- `terkini hybrid`: the hybrid step on the saved eval runs, 67 Tavily credits. Precision 13 of 20 (65%), recall 13 of
+  28 (46%); v0.1.0 without it stays reported at 10 of 17 and 10 of 28 (`eval/my/results.json`, `docs/EVAL.md`).
+- `terkini guard` and an optional budget guard (D-025): before a command that spends model or Tavily calls, run the
+  `guard` command of Bifrost Meter on Terkini's virtual key and stop when too little budget is left. Off by default
+  (`config/guard.toml`).
+
 ### Changed
 
 - `terkini check --case` and `POST /api/check` also open the 68 saved eval runs by name, shown as saved (D-023).
@@ -45,5 +59,6 @@ First public version, built on 20 and 21 November 2026.
 
 - The India pack, dropped to stay within the Tavily credit budget (decision D-017).
 
-[Unreleased]: https://github.com/aimanmalib/terkini/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/aimanmalib/terkini/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/aimanmalib/terkini/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/aimanmalib/terkini/releases/tag/v0.1.0

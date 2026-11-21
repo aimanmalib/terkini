@@ -1,6 +1,6 @@
 [project]
 name = "terkini"
-version = "0.1.0"
+version = "0.2.0"
 description = "Checks AI answers about Malaysian rules against official government sources, through Tavily and a Bifrost gateway."
 readme = "README.md"
 license = "Apache-2.0"

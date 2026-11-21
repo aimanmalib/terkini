@@ -25,6 +25,13 @@ blockquote{margin:0;font:500 50px/1.3 Barlow;color:var(--ink);border-left:6px so
 blockquote.now{border-left-color:var(--fresh)}
 pre.code{font-size:23px;line-height:1.45}
 pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD27A}
+.bars{display:grid;gap:22px}
+.bar{display:grid;grid-template-columns:1fr 80px;align-items:center;column-gap:18px;row-gap:8px}
+.bar span{grid-column:1/-1;font:500 24px/1.25 Barlow;color:var(--ink)}
+.bar i{display:block;height:34px;width:var(--w);background:var(--ink)}
+.bar i.nq{background:none;border:2px dashed var(--on-light-3)}
+.bar b{font:700 40px/1 Barlow;color:var(--ink);font-variant-numeric:tabular-nums}
+.next{margin:0;padding-left:1.3em}.next li{margin-top:4px}
 </style>
 </head>
 <body>
@@ -189,7 +196,7 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
 …
 2 claims checked, 1 outdated, 2 skipped, 1 Tavily credits
 <span class="uns">This answer reads as if written before 2024-03-01</span></pre>
-    <p class="p" data-anim style="--d:4;font-size:26px">The answer key labels this Grok 4.7 answer stale. Misses and false alarms are listed in docs/EVAL.md; <span class="mono" style="font-size:22px">--case my-12-kimi-k3-1-pro</span> replays one false alarm.</p>
+    <p class="p" data-anim style="--d:4;font-size:26px">The answer key labels this Grok 4.7 answer stale. Misses and false alarms are listed in docs/EVAL.md; <span class="mono" style="font-size:24px">--case my-12-kimi-k3-1-pro</span> replays one false alarm.</p>
   </div>
   <div class="foot"><span>Terkini</span><span>Command line · HTTP API · demo/run.sh</span></div>
 </section>
@@ -221,15 +228,27 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
 
 <!-- === 10 STATUS === -->
 <section class="slide light">
-  <div class="chrome"><span>Status</span><span>10 / 10</span></div>
-  <div class="body" style="gap:44px">
-    <h2 class="h2" data-anim>Where it stands</h2>
-    <div class="side">
-      <div class="col on" data-anim style="--d:2"><h3 class="h3">Works</h3><p class="p" style="font-size:28px">The full check, live and in replay: command line, HTTP API, the replay page, and demo/run.sh with Docker only. The eval over 68 answers.</p></div>
-      <div class="col" data-anim style="--d:3"><h3 class="h3">Not done yet</h3><p class="p" style="font-size:28px">Recall is 36%; claims the official pages do not settle stay unverifiable. The India pack. Live checks from the page itself.</p></div>
+  <div class="chrome"><span>Status · Next</span><span>10 / 10</span></div>
+  <div class="body" style="gap:36px">
+    <h2 class="h2" data-anim>What works, known limits, next</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
+      <div data-anim style="--d:2">
+        <p class="cap" style="margin:0 0 22px;color:var(--on-light-2)">Stale answers flagged, of 28 · eval of 21 Nov 2026</p>
+        <div class="bars">
+          <div class="bar"><span>Judge model alone, no official page</span><i style="--w:85.7%" class="nq"></i><b>24</b></div>
+          <div class="bar"><span>Terkini with the hybrid step</span><i style="--w:46.4%"></i><b>13</b></div>
+          <div class="bar"><span>Terkini v0.1.0</span><i style="--w:35.7%"></i><b>10</b></div>
+          <div class="bar"><span>Naive rule: value missing from the official quote</span><i style="--w:35.7%" class="nq"></i><b>10</b></div>
+        </div>
+        <p class="p" style="font-size:24px;margin-top:22px;color:var(--on-light-2)">Dark bars: Terkini, every flag backed by an exact official quote. Dashed bars: baselines on the same 68 answers; the model alone gives no source.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <div class="col on" data-anim style="--d:3;gap:10px"><h3 class="h3" style="font-size:34px">Works</h3><p class="p" style="font-size:25px">Command line, HTTP API, the replay page, demo/run.sh with Docker only, the eval over 68 answers.</p></div>
+        <div class="col" data-anim style="--d:4;gap:10px"><h3 class="h3" style="font-size:34px">Known limits</h3><p class="p" style="font-size:25px">Recall 46%: most misses end unverifiable. No India pack. The page replays runs; live checks run on your machine.</p></div>
+        <div class="col" data-anim style="--d:5;gap:10px"><h3 class="h3" style="font-size:34px">Next</h3><ol class="p next" style="font-size:25px"><li>Search the pack's canonical official pages first.</li><li>Rank evidence by document date.</li><li>Add the India pack.</li></ol></div>
+      </div>
     </div>
-    <p class="p" data-anim style="--d:4;margin-top:auto;font-size:27px"><span class="hl">Not legal advice.</span> Terkini compares an answer with what official pages say on the day it runs. Confirm anything important with the agency.</p>
-    <p class="cap" data-anim style="--d:5;margin:0;color:var(--on-light-2)"><a href="https://github.com/aimanmalib/terkini">github.com/aimanmalib/terkini</a> · <a href="https://aimanmalib.github.io/terkini/">aimanmalib.github.io/terkini</a></p>
+    <p class="cap" data-anim style="--d:6;margin:auto 0 0;color:var(--on-light-2)"><span class="hl" style="text-transform:none">Not legal advice.</span> · <a href="https://github.com/aimanmalib/terkini">github.com/aimanmalib/terkini</a> · <a href="https://aimanmalib.github.io/terkini/">aimanmalib.github.io/terkini</a></p>
   </div>
   <div class="foot"><span>Terkini</span><span>Built during the Global AI Hackathon, 21 Nov 2026</span></div>
 </section>

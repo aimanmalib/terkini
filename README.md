@@ -2,10 +2,10 @@
 
 <h1 align="center">Terkini</h1>
 
-<p align="center"><a href="LICENSE"><img src="https://img.shields.io/github/license/aimanmalib/terkini" alt="Licence: Apache-2.0"></a> <img src="https://img.shields.io/badge/python-3.12-blue" alt="Python 3.12"> <img src="https://img.shields.io/badge/Tavily-Search%20%2B%20Extract-14213d" alt="Tavily Search and Extract"> <img src="https://img.shields.io/badge/Bifrost-v2.5.1-14213d" alt="Bifrost v2.5.1"></p>
+<p align="center"><a href="https://github.com/aimanmalib/terkini/actions/workflows/ci.yml"><img src="https://github.com/aimanmalib/terkini/actions/workflows/ci.yml/badge.svg" alt="CI"></a> <a href="LICENSE"><img src="https://img.shields.io/github/license/aimanmalib/terkini" alt="Licence: Apache-2.0"></a> <img src="https://img.shields.io/badge/python-3.12-blue" alt="Python 3.12"> <img src="https://img.shields.io/badge/Tavily-Search%20%2B%20Extract-14213d" alt="Tavily Search and Extract"> <img src="https://img.shields.io/badge/Bifrost-v2.5.1-14213d" alt="Bifrost v2.5.1"></p>
 
 <p align="center"><b>Is this AI answer still true where you live?</b> · <i>Adakah jawapan AI ini masih betul di tempat anda?</i><br>
-<a href="https://aimanmalib.github.io/terkini/deck.pdf">slides, 8</a> · <a href="#try-it-in-three-steps">try it</a> · <a href="README.ms.md">Bahasa Melayu</a> · <a href="docs/02-DECISIONS.md">decisions</a> · Built in Malaysia by <a href="https://aimanmalib.com">Aiman Malib</a></p>
+<a href="#try-it-in-three-steps">try it</a> · <a href="https://aimanmalib.github.io/terkini/">replay page</a> · <a href="#one-command-demo-docker">demo</a> · <a href="https://aimanmalib.github.io/terkini/deck.pdf">slides</a> · <a href="docs/EVAL.md">eval</a> · <a href="CHANGELOG.md">changelog</a> · <a href="README.ms.md">Bahasa Melayu</a> · Built in Malaysia by <a href="https://aimanmalib.com">Aiman Malib</a></p>
 
 <p align="center"><img src="docs/images/check-my-12.png" width="838" alt="Terkini report for a Kimi K3.1 Pro answer about EPF for foreign workers: two claims outdated against kwsp.gov.my, two unverifiable, the answer reads as if written before 2025-10-01"></p>
 
@@ -36,8 +36,9 @@ Not finished. What works and what does not, as of today:
   from three models ([`docs/EVAL.md`](docs/EVAL.md)).
 - **Weak spots:** recall is 36%. Most missed answers end `unverifiable` because the official pages that
   search returns do not settle the claim.
-- **Also works:** the replay page with six recorded runs in English and Malay, and `POST /api/check`, which
-  returns the same report as JSON for a team that checks answers before users see them.
+- **Also works:** the replay page with six recorded runs in English and Malay, `POST /api/check`, which
+  returns the same report as JSON for a team that checks answers before users see them, and a one-command
+  demo with Docker.
 - **Not done:** the India pack (dropped to stay within the Tavily credit budget, D-017) and the video.
 
 ## Try it in three steps
@@ -73,6 +74,18 @@ The other two recordings: DeepSeek V4.1 Flash on the minimum wage (one claim cur
 
 <img src="docs/images/check-my-09.png" width="838" alt="Terkini report for a Grok 4.7 answer about the e-invoicing exemption: one claim outdated against mof.gov.my, two unverifiable">
 
+### One-command demo (Docker)
+
+If you have Docker but not uv, this starts the replay page and the API from the clone. No key is needed.
+
+```bash
+demo/run.sh          # prints a recorded report, the page URL and a curl line for the API
+demo/run.sh stop     # removes the container
+```
+
+It uses the official uv image, pinned by digest, with the folder mounted read-only. It picks the first free port from
+8710 and removes the container if anything fails.
+
 ### Live mode
 
 Live mode checks any answer you paste. It needs your own Tavily key and a running Bifrost gateway.
@@ -101,6 +114,30 @@ quote, the source URL and the score. Errors: 400 unknown pack, 404 no recording 
 
 Any OpenAI-compatible provider works upstream of Bifrost. The model ids in [`config/models.toml`](config/models.toml)
 are the ones this project was tested with; change them to ids your provider serves.
+
+## Evaluation
+
+23 questions about Malaysian rules, an answer key read from official pages before any model answer was seen, and 68
+answers from three models, checked on 21 Nov 2026. Numbers from [`eval/my/results.json`](eval/my/results.json); method,
+dropped questions and failures in [`docs/EVAL.md`](docs/EVAL.md).
+
+| Measure | Value |
+|---|---|
+| Answers that differ from the current official value | 28 of 68 |
+| Answers Terkini flagged | 17 |
+| Flagged and really stale | 10 |
+| Precision / recall | 59% / 36% |
+| Claims checked | 214 (20 outdated, 59 current, 135 unverifiable) |
+| Verdicts backed by an exact official quote | 79 |
+| Tavily credits | 276, about 1.3 per checked claim |
+
+| Model | Answers | Differ from the key | Flagged | Flagged and stale |
+|---|---|---|---|---|
+| `gcli/grok-4.7` | 23 | 20 | 9 | 9 |
+| `rv/deepseek-ai/DeepSeek-V4.1-Flash-1017` | 23 | 6 | 4 | 1 |
+| `rv/moonshotai/Kimi-K3.1-Pro` | 22 | 2 | 4 | 0 |
+
+Most misses end `unverifiable`: the official pages returned for a claim did not settle it, so no verdict was given.
 
 ## How it works
 
@@ -199,9 +236,21 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 | `packs/` | Country packs (domains, categories) |
 | `eval/my/` | 23 Malaysian questions, their answer key, model answers, labels, one run per answer, `results.json` |
 | `tests/` | Offline tests; `tests/fixtures/` holds recorded runs with no keys |
-| `scripts/` | Gateway setup, recording live runs, checking the answer key, eval tables |
+| `scripts/` | Gateway setup, recording live runs, checking the answer key, eval tables, building the page data |
+| `demo/` | `run.sh`: the replay page and the API in Docker, from a clean clone |
+| `docs/` | The replay page and slides (GitHub Pages), decisions, eval report |
+| `deck/` | Slide source |
 
-Design decisions are in [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md).
+## Documentation
+
+| Document | What |
+|---|---|
+| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-018 |
+| [`docs/EVAL.md`](docs/EVAL.md) | How the eval was run and scored, and where it fails |
+| [`CHANGELOG.md`](CHANGELOG.md) | What changed |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Set-up, tests, rules for pull requests |
+| [`SECURITY.md`](SECURITY.md) | Reporting a vulnerability; keys and the API |
+| [Slides (PDF)](https://aimanmalib.github.io/terkini/deck.pdf) | The project in ten slides |
 
 ## Tests
 
@@ -209,8 +258,13 @@ Design decisions are in [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md).
 bash scripts/gerbang-ujian.sh   # pytest on recorded fixtures; no network, no keys
 ```
 
-The tests replay the three recorded live runs, and cover the quote check, the score table, the `434` retry, the credit
+CI runs the same script on every push. The tests replay the three recorded live runs, and cover the quote check, the score table, the `434` retry, the credit
 guard, the gateway client and the eval metrics. One test recomputes `eval/my/results.json` from the saved runs.
+
+## Contributing
+
+Issues and pull requests are welcome; see [`CONTRIBUTING.md`](CONTRIBUTING.md) and the
+[Code of Conduct](CODE_OF_CONDUCT.md). Report security issues privately ([`SECURITY.md`](SECURITY.md)).
 
 ## Licence
 

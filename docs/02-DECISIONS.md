@@ -206,3 +206,18 @@ change it.
 - **Page.** The paste box on the replay page still opens recordings only. Posting to the API when the page is
   served locally is left for later.
 - **Would change if.** The credit limit rises. Then the India pack is built the same way as `packs/my.toml`.
+
+## D-018 · One-command demo, public CI, community files
+
+- **Demo.** `demo/run.sh` runs the official uv image (pinned by digest) with the repository mounted read-only. It
+  installs the locked dependencies inside the container and starts `terkini serve` in replay mode. There is no
+  Dockerfile and no image to build or publish, so the demo cannot drift from the code in the clone.
+- **Port and cleanup.** It takes the first free port from 8710 upwards. If the server does not answer within the
+  wait limit, or the container stops, the script prints the last log lines and removes the container.
+  `demo/run.sh stop` removes it too. The container gets one CPU and 768 MB.
+- **No key in the demo.** The script clears `TAVILY_API_KEY`, so the demo can only replay. Live mode stays a step
+  a user takes on purpose, with their own key.
+- **CI.** GitHub Actions runs `scripts/gerbang-ujian.sh` on every push and pull request: the same offline tests,
+  no secrets, no network calls from tests.
+- **No Dependabot yet.** It opens pull requests as soon as it is turned on. The pinned versions are tested together
+  in `uv.lock`; dependency updates can wait for a quieter time.

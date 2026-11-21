@@ -2,8 +2,10 @@
 
 <h1 align="center">Terkini</h1>
 
+<p align="center"><a href="https://github.com/aimanmalib/terkini/actions/workflows/ci.yml"><img src="https://github.com/aimanmalib/terkini/actions/workflows/ci.yml/badge.svg" alt="CI"></a> <a href="LICENSE"><img src="https://img.shields.io/github/license/aimanmalib/terkini" alt="Lesen: Apache-2.0"></a> <img src="https://img.shields.io/badge/python-3.12-blue" alt="Python 3.12"></p>
+
 <p align="center"><b>Adakah jawapan AI ini masih betul di tempat anda?</b><br>
-<a href="README.md">English</a> · <a href="https://aimanmalib.github.io/terkini/deck.pdf">slaid (Inggeris)</a> · Dibina di Malaysia oleh <a href="https://aimanmalib.com">Aiman Malib</a></p>
+<a href="README.md">English</a> · <a href="https://aimanmalib.github.io/terkini/">halaman ulang tayang</a> · <a href="#demo-satu-arahan-docker">demo</a> · <a href="https://aimanmalib.github.io/terkini/deck.pdf">slaid (Inggeris)</a> · <a href="docs/EVAL.md">penilaian (Inggeris)</a> · Dibina di Malaysia oleh <a href="https://aimanmalib.com">Aiman Malib</a></p>
 
 Terkini mengambil jawapan AI tentang peraturan Malaysia, seperti gaji minimum, kadar caruman KWSP, tarif elektrik atau had
 jualan untuk e-Invois. Ia memecahkan jawapan itu kepada dakwaan, menyemak setiap dakwaan dengan laman rasmi kerajaan melalui
@@ -20,8 +22,8 @@ gerbang Bifrost.
 - **Penilaian, 21 Nov 2026:** 28 daripada 68 jawapan daripada 3 model menyatakan peraturan Malaysia
   yang berbeza daripada nilai rasmi semasa; Terkini menanda 10 daripadanya dengan laman rasmi
   (precision 59%, recall 36%). Butiran dan kegagalan: [`docs/EVAL.md`](docs/EVAL.md) (Inggeris).
-- **Juga berfungsi:** halaman ulang tayang (enam larian dirakam, BM dan Inggeris) dan `POST /api/check`, yang
-  memulangkan laporan yang sama sebagai JSON.
+- **Juga berfungsi:** halaman ulang tayang (enam larian dirakam, BM dan Inggeris), `POST /api/check`, yang
+  memulangkan laporan yang sama sebagai JSON, dan demo satu arahan dengan Docker.
 - **Tidak dibina:** pek India (digugurkan supaya kekal dalam bajet kredit Tavily, D-017) dan video.
 
 ## Cuba
@@ -37,7 +39,21 @@ uv run terkini serve   # halaman ulang tayang di http://127.0.0.1:8710
 
 Halaman ulang tayang yang sama (enam larian dirakam, BM dan Inggeris): <https://aimanmalib.github.io/terkini/>
 
+## Demo satu arahan (Docker)
+
+Jika anda ada Docker tetapi tiada uv, arahan ini menghidupkan halaman ulang tayang dan API dari klon. Tiada kunci diperlukan.
+
+```bash
+demo/run.sh          # cetak satu laporan dirakam, URL halaman dan baris curl untuk API
+demo/run.sh stop     # buang kontena
+```
+
 Cara ia berfungsi, tempat Tavily dan Bifrost digunakan, dan had alat ini diterangkan dalam [README Inggeris](README.md).
+
+## Menyumbang
+
+Isu dan pull request dialu-alukan: [`CONTRIBUTING.md`](CONTRIBUTING.md) (Inggeris). Laporkan isu keselamatan secara
+peribadi ([`SECURITY.md`](SECURITY.md)).
 
 ## Lesen
 

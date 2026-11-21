@@ -5,7 +5,7 @@
 <p align="center"><a href="https://github.com/aimanmalib/terkini/actions/workflows/ci.yml"><img src="https://github.com/aimanmalib/terkini/actions/workflows/ci.yml/badge.svg" alt="CI"></a> <a href="LICENSE"><img src="https://img.shields.io/github/license/aimanmalib/terkini" alt="Licence: Apache-2.0"></a> <img src="https://img.shields.io/badge/python-3.12-blue" alt="Python 3.12"> <img src="https://img.shields.io/badge/Tavily-Search%20%2B%20Extract-14213d" alt="Tavily Search and Extract"> <img src="https://img.shields.io/badge/Bifrost-v2.5.1-14213d" alt="Bifrost v2.5.1"></p>
 
 <p align="center"><b>Is this AI answer still true where you live?</b> · <i>Adakah jawapan AI ini masih betul di tempat anda?</i><br>
-<a href="#try-it-in-three-steps">try it</a> · <a href="https://aimanmalib.github.io/terkini/">replay page</a> · <a href="#one-command-demo-docker">demo</a> · <a href="https://aimanmalib.github.io/terkini/deck.pdf">slides</a> · <a href="docs/EVAL.md">eval</a> · <a href="CHANGELOG.md">changelog</a> · <a href="README.ms.md">Bahasa Melayu</a> · Built in Malaysia by <a href="https://aimanmalib.com">Aiman Malib</a></p>
+<a href="https://youtu.be/NZEdoEwUnmk"><b>&#9654;&#xFE0E; demo video, 72 s</b></a> · <a href="#try-it-in-three-steps">try it</a> · <a href="https://aimanmalib.github.io/terkini/">replay page</a> · <a href="#one-command-demo-docker">demo</a> · <a href="https://aimanmalib.github.io/terkini/deck.pdf">slides</a> · <a href="docs/EVAL.md">eval</a> · <a href="CHANGELOG.md">changelog</a> · <a href="README.ms.md">Bahasa Melayu</a> · Built in Malaysia by <a href="https://aimanmalib.com">Aiman Malib</a></p>
 
 <p align="center"><img src="docs/images/page-my-03.png" width="838" alt="Terkini replay page for a Grok 4.7 answer on the Malaysian service tax rate: the claim of 6% is marked outdated, the official rate is 8% from 1 March 2024, with the exact quote from customs.gov.my"></p>
 
@@ -18,7 +18,7 @@ calls go through a Bifrost gateway.
 
 - Replay page: <https://aimanmalib.github.io/terkini/> (six recorded runs, English and Bahasa Melayu, no key; each run is shown against the answer key, including one false alarm). Open "How this check ran" under a run to see each Tavily query, its `include_domains` and credits, and each Bifrost call with the model asked for, the model that answered and the tokens.
 - Slides (PDF): <https://aimanmalib.github.io/terkini/deck.pdf>
-- Video (72 s, captions burned in, `.srt` beside it): <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>. Its figures are the hybrid step's (13 of 20 flags right, 65% precision, 46% recall), the same as below.
+- Video (72 s, captions burned in): <https://youtu.be/NZEdoEwUnmk> on YouTube, or the same file at <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4> with its `.srt` beside it. Its figures are the hybrid step's (13 of 20 flags right, 65% precision, 46% recall), the same as below.
 
 > **Not legal advice.** Terkini compares an answer with what official pages say on the day it runs. It can miss a page,
 > misread one, or check a page that is itself out of date. Confirm anything important with the agency.

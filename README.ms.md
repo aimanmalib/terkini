@@ -5,7 +5,7 @@
 <p align="center"><a href="https://github.com/aimanmalib/terkini/actions/workflows/ci.yml"><img src="https://github.com/aimanmalib/terkini/actions/workflows/ci.yml/badge.svg" alt="CI"></a> <a href="LICENSE"><img src="https://img.shields.io/github/license/aimanmalib/terkini" alt="Lesen: Apache-2.0"></a> <img src="https://img.shields.io/badge/python-3.12-blue" alt="Python 3.12"></p>
 
 <p align="center"><b>Adakah jawapan AI ini masih betul di tempat anda?</b><br>
-<a href="README.md">English</a> · <a href="https://aimanmalib.github.io/terkini/">halaman ulang tayang</a> · <a href="#demo-satu-arahan-docker">demo</a> · <a href="https://aimanmalib.github.io/terkini/deck.pdf">slaid (Inggeris)</a> · <a href="docs/EVAL.md">penilaian (Inggeris)</a> · Dibina di Malaysia oleh <a href="https://aimanmalib.com">Aiman Malib</a></p>
+<a href="https://youtu.be/NZEdoEwUnmk"><b>&#9654;&#xFE0E; video demo, 72 s</b></a> · <a href="README.md">English</a> · <a href="https://aimanmalib.github.io/terkini/">halaman ulang tayang</a> · <a href="#demo-satu-arahan-docker">demo</a> · <a href="https://aimanmalib.github.io/terkini/deck.pdf">slaid (Inggeris)</a> · <a href="docs/EVAL.md">penilaian (Inggeris)</a> · Dibina di Malaysia oleh <a href="https://aimanmalib.com">Aiman Malib</a></p>
 
 Terkini mengambil jawapan AI tentang peraturan Malaysia, seperti gaji minimum, kadar caruman KWSP, tarif elektrik atau had
 jualan untuk e-Invois. Ia memecahkan jawapan itu kepada dakwaan, menyemak setiap dakwaan dengan laman rasmi kerajaan melalui
@@ -15,7 +15,7 @@ gerbang Bifrost.
 > **Bukan nasihat undang-undang.** Terkini membandingkan jawapan dengan apa yang laman rasmi katakan pada hari ia dijalankan.
 > Ia boleh terlepas sesuatu laman, tersalah baca, atau membaca laman yang sudah lapuk. Sahkan perkara penting dengan agensi.
 
-Video demo (72 s, Inggeris, sari kata dibakar): <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>. Suara
+Video demo (72 s, Inggeris, sari kata dibakar): <https://youtu.be/NZEdoEwUnmk> di YouTube, atau fail yang sama di <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>. Suara
 naratif ialah klon AI suara saya sendiri (ElevenLabs), dinyatakan pada kad akhir. Angka dalam video ialah angka langkah hibrid (13 daripada 20 tanda betul, precision 65%, recall 46%), sama seperti di bawah.
 
 ## Apa yang berfungsi / had diketahui

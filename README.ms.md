@@ -18,19 +18,26 @@ gerbang Bifrost.
 Video demo (72 s, Inggeris, sari kata dibakar): <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>. Suara
 naratif ialah klon AI suara saya sendiri (ElevenLabs), dinyatakan pada kad akhir.
 
-## Status
+## Apa yang berfungsi / had diketahui
 
-- **Sudah berfungsi:** semakan penuh dari baris arahan. Tiga larian sebenar pada 20 Nov 2026 dirakam dan boleh dimainkan
+**Apa yang berfungsi**
+
+- Semakan penuh dari baris arahan. Tiga larian sebenar pada 20 Nov 2026 dirakam dan boleh dimainkan
   semula tanpa rangkaian.
-- **Penilaian, 21 Nov 2026:** 28 daripada 68 jawapan daripada 3 model menyatakan peraturan Malaysia
+- Penilaian, 21 Nov 2026: 28 daripada 68 jawapan daripada 3 model menyatakan peraturan Malaysia
   yang berbeza daripada nilai rasmi semasa. Dengan langkah hibrid (model mencadang nilai semasa, petikan rasmi mesti
   menyatakannya), Terkini menanda 13 daripadanya (precision 65%, recall 46%); v0.1.0 tanpanya menanda 10 (59%, 36%).
   Butiran dan kegagalan: [`docs/EVAL.md`](docs/EVAL.md) (Inggeris).
-- **Garis asas:** model hakim sahaja, tanpa laman rasmi, menanda 24 daripada 28 jawapan basi (precision 73%,
+- Garis asas: model hakim sahaja, tanpa laman rasmi, menanda 24 daripada 28 jawapan basi (precision 73%,
   recall 86%), tetapi tanpa sumber. Terkini menanda lebih sedikit, setiap satu dengan petikan rasmi tepat.
-- **Juga berfungsi:** halaman ulang tayang (enam larian dirakam, BM dan Inggeris), `POST /api/check`, yang
+- Halaman ulang tayang (enam larian dirakam, BM dan Inggeris), `POST /api/check`, yang
   memulangkan laporan yang sama sebagai JSON, dan demo satu arahan dengan Docker.
-- **Tidak dibina:** pek India (digugurkan supaya kekal dalam bajet kredit Tavily, D-017).
+
+**Had diketahui**
+
+- Halaman ulang tayang tidak menjalankan semakan langsung. Ia menunjukkan larian yang dirakam dan memberi arahan untuk
+  menyemak jawapan anda sendiri di komputer anda.
+- Pek India belum dibina (digugurkan supaya kekal dalam bajet kredit Tavily, D-017).
 
 ## Cuba
 

@@ -26,20 +26,25 @@ calls go through a Bifrost gateway.
 Built during the Global AI Hackathon (extended window, 21 Nov 2026), Tavily track, problem statement PS06 (stale-answer
 detector). First commit: `397bbc2`.
 
-## Status
+## What works / known limits
 
-Not finished. What works and what does not, as of today:
+**What works**
 
-- **Works:** the full check from the command line. Claim extraction and judging through Bifrost, Tavily Search and
-  Extract on official domains only, the exact-quote check in code, and the freshness score. Three live runs from
-  20 Nov 2026 are recorded and replay offline. The eval over the 23 Malaysian questions has run on 68 answers
-  from three models ([`docs/EVAL.md`](docs/EVAL.md)).
-- **Weak spots:** recall is 46% with the hybrid step (36% without). Most missed answers end `unverifiable`
-  because the official pages that search returns do not settle the claim, or do not state the value the model proposes.
-- **Also works:** the replay page with six recorded runs in English and Malay, `POST /api/check`, which
-  returns the same report as JSON for a team that checks answers before users see them, and a one-command
-  demo with Docker.
-- **Not done:** the India pack (dropped to stay within the Tavily credit budget, D-017).
+- The full check from the command line. Claim extraction and judging through Bifrost, Tavily Search and Extract on
+  official domains only, the exact-quote check in code, and the freshness score. Three live runs from 20 Nov 2026 are
+  recorded and replay offline. The eval over the 23 Malaysian questions has run on 68 answers from three models
+  ([`docs/EVAL.md`](docs/EVAL.md)).
+- The replay page with six recorded runs in English and Malay, `POST /api/check`, which returns the same report as
+  JSON for a team that checks answers before users see them, and a one-command demo with Docker.
+
+**Known limits**
+
+- Recall is 46% with the hybrid step (36% without). Most missed answers end `unverifiable` because the official pages
+  that search returns do not settle the claim, or do not state the value the model proposes.
+- The replay page does not run live checks. It shows recorded runs and gives the commands to check your own answer
+  on your machine.
+- No India pack yet (dropped to stay within the Tavily credit budget, D-017). The full list is under
+  [Limitations](#limitations).
 
 ## Try it in three steps
 

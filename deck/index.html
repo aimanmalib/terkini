@@ -28,7 +28,7 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
 </style>
 </head>
 <body>
-<!-- Every number on these slides comes from README.md (recorded runs of 20 Nov 2026). Do not add numbers here. -->
+<!-- Every number on these slides comes from README.md (recorded runs of 20 Nov 2026, eval of 21 Nov 2026). Do not add numbers here. -->
 <div class="deck-viewport"><div class="deck-stage" id="stage">
 
 <!-- === 01 COVER === -->
@@ -47,7 +47,7 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
 
 <!-- === 02 PROBLEM === -->
 <section class="slide light">
-  <div class="chrome"><span>Problem and potential impact</span><span>02 / 08</span></div>
+  <div class="chrome"><span>Problem and potential impact</span><span>02 / 10</span></div>
   <div class="body" style="gap:44px">
     <h2 class="h2" data-anim>AI answers keep old rules alive</h2>
     <div class="side">
@@ -70,7 +70,7 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
 
 <!-- === 03 INNOVATION === -->
 <section class="slide dark">
-  <div class="chrome"><span>Innovation</span><span>03 / 08</span></div>
+  <div class="chrome"><span>Innovation</span><span>03 / 10</span></div>
   <div class="body" style="gap:50px">
     <h2 class="h2" data-anim>Official pages decide. Code checks the quote.</h2>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:56px">
@@ -85,7 +85,7 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
 
 <!-- === 04 TECHNICAL EXECUTION === -->
 <section class="slide light">
-  <div class="chrome"><span>Technical execution · Architecture</span><span>04 / 08</span></div>
+  <div class="chrome"><span>Technical execution · Architecture</span><span>04 / 10</span></div>
   <div class="body" style="display:grid;grid-template-columns:760px 1fr;gap:90px">
     <div style="display:flex;flex-direction:column;gap:36px">
       <h2 class="h2" data-anim>One claim, six steps</h2>
@@ -109,7 +109,7 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
 
 <!-- === 05 USE OF AI: TAVILY + BIFROST === -->
 <section class="slide dark">
-  <div class="chrome"><span>Use of AI</span><span>05 / 08</span></div>
+  <div class="chrome"><span>Use of AI</span><span>05 / 10</span></div>
   <div class="body" style="gap:44px">
     <h2 class="h2" data-anim>How Tavily and Bifrost each contribute</h2>
     <div class="side" style="flex:1">
@@ -136,9 +136,42 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
   <div class="foot"><span>Terkini</span><span>Evidence · gateway</span></div>
 </section>
 
-<!-- === 06 USER EXPERIENCE · PROTOTYPE === -->
+<!-- === 06 EVALUATION === -->
+<section class="slide dark">
+  <div class="chrome"><span>Technical execution · Evaluation</span><span>06 / 10</span></div>
+  <div class="body" style="gap:40px">
+    <h2 class="h2" data-anim>68 answers, 3 models, one answer key</h2>
+    <p class="p" data-anim style="--d:2;max-width:1500px">23 questions about Malaysian rules. The key was read from official pages before any model answered. Every answer was checked on 21 Nov 2026.</p>
+    <div class="stats" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stat" data-anim style="--d:3"><b>28</b><span>of 68 answers differ from the current official value</span></div>
+      <div class="stat" data-anim style="--d:4"><b>10</b><span>of them flagged by Terkini, with the official quote</span></div>
+      <div class="stat" data-anim style="--d:5"><b>59%</b><span>precision: 10 of 17 flags were right</span></div>
+      <div class="stat" data-anim style="--d:6"><b>36%</b><span>recall: most misses end unverifiable, not wrong</span></div>
+    </div>
+    <ul class="dash" data-anim style="--d:7;margin-top:24px">
+      <li>Grok 4.7: 20 of 23 answers differ from the key; 9 flagged. DeepSeek: 6, 1 flagged. Kimi: 2, none flagged.</li>
+      <li>214 claims checked, 79 verdicts backed by an exact official quote, 276 Tavily credits.</li>
+    </ul>
+  </div>
+  <div class="foot"><span>Terkini</span><span>docs/EVAL.md · eval/my/results.json</span></div>
+</section>
+
+<!-- === 07 PAGE === -->
 <section class="slide light">
-  <div class="chrome"><span>User experience · Working prototype</span><span>06 / 08</span></div>
+  <div class="chrome"><span>User experience</span><span>07 / 10</span></div>
+  <div class="body" style="gap:30px">
+    <div style="display:grid;grid-template-columns:1fr 760px;gap:50px;align-items:end">
+      <h2 class="h2" data-anim>Each claim marked in the answer</h2>
+      <p class="p" data-anim style="--d:2;font-size:27px">Six recorded runs, English and Bahasa Melayu, no key. Open a claim to see the official quote, the date and the source.</p>
+    </div>
+    <div class="frame top" data-anim style="--d:3"><img src="img/replay-page.png" alt="The replay page: recorded runs on the left; the answer with each claim underlined in its verdict colour; an outdated claim card with the official value and the date it took effect"></div>
+  </div>
+  <div class="foot"><span>Terkini</span><span><a href="https://aimanmalib.github.io/terkini/">aimanmalib.github.io/terkini</a></span></div>
+</section>
+
+<!-- === 08 WORKING PROTOTYPE === -->
+<section class="slide light">
+  <div class="chrome"><span>Working prototype</span><span>08 / 10</span></div>
   <div class="body" style="gap:30px">
     <div style="display:grid;grid-template-columns:1fr 860px;gap:50px;align-items:end">
       <h2 class="h2" data-anim>A recorded live run, replayed offline</h2>
@@ -156,12 +189,12 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
 4 claims checked, 2 outdated, 3 skipped, 8 Tavily credits
 <span class="uns">This answer reads as if written before 2025-10-01</span></pre>
   </div>
-  <div class="foot"><span>Terkini</span><span>Command line today, web page next</span></div>
+  <div class="foot"><span>Terkini</span><span>Command line · HTTP API · demo/run.sh</span></div>
 </section>
 
-<!-- === 07 SCALABILITY === -->
+<!-- === 09 SCALABILITY === -->
 <section class="slide dark">
-  <div class="chrome"><span>Scalability and potential</span><span>07 / 08</span></div>
+  <div class="chrome"><span>Scalability and potential</span><span>09 / 10</span></div>
   <div class="body" style="gap:44px">
     <h2 class="h2" data-anim>A new country is a new pack file</h2>
     <div class="side">
@@ -171,7 +204,7 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
         <li>Per-run and daily credit limits live in <span class="hl">config/budget.toml</span>.</li>
       </ul>
       <ul class="dash" data-anim style="--d:3">
-        <li>The same check can sit behind a chatbot or a help desk and flag a stale answer before it is sent.</li>
+        <li>POST /api/check returns the same report as JSON, so a chatbot or a help desk can check an answer before it is sent.</li>
         <li>Any OpenAI-compatible provider works behind Bifrost.</li>
       </ul>
     </div>
@@ -184,14 +217,14 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
   <div class="foot"><span>Terkini</span><span>Packs · cache · limits</span></div>
 </section>
 
-<!-- === 08 STATUS === -->
+<!-- === 10 STATUS === -->
 <section class="slide light">
-  <div class="chrome"><span>Status</span><span>08 / 08</span></div>
+  <div class="chrome"><span>Status</span><span>10 / 10</span></div>
   <div class="body" style="gap:44px">
     <h2 class="h2" data-anim>Where it stands</h2>
     <div class="side">
-      <div class="col on" data-anim style="--d:2"><h3 class="h3">Works</h3><p class="p" style="font-size:28px">The full check from the command line, live and in replay. Three live runs from 20 Nov 2026, recorded.</p></div>
-      <div class="col" data-anim style="--d:3"><h3 class="h3">Not done yet</h3><p class="p" style="font-size:28px">The evaluation over the 23 questions, so no accuracy numbers yet. The web page for pasting an answer. The video.</p></div>
+      <div class="col on" data-anim style="--d:2"><h3 class="h3">Works</h3><p class="p" style="font-size:28px">The full check, live and in replay: command line, HTTP API, the replay page, and demo/run.sh with Docker only. The eval over 68 answers.</p></div>
+      <div class="col" data-anim style="--d:3"><h3 class="h3">Not done yet</h3><p class="p" style="font-size:28px">Recall is 36%; claims the official pages do not settle stay unverifiable. The India pack. Live checks from the page itself.</p></div>
     </div>
     <p class="p" data-anim style="--d:4;margin-top:auto;font-size:27px"><span class="hl">Not legal advice.</span> Terkini compares an answer with what official pages say on the day it runs. Confirm anything important with the agency.</p>
     <p class="cap" data-anim style="--d:5;margin:0;color:var(--on-light-2)"><a href="https://github.com/aimanmalib/terkini">github.com/aimanmalib/terkini</a> · <a href="https://aimanmalib.github.io/terkini/">aimanmalib.github.io/terkini</a></p>

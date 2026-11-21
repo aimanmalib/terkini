@@ -1,6 +1,13 @@
-# Terkini
+<p align="center"><img src="brand/logo-512.png" width="96" height="96" alt="Terkini"></p>
 
-**Is this AI answer still true where you live?**
+<h1 align="center">Terkini</h1>
+
+<p align="center"><a href="LICENSE"><img src="https://img.shields.io/github/license/aimanmalib/terkini" alt="Licence: Apache-2.0"></a> <img src="https://img.shields.io/badge/python-3.12-blue" alt="Python 3.12"> <img src="https://img.shields.io/badge/Tavily-Search%20%2B%20Extract-14213d" alt="Tavily Search and Extract"> <img src="https://img.shields.io/badge/Bifrost-v2.5.1-14213d" alt="Bifrost v2.5.1"></p>
+
+<p align="center"><b>Is this AI answer still true where you live?</b> · <i>Adakah jawapan AI ini masih betul di tempat anda?</i><br>
+<a href="https://aimanmalib.github.io/terkini/deck.pdf">slides, 8</a> · <a href="#try-it-in-three-steps">try it</a> · <a href="README.ms.md">Bahasa Melayu</a> · <a href="docs/02-DECISIONS.md">decisions</a> · Built in Malaysia by <a href="https://aimanmalib.com">Aiman Malib</a></p>
+
+<p align="center"><img src="docs/images/check-my-12.png" width="838" alt="Terkini report for a Kimi K3.1 Pro answer about EPF for foreign workers: two claims outdated against kwsp.gov.my, two unverifiable, the answer reads as if written before 2025-10-01"></p>
 
 Terkini takes an AI answer about a Malaysian rule, such as the minimum wage, an EPF contribution rate, an electricity
 tariff or the turnover limit for e-invoicing. It pulls out each factual claim, checks it against official government pages through
@@ -19,7 +26,7 @@ detector). First commit: `397bbc2`.
 
 ## Status
 
-Work in progress, stated plainly:
+Not finished. What works and what does not, as of today:
 
 - **Works:** the full check from the command line. Claim extraction and judging through Bifrost, Tavily Search and
   Extract on official domains only, the exact-quote check in code, and the freshness score. Three live runs from
@@ -56,6 +63,8 @@ This answer reads as if written before 2025-10-01
 
 The other two recordings: DeepSeek V4.1 Flash on the minimum wage (one claim current at RM1,700 from 1 February 2025,
 4 credits) and Grok 4.7 on the e-invoicing exemption (one claim outdated, 4 credits).
+
+<img src="docs/images/check-my-09.png" width="838" alt="Terkini report for a Grok 4.7 answer about the e-invoicing exemption: one claim outdated against mof.gov.my, two unverifiable">
 
 ### Live mode
 
@@ -170,7 +179,16 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 | `tests/` | Offline tests; `tests/fixtures/` holds recorded runs with no keys |
 | `scripts/` | Gateway setup, recording live runs, checking the answer key |
 
-Design decisions are in [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md). Tests: `bash scripts/gerbang-ujian.sh`.
+Design decisions are in [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md).
+
+## Tests
+
+```bash
+bash scripts/gerbang-ujian.sh   # pytest on recorded fixtures; no network, no keys
+```
+
+The tests replay the three recorded live runs, and cover the quote check, the score table, the `434` retry, the credit
+guard and the gateway client.
 
 ## Licence
 

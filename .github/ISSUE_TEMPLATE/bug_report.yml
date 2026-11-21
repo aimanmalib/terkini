@@ -1,0 +1,35 @@
+name: Bug report
+description: A wrong verdict, a crash, or something in the page, the API or the demo that doesn't work
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The command or request, and the answer text you checked if it is not private.
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options: [terkini check (replay), terkini check (live), HTTP API, Replay page, One-command demo, Eval]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Terkini version (`uv run terkini --version`) or commit
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: "Output (remove keys and private host names first)"
+      render: text

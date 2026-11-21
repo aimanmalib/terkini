@@ -16,7 +16,7 @@ calls go through a Bifrost gateway.
 
 **Eval, 21 Nov 2026:** 28 of 68 answers from 3 models stated a Malaysian rule that differs from the current official value; Terkini flagged 10 of them against official pages (precision 59%, recall 36%). Details and failures: [`docs/EVAL.md`](docs/EVAL.md).
 
-- Replay page: <https://aimanmalib.github.io/terkini/>
+- Replay page: <https://aimanmalib.github.io/terkini/> (six recorded runs, English and Bahasa Melayu, no key)
 - Slides (PDF): <https://aimanmalib.github.io/terkini/deck.pdf>
 - Video: not recorded yet.
 
@@ -46,6 +46,7 @@ You need [uv](https://docs.astral.sh/uv/). No API key is needed for replay mode.
 git clone https://github.com/aimanmalib/terkini && cd terkini
 uv run terkini check --list                               # the recorded runs
 uv run terkini check --pack my --case my-12-kimi-k3-1-pro # replay one of them, offline
+uv run terkini serve                                      # the replay page at http://127.0.0.1:8710
 ```
 
 The second command prints the report below. It is a real answer from Kimi K3.1 Pro, checked live on 20 Nov 2026

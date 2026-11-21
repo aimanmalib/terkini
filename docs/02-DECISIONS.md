@@ -170,3 +170,21 @@ change it.
   Failures found in the eval are listed in `docs/EVAL.md` and left for later work.
 - **Would change if.** The question set grows past one fact per question. Then claims are matched to key facts
   and scored per claim.
+
+## D-016 · The replay page
+
+- **Decision.** The page is one static HTML file, `docs/index.html`, with `docs/app.js`. It reads JSON only:
+  `docs/i18n.json` and `docs/cases/*.json`. `scripts/build-pages.py` writes those files from `config/pages.toml`,
+  `i18n/en.json` and `i18n/ms.json`. GitHub Pages serves `docs/`. `terkini serve` (FastAPI) serves the same files on
+  127.0.0.1 and nothing else from `docs/`.
+- **Cases.** Six real runs. Three are recordings, replayed through the checker when the page data is built. The
+  other three are eval runs, shown as they were checked live. A test rebuilds the data and fails if a committed file
+  differs, so a code change that alters a verdict shows up.
+- **Claims in the answer.** The extractor rewrites claims, so they rarely appear word for word. Each claim is
+  placed on the answer sentence that shares the most words with it. A sentence that holds several claims takes the
+  most serious verdict. A claim with no matching sentence keeps its card and stays unmarked in the text.
+- **Paste box.** The page holds no key and makes no live calls. A pasted answer that matches a recorded run opens
+  it. Any other answer gets the command to check it on your own machine.
+- **Type.** Barlow and IBM Plex Mono, self-hosted under the SIL Open Font License (`docs/fonts/`), the same faces as
+  the slides. No request leaves the page.
+- **Would change if.** A live mode is added to `terkini serve`. Then the paste box posts to it when it runs locally.

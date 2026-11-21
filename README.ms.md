@@ -30,7 +30,10 @@ Perlu [uv](https://docs.astral.sh/uv/). Mod ulang tayang tidak memerlukan kunci 
 git clone https://github.com/aimanmalib/terkini && cd terkini
 uv run terkini check --list
 uv run terkini check --pack my --case my-12-kimi-k3-1-pro
+uv run terkini serve   # halaman ulang tayang di http://127.0.0.1:8710
 ```
+
+Halaman ulang tayang yang sama (enam larian dirakam, BM dan Inggeris): <https://aimanmalib.github.io/terkini/>
 
 Cara ia berfungsi, tempat Tavily dan Bifrost digunakan, dan had alat ini diterangkan dalam [README Inggeris](README.md).
 

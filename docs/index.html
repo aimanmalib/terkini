@@ -71,8 +71,8 @@
   .btn { margin-top: .75rem; font: 600 1rem/1 var(--sans); color: var(--paper); background: var(--ink); border: 0; border-radius: 8px;
     padding: .75rem 1.25rem; min-height: 2.75rem; cursor: pointer; }
   .btn:hover { background: var(--ink-2); }
-  .paste-msg { margin-top: .75rem; font-size: .9375rem; overflow-wrap: anywhere; }
-  .paste-msg:empty { display: none; }
+  .answer-msg { margin-top: .75rem; font-size: .9375rem; overflow-wrap: anywhere; }
+  .answer-msg:empty { display: none; }
 
   .result { min-width: 0; }
   .run-label { display: flex; flex-wrap: wrap; gap: .25rem .75rem; font-size: .9375rem; color: var(--muted); }
@@ -165,13 +165,13 @@
       <ol class="cases" id="cases"></ol>
     </section>
 
-    <section class="paste" aria-labelledby="paste-h">
-      <h2 id="paste-h" data-i18n="paste_heading">Paste an answer</h2>
-      <form id="paste-form" novalidate>
+    <section class="paste" aria-labelledby="answer-h">
+      <h2 id="answer-h" data-i18n="paste_heading">Paste an answer</h2>
+      <form id="answer-form" novalidate>
         <label for="paste" data-i18n="paste_label">AI answer to check</label>
         <textarea id="paste" name="answer" data-i18n-placeholder="paste_placeholder" placeholder="Paste an AI answer about a Malaysian rule…"></textarea>
         <button class="btn" type="submit" data-i18n="paste_button">Check</button>
-        <p class="paste-msg" id="paste-msg" role="status" aria-live="polite"></p>
+        <p class="answer-msg" id="answer-msg" role="status" aria-live="polite"></p>
       </form>
     </section>
   </aside>

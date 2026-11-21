@@ -80,7 +80,7 @@ function applyLang(lang) {
   renderCaseList();
   if (state.current) renderCase(state.current);
   else if (state.failed) renderFailed();
-  const msg = $("#paste-msg");
+  const msg = $("#answer-msg");
   if (msg.dataset.key) msg.textContent = t(msg.dataset.key);
 }
 
@@ -198,7 +198,7 @@ function renderFailed() {
 
 function onPaste(ev) {
   ev.preventDefault();
-  const msg = $("#paste-msg");
+  const msg = $("#answer-msg");
   const text = normalise($("#paste").value);
   const say = (key) => { msg.dataset.key = key; msg.textContent = t(key); };
   if (!text) return say("paste_empty");
@@ -218,7 +218,7 @@ async function getJSON(path) {
 
 async function start() {
   document.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => applyLang(b.dataset.lang)));
-  $("#paste-form").addEventListener("submit", onPaste);
+  $("#answer-form").addEventListener("submit", onPaste);
   try {
     const i18n = await getJSON("i18n.json");
     state.strings = i18n.strings;

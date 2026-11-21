@@ -157,8 +157,8 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
       <div class="stat" data-anim style="--d:6"><b>46%</b><span>recall: most misses end unverifiable, not wrong</span></div>
     </div>
     <ul class="dash" data-anim style="--d:7;margin-top:24px">
-      <li>With the hybrid step: the model proposes a current value, an official quote must state it. v0.1.0 without it: 10 flagged, 59% precision, 36% recall.</li>
-      <li>Grok 4.7: 20 of 23 answers differ from the key; 12 flagged. DeepSeek: 6, 1 flagged. Kimi: 2, none flagged.</li>
+      <li>With the hybrid step: the model proposes a current value, an official quote must state it. Two of its three extra catches are weak matches (docs/EVAL.md). v0.1.0 without it: 10 of 17 flags right, 59% precision, 36% recall.</li>
+      <li>Grok 4.7: 20 of 23 answers differ from the key; 12 flagged, 12 right. DeepSeek: 6 differ; 4 flagged, 1 right. Kimi: 2 differ; 4 flagged, none right.</li>
       <li>214 claims checked, 79 verdicts backed by an exact official quote, 276 + 67 Tavily credits.</li>
     </ul>
   </div>

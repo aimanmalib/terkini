@@ -378,3 +378,13 @@ change it.
   own fonts and English strings. Colours, the card's run and its footer are in `config/share.toml`. `index.html` has
   Open Graph and Twitter tags with absolute URLs, a canonical link and a theme colour; `terkini serve` serves the new files.
 - **Rollback.** Delete the files and the tags; nothing reads them.
+
+## D-029 · The eval slide says how each model's flags split, and that two hybrid catches are weak
+
+- **Why.** The final red team (21 Nov 2026) read "DeepSeek: 6, 1 flagged. Kimi: 2, none flagged" as the number of flags,
+  when DeepSeek and Kimi were each flagged 4 times (1 and 0 right). The slide also said 13 catches "with the official
+  quote" without the caveat that EVAL.md and the README give: two of the hybrid step's three extra catches are weak matches.
+- **What.** Slide 6 now reads "12 flagged, 12 right / 4 flagged, 1 right / 4 flagged, none right" and names the weak
+  matches; the v0.1.0 line says "10 of 17 flags right". Rebuilt with `~/deck-baru` (`bina.sh`, no overflow, no console
+  errors); `docs/deck.pdf` and `docs/deck.pptx` replaced. No other slide text changed.
+- **Rollback.** Revert this commit.

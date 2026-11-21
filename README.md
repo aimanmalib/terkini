@@ -231,6 +231,12 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
   indexed, or that blocks extraction, cannot decide a verdict.
 - **Official pages go stale too.** A ministry page can lag behind a new order. Terkini reports the page it read and
   its date; it does not know about rules that no official page states yet.
+- **Older official pages can confirm an old value.** Official sites still serve pages with earlier values, and
+  Terkini reads the top search results, not the newest page. So an old value can come back `current` with a real
+  official quote. Two cases from our own runs: for the minimum-wage question, the page picked was a PERKESO
+  document from 2025 that says "RM1,500 as of 2024", while the current rate is RM1,700 (that claim ended `unverifiable`). The
+  recorded e-invoicing run (`my-09-grok-4-7`) is decided with an older Ministry of Finance statement, not the newer
+  RM3,000,000 exemption. Planned fix: rank evidence by document date.
 - **Many claims end up `unverifiable`.** Often the official pages Tavily returns for a claim do not settle it, so the
   claim is set aside. That is the intended failure: no quote, no verdict. See [`docs/EVAL.md`](docs/EVAL.md).
 - **The answer key is ours.** The evaluation key in `eval/my/key.yaml` was written by reading official pages before

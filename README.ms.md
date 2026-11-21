@@ -51,7 +51,17 @@ demo/run.sh          # cetak satu laporan dirakam, URL halaman dan baris curl un
 demo/run.sh stop     # buang kontena
 ```
 
-Cara ia berfungsi, tempat Tavily dan Bifrost digunakan, dan had alat ini diterangkan dalam [README Inggeris](README.md).
+## Had utama
+
+- **Laman rasmi yang lebih lama boleh mengesahkan nilai lama.** Laman kerajaan masih menghidang halaman dengan nilai
+  terdahulu, dan Terkini membaca hasil carian teratas, bukan halaman paling baharu. Jadi nilai lama boleh dinilai
+  `current` dengan petikan rasmi yang sah. Dua contoh dari larian kami sendiri: untuk soalan gaji minimum, halaman yang
+  dipilih ialah dokumen PERKESO dari 2025 yang menyebut "RM1,500 as of 2024", sedangkan kadar semasa RM1,700 (dakwaan itu
+  berakhir `unverifiable`). Larian e-Invois yang dirakam (`my-09-grok-4-7`) diputuskan dengan kenyataan Kementerian
+  Kewangan yang lebih lama, bukan pengecualian RM3,000,000 yang lebih baharu. Pembaikan dirancang: susun bukti ikut
+  tarikh dokumen.
+
+Cara ia berfungsi, tempat Tavily dan Bifrost digunakan, dan senarai had penuh diterangkan dalam [README Inggeris](README.md#limitations).
 
 ## Menyumbang
 

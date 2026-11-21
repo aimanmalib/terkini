@@ -147,10 +147,11 @@ const sari = sariKata({semasa: '#4cc98a', lepas: '#fbfaf6', belum: 'rgba(251,250
 
 function seek(t) {
   // 1 HOOK
-  let k = babakK(t, B.hook, .3, .3); bHook.style.opacity = k.o;
-  hq.style.transform = `translateY(${(1 - k.k) * 40}px)`;
-  kinetikMain(hQk, t, .25, .045, .35);
-  const n = Math.round(X.a.length * pr(t, T.jawab, T.jawab + .7)); hA.textContent = X.a.slice(0, n);
+  // Frame 0 already shows the problem: question and answer are on screen from t = 0 (no fade-in).
+  let k = {o: t < B.hook[1] ? 1 - pr(t, B.hook[1] - .3, B.hook[1]) : 0, k: 1}; bHook.style.opacity = k.o;
+  hq.style.transform = 'none';
+  kinetikMain(hQk, t, -1, 0, .01);
+  hA.textContent = X.a;
   const c = pr(t, T.cop, T.cop + .28);
   cop.style.opacity = c > 0 ? 1 : 0; cop.style.transform = `rotate(-6deg) scale(${1.6 - .6 * eo(c)})`;
   hA.style.textDecoration = t > T.cop + .2 ? 'line-through' : 'none'; hA.style.textDecorationColor = 'var(--stale-hi)';

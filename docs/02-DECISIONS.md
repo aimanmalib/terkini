@@ -236,3 +236,6 @@ change it.
   credited on the end card) sits well under the voice.
 - **Not in the repository.** The video kit, the voice files and the frames. They are build tools and media, and
   the voice files are biometric data.
+- **Scene order.** Frame 0 already shows the question and the stale answer, with no fade-in. The real replay page
+  starts at 7 s, straight after the hook. The eval chart comes after Bifrost, just before the precision and recall
+  numbers. The narration lines did not change; only their order did.

@@ -11,84 +11,84 @@ and it answers with confidence.
 Sometimes the rule changed years ago.
 
 4
-00:00:07,220 --> 00:00:09,746
-We asked 3 models 23 questions.
-
-5
-00:00:09,746 --> 00:00:12,900
-28 of 68 answers stated a rule that is
-
-6
-00:00:12,900 --> 00:00:14,460
-no longer current.
-
-7
-00:00:15,320 --> 00:00:19,360
-Terkini checks those answers against official government pages.
-
-8
-00:00:19,920 --> 00:00:22,051
-Each claim goes to Tavily Search,
-
-9
-00:00:22,051 --> 00:00:23,872
-restricted to official domains,
-
-10
-00:00:23,872 --> 00:00:26,464
-with live results for rules that change.
-
-11
-00:00:26,464 --> 00:00:29,800
-Then Tavily Extract reads the page itself.
-
-12
-00:00:30,520 --> 00:00:32,400
+00:00:07,320 --> 00:00:09,200
 Here the answer says 6%.
 
-13
-00:00:32,400 --> 00:00:34,648
+5
+00:00:09,200 --> 00:00:11,448
 The customs page says 8%,
 
-14
-00:00:34,648 --> 00:00:36,320
+6
+00:00:11,448 --> 00:00:13,120
 from March 2024.
 
-15
-00:00:36,320 --> 00:00:37,520
+7
+00:00:13,120 --> 00:00:14,320
 Outdated.
 
-16
-00:00:39,120 --> 00:00:42,300
+8
+00:00:15,920 --> 00:00:19,960
+Terkini checks those answers against official government pages.
+
+9
+00:00:20,520 --> 00:00:22,651
+Each claim goes to Tavily Search,
+
+10
+00:00:22,651 --> 00:00:24,472
+restricted to official domains,
+
+11
+00:00:24,472 --> 00:00:27,064
+with live results for rules that change.
+
+12
+00:00:27,064 --> 00:00:30,400
+Then Tavily Extract reads the page itself.
+
+13
+00:00:31,120 --> 00:00:34,300
 Every verdict must quote the page word for word.
 
-17
-00:00:42,300 --> 00:00:44,853
+14
+00:00:34,300 --> 00:00:36,853
 Terkini then checks that the quote is really there.
 
-18
-00:00:44,853 --> 00:00:45,840
+15
+00:00:36,853 --> 00:00:37,840
 No exact quote,
 
-19
-00:00:45,840 --> 00:00:47,160
+16
+00:00:37,840 --> 00:00:39,160
 no verdict.
 
-20
-00:00:47,520 --> 00:00:49,680
+17
+00:00:39,520 --> 00:00:41,680
 The models run through Bifrost:
 
-21
-00:00:49,680 --> 00:00:50,760
+18
+00:00:41,680 --> 00:00:42,760
 one virtual key,
 
-22
-00:00:50,760 --> 00:00:51,640
+19
+00:00:42,760 --> 00:00:43,640
 a daily budget,
 
-23
-00:00:51,640 --> 00:00:53,960
+20
+00:00:43,640 --> 00:00:45,960
 and fallbacks across vendors.
+
+21
+00:00:46,420 --> 00:00:48,946
+We asked 3 models 23 questions.
+
+22
+00:00:48,946 --> 00:00:52,100
+28 of 68 answers stated a rule that is
+
+23
+00:00:52,100 --> 00:00:53,660
+no longer current.
 
 24
 00:00:54,520 --> 00:00:56,400

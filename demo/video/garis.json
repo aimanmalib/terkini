@@ -4,7 +4,7 @@
   "awalan_filedrop": "globalai-terkini-video-",
   "fps": 30,
   "panjang": 72.0,
-  "poster": 36.6,
+  "poster": 13.4,
   "format": {
    "l": {
     "saiz": [
@@ -30,28 +30,28 @@
    0,
    7.0
   ],
-  "skala": [
+  "putusan": [
    7.0,
-   15.0
+   15.6
   ],
   "reveal": [
-   15.0,
-   19.6
+   15.6,
+   20.2
   ],
   "tavily": [
-   19.6,
-   30.2
-  ],
-  "putusan": [
-   30.2,
-   38.8
+   20.2,
+   30.8
   ],
   "petikan": [
-   38.8,
-   47.2
+   30.8,
+   39.2
   ],
   "bifrost": [
-   47.2,
+   39.2,
+   46.2
+  ],
+  "skala": [
+   46.2,
    54.2
   ],
   "jujur": [
@@ -65,33 +65,26 @@
  },
  "suara": {
   "hook": 0.4,
-  "skala": 7.3,
-  "reveal": 15.4,
-  "tavily": 20.0,
-  "putusan": 30.6,
-  "petikan": 39.2,
-  "bifrost": 47.6,
+  "putusan": 7.4,
+  "reveal": 16.0,
+  "tavily": 20.6,
+  "petikan": 31.2,
+  "bifrost": 39.6,
+  "skala": 46.5,
   "jujur": 54.6,
   "tutup": 64.3
  },
  "sari_kata": [
   "hook",
-  "skala",
+  "putusan",
   "reveal",
   "tavily",
-  "putusan",
   "petikan",
   "bifrost",
+  "skala",
   "jujur"
  ],
  "peristiwa": {
-  "jawab": {
-   "kata": [
-    "hook",
-    "answers"
-   ],
-   "anjak": -0.1
-  },
   "cop": {
    "kata": [
     "hook",
@@ -261,10 +254,6 @@
   }
  },
  "bunyi": [
-  {
-   "taip_kata": "hook",
-   "db": -21
-  },
   {
    "t": "cop",
    "fail": "impact/impactSoft_heavy_001.ogg",

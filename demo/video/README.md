@@ -1,7 +1,7 @@
 # Demo video source
 
 The demo video (`docs/media/terkini-demo.mp4`, 72 s, 1920x1080) is rendered frame by frame from a web page, so it can be
-rebuilt the same way every time.
+rebuilt the same way every time. Frame 0 shows the question and the stale answer. The real replay page starts at 7 s.
 
 | File | What |
 |---|---|

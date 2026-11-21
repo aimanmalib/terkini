@@ -36,7 +36,9 @@ Not finished. What works and what does not, as of today:
   from three models ([`docs/EVAL.md`](docs/EVAL.md)).
 - **Weak spots:** recall is 36%. Most missed answers end `unverifiable` because the official pages that
   search returns do not settle the claim.
-- **Not done yet:** the web page for pasting an answer, and the video. This section will change when they exist.
+- **Also works:** the replay page with six recorded runs in English and Malay, and `POST /api/check`, which
+  returns the same report as JSON for a team that checks answers before users see them.
+- **Not done:** the India pack (dropped to stay within the Tavily credit budget, D-017) and the video.
 
 ## Try it in three steps
 
@@ -82,6 +84,20 @@ uv run scripts/bifrost-bootstrap.py   # adds the provider and a virtual key with
 uv run terkini check --pack my "The minimum wage in Malaysia is RM1,500 a month."
 docker compose down -v          # stop and remove everything
 ```
+
+### HTTP API
+
+`terkini serve` also answers `POST /api/check`, with the same mode rule as the CLI. Without `TAVILY_API_KEY` it
+replays recorded runs; with your keys in `.env` it checks live and spends your credits, so it listens on 127.0.0.1.
+
+```bash
+curl -s -X POST http://127.0.0.1:8710/api/check -H 'content-type: application/json' \
+  -d '{"case": "my-12-kimi-k3-1-pro"}'          # or {"answer": "...", "pack": "my"}
+```
+
+The reply is the report as JSON: `mode`, `pack`, `checked_on`, and one entry per claim with its verdict, the official
+quote, the source URL and the score. Errors: 400 unknown pack, 404 no recording (replay mode), 413 answer too long
+(limit in [`config/api.toml`](config/api.toml)), 422 empty request, 503 gateway not set up (live mode).
 
 Any OpenAI-compatible provider works upstream of Bifrost. The model ids in [`config/models.toml`](config/models.toml)
 are the ones this project was tested with; change them to ids your provider serves.
@@ -178,7 +194,7 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 
 | Path | What |
 |---|---|
-| `src/terkini/` | The checker: claims, Tavily client, verifier, judge, quote check, score, cache, replay, CLI |
+| `src/terkini/` | The checker: claims, Tavily client, verifier, judge, quote check, score, cache, replay, CLI, HTTP API |
 | `config/` | Every tunable value: models, gateway, search parameters, score weights, credit limits, prompts |
 | `packs/` | Country packs (domains, categories) |
 | `eval/my/` | 23 Malaysian questions, their answer key, model answers, labels, one run per answer, `results.json` |

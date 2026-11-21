@@ -20,7 +20,9 @@ gerbang Bifrost.
 - **Penilaian, 21 Nov 2026:** 28 daripada 68 jawapan daripada 3 model menyatakan peraturan Malaysia
   yang berbeza daripada nilai rasmi semasa; Terkini menanda 10 daripadanya dengan laman rasmi
   (precision 59%, recall 36%). Butiran dan kegagalan: [`docs/EVAL.md`](docs/EVAL.md) (Inggeris).
-- **Belum siap:** halaman web untuk menampal jawapan, dan video.
+- **Juga berfungsi:** halaman ulang tayang (enam larian dirakam, BM dan Inggeris) dan `POST /api/check`, yang
+  memulangkan laporan yang sama sebagai JSON.
+- **Tidak dibina:** pek India (digugurkan supaya kekal dalam bajet kredit Tavily, D-017) dan video.
 
 ## Cuba
 

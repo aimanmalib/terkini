@@ -188,3 +188,21 @@ change it.
 - **Type.** Barlow and IBM Plex Mono, self-hosted under the SIL Open Font License (`docs/fonts/`), the same faces as
   the slides. No request leaves the page.
 - **Would change if.** A live mode is added to `terkini serve`. Then the paste box posts to it when it runs locally.
+
+## D-017 · `POST /api/check`, and no India pack in this window
+
+- **Decision.** `terkini serve` answers `POST /api/check` with `{"answer", "pack", "case"}` and returns the
+  CLI's report as JSON, plus `mode` and `pack`. The CLI and the API share one function (`terkini.service.run`),
+  so they cannot disagree on mode or result.
+- **Mode.** A named `case` always replays. Otherwise the check is live when `TAVILY_API_KEY` is set and replays
+  the recording whose answer matches when it is not. Replay mode with no match returns 404 and says how to go live.
+- **Limits.** The default pack and the longest answer accepted are in `config/api.toml`. A longer answer gets 413
+  before any model or search call. Live runs keep the credit limits in `config/budget.toml`.
+- **Exposure.** Live mode spends the key holder's credits. The server binds to 127.0.0.1 by default and has no
+  login, so it is for one machine or a private network, not the open internet.
+- **India pack.** Not built. The Tavily plan has 1,000 credits a month, and the build and the Malaysian eval used
+  their share. A second pack needs its own answer key read from official pages and an eval run at the same size;
+  doing that on the reserve would leave nothing for fixes.
+- **Page.** The paste box on the replay page still opens recordings only. Posting to the API when the page is
+  served locally is left for later.
+- **Would change if.** The credit limit rises. Then the India pack is built the same way as `packs/my.toml`.

@@ -64,6 +64,7 @@ The same 68 answers and the same 214 claims, scored two other ways. Both rows co
 | Method | Flagged | Precision (95% CI) | Recall (95% CI) |
 |---|---|---|---|
 | Terkini (Tavily evidence, judge, exact-quote check) | 17 of 68 | 10 of 17, 59% (36%-78%) | 10 of 28, 36% (21%-54%) |
+| Hybrid: model proposes, official quote must state it (D-022) | 20 of 68 | 13 of 20, 65% (43%-82%) | 13 of 28, 46% (30%-64%) |
 | Judge model alone, no official pages | 33 of 68 | 24 of 33, 73% (56%-85%) | 24 of 28, 86% (68%-94%) |
 | Naive rule: value missing from the official quote | 24 of 68 | 10 of 24, 42% (24%-61%) | 10 of 28, 36% (21%-54%) |
 
@@ -79,8 +80,45 @@ What this says:
   page that the code checked.
 - The naive rule flags 7 more current answers than Terkini: an official page that does not repeat the claim's value
   is not evidence that the value changed. The judge step removes half of them.
-- A practical next step is to combine them: let the model propose, and keep the official quote check before a verdict
-  is shown. This is not built or measured.
+- The hybrid row (next section) combines them: the model proposes, and an official quote is still required before a
+  verdict is shown.
+
+## Hybrid: the model proposes, an official page proves (D-022)
+
+Built and measured on 21 Nov 2026, after the rows above. For each claim the main check did not flag, the judge
+model's guess without pages is the proposal (the saved model-only verdicts: same model, same prompt). When it says
+`outdated` with a value, Terkini runs one Tavily Search on the pack's official domains with the proposed value in the
+query, extracts up to 3 official pages, and code looks for one sentence that states the proposed value and shares at
+least 2 words with the claim. Only then does the claim become `outdated`. When the main check had found the claim
+`current` with its own quote, the page with the later date wins; an undated page keeps the main verdict. A model guess
+alone never decides a verdict. Settings: [`config/hybrid.toml`](../config/hybrid.toml). Evidence:
+[`eval/my/hybrid.json`](../eval/my/hybrid.json), written by `terkini hybrid --pack my`.
+
+| Hybrid step | Count |
+|---|---|
+| Claims not flagged by the main check that the model called outdated with a value | 48 |
+| Searched on official domains (1 search + 1 extract each) | 43 |
+| Not searched: proposal repeats the claim's value, or has no amount, rate or date | 5 |
+| No official page returned | 6 |
+| Official pages returned, but no sentence states the proposed value | 31 |
+| Claims turned `outdated` with an official quote | 3 |
+| Tavily credits (sum of response usage) | 67 |
+
+- **Answers.** Three stale answers are newly flagged (`my-01--grok-4-7`, `my-02--grok-4-7`, `my-09--grok-4-7`); no
+  current answer is newly flagged. Precision goes from 10 of 17 to 13 of 20, recall from 10 of 28 to 13 of 28. The
+  intervals still overlap with the main result.
+- **Claims.** Read one by one, not all three changes are right at claim level. `my-02--grok-4-7`: the claim is that
+  the *first* minimum wage was RM920, a historical fact the hybrid step marks outdated against a RM1,700 news clip
+  on tnb.com.my. `my-09--grok-4-7`: "under RM20 million is exempt" is matched to a hasil.gov.my timeline row for
+  "more than RM100 million", the first phase, not the current exemption. Both answers are stale for other reasons.
+- **Two rules added after reading the first run's quotes.** A value on the old side of a change ("from RM1,700 to
+  ...") is not proof, and a proposal must be of the claim's kind (an amount for an amount, a date for a date). Both
+  were applied to the saved quotes with no new search. Before them the row was 14 of 21 and 14 of 28: one of the two
+  quotes they removed showed a 12 Oct 2026 news clip on tnb.com.my where RM1,700 is the *old* minimum wage.
+- **Why recall stays below the model alone.** In 31 of 43 searches the official pages Tavily returned did not state
+  the proposed value in a sentence about the rule. Searching the pack's `[[canonical_sources]]` pages first is the next
+  thing to try; it is not built.
+- `GET /usage` did not move during the run (336 before and after, D-010); the 67 credits are the response sum.
 
 ## Claims
 
@@ -204,14 +242,15 @@ Every answer that was labelled stale or flagged by Terkini.
 - **Small sample.** 68 answers to 23 questions, labelled once. Treat the rates as a first measurement.
 - **Right verdict, old evidence.** The recorded e-invoicing run (`my-09-grok-4-7`, on the replay page) is marked
   outdated with a 2023 Ministry of Finance statement. The verdict is right, but the current rule in the key is newer:
-  turnover under RM3,000,000 is exempt (hasil.gov.my). The eval run of the same answer was a miss. Terkini does not yet
-  prefer the newest official page when two disagree.
+  turnover under RM3,000,000 is exempt (hasil.gov.my). The eval run of the same answer was a miss. The main check does
+  not compare page dates. The hybrid step (D-022) does, but only for claims the main check found current.
 
 ## Reproduce
 
 ```bash
 uv run terkini eval --pack my --score-only   # recompute results.json from the saved runs; no keys, no network
 uv run terkini baseline --pack my --score-only   # recompute the baseline rows from the saved files
+uv run terkini hybrid --pack my --score-only     # recompute the hybrid row from eval/my/hybrid.json
 uv run scripts/eval-tables.py                # print the tables above
 ```
 

@@ -14,7 +14,7 @@ tariff or the turnover limit for e-invoicing. It pulls out each factual claim, c
 Tavily Search and Extract, and gives every claim a freshness score with the exact quote from the official source. All model
 calls go through a Bifrost gateway.
 
-**Eval, 21 Nov 2026:** 28 of 68 answers from 3 models stated a Malaysian rule that differs from the current official value; Terkini flagged 10 of them against official pages (precision 59%, recall 36%). Details and failures: [`docs/EVAL.md`](docs/EVAL.md).
+**Eval, 21 Nov 2026:** 28 of 68 answers from 3 models stated a Malaysian rule that differs from the current official value. With the hybrid step (the model proposes a current value, an official quote must state it), Terkini flagged 13 of them (precision 65%, recall 46%); v0.1.0 without it flagged 10 (59%, 36%). Every flag carries an exact official quote. Details and failures: [`docs/EVAL.md`](docs/EVAL.md).
 
 - Replay page: <https://aimanmalib.github.io/terkini/> (six recorded runs, English and Bahasa Melayu, no key). Open "How this check ran" under a run to see each Tavily query, its `include_domains` and credits, and each Bifrost call with the model asked for, the model that answered and the tokens.
 - Slides (PDF): <https://aimanmalib.github.io/terkini/deck.pdf>
@@ -34,8 +34,8 @@ Not finished. What works and what does not, as of today:
   Extract on official domains only, the exact-quote check in code, and the freshness score. Three live runs from
   20 Nov 2026 are recorded and replay offline. The eval over the 23 Malaysian questions has run on 68 answers
   from three models ([`docs/EVAL.md`](docs/EVAL.md)).
-- **Weak spots:** recall is 36%. Most missed answers end `unverifiable` because the official pages that
-  search returns do not settle the claim.
+- **Weak spots:** recall is 46% with the hybrid step (36% without). Most missed answers end `unverifiable`
+  because the official pages that search returns do not settle the claim, or do not state the value the model proposes.
 - **Also works:** the replay page with six recorded runs in English and Malay, `POST /api/check`, which
   returns the same report as JSON for a team that checks answers before users see them, and a one-command
   demo with Docker.
@@ -126,7 +126,8 @@ are the ones this project was tested with; change them to ids your provider serv
 
 23 questions about Malaysian rules, an answer key read from official pages before any model answer was seen, and 68
 answers from three models, checked on 21 Nov 2026. Numbers from [`eval/my/results.json`](eval/my/results.json); method,
-dropped questions and failures in [`docs/EVAL.md`](docs/EVAL.md).
+dropped questions and failures in [`docs/EVAL.md`](docs/EVAL.md). The first two tables are the main check (v0.1.0);
+the hybrid step is a row in the third.
 
 | Measure | Value |
 |---|---|
@@ -150,12 +151,15 @@ Baselines on the same answers and claims (95% Wilson intervals in [`docs/EVAL.md
 
 | Method | Precision | Recall |
 |---|---|---|
-| Terkini | 10 of 17 (59%) | 10 of 28 (36%) |
+| Terkini v0.1.0 (main check) | 10 of 17 (59%) | 10 of 28 (36%) |
+| Terkini with the hybrid step ([D-022](docs/02-DECISIONS.md)) | 13 of 20 (65%) | 13 of 28 (46%) |
 | Judge model alone, no official pages, no source | 24 of 33 (73%) | 24 of 28 (86%) |
 | Naive rule: value missing from the official quote | 10 of 24 (42%) | 10 of 28 (36%) |
 
 The model alone found more stale answers here, but gave no source and said "unsure" for 1 of 214 claims. Terkini
-shows fewer verdicts, each with an exact official quote.
+shows fewer verdicts, each with an exact official quote. The hybrid step uses the model's guess only to aim one more
+Tavily search (67 credits for 43 searches); a claim turns outdated only when code finds the proposed value in an
+official sentence. Two of its three claim-level changes are weak matches; see [`docs/EVAL.md`](docs/EVAL.md#hybrid-the-model-proposes-an-official-page-proves-d-022).
 
 ## How it works
 
@@ -184,6 +188,11 @@ flowchart LR
    the source is a government domain, whether the quote was found, and the page date. The report also says which date
    the answer reads as if it were written before. With a government quote, a current claim scores up to 100, an
    outdated one scores 0, and an unverifiable one at most 50.
+7. **Hybrid step (live checks, [D-022](docs/02-DECISIONS.md)).** For a claim not marked outdated, the judge model
+   guesses without pages whether a newer value applies. If it proposes one, Terkini runs one more Tavily Search on the
+   official domains with that value, extracts up to 3 pages, and code looks for a sentence that states it. Only a
+   quoted official sentence changes the verdict; between two dated official pages, the later one wins. Settings in
+   [`config/hybrid.toml`](config/hybrid.toml).
 
 What a country pack holds, in [`packs/my.toml`](packs/my.toml): 12 official domains (each labelled government or
 utility), the claim categories, which categories change often, and the question file for the evaluation. Code holds
@@ -272,7 +281,7 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 
 | Document | What |
 |---|---|
-| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-021 |
+| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-022 |
 | [`docs/EVAL.md`](docs/EVAL.md) | How the eval was run and scored, and where it fails |
 | [`CHANGELOG.md`](CHANGELOG.md) | What changed |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Set-up, tests, rules for pull requests |

@@ -272,3 +272,33 @@ change it.
   says "not saved" for search depth and fallbacks there instead of guessing.
 - **Spend.** Bifrost reported US$0 because it has no price list for these model ids (see `docs/EVAL.md`), so the panel
   shows token counts as the cost measure.
+
+
+## D-022 · Hybrid check: the model proposes, an official page proves
+
+- **Why.** The D-020 baseline showed the judge model alone found 24 of 28 stale answers with no source, against 10 of
+  28 for Terkini. Most Terkini misses end `unverifiable`: the search for the claim's own wording returned pages that
+  did not settle it. A model that knows the newer value can point the search at it.
+- **How.** For each claim the main check did not flag, the judge model is asked without pages (the same
+  `[judge_no_evidence]` prompt as the D-020 baseline, so the eval and live checks use one prompt). When it says
+  `outdated` with a value, code takes the first amount, rate or date of the claim's kind from that value. One Tavily
+  Search on the pack's official domains (`restrict`) puts the proposed value in the claim sentence; up to 3 official
+  pages are extracted. Code, not the model, looks for one sentence that states the proposed value and shares at
+  least 2 words with the claim. The quote is an exact substring of the page (D7 unchanged).
+- **Decision, in code.** Main check `unverifiable` + quoted proposed value → `outdated`. Main check `current` with its
+  own quote → `outdated` only when the new page's date is later than the old one; an undated side keeps `current`.
+  Main check `outdated` → unchanged, no hybrid calls. A model guess alone never decides a verdict.
+- **Dates.** The latest date (not after the check date) in the quote, then within 300 characters of it. With none,
+  Tavily's published date is used and marked as an estimate.
+- **Values.** RM amounts (with "million"/"juta"), percentages and dates are compared as values, so "RM1 million" and
+  "RM1,000,000" match. A value written as the old side of a change ("from X to Y", "daripada X kepada Y") is not
+  proof. Both of these rules and the kind rule were added after reading the first run's quotes; `docs/EVAL.md` gives
+  the numbers before and after.
+- **Switch.** `config/hybrid.toml` `enabled`. It applies to live `terkini check` and `POST /api/check`. Replays of
+  recorded runs never call it: the recordings hold no such calls. Results without a hybrid step serialise exactly as
+  before, so saved runs and the replay page data do not change.
+- **Eval.** `terkini hybrid --pack my` reuses the saved runs and the saved model-only verdicts, so only Tavily is
+  called: 48 proposals, 43 searches, 67 credits, under a 150-credit cap drawn from the reserve. Result: precision 13 of
+  20, recall 13 of 28 (main check 10 of 17, 10 of 28). The answer key did not change (D9).
+- **Rollback.** Set `enabled = false`. The hybrid row in `eval/my/results.json` disappears when `eval/my/hybrid.json`
+  is removed.

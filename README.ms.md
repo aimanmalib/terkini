@@ -23,8 +23,9 @@ naratif ialah klon AI suara saya sendiri (ElevenLabs), dinyatakan pada kad akhir
 - **Sudah berfungsi:** semakan penuh dari baris arahan. Tiga larian sebenar pada 20 Nov 2026 dirakam dan boleh dimainkan
   semula tanpa rangkaian.
 - **Penilaian, 21 Nov 2026:** 28 daripada 68 jawapan daripada 3 model menyatakan peraturan Malaysia
-  yang berbeza daripada nilai rasmi semasa; Terkini menanda 10 daripadanya dengan laman rasmi
-  (precision 59%, recall 36%). Butiran dan kegagalan: [`docs/EVAL.md`](docs/EVAL.md) (Inggeris).
+  yang berbeza daripada nilai rasmi semasa. Dengan langkah hibrid (model mencadang nilai semasa, petikan rasmi mesti
+  menyatakannya), Terkini menanda 13 daripadanya (precision 65%, recall 46%); v0.1.0 tanpanya menanda 10 (59%, 36%).
+  Butiran dan kegagalan: [`docs/EVAL.md`](docs/EVAL.md) (Inggeris).
 - **Garis asas:** model hakim sahaja, tanpa laman rasmi, menanda 24 daripada 28 jawapan basi (precision 73%,
   recall 86%), tetapi tanpa sumber. Terkini menanda lebih sedikit, setiap satu dengan petikan rasmi tepat.
 - **Juga berfungsi:** halaman ulang tayang (enam larian dirakam, BM dan Inggeris), `POST /api/check`, yang

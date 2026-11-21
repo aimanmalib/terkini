@@ -1,0 +1,107 @@
+1
+00:00:00,320 --> 00:00:02,500
+Ask an AI about a Malaysian rule,
+
+2
+00:00:02,500 --> 00:00:04,384
+and it answers with confidence.
+
+3
+00:00:04,384 --> 00:00:06,920
+Sometimes the rule changed a year ago.
+
+4
+00:00:07,220 --> 00:00:09,746
+We asked 3 models 23 questions.
+
+5
+00:00:09,746 --> 00:00:12,900
+28 of 68 answers stated a rule that is
+
+6
+00:00:12,900 --> 00:00:14,460
+no longer current.
+
+7
+00:00:15,320 --> 00:00:19,360
+Terkini checks those answers against official government pages.
+
+8
+00:00:19,920 --> 00:00:22,051
+Each claim goes to Tavily Search,
+
+9
+00:00:22,051 --> 00:00:23,872
+restricted to official domains,
+
+10
+00:00:23,872 --> 00:00:26,464
+with live results for rules that change.
+
+11
+00:00:26,464 --> 00:00:29,800
+Then Tavily Extract reads the page itself.
+
+12
+00:00:30,520 --> 00:00:33,020
+Here the answer says RM 20 million.
+
+13
+00:00:33,020 --> 00:00:35,800
+The official page says all taxpayers were included from
+
+14
+00:00:35,800 --> 00:00:37,300
+July 2025.
+
+15
+00:00:37,300 --> 00:00:38,560
+Outdated.
+
+16
+00:00:39,120 --> 00:00:42,300
+Every verdict must quote the page word for word.
+
+17
+00:00:42,300 --> 00:00:44,853
+Terkini then checks that the quote is really there.
+
+18
+00:00:44,853 --> 00:00:45,840
+No exact quote,
+
+19
+00:00:45,840 --> 00:00:47,160
+no verdict.
+
+20
+00:00:47,520 --> 00:00:49,680
+The models run through Bifrost:
+
+21
+00:00:49,680 --> 00:00:50,760
+one virtual key,
+
+22
+00:00:50,760 --> 00:00:51,640
+a daily budget,
+
+23
+00:00:51,640 --> 00:00:53,960
+and fallbacks across vendors.
+
+24
+00:00:54,520 --> 00:00:56,400
+Terkini flagged 17 answers,
+
+25
+00:00:56,400 --> 00:00:58,104
+and 10 were really stale.
+
+26
+00:00:58,104 --> 00:01:01,560
+That is 59% precision and 36% recall.
+
+27
+00:01:01,560 --> 00:01:03,520
+The misses are published too.

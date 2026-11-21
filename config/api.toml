@@ -1,0 +1,8 @@
+# `POST /api/check` on `terkini serve` (PRD §1 users 1, §3 P1). The server binds to config/pages.toml [serve] host
+# (127.0.0.1 by default). In live mode it spends your own Tavily credits under config/budget.toml, so keep it private.
+
+[check]
+# Pack used when a request names none. Must be a file in packs/.
+default_pack = "my"
+# Longest answer accepted, in characters. Longer requests get HTTP 413 before any model or search call.
+max_answer_chars = 8000

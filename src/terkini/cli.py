@@ -8,10 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import sys
-from contextlib import closing
-from datetime import UTC, datetime
 
 from terkini import __version__
 from terkini.checker import AnswerReport
@@ -67,60 +64,41 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _check(args) -> int:
-    from terkini.gateway import load_env_file
-    from terkini.replay import find_by_answer, list_cassettes
-    from terkini.runner import replay, runs_dir
+    from terkini.gateway import GatewayNotConfigured, load_env_file
+    from terkini.replay import list_cassettes
+    from terkini.runner import runs_dir
+    from terkini.service import NoRecording, UnknownPack, is_live, run
 
-    cassettes = list_cassettes(runs_dir(), args.pack)
     if args.list:
-        for c in cassettes:
+        for c in list_cassettes(runs_dir(), args.pack):
             print(f"{c.name}\t{c.answer_model or '-'}\t{c.recorded_at}\t{c.question or c.answer[:60]}")
         return 0
 
     if not args.case:
         load_env_file(REPO_ROOT / ".env")
-    live = not args.case and bool(os.environ.get("TAVILY_API_KEY"))
-    if live:
-        if not args.answer:
-            print("check: give the answer to check", file=sys.stderr)
-            return 2
-        from terkini.gateway import GatewayNotConfigured
-        try:
-            report = _live(args.answer, args.pack)
-        except GatewayNotConfigured as e:
-            print(f"check: live mode needs the Bifrost gateway: {e}", file=sys.stderr)
-            return 2
-        label = "live run"
-    else:
-        found = next((c for c in cassettes if c.name == args.case), None) if args.case else (
-            find_by_answer(cassettes, args.answer) if args.answer else None)
-        if found is None:
-            print("check: replay mode (no TAVILY_API_KEY) needs a recorded run. Pick one with --case NAME "
-                  "(see --list), or set TAVILY_API_KEY for a live check.", file=sys.stderr)
-            return 2
-        report = replay(found)
-        label = f"recorded run, {found.recorded_at[:10]}"
-        if not args.json:
-            print(f"Answer ({found.answer_model or 'pasted'}):\n{found.answer}\n")
+    if is_live(args.case) and not args.answer:
+        print("check: give the answer to check", file=sys.stderr)
+        return 2
+    try:
+        out = run(args.answer, pack=args.pack, case=args.case)
+    except UnknownPack:
+        print(f"check: no pack {args.pack!r} in packs/", file=sys.stderr)
+        return 2
+    except GatewayNotConfigured as e:
+        print(f"check: live mode needs the Bifrost gateway: {e}", file=sys.stderr)
+        return 2
+    except NoRecording:
+        print("check: replay mode (no TAVILY_API_KEY) needs a recorded run. Pick one with --case NAME "
+              "(see --list), or set TAVILY_API_KEY for a live check.", file=sys.stderr)
+        return 2
 
     if args.json:
-        print(json.dumps({"mode": label, **report.model_dump(mode="json")}, indent=2, ensure_ascii=False))
+        print(json.dumps({"mode": out.mode, **out.report.model_dump(mode="json")}, indent=2, ensure_ascii=False))
     else:
-        print(render(report, label))
+        if out.recording:
+            print(f"Answer ({out.recording.answer_model or 'pasted'}):\n{out.recording.answer}\n")
+        print(render(out.report, out.mode))
     return 0
-
-
-def _live(answer: str, pack_id: str) -> AnswerReport:
-    from terkini.cache import Cache
-    from terkini.gateway import Gateway, load_env_file
-    from terkini.runner import run_check
-    from terkini.tavily import Tavily
-    from terkini.verify import load_verify_config
-
-    load_env_file(REPO_ROOT / ".env.bifrost")
-    today = datetime.now(UTC).date()
-    with closing(Cache(REPO_ROOT / load_verify_config().cache_path)) as cache:
-        return run_check(answer, pack_id=pack_id, tavily=Tavily(), gateway=Gateway(), cache=cache, today=today)
 
 
 def render(r: AnswerReport, label: str) -> str:

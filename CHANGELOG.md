@@ -5,6 +5,8 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-21
+
 First public version, built on 20 and 21 November 2026.
 
 ### Added
@@ -25,7 +27,14 @@ First public version, built on 20 and 21 November 2026.
 - Offline tests on recorded fixtures, run in CI on every push.
 - Demo video (`docs/media/terkini-demo.mp4`, 72 s, captions in `docs/media/terkini-demo.srt`), rendered from the
   replay page and the eval numbers; source in `demo/video/` (D-019).
+- `terkini baseline`: two baselines on the same answers and claims, the judge model alone with no official pages and a
+  naive page rule, with 95% Wilson intervals in `docs/EVAL.md` (D-020). The Terkini numbers did not change.
+- "How this check ran" on the replay page and in `terkini serve`: for each recorded run, the Tavily queries with their
+  domains and credits, and each Bifrost call with the model asked for, the model that answered and the tokens (D-021).
 
 ### Not included
 
 - The India pack, dropped to stay within the Tavily credit budget (decision D-017).
+
+[Unreleased]: https://github.com/aimanmalib/terkini/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/aimanmalib/terkini/releases/tag/v0.1.0

@@ -272,7 +272,7 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 
 | Document | What |
 |---|---|
-| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-019 |
+| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-021 |
 | [`docs/EVAL.md`](docs/EVAL.md) | How the eval was run and scored, and where it fails |
 | [`CHANGELOG.md`](CHANGELOG.md) | What changed |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Set-up, tests, rules for pull requests |

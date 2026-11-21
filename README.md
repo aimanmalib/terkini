@@ -7,7 +7,7 @@
 <p align="center"><b>Is this AI answer still true where you live?</b> · <i>Adakah jawapan AI ini masih betul di tempat anda?</i><br>
 <a href="#try-it-in-three-steps">try it</a> · <a href="https://aimanmalib.github.io/terkini/">replay page</a> · <a href="#one-command-demo-docker">demo</a> · <a href="https://aimanmalib.github.io/terkini/deck.pdf">slides</a> · <a href="docs/EVAL.md">eval</a> · <a href="CHANGELOG.md">changelog</a> · <a href="README.ms.md">Bahasa Melayu</a> · Built in Malaysia by <a href="https://aimanmalib.com">Aiman Malib</a></p>
 
-<p align="center"><img src="docs/images/check-my-12.png" width="838" alt="Terkini report for a Kimi K3.1 Pro answer about EPF for foreign workers: two claims outdated against kwsp.gov.my, two unverifiable, the answer reads as if written before 2025-10-01"></p>
+<p align="center"><img src="docs/images/page-my-03.png" width="838" alt="Terkini replay page for a Grok 4.7 answer on the Malaysian service tax rate: the claim of 6% is marked outdated, the official rate is 8% from 1 March 2024, with the exact quote from customs.gov.my"></p>
 
 Terkini takes an AI answer about a Malaysian rule, such as the minimum wage, an EPF contribution rate, an electricity
 tariff or the turnover limit for e-invoicing. It pulls out each factual claim, checks it against official government pages through
@@ -69,10 +69,17 @@ OLD outdated      score   0  For non-Malaysian workers registered on or after 1 
 This answer reads as if written before 2025-10-01
 ```
 
+Read this one with [`docs/EVAL.md`](docs/EVAL.md). In the eval, Kimi's answer to the same question was labelled current
+and Terkini still flagged it: one of the seven false positives. Here, the first claim is history ("was a flat RM5"),
+and the checker marks it outdated.
+
 The other two recordings: DeepSeek V4.1 Flash on the minimum wage (one claim current at RM1,700 from 1 February 2025,
 4 credits) and Grok 4.7 on the e-invoicing exemption (one claim outdated, 4 credits).
 
 <img src="docs/images/check-my-09.png" width="838" alt="Terkini report for a Grok 4.7 answer about the e-invoicing exemption: one claim outdated against mof.gov.my, two unverifiable">
+
+The verdict on this one is right, but its evidence is old: a 2023 Ministry of Finance statement. The current rule, in the
+answer key from hasil.gov.my, exempts businesses with turnover under RM3,000,000.
 
 ### One-command demo (Docker)
 
@@ -164,7 +171,8 @@ flowchart LR
    counts only if it is written inside that quote. Otherwise the claim is `unverifiable`.
 6. **Score.** Plain arithmetic with fixed weights from [`config/score.toml`](config/score.toml): the verdict, whether
    the source is a government domain, whether the quote was found, and the page date. The report also says which date
-   the answer reads as if it were written before.
+   the answer reads as if it were written before. With a government quote, a current claim scores up to 100, an
+   outdated one scores 0, and an unverifiable one at most 50.
 
 What a country pack holds, in [`packs/my.toml`](packs/my.toml): 12 official domains (each labelled government or
 utility), the claim categories, which categories change often, and the question file for the evaluation. Code holds
@@ -247,7 +255,7 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 
 | Document | What |
 |---|---|
-| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-018 |
+| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-019 |
 | [`docs/EVAL.md`](docs/EVAL.md) | How the eval was run and scored, and where it fails |
 | [`CHANGELOG.md`](CHANGELOG.md) | What changed |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Set-up, tests, rules for pull requests |

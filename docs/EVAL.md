@@ -167,6 +167,10 @@ Every answer that was labelled stale or flagged by Terkini.
 - **Grok 4.7 drives the stale count.** 20 of its 23 answers differ from the key, against 6 for DeepSeek and 2 for Kimi.
   Recall on Grok answers is 9 of 20.
 - **Small sample.** 68 answers to 23 questions, labelled once. Treat the rates as a first measurement.
+- **Right verdict, old evidence.** The recorded e-invoicing run (`my-09-grok-4-7`, on the replay page) is marked
+  outdated with a 2023 Ministry of Finance statement. The verdict is right, but the current rule in the key is newer:
+  turnover under RM3,000,000 is exempt (hasil.gov.my). The eval run of the same answer was a miss. Terkini does not yet
+  prefer the newest official page when two disagree.
 
 ## Reproduce
 

@@ -52,12 +52,12 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
     <h2 class="h2" data-anim>AI answers keep old rules alive</h2>
     <div class="side">
       <div data-anim style="--d:2;display:flex;flex-direction:column;gap:18px">
-        <p class="cap" style="margin:0;color:var(--on-light-2)">Kimi K3.1 Pro, asked about EPF for foreign workers</p>
-        <blockquote>"For workers registered on or after 1 August 1998, the employer's contribution was a flat RM5 per month."</blockquote>
+        <p class="cap" style="margin:0;color:var(--on-light-2)">Grok 4.7, asked for the standard service tax rate</p>
+        <blockquote>"The standard service tax rate in Malaysia is 6%."</blockquote>
       </div>
       <div data-anim style="--d:3;display:flex;flex-direction:column;gap:18px">
-        <p class="cap" style="margin:0;color:var(--on-light-2)">kwsp.gov.my, read through Tavily on 20 Nov 2026</p>
-        <blockquote class="now">"Employers are only required to register and contribute for their non-Malaysian citizen employees starting 1 October 2025."</blockquote>
+        <p class="cap" style="margin:0;color:var(--on-light-2)">customs.gov.my, read through Tavily on 21 Nov 2026</p>
+        <blockquote class="now">"…the service tax rate for most prescribed taxable services … will increase from 6% to 8%, effective from 01 March 2024."</blockquote>
       </div>
     </div>
     <ul class="dash" data-anim style="--d:4;margin-top:auto;margin-bottom:10px">
@@ -188,6 +188,7 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
 ...
 4 claims checked, 2 outdated, 3 skipped, 8 Tavily credits
 <span class="uns">This answer reads as if written before 2025-10-01</span></pre>
+    <p class="p" data-anim style="--d:4;font-size:26px">In the eval, Kimi's answer to this question counts as a false positive: this first claim is history, not a current rule. Failures are listed in docs/EVAL.md.</p>
   </div>
   <div class="foot"><span>Terkini</span><span>Command line · HTTP API · demo/run.sh</span></div>
 </section>

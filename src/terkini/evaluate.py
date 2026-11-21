@@ -36,6 +36,8 @@ class EvalConfig(BaseModel):
     labels: str
     results: str
     date_window_days: int
+    baseline_model_only: str
+    ci_z: float
 
 
 def load_eval_config(root: Path = REPO_ROOT) -> EvalConfig:

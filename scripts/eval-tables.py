@@ -70,6 +70,16 @@ def main() -> int:
                       ("Median seconds to check one answer", "p50_seconds_per_answer")]:
         print(f"| {name} | {k[key]} |")
 
+    names = {"terkini": "Terkini (Tavily evidence, judge, exact-quote check)",
+             "model_only": "Judge model alone, no official pages",
+             "naive_page_rule": "Naive rule: value missing from the official quote"}
+    print("\n| Method | Flagged | Precision (95% CI) | Recall (95% CI) |\n|---|---|---|---|")
+    for b in r.get("baselines", {}).get("rows", []):
+        ci = lambda v: "n/a" if v is None else f"{pct(v[0])}-{pct(v[1])}"
+        print(f"| {names.get(b['name'], b['name'])} | {b['flagged']} of {b['n_answers']} | {b['precision_text']}, "
+              f"{pct(b['precision'])} ({ci(b['precision_ci95'])}) | {b['recall_text']}, {pct(b['recall'])} "
+              f"({ci(b['recall_ci95'])}) |")
+
     labels = load_labels(pack)
     print("\n| Answer | Label | Flagged | Outdated claims |\n|---|---|---|---|")
     for run in load_runs(pack):

@@ -10,7 +10,7 @@ from datetime import UTC, datetime
 
 import httpx
 
-from terkini.packs import REPO_ROOT, load_key, load_pack
+from terkini.packs import REPO_ROOT, load_pack
 
 
 def _env() -> None:
@@ -64,11 +64,8 @@ def eval_command(args) -> int:
         eval_dir,
         load_answers,
         load_eval_config,
-        load_labels,
-        load_runs,
         write_json,
     )
-    from terkini.metrics import compute_results
     pack = load_pack(args.pack)
     cfg = load_eval_config()
     side = eval_dir(pack) / "usage.json"
@@ -93,12 +90,34 @@ def eval_command(args) -> int:
                             "tavily_usage_after": usage_numbers(tavily.usage()), "gateway_before": gw_before,
                             "gateway_after": gateway_usage()})
         write_json(side, log)
-    import json
-    usage = json.loads(side.read_text()) if side.exists() else {"runs": []}
-    results = compute_results(load_runs(pack), load_labels(pack), load_key(pack), usage=usage,
-                              window_days=cfg.date_window_days, pack=pack.id)
+    from terkini.baseline import saved_results
+    results = saved_results(pack, REPO_ROOT)
     write_json(eval_dir(pack) / cfg.results, results)
     d = results["detection"]
     print(f"eval: {results['answers']} answers · {results['claims']['checked']} claims · precision {d['precision']} · "
           f"recall {d['recall']} · results in {(eval_dir(pack) / cfg.results).relative_to(REPO_ROOT)}")
     return 0
+
+
+def baseline_command(args) -> int:
+    """Judge every saved claim without official pages (one gateway call per claim, no Tavily), then rewrite results."""
+    from terkini.baseline import run_model_only, saved_results
+    from terkini.evaluate import eval_dir, load_eval_config, load_runs, write_json
+    from terkini.gateway import Gateway, load_gateway_config
+    pack = load_pack(args.pack)
+    cfg = load_eval_config()
+    failed = []
+    if not args.score_only:
+        _env()
+        models = load_gateway_config().models
+        failed = run_model_only(load_runs(pack), Gateway(), model=models.judge, fallbacks=models.fallbacks,
+                                country=pack.name, path=eval_dir(pack) / cfg.baseline_model_only,
+                                workers=cfg.workers, root=REPO_ROOT)
+        for f in failed:
+            print(f"baseline: failed {f}", file=sys.stderr)
+    results = saved_results(pack, REPO_ROOT)
+    write_json(eval_dir(pack) / cfg.results, results)
+    for r in results["baselines"]["rows"]:
+        print(f"baseline: {r['name']}: precision {r['precision_text']} {r['precision_ci95']} · "
+              f"recall {r['recall_text']} {r['recall_ci95']}")
+    return 1 if failed else 0

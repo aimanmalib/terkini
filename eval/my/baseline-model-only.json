@@ -1,0 +1,1080 @@
+{
+  "model": "rv/GLM-5.3",
+  "prompt": "config/prompts.toml [judge_no_evidence]",
+  "calls": 214,
+  "prompt_tokens": 464605,
+  "completion_tokens": 358302,
+  "verdicts": {
+    "my-01--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "RM1,700 per month",
+      "model": "GLM-5.3"
+    },
+    "my-01--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "RM1,700 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-01--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "RM1,700 per month (effective 1 February 2025 under the Minimum Wages Order 2024; employers with fewer than five employees from 1 August 2025)",
+      "model": "GLM-5.3"
+    },
+    "my-01--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "RM1,700 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-01--grok-4-7#2": {
+      "verdict": "outdated",
+      "current_value": "RM1,700 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-01--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "RM1,700 MYR per month (RM8.72 per hour)",
+      "model": "GLM-5.3"
+    },
+    "my-01--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "RM1,700 per month, equivalent to roughly RM8.72 per hour (based on ~195 working hours per month)",
+      "model": "GLM-5.3"
+    },
+    "my-01--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "RM1,700 per month",
+      "model": "GLM-5.3"
+    },
+    "my-01--kimi-k3-1-pro#3": {
+      "verdict": "current",
+      "current_value": "RM1,700 per month (Minimum Wages Order 2024; effective 1 February 2025 for employers with five or more employees, and 1 August 2025 for employers with fewer than five employees)",
+      "model": "GLM-5.3"
+    },
+    "my-01--kimi-k3-1-pro#4": {
+      "verdict": "current",
+      "current_value": "RM1,700 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-01--kimi-k3-1-pro#5": {
+      "verdict": "current",
+      "current_value": "RM1,700 per month (Minimum Wages Order 2025: effective 1 February 2025 for most employers, with a deferred effective date of 1 August 2025 for employers with fewer than five employees)",
+      "model": "GLM-5.3"
+    },
+    "my-02--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "RM1,700 per month",
+      "model": "GLM-5.3"
+    },
+    "my-02--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "RM1,700 per month (effective 1 February 2025 for employers with five or more employees; 1 August 2025 for employers with fewer than five employees)",
+      "model": "GLM-5.3"
+    },
+    "my-02--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "RM1,700 per month",
+      "model": "GLM-5.3"
+    },
+    "my-02--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "RM1,700 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-02--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "The national minimum wage has actually been in force since 1 January 2013 under the Minimum Wages Order 2012 (National Wages Consultative Council Act 2011), not 1 January 2016. The current minimum wage is RM1,700 per month under the Minimum Wages Order 2024, effective 1 February 2025 (1 August 2025 for employers with five or fewer employees).",
+      "model": "GLM-5.3"
+    },
+    "my-02--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "RM1,700 per month (effective 1 February 2025; employers with fewer than 5 employees from 1 August 2025)",
+      "model": "GLM-5.3"
+    },
+    "my-02--grok-4-7#2": {
+      "verdict": "outdated",
+      "current_value": "RM1,700 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-02--kimi-k3-1-pro#0": {
+      "verdict": "outdated",
+      "current_value": "RM1,700 per month under the Minimum Wages Order 2024, in force 1 February 2025; employers with fewer than 5 employees were covered from 1 August 2025. The 1 July 2023 date applied to the earlier RM1,500 order (Minimum Wages Order 2022), and that deferral actually ran from 1 May 2022, not 1 January 2023.",
+      "model": "GLM-5.3"
+    },
+    "my-02--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "Employers carrying out professional activities classified under MASCO remain covered by the national minimum wage regardless of headcount (this carve-out from the small-employer grace period was retained in the Minimum Wages Order 2024). The national minimum wage is RM1,700 per month, effective 1 February 2025 for employers with 5 or more employees (including MASCO professional-activity employers of any size), and from 1 August 2025 for all remaining employers with fewer than 5 employees.",
+      "model": "GLM-5.3"
+    },
+    "my-02--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "RM1,700 per month",
+      "model": "GLM-5.3"
+    },
+    "my-02--kimi-k3-1-pro#3": {
+      "verdict": "outdated",
+      "current_value": "RM1,700 per month applies to ALL employers regardless of headcount; it took effect 1 December 2024 for employers with five or more employees (not 1 February 2025) and was extended to employers with fewer than five employees from 1 August 2025 under the Minimum Wages Order 2024",
+      "model": "GLM-5.3"
+    },
+    "my-03--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "8% (standard rate; certain prescribed services such as F&B, telecommunications, parking and logistics remain at 6%)",
+      "model": "GLM-5.3"
+    },
+    "my-03--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "8%",
+      "model": "GLM-5.3"
+    },
+    "my-03--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-03--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "8% (standard rate effective 1 March 2025; certain services such as food & beverage, telecommunications, parking, and logistics remain at 6%)",
+      "model": "GLM-5.3"
+    },
+    "my-03--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "RM1,000,000 MYR per year for most taxable services (threshold raised from RM500,000 effective 1 March 2024); RM500,000 still applies to certain categories such as restaurants and gaming",
+      "model": "GLM-5.3"
+    },
+    "my-03--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "8%",
+      "model": "GLM-5.3"
+    },
+    "my-03--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "8%",
+      "model": "GLM-5.3"
+    },
+    "my-03--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-03--kimi-k3-1-pro#3": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-03--kimi-k3-1-pro#4": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-03--kimi-k3-1-pro#5": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-04--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-04--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "8%",
+      "model": "GLM-5.3"
+    },
+    "my-04--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-04--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "Yes — food and beverage (restaurant) operators in Malaysia remain subject to a service tax registration threshold based on annual taxable turnover. Effective 1 January 2025 (Budget 2025), the threshold for F&B operators was reduced from RM500,000 to RM150,000, and the scope was extended to include F&B sold through online platforms; the applicable service tax rate for F&B remains 6%.",
+      "model": "GLM-5.3"
+    },
+    "my-04--grok-4-7#0": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-04--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-04--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "F&B services remain at 6% service tax; the 8% rate applies to other taxable services (F&B, telecommunications, parking, and logistics were excluded from the 1 March 2024 increase to 8%)",
+      "model": "GLM-5.3"
+    },
+    "my-04--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-05--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "8%",
+      "model": "GLM-5.3"
+    },
+    "my-05--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "8%",
+      "model": "GLM-5.3"
+    },
+    "my-05--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "8% (standard service tax rate since 1 March 2024; certain services such as telecommunications, parking, and logistics remain at 6%)",
+      "model": "GLM-5.3"
+    },
+    "my-05--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "8% (standard service tax rate since 1 March 2024; a reduced 6% rate applies to specific services such as food and beverages, telecommunications, parking, and logistics)",
+      "model": "GLM-5.3"
+    },
+    "my-05--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "8%",
+      "model": "GLM-5.3"
+    },
+    "my-05--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-05--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-05--kimi-k3-1-pro#3": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-05--kimi-k3-1-pro#4": {
+      "verdict": "current",
+      "current_value": "6%",
+      "model": "GLM-5.3"
+    },
+    "my-05--kimi-k3-1-pro#5": {
+      "verdict": "current",
+      "current_value": "8%",
+      "model": "GLM-5.3"
+    },
+    "my-06--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "5% or 10% depending on the goods category (standard rates under Malaysia's Sales Tax Act as part of the SST regime; some goods are exempt or zero-rated, and imported low-value goods are taxed at 10%)",
+      "model": "GLM-5.3"
+    },
+    "my-06--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "5%",
+      "model": "GLM-5.3"
+    },
+    "my-06--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "10%",
+      "model": "GLM-5.3"
+    },
+    "my-06--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "Certain agricultural products and essential foodstuffs (e.g., rice, meat, fish, vegetables, fruits, and other basic food items) remain exempt from sales tax under the Sales Tax (Goods Exempted from Sales Tax) Order issued under the Sales Tax Act 2018, as amended.",
+      "model": "GLM-5.3"
+    },
+    "my-06--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "Malaysia's Sales Tax on goods is levied at 5% or 10% depending on the category of goods (with some goods exempt) — there is no 6% rate on goods. The 6% figure was the Service Tax rate, and since 1 March 2024 most services are taxed at 8%, with only certain services (e.g., food and beverage, telecommunications, parking, logistics) remaining at 6%.",
+      "model": "GLM-5.3"
+    },
+    "my-06--grok-4-7#1": {
+      "verdict": "current",
+      "current_value": "0%",
+      "model": "GLM-5.3"
+    },
+    "my-06--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "5% and 10%",
+      "model": "GLM-5.3"
+    },
+    "my-06--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "untaxed (basic essential goods such as rice, flour, cooking oil, vegetables, fruits, meat, fish, eggs and basic medicines remain exempt from the expanded Sales Tax)",
+      "model": "GLM-5.3"
+    },
+    "my-06--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "5% or 10%",
+      "model": "GLM-5.3"
+    },
+    "my-06--kimi-k3-1-pro#3": {
+      "verdict": "current",
+      "current_value": "exempt - certain goods remain specifically exempt from sales tax under Malaysia's Sales Tax Act 2018, via the Sales Tax (Exemption from Tax) (Goods) Order, which lists items such as selected foodstuffs, pharmaceuticals, and agricultural goods as exempt",
+      "model": "GLM-5.3"
+    },
+    "my-06--kimi-k3-1-pro#4": {
+      "verdict": "current",
+      "current_value": "Under Malaysia's Sales Tax Act 2018 and the Sales Tax (Rates of Tax) Order, certain goods—including particular petroleum products such as petrol and diesel—are subject to specific rates (e.g., sen per litre) rather than ad valorem percentage rates.",
+      "model": "GLM-5.3"
+    },
+    "my-07--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "RM500,000 per year",
+      "model": "GLM-5.3"
+    },
+    "my-07--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "RM500,000 MYR per year",
+      "model": "GLM-5.3"
+    },
+    "my-07--grok-4-7#0": {
+      "verdict": "current",
+      "current_value": "RM500,000 MYR per year",
+      "model": "GLM-5.3"
+    },
+    "my-07--grok-4-7#1": {
+      "verdict": "current",
+      "current_value": "RM500,000 MYR per year",
+      "model": "GLM-5.3"
+    },
+    "my-07--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "RM500,000 MYR per 12-month period",
+      "model": "GLM-5.3"
+    },
+    "my-08--deepseek-v4-1-flash-1017#0": {
+      "verdict": "outdated",
+      "current_value": "RM20 per room per night for five-star hotels (tiered rates effective 1 January 2025: RM10 for 1–3 star hotels, RM20 for 4–5 star hotels)",
+      "model": "GLM-5.3"
+    },
+    "my-08--deepseek-v4-1-flash-1017#1": {
+      "verdict": "outdated",
+      "current_value": "RM15 per room per night for four-star hotels (tourism tax increased effective 1 January 2023; four- and five-star hotels pay RM15, while lower-rated hotels pay RM5)",
+      "model": "GLM-5.3"
+    },
+    "my-08--deepseek-v4-1-flash-1017#2": {
+      "verdict": "outdated",
+      "current_value": "RM30 per room per night for three-star accommodation (under the tiered tourism tax rates effective 1 January 2023: five-star RM50, four-star RM40, three-star RM30, two-star RM20, one-star RM10, non-rated RM5)",
+      "model": "GLM-5.3"
+    },
+    "my-08--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "RM2 per room per night (tiered rate applying to one-star and two-star hotels; five-star RM20, four-star RM10, three-star RM5)",
+      "model": "GLM-5.3"
+    },
+    "my-08--deepseek-v4-1-flash-1017#4": {
+      "verdict": "outdated",
+      "current_value": "RM2.50 per room per night for one-star and unrated (zero-star) accommodation",
+      "model": "GLM-5.3"
+    },
+    "my-08--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "Flat RM10 per room per night (not a percentage), under the Tourism Tax Act 2017; since 1 January 2023 it applies to all guests including Malaysians, and this flat rate remains in effect",
+      "model": "GLM-5.3"
+    },
+    "my-08--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "8% service tax on hotel accommodation (raised from 6% effective 1 March 2024; food and beverage services remain at 6%). The Tourism Tax itself remains RM10 per room per night for foreign guests, charged in addition to the service tax.",
+      "model": "GLM-5.3"
+    },
+    "my-08--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "RM10 per room per night (flat rate under the Tourism Tax Act 2017, charged to foreign guests; Malaysian citizens are exempt)",
+      "model": "GLM-5.3"
+    },
+    "my-09--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "RM150,000 MYR per year — businesses with annual sales turnover below RM150,000 remain exempt from mandatory e-Invoicing under LHDN's e-Invois framework (the exemption was confirmed in Budget 2025, while all other taxpayers entered the final implementation phase on 1 July 2026).",
+      "model": "GLM-5.3"
+    },
+    "my-09--deepseek-v4-1-flash-1017#1": {
+      "verdict": "outdated",
+      "current_value": "RM500,000 per year (taxpayers with annual turnover or revenue not exceeding RM500,000 are exempted from mandatory e-invoicing, per the July 2025 announcement; the phased rollout applies RM1 million+ from 1 Jan 2026 and RM500,000+ from 1 July 2026)",
+      "model": "GLM-5.3"
+    },
+    "my-09--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "No turnover-based exemption exists. Malaysia's e-Invoicing mandate was rolled out in phases by LHDN/IRBM — taxpayers with turnover above RM100 million from 1 August 2024, above RM25 million from 1 January 2025, and all remaining taxpayers from 1 July 2025. Since 1 July 2025, e-Invoicing applies to all businesses regardless of annual turnover (with only specific category exemptions, e.g., certain individuals such as taxi/school bus drivers, small market traders, and room/property rental by individuals, plus B2C transactions handled via consolidated e-invoices).",
+      "model": "GLM-5.3"
+    },
+    "my-09--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "As of 21 Nov 2026, e-Invoicing is mandatory for essentially all Malaysian businesses regardless of turnover, per LHDN/RMCD phased implementation: turnover above RM100 million from 1 Aug 2024; RM25m–RM100m from 1 Jan 2025; RM5m–RM25m from 1 Jul 2025; RM1m–RM5m from 1 Jan 2026; and all remaining taxpayers (below RM1 million) from 1 Jul 2026. The RM20 million figure was never an official threshold; the current effective threshold is RM0 (all businesses).",
+      "model": "GLM-5.3"
+    },
+    "my-09--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "RM500,000 MYR per year",
+      "model": "GLM-5.3"
+    },
+    "my-09--kimi-k3-1-pro#1": {
+      "verdict": "outdated",
+      "current_value": "RM500,000 MYR per year",
+      "model": "GLM-5.3"
+    },
+    "my-10--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "RM1 million–RM5 million MYR per year (based on YA2024 turnover; this band is Phase 4 of Malaysia's e-invoicing rollout, mandatory from 1 January 2026)",
+      "model": "GLM-5.3"
+    },
+    "my-10--deepseek-v4-1-flash-1017#1": {
+      "verdict": "outdated",
+      "current_value": "1 January 2026",
+      "model": "GLM-5.3"
+    },
+    "my-10--grok-4-7#0": {
+      "verdict": "current",
+      "current_value": "RM3 million MYR per year",
+      "model": "Qwen/Qwen3.8-27B-FP8"
+    },
+    "my-10--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "RM1 million MYR per year (e-Invoicing has been mandatory for taxpayers with annual turnover above RM1 million since 1 July 2026, following the phased rollout: >RM100m from Aug 2024, >RM50m from Jan 2025, >RM25m from Jul 2025, >RM5m from Jan 2026, >RM1m from Jul 2026; from 1 January 2027 it extends to all taxpayers, with micro businesses below RM150,000 exempted)",
+      "model": "GLM-5.3"
+    },
+    "my-10--grok-4-7#2": {
+      "verdict": "outdated",
+      "current_value": "No RM3 million threshold exists in Malaysia's e-Invoicing rollout, and no phase began on 1 January 2024. The actual phased timeline (per LHDN, as revised in Budget 2025): turnover >RM100m from 1 Aug 2024; >RM25m from 1 Jan 2025; >RM5m from 1 Jul 2025; >RM500k from 1 Jan 2026; >RM150k from 1 Jul 2026; all remaining taxpayers from 1 Jan 2027. A business with roughly RM3 million annual turnover therefore falls under the >RM500,000 phase and must e-invoice from 1 January 2026.",
+      "model": "GLM-5.3"
+    },
+    "my-11--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "75%",
+      "model": "GLM-5.3"
+    },
+    "my-11--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "15%",
+      "model": "GLM-5.3"
+    },
+    "my-11--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "10%",
+      "model": "GLM-5.3"
+    },
+    "my-11--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "13% of monthly wages for members under 60 earning RM5,000 or less; 12% for wages above RM5,000 (employee share is 11%; for members aged 60+, the employer rate drops to 4% and employee contribution is 0%). Note: a temporary additional 2% employer contribution on wages above RM4,000 applied only during 2025 and has lapsed.",
+      "model": "GLM-5.3"
+    },
+    "my-11--deepseek-v4-1-flash-1017#4": {
+      "verdict": "current",
+      "current_value": "11%",
+      "model": "GLM-5.3"
+    },
+    "my-11--deepseek-v4-1-flash-1017#5": {
+      "verdict": "current",
+      "current_value": "55 or 60 years of age (Akaun Persaraan, holding 75% of EPF contributions under the account restructuring effective May 2024, permits full withdrawal only at age 55, or at age 60 for members who continue working/defer withdrawal)",
+      "model": "GLM-5.3"
+    },
+    "my-11--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "Since 11 May 2024, EPF members under 55 have new contributions allocated as: 75% to Akaun Persaraan (Retirement Account), 15% to Akaun Sejahtera (Wellbeing Account), and 10% to Akaun Fleksibel (Flexible Account). The 60% figure does not match the current structure (it also does not match the pre-2024 split of 70%/20%/10% for Accounts 1/2/3; a 60/40 two-account split only existed before the late 1990s).",
+      "model": "GLM-5.3"
+    },
+    "my-11--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "No EPF 'Investment Account' exists. Since 11 May 2024, new contributions are allocated 75% to Akaun Persaraan (retirement, withdrawal at 55), 20% to Akaun Sejahtera (withdrawal at 50, with limited pre-50 access for housing/education/health), and 5% to Akaun Fleksibel (withdrawable anytime). Before that, the split was 70% Account I / 20% Account II / 10% Account III. A 40% allocation to an 'Investment Account' matches no known EPF rule; the closest real feature is the EPF Members Investment Scheme, which lets members under 55 invest up to 30% of Akaun Persaraan savings in excess of the Basic Savings amount through approved fund managers.",
+      "model": "GLM-5.3"
+    },
+    "my-11--grok-4-7#2": {
+      "verdict": "current",
+      "current_value": "100%",
+      "model": "Qwen/Qwen3.8-27B-FP8"
+    },
+    "my-11--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "75%",
+      "model": "GLM-5.3"
+    },
+    "my-11--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "15%",
+      "model": "GLM-5.3"
+    },
+    "my-11--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "10% of new contributions for members below age 55 allocated to Akaun Fleksibel (alongside 75% to Akaun Persaraan and 15% to Akaun Sejahtera), with flexible withdrawals permitted at any time subject to EPF rules (e.g., minimum withdrawal amount)",
+      "model": "GLM-5.3"
+    },
+    "my-11--kimi-k3-1-pro#3": {
+      "verdict": "current",
+      "current_value": "55 years",
+      "model": "GLM-5.3"
+    },
+    "my-12--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "Effective 1 October 2025, employers must pay a mandatory EPF contribution of 2% of the foreign worker's wages for foreign employees holding a valid employment pass or work permit; the foreign worker's own contribution is not mandatory, and domestic servants are excluded.",
+      "model": "GLM-5.3"
+    },
+    "my-12--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "2% of the employee's monthly wages",
+      "model": "GLM-5.3"
+    },
+    "my-12--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "Employers in Malaysia must register with EPF (KWSP) and remit contributions monthly, by the 15th day of the following month (statutory rates: employee 11%, employer 13% for wages ≤ RM5,000 and 12% for wages above RM5,000).",
+      "model": "GLM-5.3"
+    },
+    "my-12--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "Mandatory EPF contributions for foreign workers in Malaysia took effect on 1 October 2025, with a 2% employer contribution and 2% employee contribution of monthly wages.",
+      "model": "GLM-5.3"
+    },
+    "my-12--deepseek-v4-1-flash-1017#4": {
+      "verdict": "current",
+      "current_value": "2%",
+      "model": "Qwen/Qwen3.8-27B-FP8"
+    },
+    "my-12--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "The total statutory EPF contribution is about 23%–24% of wages, not 12%: employees contribute 11% (for those under 60) and employers contribute 13% for monthly wages up to RM5,000 or 12% for wages above RM5,000. The 12% figure in the claim matches only the employer's rate for wages above RM5,000, not the combined total.",
+      "model": "GLM-5.3"
+    },
+    "my-12--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "11%",
+      "model": "GLM-5.3"
+    },
+    "my-12--grok-4-7#2": {
+      "verdict": "outdated",
+      "current_value": "12% of monthly wages for wages above RM5,000; 13% for wages up to RM5,000 (the 4% rate was a temporary COVID-19 relief measure for certain affected sectors, which has expired)",
+      "model": "GLM-5.3"
+    },
+    "my-12--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "As of November 2026, employers are still not required to make mandatory EPF contributions for foreign workers (non-Malaysian citizens who are not permanent residents); such workers may only contribute voluntarily. Note: Budget 2026 (tabled 10 October 2025) announced a mandatory 2% employer EPF contribution for foreign workers, but it will only be implemented in phases starting 1 October 2027, so the old rule still applies today.",
+      "model": "GLM-5.3"
+    },
+    "my-12--kimi-k3-1-pro#1": {
+      "verdict": "outdated",
+      "current_value": "Since 1 October 2025, EPF contributions are mandatory for foreign workers (non-Malaysian citizens who are not permanent residents): the employer contributes 2% of monthly wages and the employee contributes 2%, replacing the previous voluntary opt-in scheme under which the employer paid a flat RM5 per month.",
+      "model": "GLM-5.3"
+    },
+    "my-12--kimi-k3-1-pro#2": {
+      "verdict": "outdated",
+      "current_value": "2% of monthly wages (mandatory employee EPF contribution for non-Malaysian workers, phased in from 1 October 2025, with employer also contributing 2%)",
+      "model": "GLM-5.3"
+    },
+    "my-12--kimi-k3-1-pro#3": {
+      "verdict": "current",
+      "current_value": "Effective 1 October 2025, following the EPF Act amendments announced in Budget 2025, EPF contributions are mandatory for foreign (non-Malaysian) workers: employers must contribute 2% of the worker's monthly wages, while the employee's own contribution remains voluntary (they may opt in to contribute more).",
+      "model": "GLM-5.3"
+    },
+    "my-12--kimi-k3-1-pro#4": {
+      "verdict": "current",
+      "current_value": "2%",
+      "model": "GLM-5.3"
+    },
+    "my-12--kimi-k3-1-pro#5": {
+      "verdict": "current",
+      "current_value": "2%",
+      "model": "GLM-5.3"
+    },
+    "my-12--kimi-k3-1-pro#6": {
+      "verdict": "current",
+      "current_value": "As of November 2026, foreign employees who had already voluntarily opted into EPF before the October 2025 (Budget 2026) announcement continue under their existing contribution arrangements. The mandatory EPF scheme for foreign workers announced in Budget 2026 is only being phased in from January 2027 (proposed at 2% employee + 2% employer for those earning RM10,000/month or below, with standard rates for higher earners), so the pre-existing opt-in arrangements have not yet been superseded.",
+      "model": "GLM-5.3"
+    },
+    "my-13--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "0.2% of the employee's monthly wages (employer share; employee also contributes 0.2%, for a combined 0.4%)",
+      "model": "GLM-5.3"
+    },
+    "my-13--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "0.2% of the employee's monthly wages (capped at assumed monthly wages of RM4,000, i.e., maximum RM7.90 per month; employer contributes a matching 0.2%)",
+      "model": "GLM-5.3"
+    },
+    "my-13--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "0.4% of monthly wages, split equally between employer (0.2%) and employee (0.2%), with a wage ceiling of RM4,000",
+      "model": "GLM-5.3"
+    },
+    "my-13--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "RM6,000 per month",
+      "model": "GLM-5.3"
+    },
+    "my-13--deepseek-v4-1-flash-1017#4": {
+      "verdict": "outdated",
+      "current_value": "RM6,000 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-13--deepseek-v4-1-flash-1017#5": {
+      "verdict": "current",
+      "current_value": "18 to 60 years",
+      "model": "GLM-5.3"
+    },
+    "my-13--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "0.2% of monthly wages (employee share; employer pays a matching 0.2%, capped at the RM4,000 wage ceiling)",
+      "model": "GLM-5.3"
+    },
+    "my-13--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "0.2% of the employee's monthly wages (employer share; employee also contributes 0.2%, for a total of 0.4%). The statutory rate of 0.25% per party (0.5% total) has been repeatedly deferred and the reduced 0.2% rate remains in effect.",
+      "model": "GLM-5.3"
+    },
+    "my-13--grok-4-7#2": {
+      "verdict": "outdated",
+      "current_value": "0.4% of monthly wages (0.2% employer + 0.2% employee)",
+      "model": "GLM-5.3"
+    },
+    "my-13--grok-4-7#3": {
+      "verdict": "outdated",
+      "current_value": "RM4,000 per month",
+      "model": "GLM-5.3"
+    },
+    "my-13--grok-4-7#4": {
+      "verdict": "current",
+      "current_value": "EIS contribution rates remain unchanged: 0.2% from employee and 0.2% from employer (total 0.4% of monthly wages, with the contribution wage ceiling at RM5,000)",
+      "model": "GLM-5.3"
+    },
+    "my-13--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "0.2% of monthly wages (employee share; employer also pays 0.2%, with the insurable wage ceiling raised to RM6,000 effective October 2024)",
+      "model": "GLM-5.3"
+    },
+    "my-13--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "0.2% of monthly wages (employer share; employee also contributes 0.2%)",
+      "model": "GLM-5.3"
+    },
+    "my-13--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "0.4% of monthly wages (0.2% employer + 0.2% employee), applicable to wages up to RM4,000 per month",
+      "model": "GLM-5.3"
+    },
+    "my-13--kimi-k3-1-pro#3": {
+      "verdict": "current",
+      "current_value": "EIS (SIP) contributions remain subject to the SOCSO/EIS monthly wage ceiling of RM5,000 (in force since 1 September 2022). Contributions are 0.2% employer + 0.2% employee (0.4% total) of the assumed monthly wage per the EIS contribution schedule, rounded per the schedule's wage categories, and capped at RM10 each (RM20 total) for wages of RM5,000 and above.",
+      "model": "GLM-5.3"
+    },
+    "my-14--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "RM6,000 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-14--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "RM6,000 MYR per month (maximum assumed monthly wage for EIS contribution calculation)",
+      "model": "GLM-5.3"
+    },
+    "my-14--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "EIS (SIP) insurable monthly wages are capped at RM6,000, so employees earning above RM6,000 pay the fixed top-rate contribution of 0.2% employee + 0.2% employer (approximately RM11.90 each, about RM23.80–RM24 total per month), a rule in effect since EIS began in 2018 and unchanged as of 2026.",
+      "model": "GLM-5.3"
+    },
+    "my-14--grok-4-7#0": {
+      "verdict": "current",
+      "current_value": "RM5,000 MYR per month (EIS contributions remain 0.2% employer + 0.2% employee of the first RM5,000 of wages, i.e., a maximum of RM10 each per month; employees earning above RM5,000 still contribute but only on the first RM5,000)",
+      "model": "GLM-5.3"
+    },
+    "my-14--grok-4-7#1": {
+      "verdict": "current",
+      "current_value": "0.2% each for employer and employee, on monthly wages capped at RM4,000 (EIS/SIP under PERKESO)",
+      "model": "GLM-5.3"
+    },
+    "my-14--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "RM6,000 per month",
+      "model": "GLM-5.3"
+    },
+    "my-14--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "RM6,000 MYR per month (EIS/SIP wage ceiling; contributions capped at 0.2% employer + 0.2% employee, i.e., max RM12 each per month)",
+      "model": "GLM-5.3"
+    },
+    "my-14--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "0.2% of assumed monthly wages payable by the employer and 0.2% by the employee (0.4% combined), applied according to PERKESO's EIS (SIP) contribution table of 24 wage categories, with the top category covering wages above RM4,900",
+      "model": "GLM-5.3"
+    },
+    "my-14--kimi-k3-1-pro#3": {
+      "verdict": "outdated",
+      "current_value": "RM6,000 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-15--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "24-hour coverage for invalidity (including from non-work accidents or diseases) under the SOCSO Invalidity Scheme, established under the Employees' Social Security Act 1969 which came into force in 1971",
+      "model": "GLM-5.3"
+    },
+    "my-15--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "1 January 2019",
+      "model": "Qwen/Qwen3.8-27B-FP8"
+    },
+    "my-15--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "Commuting accidents, including travel between home and the workplace, remain covered under SOCSO's (PERKESO) Employment Injury Scheme, with coverage effective since 1 July 1992. The definition has since been broadened (e.g., around 2020) to cover additional routes and certain side trips, but the 1992 commencement date still stands.",
+      "model": "GLM-5.3"
+    },
+    "my-15--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "Still in force: under the Employees' Social Security Act 1969, SOCSO's (PERKESO's) Employment Injury Scheme covers accidents occurring while the employee travels in a direct route between the place of work and the place where he/she takes a meal during an authorised rest interval — coverage that has applied since 1 July 1992.",
+      "model": "GLM-5.3"
+    },
+    "my-15--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "SOCSO's Employment Injury Scheme under the Employees' Social Security Act 1969 still covers commuting accidents — accidents occurring while travelling on a journey directly connected with employment (e.g., between home and workplace), a coverage extension that took effect on 1 July 1992 and remains in force today.",
+      "model": "GLM-5.3"
+    },
+    "my-16--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "RM100,000 annual dividend income threshold; 2% tax on the excess for individual shareholders, effective from year of assessment 2025",
+      "model": "GLM-5.3"
+    },
+    "my-16--deepseek-v4-1-flash-1017#1": {
+      "verdict": "outdated",
+      "current_value": "2% on the portion of an individual's annual dividend income exceeding RM100,000, but effective from year of assessment 2026 (implementation deferred from YA 2025 as announced during the Budget 2025 winding-up in November 2024)",
+      "model": "GLM-5.3"
+    },
+    "my-16--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "RM100,000 per year — individual shareholders' dividend income up to RM100,000 remains exempt; the 2% dividend tax applies only to dividend income exceeding RM100,000, effective from year of assessment 2025 (still in force for YA 2026)",
+      "model": "GLM-5.3"
+    },
+    "my-16--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "RM100,000 MYR per year",
+      "model": "Qwen/Qwen3.8-27B-FP8"
+    },
+    "my-16--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "Since YA 2025 (announced in Budget 2025), dividends received by individual shareholders from Malaysian companies are exempt only up to RM100,000 of gross dividend income per year; dividend income exceeding RM100,000 is subject to a 2% final tax on the gross amount.",
+      "model": "GLM-5.3"
+    },
+    "my-16--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "Under Budget 2025 (effective from Year of Assessment 2025), resident individual shareholders are subject to a 2% final tax on the portion of annual dividend income exceeding RM100,000; dividend income up to RM100,000 remains tax-exempt (0%).",
+      "model": "GLM-5.3"
+    },
+    "my-16--grok-4-7#2": {
+      "verdict": "outdated",
+      "current_value": "2%",
+      "model": "GLM-5.3"
+    },
+    "my-16--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "2%",
+      "model": "GLM-5.3"
+    },
+    "my-16--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "2% dividend tax on an individual's aggregate annual dividend income exceeding RM100,000, effective from Year of Assessment 2025 (per Budget 2025; exemptions apply, e.g., for non-citizens/non-permanent residents and distributions from certain licensed funds)",
+      "model": "GLM-5.3"
+    },
+    "my-17--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "Effective 1 March 2024, gains on disposal of unlisted shares by companies, LLPs, trust bodies and co-operative societies remain taxable under the capital gains tax rules (10% on net gain, with an election for 2% on gross disposal proceeds available for disposals made before 1 March 2026). No repeal or replacement of this regime is known as of 21 November 2026.",
+      "model": "GLM-5.3"
+    },
+    "my-17--deepseek-v4-1-flash-1017#1": {
+      "verdict": "outdated",
+      "current_value": "For unlisted shares acquired on or after 1 March 2024, the 10% flat rate applied only to disposals before 1 January 2025. From 1 January 2025 (Budget 2025 / Finance (No. 2) Act 2024), individuals pay 10% on the first RM50,000 of chargeable gains and 15% on the portion exceeding RM50,000, or 2% of the gross disposal price, whichever is higher; companies are taxed at 24% of the gain (non-citizen individuals 30%).",
+      "model": "GLM-5.3"
+    },
+    "my-17--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "For unlisted shares acquired before 1 March 2024, the taxpayer may make an irrevocable election to pay 2% on the gross disposal value (i.e., the total sale consideration, not the net gain); otherwise the standard 10% rate on the net chargeable gain applies. This transitional rule remains in effect as of November 2026.",
+      "model": "GLM-5.3"
+    },
+    "my-17--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "For unlisted shares in Malaysia acquired on or after 1 March 2024, the capital gains tax is 30% of the chargeable gain only if held for 1 year or less; 15% if held more than 1 year but not more than 3 years; and 10% if held more than 3 years. The claim's 2-year threshold for the 30% rate is incorrect.",
+      "model": "GLM-5.3"
+    },
+    "my-17--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "For unlisted shares acquired on or after 1 March 2024, the capital gains tax is tiered by holding period: 30% of the net gain if held less than 3 years, 20% if held 3 to less than 4 years, 15% if held 4 to less than 5 years, and 10% only if held 5 years or more. (A flat 10% of the net gain applies only to unlisted shares acquired before 1 March 2024.)",
+      "model": "GLM-5.3"
+    },
+    "my-17--grok-4-7#2": {
+      "verdict": "outdated",
+      "current_value": "No 5-year holding-period exemption exists for capital gains tax (CGT) on unlisted shares in Malaysia. For unlisted shares acquired on or after 1 Jan 2024, disposals are taxed at 10% of the net gain or 2% of gross proceeds, whichever is higher. From YA 2025, disposals by companies are taxed at 10% on the first RM2.5 million of net gains and 15% on the excess, while disposals by individuals are taxed at progressive individual income tax rates (0%–30%) on the net gain. (The '0% after more than 5 years' rule the claim describes applies to the Real Property Gains Tax on real property for Malaysian citizens/individuals from 1 Jan 2024, not to CGT on unlisted shares.)",
+      "model": "GLM-5.3"
+    },
+    "my-17--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "10% for individuals; 15% for companies",
+      "model": "Qwen/Qwen3.8-27B-FP8"
+    },
+    "my-17--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "2% of gross disposal price",
+      "model": "Qwen/Qwen3.8-27B-FP8"
+    },
+    "my-18--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "15% on the first RM150,000 of chargeable income (with the next RM450,000 at 17% and the balance at 24%). Note: the 0% rate on the first RM20,000 applied only for YA 2022–2024 and has expired; from YA 2025 the full first RM150,000 is taxed at 15%. The preferential rate also now requires gross income from business not exceeding RM50 million (from YA 2024) and that the company is not related to a company with paid-up capital above RM2.5 million.",
+      "model": "GLM-5.3"
+    },
+    "my-18--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "17%",
+      "model": "GLM-5.3"
+    },
+    "my-18--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "24%",
+      "model": "GLM-5.3"
+    },
+    "my-18--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "first three years of assessment",
+      "model": "Qwen/Qwen3.8-27B-FP8"
+    },
+    "my-18--deepseek-v4-1-flash-1017#4": {
+      "verdict": "current",
+      "current_value": "RM2.5 million MYR",
+      "model": "GLM-5.3"
+    },
+    "my-18--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "15% on the first RM150,000 of chargeable income (17% applies to the band from RM150,001 to RM600,000, and 24% above RM600,000) for qualifying SMEs with paid-up capital not exceeding RM2.5 million and gross business income not exceeding RM50 million. The 17% rate on the first RM150,000 applied only for YA 2020; it was reduced to 15% from YA 2021.",
+      "model": "GLM-5.3"
+    },
+    "my-18--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "17% for chargeable income from RM150,001 to RM600,000 (first RM150,000 is taxed at 15%; the 24% rate applies only to chargeable income above RM600,000)",
+      "model": "GLM-5.3"
+    },
+    "my-18--grok-4-7#2": {
+      "verdict": "outdated",
+      "current_value": "Effective from Year of Assessment 2024 (Finance Act 2023), a 'small and medium company' (SMC) is defined as a resident company with gross income from business sources not exceeding RM50 million, replacing the previous paid-up capital criterion of RM2.5 million.",
+      "model": "GLM-5.3"
+    },
+    "my-18--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "15% on the first RM150,000 of chargeable income for a qualifying SME (paid-up capital ≤ RM2.5 million and gross income ≤ RM50 million), with 17% on RM150,001–RM600,000 and 24% on the balance. Note: the RM150,000 band at 15% took effect from YA 2025 under Budget 2025; in YA 2023 itself the 15% band applied only to the first RM100,000, so the claim's stated rule matches today's rule (YA 2025/2026) even though it did not match YA 2023.",
+      "model": "GLM-5.3"
+    },
+    "my-18--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "17%",
+      "model": "GLM-5.3"
+    },
+    "my-18--kimi-k3-1-pro#2": {
+      "verdict": "outdated",
+      "current_value": "26% for resident individuals in the RM600,001–RM2,000,000 band (higher rates apply above RM2,000,000)",
+      "model": "Qwen/Qwen3.8-27B-FP8"
+    },
+    "my-19--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "98 consecutive days of paid maternity leave",
+      "model": "GLM-5.3"
+    },
+    "my-19--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "98 consecutive days",
+      "model": "GLM-5.3"
+    },
+    "my-19--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "30 days",
+      "model": "GLM-5.3"
+    },
+    "my-19--deepseek-v4-1-flash-1017#3": {
+      "verdict": "unverifiable",
+      "current_value": "",
+      "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+    },
+    "my-19--deepseek-v4-1-flash-1017#4": {
+      "verdict": "current",
+      "current_value": "90 days",
+      "model": "GLM-5.3"
+    },
+    "my-19--grok-4-7#0": {
+      "verdict": "current",
+      "current_value": "98 days",
+      "model": "GLM-5.3"
+    },
+    "my-19--grok-4-7#1": {
+      "verdict": "current",
+      "current_value": "90 days",
+      "model": "Qwen/Qwen3.8-27B-FP8"
+    },
+    "my-19--grok-4-7#2": {
+      "verdict": "outdated",
+      "current_value": "100% (full pay) — under the Employment Act 1955 as amended (effective 1 January 2023), eligible female employees receive 98 consecutive days of paid maternity leave at their ordinary rate of pay, i.e., full salary, not 90%.",
+      "model": "GLM-5.3"
+    },
+    "my-19--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "98 consecutive days per confinement",
+      "model": "GLM-5.3"
+    },
+    "my-19--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "98 days per confinement",
+      "model": "GLM-5.3"
+    },
+    "my-19--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "98 consecutive days of maternity leave per confinement (Employment Act 1955, as amended by the Employment (Amendment) Act 2021, effective 1 January 2023)",
+      "model": "GLM-5.3"
+    },
+    "my-20--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "7 days",
+      "model": "GLM-5.3"
+    },
+    "my-20--deepseek-v4-1-flash-1017#1": {
+      "verdict": "outdated",
+      "current_value": "No minimum service period is required. Under the Employment (Amendment) Act 2021 (effective 1 January 2022), a married male employee is entitled to 7 consecutive days of paid paternity leave (up to five confinements) regardless of length of service, provided he is married to the mother of the child and gives notice of the expected delivery to the employer. The previous 12-month service requirement (and the old 2-day entitlement) no longer applies.",
+      "model": "GLM-5.3"
+    },
+    "my-20--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "60 days",
+      "model": "GLM-5.3"
+    },
+    "my-20--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "7 consecutive days of paid paternity leave",
+      "model": "GLM-5.3"
+    },
+    "my-20--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "30 days",
+      "model": "GLM-5.3"
+    },
+    "my-20--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "7 consecutive days of paid paternity leave per confinement (capped at five confinements), for a married male employee with at least 12 months of service, under section 60FA of the Employment Act 1955, effective 1 January 2023",
+      "model": "GLM-5.3"
+    },
+    "my-20--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "five confinements",
+      "model": "GLM-5.3"
+    },
+    "my-20--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "12 months of service with the same employer immediately before the confinement (under Section 60FA, Employment Act 1955, as amended by the Employment (Amendment) Act 2022, effective 1 January 2023)",
+      "model": "GLM-5.3"
+    },
+    "my-20--kimi-k3-1-pro#3": {
+      "verdict": "current",
+      "current_value": "30 days",
+      "model": "GLM-5.3"
+    },
+    "my-21--deepseek-v4-1-flash-1017#0": {
+      "verdict": "outdated",
+      "current_value": "45 hours per week",
+      "model": "GLM-5.3"
+    },
+    "my-21--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "8 hours per day",
+      "model": "GLM-5.3"
+    },
+    "my-21--deepseek-v4-1-flash-1017#2": {
+      "verdict": "current",
+      "current_value": "45 hours per week",
+      "model": "GLM-5.3"
+    },
+    "my-21--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "104 hours per month",
+      "model": "GLM-5.3"
+    },
+    "my-21--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "45 hours per week",
+      "model": "GLM-5.3"
+    },
+    "my-21--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "45 hours per week",
+      "model": "GLM-5.3"
+    },
+    "my-21--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "45 hours per week",
+      "model": "GLM-5.3"
+    },
+    "my-21--kimi-k3-1-pro#2": {
+      "verdict": "current",
+      "current_value": "8 hours per day",
+      "model": "GLM-5.3"
+    },
+    "my-22--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "RM4,000 per month",
+      "model": "GLM-5.3"
+    },
+    "my-22--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "RM4,000 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-22--deepseek-v4-1-flash-1017#2": {
+      "verdict": "outdated",
+      "current_value": "The Employment (Amendment) Act 2022 (in force 1 January 2023, not 1 May 2023) removed the wage ceiling entirely — the Employment Act 1955 now covers all employees under a contract of service regardless of monthly wages. The RM4,000/month threshold applies only to certain provisions (e.g., overtime pay under ss. 60(3), 60A(3), 60C(2A), 60D(3)-(4), 60J, 60K, 60N), not to overall coverage.",
+      "model": "GLM-5.3"
+    },
+    "my-22--deepseek-v4-1-flash-1017#3": {
+      "verdict": "current",
+      "current_value": "RM4,000 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-22--deepseek-v4-1-flash-1017#4": {
+      "verdict": "current",
+      "current_value": "RM4,000 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-22--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "RM4,000 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-22--grok-4-7#1": {
+      "verdict": "outdated",
+      "current_value": "The 48-hour workweek still stands, but the wage threshold is outdated: since the Employment (Amendment) Act 2022 took effect on 1 January 2023, the Employment Act 1955 covers all employees, and overtime entitlement extends to non-manual employees earning RM4,000 or less per month (only those in managerial, executive, confidential, or security capacity earning above RM4,000, plus certain excluded categories like domestic servants, are exempt from the overtime provisions). Overtime is payable for work beyond the normal hours (max 48 hours/week) at 1.5x on normal days, 2x on rest days, and 3x on public holidays.",
+      "model": "GLM-5.3"
+    },
+    "my-22--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "RM4,000 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-22--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "RM4,000 MYR per month",
+      "model": "GLM-5.3"
+    },
+    "my-23--deepseek-v4-1-flash-1017#0": {
+      "verdict": "current",
+      "current_value": "60 years",
+      "model": "GLM-5.3"
+    },
+    "my-23--deepseek-v4-1-flash-1017#1": {
+      "verdict": "current",
+      "current_value": "60 years",
+      "model": "GLM-5.3"
+    },
+    "my-23--grok-4-7#0": {
+      "verdict": "outdated",
+      "current_value": "Mandatory EPF contributions continue until age 60 (raised from 55 in August 2013, in line with the Minimum Retirement Age Act 2012); members may also contribute voluntarily up to age 100 (limit extended from 75 to 100 effective June 2016)",
+      "model": "GLM-5.3"
+    },
+    "my-23--grok-4-7#1": {
+      "verdict": "current",
+      "current_value": "55 years",
+      "model": "GLM-5.3"
+    },
+    "my-23--kimi-k3-1-pro#0": {
+      "verdict": "current",
+      "current_value": "60 years",
+      "model": "GLM-5.3"
+    },
+    "my-23--kimi-k3-1-pro#1": {
+      "verdict": "current",
+      "current_value": "60 years",
+      "model": "GLM-5.3"
+    }
+  },
+  "checked_at": "2026-11-21T05:26:54Z"
+}

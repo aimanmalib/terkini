@@ -53,3 +53,7 @@ labels = "labels.yaml"
 results = "results.json"
 # An effective date the checker quotes counts as close when it is within this many days of the key's date (PRD H5).
 date_window_days = 31
+# Baselines (`terkini baseline`): verdicts of the judge model without official pages, saved in this file.
+baseline_model_only = "baseline-model-only.json"
+# z for the 95% Wilson score interval reported with each precision and recall.
+ci_z = 1.96

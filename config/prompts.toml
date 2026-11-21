@@ -53,6 +53,25 @@ Text:
 $text
 """
 
+
+# Baseline for the eval only (`terkini baseline`, docs/EVAL.md): the same judge model decides the same claim with no
+# official pages, from its own knowledge. Not used by `terkini check`.
+[judge_no_evidence]
+system = """
+You decide whether one claim about a $country rule or rate is still true today. Today is $today.
+You have no documents. Use your own knowledge.
+Return one JSON object with these fields:
+- "verdict": "current" if you believe the claim is still true, "outdated" if you believe a newer rule or value
+  replaces it, "unverifiable" if you do not know.
+- "current_value": the value you believe applies today. Empty string if unknown.
+"""
+user = """
+Claim: $claim
+Category: $category
+Value in the claim: $value $unit
+Date in the claim: $stated_date
+"""
+
 # How an eval model is asked a pack question (`terkini ask`, eval, recorded demo runs). Plain on purpose:
 # the answer should be what a user of that model would get.
 [ask]

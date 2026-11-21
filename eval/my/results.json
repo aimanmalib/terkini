@@ -82,5 +82,96 @@
     "tokens_per_checked_claim": 8061.565,
     "gateway_budget_usd_after": 0,
     "p50_seconds_per_answer": 151.8
+  },
+  "baselines": {
+    "ci": "95% Wilson score interval",
+    "rows": [
+      {
+        "name": "terkini",
+        "note": "Tavily evidence, judge, exact-quote check (the main result).",
+        "n_answers": 68,
+        "labelled": 68,
+        "stale": 28,
+        "current": 40,
+        "no_value": 0,
+        "flagged": 17,
+        "true_positive": 10,
+        "false_positive": 7,
+        "false_negative": 18,
+        "true_negative": 33,
+        "precision": 0.588,
+        "recall": 0.357,
+        "precision_text": "10 of 17",
+        "precision_ci95": [
+          0.36,
+          0.784
+        ],
+        "recall_text": "10 of 28",
+        "recall_ci95": [
+          0.207,
+          0.542
+        ]
+      },
+      {
+        "name": "model_only",
+        "note": "Same judge model, same claims, no official pages, no quote check. 0 Tavily credits.",
+        "n_answers": 68,
+        "labelled": 68,
+        "stale": 28,
+        "current": 40,
+        "no_value": 0,
+        "flagged": 33,
+        "true_positive": 24,
+        "false_positive": 9,
+        "false_negative": 4,
+        "true_negative": 31,
+        "precision": 0.727,
+        "recall": 0.857,
+        "precision_text": "24 of 33",
+        "precision_ci95": [
+          0.558,
+          0.849
+        ],
+        "recall_text": "24 of 28",
+        "recall_ci95": [
+          0.685,
+          0.943
+        ],
+        "model": "rv/GLM-5.3",
+        "claims_judged": 214,
+        "claims_outdated": 61,
+        "claims_unverifiable": 1,
+        "prompt_tokens": 464605,
+        "completion_tokens": 358302
+      },
+      {
+        "name": "naive_page_rule",
+        "note": "Flag a claim when its value is not in the official quote the checker found. From saved runs, 0 credits.",
+        "n_answers": 68,
+        "labelled": 68,
+        "stale": 28,
+        "current": 40,
+        "no_value": 0,
+        "flagged": 24,
+        "true_positive": 10,
+        "false_positive": 14,
+        "false_negative": 18,
+        "true_negative": 26,
+        "precision": 0.417,
+        "recall": 0.357,
+        "precision_text": "10 of 24",
+        "precision_ci95": [
+          0.245,
+          0.612
+        ],
+        "recall_text": "10 of 28",
+        "recall_ci95": [
+          0.207,
+          0.542
+        ],
+        "claims_with_official_quote": 89,
+        "claims_outdated": 32
+      }
+    ]
   }
 }

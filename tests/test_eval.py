@@ -10,6 +10,7 @@ from pathlib import Path
 import pytest
 from conftest import TODAY, FakeGateway, FakeTavily, extract_body, search_body
 
+from terkini.baseline import saved_results
 from terkini.cache import Cache
 from terkini.checker import AnswerReport
 from terkini.claims import Claim, ClaimResult
@@ -23,11 +24,10 @@ from terkini.evaluate import (
     eval_dir,
     load_answers,
     load_eval_config,
-    load_labels,
     load_runs,
 )
 from terkini.metrics import compute_results
-from terkini.packs import REPO_ROOT, AnswerKey, KeyEntry, load_key, load_pack
+from terkini.packs import REPO_ROOT, AnswerKey, KeyEntry, load_pack
 
 
 @pytest.fixture
@@ -130,8 +130,5 @@ def test_saved_results_are_computed_from_the_saved_runs():
     path = eval_dir(pack) / cfg.results
     if not path.exists():
         pytest.skip("no eval results saved yet")
-    usage_path = eval_dir(pack) / "usage.json"
-    usage = json.loads(usage_path.read_text()) if usage_path.exists() else {"runs": []}
-    again = compute_results(load_runs(pack), load_labels(pack), load_key(pack), usage=usage,
-                            window_days=cfg.date_window_days, pack=pack.id)
+    again = saved_results(pack, REPO_ROOT)
     assert json.loads(path.read_text()) == json.loads(json.dumps(again))

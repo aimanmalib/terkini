@@ -1,0 +1,20 @@
+# Icons and the share card for the replay page (scripts/build-share.py, D-028). Colours are the page's own tokens
+# (docs/index.html :root) plus the brighter ones the demo video uses on dark backgrounds.
+
+[colors]
+ink = "#14213d"
+paper = "#fbfaf6"
+fresh = "#1f7a4d"
+unsure = "#8a5c00"
+stale = "#b3261e"
+fresh_hi = "#4cc98a"
+stale_hi = "#ff6b5e"
+unsure_hi = "#e0a53a"
+
+# Icons and the card's dots use the *_hi colours, which read on the dark ink square.
+
+# The share card (docs/og.png, 1200 x 630) shows the first outdated claim of this recorded run, as checked.
+[card]
+case = "my-03--grok-4-7"
+footer_left = "aimanmalib.github.io/terkini"
+footer_right = "Built with Tavily and Bifrost · open source"

@@ -11,7 +11,8 @@ languages = ["en", "ms"]
 [serve]
 host = "127.0.0.1"
 port = 8710
-files = ["index.html", "app.js", "i18n.json", "deck.pdf"]
+files = ["index.html", "app.js", "i18n.json", "deck.pdf", "favicon.svg", "favicon.ico", "apple-touch-icon.png",
+  "icon-192.png", "icon-512.png", "og.png", "site.webmanifest"]
 folders = ["cases", "fonts", "images"]
 
 # Each case is a run that really happened. "recording" = a recorded run in config/verify.toml [replay] runs_dir; the

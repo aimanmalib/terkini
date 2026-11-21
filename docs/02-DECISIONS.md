@@ -368,3 +368,13 @@ change it.
   `eval/my/results.json`. Page captures were not retaken, so every other scene is the same. Loudness -16.4 LUFS, peak
   -2.9 dBFS; captions rebuilt with `srt.py`. Same URL.
 - **Rollback.** Revert this commit; the old file is in git history.
+
+## D-028 · Icons and a share card for the replay page
+
+- **Why.** A link to the replay page in a chat or a post showed no picture and the browser tab had no icon.
+- **What.** `scripts/build-share.py` writes `favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, two manifest icons,
+  `site.webmanifest` and `og.png` (1200 x 630) into `docs/`. The icon is the three dots from the page header on the ink
+  colour. The card shows the first outdated claim of a real recorded run (my-03: 6% to 8%, customs page) with the page's
+  own fonts and English strings. Colours, the card's run and its footer are in `config/share.toml`. `index.html` has
+  Open Graph and Twitter tags with absolute URLs, a canonical link and a theme colour; `terkini serve` serves the new files.
+- **Rollback.** Delete the files and the tags; nothing reads them.

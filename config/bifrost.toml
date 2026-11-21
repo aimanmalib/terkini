@@ -23,10 +23,12 @@ name = "terkini"
 max_limit = 5
 reset_duration = "1d"
 
+# Sized for the full eval (PRD H2-H6): 69 answers, one extractor call each and one judge call per claim,
+# each judge call carrying up to two long pages, all within about an hour.
 [virtual_key.rate_limit]
-request_max_limit = 120
+request_max_limit = 600
 request_reset_duration = "1h"
-token_max_limit = 400000
+token_max_limit = 4000000
 token_reset_duration = "1h"
 
 [client]

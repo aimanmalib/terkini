@@ -40,3 +40,15 @@ path = "data/cache.sqlite"
 [replay]
 # Recorded runs that replay mode reads (no key, no network). Written by scripts/record-run.py.
 runs_dir = "tests/fixtures/runs"
+
+[eval]
+# `terkini ask` and `terkini eval` (src/terkini/evaluate.py). Folders are inside the pack's eval folder (eval/<pack>/).
+# Answers checked at the same time. Each worker waits mostly on the gateway, not on the CPU.
+workers = 4
+answers_dir = "answers"
+runs_dir = "runs"
+# Hand labels: for each answer, whether it states an older value than the answer key (docs/EVAL.md).
+labels = "labels.yaml"
+results = "results.json"
+# An effective date the checker quotes counts as close when it is within this many days of the key's date (PRD H5).
+date_window_days = 31

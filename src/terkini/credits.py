@@ -7,6 +7,7 @@ A refused call raises CreditLimitReached; the checker stops cleanly and reports 
 from __future__ import annotations
 
 import math
+import threading
 from datetime import date
 
 from terkini.budget import TavilyBudget
@@ -23,6 +24,7 @@ class CreditGuard:
         self._ledger = ledger
         self._today = today
         self.spent_this_run = 0
+        self._lock = threading.Lock()  # the eval shares one guard between worker threads
 
     @property
     def spent_today(self) -> int:
@@ -37,6 +39,10 @@ class CreditGuard:
 
     def allow(self, cost: int) -> None:
         """Raise before a call whose cost would cross a limit."""
+        with self._lock:
+            self._allow(cost)
+
+    def _allow(self, cost: int) -> None:
         limits = self.budget.limits
         if self.spent_this_run + cost > limits.per_run:
             raise CreditLimitReached(
@@ -50,5 +56,6 @@ class CreditGuard:
     def record(self, credits: int) -> None:
         if credits <= 0:
             return
-        self.spent_this_run += credits
+        with self._lock:
+            self.spent_this_run += credits
         self._ledger.add_spent(self._today, credits)

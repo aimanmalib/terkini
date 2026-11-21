@@ -34,6 +34,16 @@ def build_parser() -> argparse.ArgumentParser:
     c.add_argument("--case", help="replay this recorded run (see --list)")
     c.add_argument("--list", action="store_true", help="list recorded runs and exit")
     c.add_argument("--json", action="store_true", help="print the report as JSON")
+    a = sub.add_parser("ask", help="ask the pack's eval questions to several models (writes eval/<pack>/answers/)")
+    a.add_argument("--pack", default="my")
+    a.add_argument("--models", help="comma-separated model ids (default: the eval models in config/models.toml)")
+    a.add_argument("--only", help="comma-separated question ids")
+    a.add_argument("--force", action="store_true", help="ask again even if an answer is saved")
+    e = sub.add_parser("eval", help="check every saved answer live, then compute eval/<pack>/results.json")
+    e.add_argument("--pack", default="my")
+    e.add_argument("--score-only", action="store_true", help="recompute results.json from saved runs (no network)")
+    e.add_argument("--force", action="store_true", help="check answers again even if a run is saved")
+    e.add_argument("--keep-errors", action="store_true", help="save runs that had failed claims")
     return parser
 
 
@@ -42,6 +52,9 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.command == "check":
         return _check(args)
+    if args.command in ("ask", "eval"):
+        from terkini.evalcli import ask_command, eval_command
+        return ask_command(args) if args.command == "ask" else eval_command(args)
     parser.print_help()
     return 0
 

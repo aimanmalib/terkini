@@ -63,16 +63,21 @@
   .dot { width: .625rem; height: .625rem; border-radius: 50%; flex: none; box-shadow: 0 0 0 1.5px var(--paper); }
   .dot.outdated { background: var(--stale); } .dot.current { background: var(--fresh); } .dot.unverifiable { background: var(--unsure); }
 
-  .paste textarea { display: block; width: 100%; min-height: 7.5rem; margin-top: .75rem; resize: vertical; font: inherit; font-size: 1rem;
-    color: var(--ink); background: var(--sheet); border: 1px solid var(--ink-2); border-radius: 8px; padding: .75rem; caret-color: var(--stale); }
-  .paste textarea::placeholder { color: var(--muted); }
-  .paste label { display: block; font-weight: 600; margin-top: .75rem; }
-  .paste textarea { margin-top: .375rem; }
-  .btn { margin-top: .75rem; font: 600 1rem/1 var(--sans); color: var(--paper); background: var(--ink); border: 0; border-radius: 8px;
+  .own pre { margin: .75rem 0 0; background: var(--sheet); border: 1px solid var(--ink-2); border-radius: 8px; padding: .75rem;
+    font: 400 .8125rem/1.6 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; }
+  .own-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin-top: .75rem; }
+  .btn { font: 600 1rem/1 var(--sans); color: var(--paper); background: var(--ink); border: 0; border-radius: 8px;
     padding: .75rem 1.25rem; min-height: 2.75rem; cursor: pointer; }
   .btn:hover { background: var(--ink-2); }
-  .answer-msg { margin-top: .75rem; font-size: .9375rem; overflow-wrap: anywhere; }
-  .answer-msg:empty { display: none; }
+  .copy-msg { font-size: .9375rem; overflow-wrap: anywhere; }
+  .own-note { margin-top: .75rem; color: var(--muted); font-size: .9375rem; }
+  .jump { display: none; }
+  /* Phone and tablet: the selected run comes right after the tagline, before the list of runs (red team T2). */
+  @media (max-width: 59.99rem) {
+    .rail { display: contents; }
+    .lede { order: 1; } .result { order: 2; } .runs { order: 3; } .own { order: 4; }
+    .jump { display: inline; }
+  }
 
   .result { min-width: 0; }
   .run-label { display: flex; flex-wrap: wrap; gap: .25rem .75rem; font-size: .9375rem; color: var(--muted); }
@@ -181,26 +186,28 @@
 </header>
 
 <div class="layout">
-  <aside class="rail">
+  <div class="rail">
     <h1 class="sr" data-i18n="title">Terkini: is this AI answer still true in Malaysia?</h1>
     <p class="lede" data-i18n="tagline">Checks AI answers about Malaysian rules against official government pages. Every verdict carries the exact quote it rests on.</p>
 
-    <section aria-labelledby="cases-h">
+    <section class="runs" id="runs" aria-labelledby="cases-h">
       <h2 id="cases-h" data-i18n="cases_heading">Recorded runs</h2>
       <p class="hint" data-i18n="cases_intro">Six real runs: a model answered a question, then Terkini checked each claim through Tavily on official sites.</p>
       <ol class="cases" id="cases"></ol>
     </section>
 
-    <section class="paste" aria-labelledby="answer-h">
-      <h2 id="answer-h" data-i18n="paste_heading">Paste an answer</h2>
-      <form id="answer-form" novalidate>
-        <label for="paste" data-i18n="paste_label">AI answer to check</label>
-        <textarea id="paste" name="answer" data-i18n-placeholder="paste_placeholder" placeholder="Paste an AI answer about a Malaysian rule…"></textarea>
-        <button class="btn" type="submit" data-i18n="paste_button">Check</button>
-        <p class="answer-msg" id="answer-msg" role="status" aria-live="polite"></p>
-      </form>
+    <section class="own" aria-labelledby="own-h">
+      <h2 id="own-h" data-i18n="own_heading">Check your own answer</h2>
+      <p class="hint" data-i18n="own_intro">This page only replays recorded runs: no key, no live calls. To check your own answer, run Terkini on your machine.</p>
+      <pre id="own-cmd" data-i18n="own_command"></pre>
+      <div class="own-row">
+        <button class="btn" type="button" id="copy" data-i18n="own_copy">Copy the commands</button>
+        <span class="copy-msg" id="copy-msg" role="status" aria-live="polite"></span>
+      </div>
+      <p class="own-note"><span data-i18n="own_needs">Live checks need your own Tavily key and a Bifrost gateway.</span>
+        <a href="https://github.com/aimanmalib/terkini#live-mode" data-i18n="own_link">Setup in the README</a></p>
     </section>
-  </aside>
+  </div>
 
   <main class="result" id="result" aria-live="polite" tabindex="-1">
     <p class="state" data-i18n="loading">Loading the recorded run…</p>

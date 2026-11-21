@@ -48,6 +48,29 @@ def test_every_ui_string_the_page_uses_exists_in_every_language():
         assert all(isinstance(v, str) and v.strip() for v in s.values()), lang
 
 
+
+def test_page_offers_local_commands_instead_of_a_check_button_it_cannot_run():
+    # D-024: the page has no key, so it must not show a paste box with a "Check" button; it gives the local commands.
+    html = (DOCS / "index.html").read_text(encoding="utf-8")
+    js = (DOCS / "app.js").read_text(encoding="utf-8")
+    assert "<textarea" not in html and 'type="submit"' not in html
+    assert 'data-i18n="own_command"' in html and 'id="copy"' in html
+    for key in re.findall(r'say\("([a-z_]+)"\)', js):
+        for lang, s in load_strings(load_pages_config().languages).items():
+            assert key in s, (lang, key)
+    for lang, s in load_strings(load_pages_config().languages).items():
+        assert "terkini check --pack" in s["own_command"], lang
+
+
+def test_phone_layout_puts_the_selected_run_before_the_list_of_runs():
+    # D-024: below 60rem the rail is flattened and ordered tagline, result, runs, own check.
+    html = (DOCS / "index.html").read_text(encoding="utf-8")
+    phone = html[html.index("@media (max-width: 59.99rem)"):]
+    phone = phone[: phone.index("}\n  }") + 1]
+    order = {name: int(n) for name, n in re.findall(r"\.(lede|result|runs|own) \{ order: (\d+); \}", phone)}
+    assert ".rail { display: contents; }" in phone
+    assert order["lede"] < order["result"] < order["runs"] < order["own"]
+
 def test_sentences_skip_list_markers_and_keep_decimals_together():
     text = "- Rate is 6.5% now. Next line\n* RM1,700 since 2025!"
     parts = [text[a:b] for a, b in sentences(text)]

@@ -45,7 +45,6 @@ function fmtDate(iso) {
   return new Intl.DateTimeFormat(locale, { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(d);
 }
 
-const normalise = (s) => s.replace(/\s+/g, " ").trim();
 // Markdown bold markers in model answers are shown as plain text; the words themselves are unchanged.
 // Markdown code fences are dropped the same way.
 const plain = (s) => s.replace(/\*\*|^```\w*$/gm, "");
@@ -80,7 +79,7 @@ function applyLang(lang) {
   renderCaseList();
   if (state.current) renderCase(state.current);
   else if (state.failed) renderFailed();
-  const msg = $("#answer-msg");
+  const msg = $("#copy-msg");
   if (msg.dataset.key) msg.textContent = t(msg.dataset.key);
 }
 
@@ -228,7 +227,8 @@ function renderCase(c) {
   const asof = r.as_of_before ? t(r.as_of_mixed ? "as_of_mixed" : "as_of", { date: fmtDate(r.as_of_before) }) : "";
   $("#result").replaceChildren(...[
     el("p", { class: "run-label" }, el("b", { text: t("recorded_run", { date: fmtDate(c.run_at) }) }),
-      el("span", { text: t(`source_${c.source}`) })),
+      el("span", { text: t(`source_${c.source}`) }),
+      el("a", { class: "jump", href: "#runs", text: t("jump_runs", { n: state.cases.length }) })),
     el("h2", { class: "q", text: c.question }),
     el("p", { class: "by", text: t("answer_by", { model: c.model.name, vendor: c.model.vendor }) }),
     answerText(c),
@@ -249,18 +249,18 @@ function renderFailed() {
   $("#result").replaceChildren(el("p", { class: "state", role: "alert", text: t("load_failed") }));
 }
 
-// --- Paste ------------------------------------------------------------------------------------------------------------
+// --- Check your own answer: the page has no key, so it gives the commands to run locally -----------------------------
 
-function onPaste(ev) {
-  ev.preventDefault();
-  const msg = $("#answer-msg");
-  const text = normalise($("#paste").value);
+async function onCopy() {
+  const msg = $("#copy-msg");
   const say = (key) => { msg.dataset.key = key; msg.textContent = t(key); };
-  if (!text) return say("paste_empty");
-  const hit = state.cases.find((c) => normalise(c.answer) === text || normalise(plain(c.answer)) === text);
-  if (!hit) return say("paste_no_match");
-  say("paste_matched");
-  select(hit, true);
+  try {
+    await navigator.clipboard.writeText($("#own-cmd").textContent);
+    say("own_copied");
+  } catch (_) {
+    getSelection().selectAllChildren($("#own-cmd"));
+    say("own_copy_failed");
+  }
 }
 
 // --- Start ------------------------------------------------------------------------------------------------------------
@@ -273,7 +273,7 @@ async function getJSON(path) {
 
 async function start() {
   document.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => applyLang(b.dataset.lang)));
-  $("#answer-form").addEventListener("submit", onPaste);
+  $("#copy").addEventListener("click", onCopy);
   try {
     const i18n = await getJSON("i18n.json");
     state.strings = i18n.strings;

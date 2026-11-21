@@ -317,3 +317,17 @@ change it.
   are now `my-03--grok-4-7`: Grok 4.7 says 6% service tax; the customs guide says 8% from 1 March 2024; the answer
   key labels the answer stale. The Kimi false alarm stays in `docs/EVAL.md` "Where it fails" and in the README.
 - **Rollback.** Revert the case names; the eval-run lookup can stay, since recordings still win on a name clash.
+
+## D-024 · The replay page shows the selected run first on phones, and no longer has a Check button
+
+- **Why.** A red-team read on 21 Nov found that on an iPhone the first screen of the replay page was only the list of
+  runs; the first red verdict came after more than one screen of scrolling. The "Check" button under "Paste an
+  answer" did not check anything: the page has no key, so it could only match a pasted text to a recorded run.
+- **How.** Below 60rem the left column is laid out with `display: contents` and CSS `order`: tagline, selected run,
+  list of runs, then "Check your own answer". A link at the top of the run jumps to the list. The paste box and the
+  Check button are gone. In their place: one sentence saying the page only replays runs, the two commands to check
+  an answer on your own machine (text in `i18n/*.json`), a Copy button and a link to the README setup. The command
+  line and `POST /api/check` still match a pasted recorded answer.
+- **Also.** README "Status" is now "What works / known limits" with the same facts. Slide 10 shows the eval baselines
+  as bars (stale answers flagged, of 28) and three next steps taken from `docs/EVAL.md` and the README limitations.
+- **Rollback.** Revert `docs/index.html`, `docs/app.js` and the `own_*` strings; the case data does not change.

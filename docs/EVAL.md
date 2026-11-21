@@ -236,7 +236,8 @@ Every answer that was labelled stale or flagged by Terkini.
   and an amendment date. The quote check confirms the sentence is on the page; it cannot confirm that the sentence
   contradicts the claim. In two the claim and the quote are about different groups or dates: the RM1,700 start date
   for small employers against the date for larger ones, and foreign workers who opted into EPF before October 2025
-  against those who opted in before 1 August 1998.
+  against those who opted in before 1 August 1998. The recorded Kimi K3.1 Pro run on the same EPF question
+  replays this kind of false alarm: `terkini check --case my-12-kimi-k3-1-pro`.
 - **Grok 4.7 drives the stale count.** 20 of its 23 answers differ from the key, against 6 for DeepSeek and 2 for Kimi.
   Recall on Grok answers is 9 of 20.
 - **Small sample.** 68 answers to 23 questions, labelled once. Treat the rates as a first measurement.

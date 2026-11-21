@@ -1,6 +1,17 @@
 {
  "cases": [
   {
+   "id": "my-03--grok-4-7",
+   "question": "What is the standard service tax rate in Malaysia?",
+   "model": "grok-4.7",
+   "run_at": "2026-11-21T00:57:35Z",
+   "counts": {
+    "outdated": 1,
+    "current": 0,
+    "unverifiable": 1
+   }
+  },
+  {
    "id": "my-09-grok-4-7",
    "question": "Below what annual turnover are Malaysian businesses exempt from e-Invoicing?",
    "model": "grok-4.7",
@@ -20,17 +31,6 @@
     "outdated": 2,
     "current": 0,
     "unverifiable": 2
-   }
-  },
-  {
-   "id": "my-03--grok-4-7",
-   "question": "What is the standard service tax rate in Malaysia?",
-   "model": "grok-4.7",
-   "run_at": "2026-11-21T00:57:35Z",
-   "counts": {
-    "outdated": 1,
-    "current": 0,
-    "unverifiable": 1
    }
   },
   {

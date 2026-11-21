@@ -26,3 +26,11 @@ def test_demo_binds_to_localhost_and_cleans_up():
     text = RUN.read_text()
     assert '-p "127.0.0.1:$PORT:' in text
     assert "trap " in text and "remove" in text
+
+
+def test_demo_case_opens_without_a_key(monkeypatch):
+    from terkini.service import run
+
+    monkeypatch.delenv("TAVILY_API_KEY", raising=False)
+    case = re.search(r'^CASE="([^"]+)"', RUN.read_text(), re.M).group(1)
+    assert run(None, pack="my", case=case).report.results

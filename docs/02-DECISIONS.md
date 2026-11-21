@@ -302,3 +302,18 @@ change it.
   20, recall 13 of 28 (main check 10 of 17, 10 of 28). The answer key did not change (D9).
 - **Rollback.** Set `enabled = false`. The hybrid row in `eval/my/results.json` disappears when `eval/my/hybrid.json`
   is removed.
+
+## D-023 · The first example is a true catch, and saved eval runs open by name
+
+- **Why.** A red-team read on 21 Nov found that the example a judge runs first (README "Try it", `demo/run.sh`, slide
+  8) was the recorded Kimi K3.1 Pro EPF run, which the eval counts as a false alarm. The replay page opened on the
+  e-invoicing run, whose evidence is a 2023 statement. The SST answer on the README image (`my-03--grok-4-7`) could
+  not be opened from the command line: `--case` only knew the three recordings.
+- **How.** `terkini check --case` and `POST /api/check` look for a recording first, then for a saved eval run with
+  that name in `eval/<pack>/runs` (answer text from `eval/<pack>/answers`). An eval run keeps the report but no Tavily
+  responses, so it is shown as saved and labelled "eval run, <date>", not replayed. `--list` prints both kinds with a
+  column that says which. Names that leave the runs folder are not found.
+- **Example.** README "Try it", `demo/run.sh`, slide 8 and the first case on the replay page (`config/pages.toml`)
+  are now `my-03--grok-4-7`: Grok 4.7 says 6% service tax; the customs guide says 8% from 1 March 2024; the answer
+  key labels the answer stale. The Kimi false alarm stays in `docs/EVAL.md` "Where it fails" and in the README.
+- **Rollback.** Revert the case names; the eval-run lookup can stay, since recordings still win on a name clash.

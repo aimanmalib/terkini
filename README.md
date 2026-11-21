@@ -47,31 +47,39 @@ You need [uv](https://docs.astral.sh/uv/). No API key is needed for replay mode.
 
 ```bash
 git clone https://github.com/aimanmalib/terkini && cd terkini
-uv run terkini check --list                               # the recorded runs
-uv run terkini check --pack my --case my-12-kimi-k3-1-pro # replay one of them, offline
-uv run terkini serve                                      # the replay page at http://127.0.0.1:8710
+uv run terkini check --list                            # 3 recorded runs and the 68 saved eval runs
+uv run terkini check --pack my --case my-03--grok-4-7  # show one of them, offline
+uv run terkini serve                                   # the replay page at http://127.0.0.1:8710
 ```
 
-The second command prints the report below. It is a real answer from Kimi K3.1 Pro, checked live on 20 Nov 2026
-and replayed from `tests/fixtures/runs/`:
+The second command prints the report below. Grok 4.7 was asked for the standard service tax rate and answered 6%.
+Terkini checked that answer live during the eval on 21 Nov 2026; the report is read from `eval/my/runs/`. The rate
+has been 8% since 1 March 2024, and the quote is from the customs guide:
 
 ```text
-Terkini · pack my · checked on 2026-11-20 (recorded run, 2026-11-20)
+Terkini · pack my · checked on 2026-11-21 (eval run, 2026-11-21)
 
-OLD outdated      score   0  For non-Malaysian workers registered on or after 1 August 1998, the employer's EPF
-                             contribution was a flat RM5 per month.
-      official now: Employers are only required to register and contribute for their non-Malaysian citizen
-                    employees starting 1 October 2025
-      in force from: 2025-10-01
-      source: https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees  (search snippet)
-...
-4 claims checked, 2 outdated, 3 skipped, 8 Tavily credits
-This answer reads as if written before 2025-10-01
+OLD outdated      score   0  The standard service tax rate in Malaysia is 6%.
+      official now: 8%
+      in force from: 2024-03-01
+      source: https://mystods.customs.gov.my/storage/app/media/pdf/guide/guide-on-transitional-rules-for-the-change-in-st-rate-to-8-on-digital-service-provided-by-frp.pdf
+      quote: "In accordance with the announcement made by the Minister of Finance during the Budget 2024 speech on 13th October 2023, the service tax rate for most prescribed taxable services under Service Tax Act 2018 (“STA 2018”) including digital service provided by Foreign Registered Person will increase from 6% to 8%, effective from 01 March 2024."
+??  unverifiable  score  40  Businesses must register for service tax if their annual turnover exceeds RM500,000.
+      source: https://www.tnb.com.my/faq/gst-for-feed-in-approval-holders-fia
+      quote: "Only FiAH that generates annual taxable turnover that exceed RM 500,000 are mandatorily required to register with RMCD."
+      why: The official pages do not settle this claim.
+
+2 claims checked, 1 outdated, 2 skipped, 1 Tavily credits
+This answer reads as if written before 2024-03-01
+Not legal advice. Always confirm with the official source linked above.
 ```
 
-Read this one with [`docs/EVAL.md`](docs/EVAL.md). In the eval, Kimi's answer to the same question was labelled current
-and Terkini still flagged it: one of the seven false positives. Here, the first claim is history ("was a flat RM5"),
-and the checker marks it outdated.
+The first claim is a true catch: the answer key labels this answer stale. The second claim ends `unverifiable`:
+the page found is a TNB FAQ about the old GST, which does not settle a service tax rule.
+
+Not every run is this clean. [`docs/EVAL.md`](docs/EVAL.md) lists the misses and the seven false alarms. One of them
+is recorded: `uv run terkini check --case my-12-kimi-k3-1-pro` replays a Kimi K3.1 Pro answer on EPF for foreign
+workers. Kimi's eval answer to the same question is labelled current, and Terkini still flagged it.
 
 The other two recordings: DeepSeek V4.1 Flash on the minimum wage (one claim current at RM1,700 from 1 February 2025,
 4 credits) and Grok 4.7 on the e-invoicing exemption (one claim outdated, 4 credits).
@@ -112,7 +120,7 @@ replays recorded runs; with your keys in `.env` it checks live and spends your c
 
 ```bash
 curl -s -X POST http://127.0.0.1:8710/api/check -H 'content-type: application/json' \
-  -d '{"case": "my-12-kimi-k3-1-pro"}'          # or {"answer": "...", "pack": "my"}
+  -d '{"case": "my-03--grok-4-7"}'              # or {"answer": "...", "pack": "my"}
 ```
 
 The reply is the report as JSON: `mode`, `pack`, `checked_on`, and one entry per claim with its verdict, the official
@@ -281,7 +289,7 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 
 | Document | What |
 |---|---|
-| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-022 |
+| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-023 |
 | [`docs/EVAL.md`](docs/EVAL.md) | How the eval was run and scored, and where it fails |
 | [`CHANGELOG.md`](CHANGELOG.md) | What changed |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Set-up, tests, rules for pull requests |

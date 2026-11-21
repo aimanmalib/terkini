@@ -13,7 +13,7 @@ IMAGE="ghcr.io/astral-sh/uv@sha256:4677e08839853fe91c523b593f822ec1e87c7b91ba4c6
 NAME="${TERKINI_DEMO_NAME:-terkini-demo}"
 FIRST_PORT="${TERKINI_DEMO_PORT:-8710}"
 WAIT_SECONDS="${TERKINI_DEMO_WAIT:-180}"
-CASE="my-12-kimi-k3-1-pro"
+CASE="my-03--grok-4-7" # a saved eval run: Grok 4.7 says 6% service tax, the customs guide says 8% (D-023)
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
@@ -61,7 +61,7 @@ echo
 docker exec "$NAME" /opt/venv/bin/terkini check --pack my --case "$CASE"
 cat <<EOF
 
-Terkini is running in replay mode (recorded runs from 20 and 21 Nov 2026, no key needed).
+Terkini is running in replay mode (recorded runs from 20 Nov and eval runs from 21 Nov 2026, no key needed).
 
   Page:  http://127.0.0.1:$PORT/
          Pick a recorded run. Red claims are outdated against an official page; open a card to see the exact quote.

@@ -5,6 +5,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- `terkini check --case` and `POST /api/check` also open the 68 saved eval runs by name, shown as saved (D-023).
+- The first example in the README, `demo/run.sh`, slide 8 and the replay page is the service tax answer (6% claimed,
+  8% official since 1 March 2024), a stale answer by the answer key. The EPF false alarm stays listed in `docs/EVAL.md`.
+
 ## [0.1.0] - 2026-11-21
 
 First public version, built on 20 and 21 November 2026.

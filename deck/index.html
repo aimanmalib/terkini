@@ -174,21 +174,22 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
   <div class="chrome"><span>Working prototype</span><span>08 / 10</span></div>
   <div class="body" style="gap:30px">
     <div style="display:grid;grid-template-columns:1fr 860px;gap:50px;align-items:end">
-      <h2 class="h2" data-anim>A recorded live run, replayed offline</h2>
-      <p class="p" data-anim style="--d:2;font-size:27px">No key needed:<br><span class="mono" style="font-size:24px">uv run terkini check --pack my --case my-12-kimi-k3-1-pro</span></p>
+      <h2 class="h2" data-anim>A live eval run, shown offline</h2>
+      <p class="p" data-anim style="--d:2;font-size:27px">No key needed:<br><span class="mono" style="font-size:24px">uv run terkini check --pack my --case my-03--grok-4-7</span></p>
     </div>
-<pre class="code" data-anim style="--d:3">Terkini · pack my · checked on 2026-11-20 (recorded run, 2026-11-20)
+<pre class="code" data-anim style="--d:3">Terkini · pack my · checked on 2026-11-21 (eval run, 2026-11-21)
 
-<span class="old">OLD outdated      score   0</span>  For non-Malaysian workers registered on or after 1 August 1998,
-                             the employer's EPF contribution was a flat RM5 per month.
-      official now: Employers are only required to register and contribute for their
-                    non-Malaysian citizen employees starting 1 October 2025
-      in force from: 2025-10-01
-      source: https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees
-...
-4 claims checked, 2 outdated, 3 skipped, 8 Tavily credits
-<span class="uns">This answer reads as if written before 2025-10-01</span></pre>
-    <p class="p" data-anim style="--d:4;font-size:26px">In the eval, Kimi's answer to this question counts as a false positive: this first claim is history, not a current rule. Failures are listed in docs/EVAL.md.</p>
+<span class="old">OLD outdated      score   0</span>  The standard service tax rate in Malaysia is 6%.
+      official now: 8%
+      in force from: 2024-03-01
+      source: https://mystods.customs.gov.my/storage/app/media/pdf/guide/guide-on-…
+      quote: "… the service tax rate for most prescribed taxable services under
+              Service Tax Act 2018 (“STA 2018”) … will increase from 6% to 8%,
+              effective from 01 March 2024."
+…
+2 claims checked, 1 outdated, 2 skipped, 1 Tavily credits
+<span class="uns">This answer reads as if written before 2024-03-01</span></pre>
+    <p class="p" data-anim style="--d:4;font-size:26px">The answer key labels this Grok 4.7 answer stale. Misses and false alarms are listed in docs/EVAL.md; <span class="mono" style="font-size:22px">--case my-12-kimi-k3-1-pro</span> replays one false alarm.</p>
   </div>
   <div class="foot"><span>Terkini</span><span>Command line · HTTP API · demo/run.sh</span></div>
 </section>

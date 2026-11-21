@@ -331,3 +331,18 @@ change it.
 - **Also.** README "Status" is now "What works / known limits" with the same facts. Slide 10 shows the eval baselines
   as bars (stale answers flagged, of 28) and three next steps taken from `docs/EVAL.md` and the README limitations.
 - **Rollback.** Revert `docs/index.html`, `docs/app.js` and the `own_*` strings; the case data does not change.
+
+## D-025 · Optional budget guard with Bifrost Meter before a run that spends
+
+- **Why.** Terkini and Bifrost Meter are two entries by the same author on the same gateway. A full eval makes about
+  three hundred model calls on one virtual key. Bifrost Meter's `guard` command answers one question before such a
+  run: is enough left on this key to start?
+- **How.** `src/terkini/guard.py` runs `node <cli> guard --min-remaining <n>` as a separate process before `check`
+  (live mode only), `ask`, `eval`, `baseline` and `hybrid` (not with `--score-only`). It passes `BIFROST_URL` as
+  `BIFROST_BASE_URL` and Terkini's own virtual key. Exit 0 goes on; exit 2 stops with exit 2 before any model or Tavily
+  call; exit 1, a missing Node or a missing `cli.js` goes on with a warning, or stops when `on_error = "stop"`.
+  `terkini guard` runs the check once by hand. Every value (on/off, Node path, `cli.js` path, percent, error rule,
+  timeout, commands) is in `config/guard.toml`. Terkini does not import or copy Bifrost Meter code.
+- **Default.** Off, so Terkini needs neither Node nor Bifrost Meter. Measured output (go, stop, and an `eval` stopped
+  before any call) is in the README, from the pinned gateway on 21 Nov 2026.
+- **Rollback.** Set `enabled = false`, or revert `guard.py` and the five `preflight` calls; nothing else depends on it.

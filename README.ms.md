@@ -66,6 +66,13 @@ demo/run.sh          # cetak satu laporan dirakam, URL halaman dan baris curl un
 demo/run.sh stop     # buang kontena
 ```
 
+## Pengawal bajet dengan Bifrost Meter
+
+Pilihan, mati secara lalai. Bila `enabled = true` dalam [`config/guard.toml`](config/guard.toml), Terkini menjalankan
+`guard` [Bifrost Meter](https://github.com/aimanmalib/bifrost-meter) dengan kunci mayanya sendiri sebelum arahan yang
+berbelanja (`check` langsung, `ask`, `eval`, `baseline`, `hybrid`). Keluar 2 = berhenti sebelum sebarang panggilan.
+Output sebenar dalam [README](README.md#budget-guard-with-bifrost-meter).
+
 ## Had utama
 
 - **Laman rasmi yang lebih lama boleh mengesahkan nilai lama.** Laman kerajaan masih menghidang halaman dengan nilai

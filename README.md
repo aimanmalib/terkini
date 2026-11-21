@@ -132,6 +132,33 @@ The reply is the report as JSON: `mode`, `pack`, `checked_on`, and one entry per
 quote, the source URL and the score. Errors: 400 unknown pack, 404 no recording (replay mode), 413 answer too long
 (limit in [`config/api.toml`](config/api.toml)), 422 empty request, 503 gateway not set up (live mode).
 
+### Budget guard with Bifrost Meter
+
+[Bifrost Meter](https://github.com/aimanmalib/bifrost-meter) is my other entry: it reads what is left on a Bifrost
+virtual key. Its `guard` command can run before any Terkini command that spends model or Tavily calls (`check` in live
+mode, `ask`, `eval`, `baseline`, `hybrid`). It is off by default. To turn it on, build Bifrost Meter (Node 22), then set
+`enabled = true` and the path to its `dist/cli.js` in [`config/guard.toml`](config/guard.toml). Terkini passes its own
+`BIFROST_URL` and virtual key; the key is never printed. Exit 0 goes on, exit 2 stops the command before any call,
+and exit 1 (quota not readable) goes on with a warning unless `on_error = "stop"`.
+
+Output from 21 Nov 2026 on the pinned gateway: Terkini's key ($5 a day), then a second key limited to 1 request an
+hour, after one real call with it.
+
+```
+$ uv run terkini guard
+Bifrost guard: go. Closest limit: 0% · $5.00 left · resets in 23h 59m; at least 20% left is required.
+exit 0
+
+$ BIFROST_VIRTUAL_KEY=…4b45 uv run terkini guard --min-remaining 0
+Bifrost guard: stop. Closest limit: Requests used up · resets in 59m; at least 0% left is required.
+exit 2
+
+$ BIFROST_VIRTUAL_KEY=…4b45 uv run terkini eval --pack my        # enabled = true in config/guard.toml
+Bifrost guard: stop. Closest limit: Requests used up · resets in 58m; at least 20% left is required.
+eval: stopped before any call (budget guard, config/guard.toml).
+exit 2
+```
+
 Any OpenAI-compatible provider works upstream of Bifrost. The model ids in [`config/models.toml`](config/models.toml)
 are the ones this project was tested with; change them to ids your provider serves.
 
@@ -237,6 +264,7 @@ Every model call goes through a Bifrost gateway: the official, unmodified image,
 | Fallback models sent as Bifrost `fallbacks` on every request | [`src/terkini/gateway.py#L124-L128`](src/terkini/gateway.py#L124-L128), [`config/models.toml`](config/models.toml) |
 | Daily budget and rate limits on the virtual key, created through the governance API | [`scripts/bifrost-bootstrap.py#L78-L94`](scripts/bifrost-bootstrap.py#L78-L94), [`config/bifrost.toml`](config/bifrost.toml) |
 | Upstream timeout, so a stalled model call moves to the next fallback | [`config/bifrost.toml`](config/bifrost.toml) |
+| Optional budget check before a run that spends, with Bifrost Meter `guard` on the same virtual key | [`src/terkini/guard.py`](src/terkini/guard.py), [`config/guard.toml`](config/guard.toml) |
 | Three answering models from three vendors, and a judge from a fourth vendor | [`config/models.toml`](config/models.toml) |
 
 ## How AI is used
@@ -294,7 +322,7 @@ Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`
 
 | Document | What |
 |---|---|
-| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-023 |
+| [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md) | Design decisions and why, D-001 to D-025 |
 | [`docs/EVAL.md`](docs/EVAL.md) | How the eval was run and scored, and where it fails |
 | [`CHANGELOG.md`](CHANGELOG.md) | What changed |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Set-up, tests, rules for pull requests |

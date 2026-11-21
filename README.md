@@ -7,33 +7,170 @@ tariff or the turnover limit for e-invoicing. It pulls out each factual claim, c
 Tavily Search and Extract, and gives every claim a freshness score with the exact quote from the official source. All model
 calls go through a Bifrost gateway.
 
+- Replay page: <https://aimanmalib.github.io/terkini/>
+- Slides (PDF): <https://aimanmalib.github.io/terkini/deck.pdf>
+- Video: not recorded yet.
+
 > **Not legal advice.** Terkini compares an answer with what official pages say on the day it runs. It can miss a page,
 > misread one, or check a page that is itself out of date. Confirm anything important with the agency.
 
+Built during the Global AI Hackathon (extended window, 21 Nov 2026), Tavily track, problem statement PS06 (stale-answer
+detector). First commit: `397bbc2`.
+
 ## Status
 
-Work in progress. This repository was started on 21 November 2026. Nothing in it works end to end yet, and there are no
-evaluation results. This file will say so until there are.
+Work in progress, stated plainly:
 
-Built during the Global AI Hackathon (extended window, 21 Nov 2026), Tavily track, problem statement PS06.
+- **Works:** the full check from the command line. Claim extraction and judging through Bifrost, Tavily Search and
+  Extract on official domains only, the exact-quote check in code, and the freshness score. Three live runs from
+  20 Nov 2026 are recorded and replay offline.
+- **Not done yet:** the evaluation over the 23 Malaysian questions (there are no accuracy numbers yet), the web page
+  for pasting an answer, and the video. This section will change when they exist.
 
-## Plan
+## Try it in three steps
 
-1. Extract claims from an AI answer with a model called through Bifrost.
-2. Search official Malaysian government domains with Tavily, then extract the page text.
-3. Accept a claim only when the evidence quote appears word for word in the extracted page.
-4. Score freshness with fixed rules from `config/score.toml`, and say which date the answer is consistent with.
+You need [uv](https://docs.astral.sh/uv/). No API key is needed for replay mode.
 
-Design decisions are in [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md).
+```bash
+git clone https://github.com/aimanmalib/terkini && cd terkini
+uv run terkini check --list                               # the recorded runs
+uv run terkini check --pack my --case my-12-kimi-k3-1-pro # replay one of them, offline
+```
+
+The second command prints the report below. It is a real answer from Kimi K3.1 Pro, checked live on 20 Nov 2026
+and replayed from `tests/fixtures/runs/`:
+
+```text
+Terkini · pack my · checked on 2026-11-20 (recorded run, 2026-11-20)
+
+OLD outdated      score   0  For non-Malaysian workers registered on or after 1 August 1998, the employer's EPF
+                             contribution was a flat RM5 per month.
+      official now: Employers are only required to register and contribute for their non-Malaysian citizen
+                    employees starting 1 October 2025
+      in force from: 2025-10-01
+      source: https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees  (search snippet)
+...
+4 claims checked, 2 outdated, 3 skipped, 8 Tavily credits
+This answer reads as if written before 2025-10-01
+```
+
+The other two recordings: DeepSeek V4.1 Flash on the minimum wage (one claim current at RM1,700 from 1 February 2025,
+4 credits) and Grok 4.7 on the e-invoicing exemption (one claim outdated, 4 credits).
+
+### Live mode
+
+Live mode checks any answer you paste. It needs your own Tavily key and a running Bifrost gateway.
+
+```bash
+cp .env.example .env            # fill in TAVILY_API_KEY, BIFROST_URL, PROVIDER_BASE_URL, PROVIDER_API_KEY, BIFROST_SETUP_TOKEN
+docker compose up -d            # the official Bifrost image, pinned by digest, on 127.0.0.1 only
+uv run scripts/bifrost-bootstrap.py   # adds the provider and a virtual key with a budget, saved to .env.bifrost
+uv run terkini check --pack my "The minimum wage in Malaysia is RM1,500 a month."
+docker compose down -v          # stop and remove everything
+```
+
+Any OpenAI-compatible provider works upstream of Bifrost. The model ids in [`config/models.toml`](config/models.toml)
+are the ones this project was tested with; change them to ids your provider serves.
+
+## How it works
+
+```mermaid
+flowchart LR
+  A[AI answer] --> B[Extract claims<br>model via Bifrost]
+  B --> C[Tavily Search<br>official domains only]
+  C --> D[Tavily Extract<br>top 2 official pages]
+  D --> E[Judge<br>model via Bifrost]
+  E --> F{Quote on the page?<br>checked in code}
+  F -- yes --> G[Verdict + score<br>config/score.toml]
+  F -- no --> H[unverifiable]
+```
+
+1. **Extract.** A model reads the answer and returns each factual claim with a category from the country pack, as JSON.
+   Duplicate claims are merged before any search.
+2. **Search.** Each claim is searched with Tavily on the pack's official domains only. Volatile categories ask for fresh
+   results. If nothing official comes back, the search is retried once at `advanced` depth.
+3. **Extract pages.** The top two official pages are read with Tavily Extract, PDFs included. If every page refuses
+   extraction, the judge reads the official search snippets instead, and the claim says "search snippet".
+4. **Judge.** A model from a different vendor than the answering models compares the claim with the page text and
+   returns a verdict (`current`, `outdated` or `unverifiable`), a quote, the official value and an effective date.
+5. **Check in code.** The verdict stands only if the quote appears word for word on the page the judge named. A date
+   counts only if it is written inside that quote. Otherwise the claim is `unverifiable`.
+6. **Score.** Plain arithmetic with fixed weights from [`config/score.toml`](config/score.toml): the verdict, whether
+   the source is a government domain, whether the quote was found, and the page date. The report also says which date
+   the answer reads as if it were written before.
+
+What a country pack holds, in [`packs/my.toml`](packs/my.toml): 12 official domains (each labelled government or
+utility), the claim categories, which categories change often, and the question file for the evaluation. Code holds
+no domains. A new country is a new pack file.
+
+## Where we use Tavily
+
+All calls are plain `httpx` requests to the Tavily REST API ([`src/terkini/tavily.py`](src/terkini/tavily.py)); the
+parameter values live in [`config/verify.toml`](config/verify.toml).
+
+| What | Where |
+|---|---|
+| Search on official domains only: `include_domains` from the pack, `include_domains_mode = "restrict"` | [`src/terkini/verify.py#L107-L113`](src/terkini/verify.py#L107-L113) |
+| `max_age_hours = 0` for volatile categories, so the answer comes from live pages | [`src/terkini/verify.py#L114-L115`](src/terkini/verify.py#L114-L115) |
+| HTTP `434` (live capacity full): one retry without `max_age_hours`, marked "Tavily cached copy" | [`src/terkini/verify.py#L120-L127`](src/terkini/verify.py#L120-L127) |
+| `basic` depth first, one `advanced` retry when nothing official comes back | [`src/terkini/verify.py#L152-L157`](src/terkini/verify.py#L152-L157) |
+| Extract on the top two official pages, PDFs included | [`src/terkini/verify.py#L136-L143`](src/terkini/verify.py#L136-L143) |
+| `include_usage` on every call; credits counted from each response | [`src/terkini/tavily.py#L56-L71`](src/terkini/tavily.py#L56-L71) |
+| Credit guard: a call is refused before it is sent if it would cross the run or daily limit | [`src/terkini/credits.py`](src/terkini/credits.py), [`config/budget.toml`](config/budget.toml) |
+
+## Where we use Bifrost
+
+Every model call goes through a Bifrost gateway: the official, unmodified image, pinned by digest in
+[`docker-compose.yml`](docker-compose.yml).
+
+| What | Where |
+|---|---|
+| One virtual key for the app, sent as `x-bf-vk` | [`src/terkini/gateway.py#L113-L122`](src/terkini/gateway.py#L113-L122) |
+| Fallback models sent as Bifrost `fallbacks` on every request | [`src/terkini/gateway.py#L124-L128`](src/terkini/gateway.py#L124-L128), [`config/models.toml`](config/models.toml) |
+| Daily budget and rate limits on the virtual key, created through the governance API | [`scripts/bifrost-bootstrap.py#L78-L94`](scripts/bifrost-bootstrap.py#L78-L94), [`config/bifrost.toml`](config/bifrost.toml) |
+| Upstream timeout, so a stalled model call moves to the next fallback | [`config/bifrost.toml`](config/bifrost.toml) |
+| Three answering models from three vendors, and a judge from a fourth vendor | [`config/models.toml`](config/models.toml) |
 
 ## How AI is used
+
+- **Claim extraction:** `rv/GLM-5.3` (Zhipu AI) splits an answer into claims, as JSON, temperature 0.
+- **Judging:** `rv/GLM-5.3` compares each claim with the official text. Its quote and date are then checked in code.
+- **Answers being checked:** `gcli/grok-4.7` (xAI), `rv/moonshotai/Kimi-K3.1-Pro` (Moonshot AI) and
+  `rv/deepseek-ai/DeepSeek-V4.1-Flash-1017` (DeepSeek). The judge comes from a different vendor, so no model grades
+  its own answer.
+- **Not AI:** the domain filter, the quote check, the date check and the score are plain code.
+
+Prompts are in [`config/prompts.toml`](config/prompts.toml). Model ids are in [`config/models.toml`](config/models.toml).
 
 ### AI disclosure
 
 - The code and the documentation in this repository were written with Claude Code (Claude Opus).
-- The product calls language models through a Bifrost gateway to extract claims and to judge evidence. The model IDs are in
-  [`config/models.toml`](config/models.toml): `rv/GLM-5.3` extracts claims and judges evidence; `gcli/grok-4.7`,
-  `rv/moonshotai/Kimi-K3.1-Pro` and `rv/deepseek-ai/DeepSeek-V4.1-Flash-1017` answer the evaluation questions.
+- The product calls the language models listed above through a Bifrost gateway.
+
+## Limitations
+
+- **Only what the index holds.** Terkini sees the official pages Tavily returns for a query. A page that is not
+  indexed, or that blocks extraction, cannot decide a verdict.
+- **Official pages go stale too.** A ministry page can lag behind a new order. Terkini reports the page it read and
+  its date; it does not know about rules that no official page states yet.
+- **Many claims end up `unverifiable`.** In the recorded runs, the judge often cited a page that was not extracted, so
+  the claim was set aside. That is the intended failure: no quote, no verdict.
+- **The answer key is ours.** The evaluation key in `eval/my/key.yaml` was written by reading official pages before
+  any model answer was seen. It can still contain mistakes.
+- **Not legal advice.** See the note at the top.
+
+## Repository layout
+
+| Path | What |
+|---|---|
+| `src/terkini/` | The checker: claims, Tavily client, verifier, judge, quote check, score, cache, replay, CLI |
+| `config/` | Every tunable value: models, gateway, search parameters, score weights, credit limits, prompts |
+| `packs/` | Country packs (domains, categories) |
+| `eval/my/` | 23 Malaysian questions and their answer key |
+| `tests/` | Offline tests; `tests/fixtures/` holds recorded runs with no keys |
+| `scripts/` | Gateway setup, recording live runs, checking the answer key |
+
+Design decisions are in [`docs/02-DECISIONS.md`](docs/02-DECISIONS.md). Tests: `bash scripts/gerbang-ujian.sh`.
 
 ## Licence
 

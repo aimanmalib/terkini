@@ -19,10 +19,30 @@ def _env() -> None:
     load_env_file(REPO_ROOT / ".env.bifrost")
 
 
+def _env_and_guard(command: str) -> int | None:
+    """Load the environment, then run the budget guard if config/guard.toml turns it on (D-025)."""
+    from terkini.guard import preflight
+    _env()
+    return preflight(command, REPO_ROOT)
+
+
+def guard_command(args) -> int:
+    """Run the Bifrost Meter guard once with Terkini's key, whether or not config/guard.toml turns it on."""
+    from terkini.guard import load_guard_config, run_guard
+    _env()
+    cfg = load_guard_config(REPO_ROOT)
+    if args.min_remaining is not None:
+        cfg = cfg.model_copy(update={"min_remaining": args.min_remaining})
+    r = run_guard(cfg, REPO_ROOT)
+    print(r.sentence, file=sys.stderr if r.code == 1 else sys.stdout)
+    return r.code
+
+
 def ask_command(args) -> int:
     from terkini.evaluate import ask_all
     from terkini.gateway import Gateway, load_gateway_config
-    _env()
+    if (stop := _env_and_guard("ask")) is not None:
+        return stop
     pack = load_pack(args.pack)
     models = args.models.split(",") if args.models else load_gateway_config().models.models
     failed = ask_all(Gateway(), pack, models, only=args.only.split(",") if args.only else None, force=args.force)
@@ -74,7 +94,8 @@ def eval_command(args) -> int:
         from terkini.gateway import Gateway
         from terkini.tavily import Tavily
         from terkini.verify import load_verify_config
-        _env()
+        if (stop := _env_and_guard("eval")) is not None:
+            return stop
         if not os.environ.get("TAVILY_API_KEY"):
             print("eval: live checks need TAVILY_API_KEY (use --score-only to recompute results)", file=sys.stderr)
             return 2
@@ -108,7 +129,8 @@ def baseline_command(args) -> int:
     cfg = load_eval_config()
     failed = []
     if not args.score_only:
-        _env()
+        if (stop := _env_and_guard("baseline")) is not None:
+            return stop
         models = load_gateway_config().models
         failed = run_model_only(load_runs(pack), Gateway(), model=models.judge, fallbacks=models.fallbacks,
                                 country=pack.name, path=eval_dir(pack) / cfg.baseline_model_only,
@@ -141,7 +163,8 @@ def hybrid_command(args) -> int:
         from terkini.score import load_score_config
         from terkini.tavily import Tavily
         from terkini.verify import Verifier, load_verify_config
-        _env()
+        if (stop := _env_and_guard("hybrid")) is not None:
+            return stop
         if not os.environ.get("TAVILY_API_KEY"):
             print("hybrid: needs TAVILY_API_KEY (use --score-only to recompute results)", file=sys.stderr)
             return 2

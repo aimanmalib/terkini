@@ -47,6 +47,8 @@ def build_parser() -> argparse.ArgumentParser:
     h = sub.add_parser("hybrid", help="eval of the hybrid step (D-022): search official pages for model-proposed values")
     h.add_argument("--pack", default="my")
     h.add_argument("--score-only", action="store_true", help="recompute results.json from saved files (no network)")
+    g = sub.add_parser("guard", help="run the Bifrost Meter budget guard once with Terkini's virtual key (D-025)")
+    g.add_argument("--min-remaining", type=int, help="percent that must be left (default from config/guard.toml)")
     s = sub.add_parser("serve", help="serve the recorded-run page on this machine (config/pages.toml [serve])")
     s.add_argument("--host", help="address to listen on (default from config)")
     s.add_argument("--port", type=int, help="port (default from config)")
@@ -67,6 +69,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "hybrid":
         from terkini.evalcli import hybrid_command
         return hybrid_command(args)
+    if args.command == "guard":
+        from terkini.evalcli import guard_command
+        return guard_command(args)
     if args.command == "serve":
         from terkini.web import serve
         serve(args.host, args.port)
@@ -96,6 +101,11 @@ def _check(args) -> int:
     if is_live(args.case) and not args.answer:
         print("check: give the answer to check", file=sys.stderr)
         return 2
+    if is_live(args.case):
+        from terkini.guard import preflight
+        load_env_file(REPO_ROOT / ".env.bifrost")
+        if (stop := preflight("check", REPO_ROOT)) is not None:
+            return stop
     try:
         out = run(args.answer, pack=args.pack, case=args.case)
     except UnknownPack:

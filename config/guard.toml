@@ -1,0 +1,18 @@
+# Budget guard (docs/02-DECISIONS.md D-025): before a command spends model or Tavily calls, Terkini runs
+# `node <cli> guard --min-remaining <n>` from Bifrost Meter (a separate project) with Terkini's own virtual key.
+# Exit 0 = go, 2 = stop with one sentence, 1 = the quota could not be read. src/terkini/guard.py reads these values.
+
+# Off by default. Terkini works without Node or Bifrost Meter.
+enabled = false
+# Node.js executable (Bifrost Meter needs Node 22 or later).
+node = "node"
+# Path to Bifrost Meter's dist/cli.js, absolute or relative to this repository.
+cli = "../bifrost-meter/dist/cli.js"
+# Percent of the virtual key's closest limit that must still be left (0 to 100). 0 = stop only when a limit is used up.
+min_remaining = 20
+# What to do when the guard cannot read the quota (exit 1, Node missing, or cli not found): "continue" or "stop".
+on_error = "continue"
+# Seconds to wait for the guard before treating it as exit 1.
+timeout_seconds = 30
+# Commands that run the guard first. `check` means live checks only; replays and --score-only never spend.
+commands = ["check", "ask", "eval", "baseline", "hybrid"]

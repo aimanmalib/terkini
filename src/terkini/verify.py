@@ -187,7 +187,11 @@ class Verifier:
             effective is not None and normalise(j.effective_date_text).casefold() in normalise(j.evidence_quote).casefold()
         )
         verdict, reason = j.verdict, ""
-        if page is None:
+        if page is None and not j.source_url and verdict == "unverifiable":
+            reason = "The official pages do not settle this claim."
+        elif page is None and not j.source_url:
+            verdict, reason = "unverifiable", "The judge gave no source page for its verdict."
+        elif page is None:
             verdict, reason = "unverifiable", "The judge cited a page that was not extracted."
         elif not quote_ok:
             verdict, reason = "unverifiable", "The evidence quote is not on the official page."

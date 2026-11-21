@@ -77,6 +77,15 @@ def test_quote_from_a_page_that_was_not_extracted_is_unverifiable(make_verifier,
     assert res.verdict == "unverifiable" and res.source_url == ""
 
 
+def test_judge_without_a_source_is_unsettled_not_a_wrong_page(make_verifier, official, volatile_claim):
+    # Regression: an "unverifiable" judgement with no source URL was reported as citing an unextracted page.
+    res, _, _ = _run(make_verifier, official, volatile_claim,
+                     _judgement("", verdict="unverifiable", evidence_quote="", effective_date_text="", effective_date=""))
+    assert res.verdict == "unverifiable" and res.reason == "The official pages do not settle this claim."
+    res, _, _ = _run(make_verifier, official, volatile_claim, _judgement(""))
+    assert res.verdict == "unverifiable" and res.reason == "The judge gave no source page for its verdict."
+
+
 def test_effective_date_must_appear_in_the_quote(make_verifier, official, volatile_claim):
     res, _, _ = _run(make_verifier, official, volatile_claim,
                      _judgement(official, effective_date_text="1 March 2025", effective_date="2025-03-01"))

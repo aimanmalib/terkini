@@ -19,7 +19,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 ASET = HERE / "work" / "aset"
 ASET.mkdir(parents=True, exist_ok=True)
-CASE = "my-09-grok-4-7"
+CASE = "my-03--grok-4-7"
 kotak = {}
 
 
@@ -50,7 +50,7 @@ def main():
         ctx = b.new_context(viewport={"width": 1440, "height": 900}, device_scale_factor=2, locale="en-GB")
         ctx.route("**/*", lambda r: r.continue_() if r.request.url.startswith(base) and r.request.method == "GET" else r.abort())
         pg = ctx.new_page()
-        pg.goto(base + f"#{CASE}", wait_until="networkidle")
+        pg.goto(base + f"#case={CASE}", wait_until="networkidle")
         pg.locator(".claim").first.wait_for()
         pg.evaluate("document.fonts.ready.then(() => true)")
         pg.wait_for_timeout(500)

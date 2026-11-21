@@ -167,7 +167,7 @@
   "kad": {
    "kata": [
     "putusan",
-    "official"
+    "customs"
    ],
    "anjak": -0.2
   },
@@ -343,11 +343,11 @@
   }
  ],
  "teks": {
-  "q": "Below what annual turnover are Malaysian businesses exempt from e-Invoicing?",
-  "a": "RM 20 million.",
-  "model": "grok-4.7 (xAI) · recorded 20 Nov 2026",
+  "q": "What is the standard service tax rate in Malaysia?",
+  "a": "6%.",
+  "model": "grok-4.7 (xAI) · eval run, 21 Nov 2026",
   "cop": "Outdated",
-  "cop_sub": "Official since 1 Jul 2025: all taxpayers",
+  "cop_sub": "8% since 1 Mar 2024 (customs.gov.my)",
   "k_skala": "Eval · 21 Nov 2026",
   "skala_cap": "answers stated a rule that is no longer current",
   "model_nama": {
@@ -381,7 +381,7 @@
    ]
   ],
   "url_bar": "aimanmalib.github.io/terkini",
-  "k_putusan": "Recorded run · replay page",
+  "k_putusan": "Eval run · replay page",
   "k_petikan": "Exact quote, checked in code",
   "ok": "Quote found on the official page",
   "tolak": "Not on the page → unverifiable",

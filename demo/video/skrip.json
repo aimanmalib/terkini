@@ -3,7 +3,7 @@
  "baris": [
   {
    "id": "hook",
-   "sari": "Ask an AI about a Malaysian rule, and it answers with confidence. Sometimes the rule changed a year ago."
+   "sari": "Ask an AI about a Malaysian rule, and it answers with confidence. Sometimes the rule changed years ago."
   },
   {
    "id": "skala",
@@ -21,8 +21,8 @@
   },
   {
    "id": "putusan",
-   "sari": "Here the answer says RM 20 million. The official page says all taxpayers were included from July 2025. Outdated.",
-   "baca": "Here, the answer says twenty million ringgit. The official page says all taxpayers were included from July twenty twenty-five. Outdated."
+   "sari": "Here the answer says 6%. The customs page says 8%, from March 2024. Outdated.",
+   "baca": "Here, the answer says six percent. The customs page says eight percent, from March twenty twenty-four. Outdated."
   },
   {
    "id": "petikan",
@@ -50,15 +50,14 @@
   "23": "twenty-three",
   "28": "twenty-eight",
   "68": "sixty-eight",
-  "RM": "twenty",
-  "20": "million",
-  "million.": "ringgit.",
-  "2025.": "twenty twenty-five.",
   "17": "seventeen",
   "10": "ten",
   "59%": "fifty-nine percent",
   "36%": "thirty-six percent",
-  "Tavily": "Tavvily"
+  "Tavily": "Tavvily",
+  "6%.": "six percent.",
+  "8%,": "eight percent,",
+  "2024.": "twenty twenty-four."
  },
  "sebut": {}
 }

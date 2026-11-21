@@ -16,7 +16,7 @@ gerbang Bifrost.
 > Ia boleh terlepas sesuatu laman, tersalah baca, atau membaca laman yang sudah lapuk. Sahkan perkara penting dengan agensi.
 
 Video demo (72 s, Inggeris, sari kata dibakar): <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>. Suara
-naratif ialah klon AI suara saya sendiri (ElevenLabs), dinyatakan pada kad akhir.
+naratif ialah klon AI suara saya sendiri (ElevenLabs), dinyatakan pada kad akhir. Video dirakam sebelum langkah hibrid dan menunjukkan angka v0.1.0 (10 daripada 17 tanda betul, precision 59%, recall 36%).
 
 ## Apa yang berfungsi / had diketahui
 

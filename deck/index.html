@@ -44,6 +44,7 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
     <h1 class="display" data-anim style="font-size:240px">Terkini</h1>
     <p class="lead" data-anim style="--d:2;font-size:56px;color:var(--acc)">Is this AI answer still true where you live?</p>
     <p class="p" data-anim style="--d:3;max-width:1300px">A stale-answer detector for local rules. It checks each claim in an AI answer about a Malaysian rule against official government pages, with the exact quote and the date the rule took effect.</p>
+    <p class="p" data-anim style="--d:4;max-width:1300px;color:var(--acc)">Eval, 21 Nov 2026: 28 of 68 answers from 3 models were stale. Terkini flagged 13 of them, and 13 of its 20 flags were right, each with an official quote.</p>
   </div>
   <div style="margin-top:auto;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--border-dark);padding-top:16px" class="cap">
     <span>Global AI Hackathon<br>Tavily track, PS06</span>
@@ -151,13 +152,14 @@ pre.code .old{color:#FF8A80}pre.code .ok{color:#8BE0B0}pre.code .uns{color:#FFD2
     <p class="p" data-anim style="--d:2;max-width:1500px">23 questions about Malaysian rules. The key was read from official pages before any model answered. Every answer was checked on 21 Nov 2026.</p>
     <div class="stats" style="grid-template-columns:repeat(4,1fr)">
       <div class="stat" data-anim style="--d:3"><b>28</b><span>of 68 answers differ from the current official value</span></div>
-      <div class="stat" data-anim style="--d:4"><b>10</b><span>of them flagged by Terkini, with the official quote</span></div>
-      <div class="stat" data-anim style="--d:5"><b>59%</b><span>precision: 10 of 17 flags were right</span></div>
-      <div class="stat" data-anim style="--d:6"><b>36%</b><span>recall: most misses end unverifiable, not wrong</span></div>
+      <div class="stat" data-anim style="--d:4"><b>13</b><span>of them flagged by Terkini, with the official quote</span></div>
+      <div class="stat" data-anim style="--d:5"><b>65%</b><span>precision: 13 of 20 flags were right</span></div>
+      <div class="stat" data-anim style="--d:6"><b>46%</b><span>recall: most misses end unverifiable, not wrong</span></div>
     </div>
     <ul class="dash" data-anim style="--d:7;margin-top:24px">
-      <li>Grok 4.7: 20 of 23 answers differ from the key; 9 flagged. DeepSeek: 6, 1 flagged. Kimi: 2, none flagged.</li>
-      <li>214 claims checked, 79 verdicts backed by an exact official quote, 276 Tavily credits.</li>
+      <li>With the hybrid step: the model proposes a current value, an official quote must state it. v0.1.0 without it: 10 flagged, 59% precision, 36% recall.</li>
+      <li>Grok 4.7: 20 of 23 answers differ from the key; 12 flagged. DeepSeek: 6, 1 flagged. Kimi: 2, none flagged.</li>
+      <li>214 claims checked, 79 verdicts backed by an exact official quote, 276 + 67 Tavily credits.</li>
     </ul>
   </div>
   <div class="foot"><span>Terkini</span><span>docs/EVAL.md · eval/my/results.json</span></div>

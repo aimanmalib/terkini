@@ -1,0 +1,12 @@
+{
+  "name": "my-20--kimi-k3-1-pro",
+  "question_id": "my-20",
+  "question": "How many days of paid paternity leave does a married male employee get under Malaysia's Employment Act?",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "answered_by": "moonshotai/Kimi-K3.1-Pro",
+  "asked_at": "2026-11-21T00:43:03Z",
+  "answer": "Under section 60FA of Malaysia’s Employment Act 1955, an eligible married male employee is entitled to **7 consecutive days of paid paternity leave** for each confinement, limited to **five confinements in total**, regardless of the number of spouses.\n\nTo qualify, he must:\n\n- Have been employed by the same employer for at least **12 months** immediately before the leave begins; and\n- Notify the employer of his spouse’s pregnancy at least **30 days before the expected confinement**, or as early as possible after the birth.\n\nThe leave is paid at his ordinary rate of pay.",
+  "prompt_tokens": 2138,
+  "completion_tokens": 663,
+  "seconds": 9.51
+}

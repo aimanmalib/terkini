@@ -1,0 +1,12 @@
+{
+  "name": "my-02--kimi-k3-1-pro",
+  "question_id": "my-02",
+  "question": "Do Malaysian employers with fewer than five employees have to pay the national minimum wage, and from when?",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "answered_by": "moonshotai/Kimi-K3.1-Pro",
+  "asked_at": "2026-11-21T00:39:27Z",
+  "answer": "Yes. Having fewer than five employees does not create a permanent exemption. Small employers generally had to comply with the national minimum wage from **1 July 2023**, following a deferral from 1 January 2023. Employers carrying out professional activities classified under MASCO were covered earlier, from **1 May 2022**, regardless of headcount.\n\nFor the newer **RM1,700 monthly minimum wage** under the Minimum Wages Order 2024, employers with fewer than five employees—other than professional-activity employers—must comply from **1 August 2025**. The RM1,700 rate applies to employers with five or more employees and professional-activity employers from **1 February 2025**.",
+  "prompt_tokens": 2138,
+  "completion_tokens": 2230,
+  "seconds": 29.58
+}

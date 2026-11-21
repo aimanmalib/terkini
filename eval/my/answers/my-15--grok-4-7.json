@@ -1,0 +1,12 @@
+{
+  "name": "my-15--grok-4-7",
+  "question_id": "my-15",
+  "question": "Are Malaysian employees covered by SOCSO for accidents outside work, and since when?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:41:51Z",
+  "answer": "**No**, Malaysian employees are **not** covered by SOCSO for accidents outside work.\n\nSOCSO’s Employment Injury Insurance Scheme only covers:\n- Accidents that happen **at work** (arising out of and in the course of employment)\n- Occupational diseases\n\nAccidents outside work — including commuting, personal injuries, or non-work-related incidents — are **not** covered.\n\nThe scheme started on **1 January 1972** under the Social Security Act 1971.",
+  "prompt_tokens": 246,
+  "completion_tokens": 1052,
+  "seconds": 11.87
+}

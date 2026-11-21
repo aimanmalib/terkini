@@ -1,0 +1,12 @@
+{
+  "name": "my-12--grok-4-7",
+  "question_id": "my-12",
+  "question": "Do employers in Malaysia have to make EPF contributions for foreign (non-Malaysian) workers, and at what rate?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:41:08Z",
+  "answer": "**No**, employers in Malaysia do not have to make EPF contributions for foreign (non-Malaysian) workers.  \nEPF covers only Malaysian citizens. Foreign workers are instead covered under the **Foreign Workers' Social Security Scheme (FWSS)** administered by SOCSO.  \nThe EPF rate (12% total: 8% employee + 4% employer) does not apply to them.",
+  "prompt_tokens": 255,
+  "completion_tokens": 1277,
+  "seconds": 14.7
+}

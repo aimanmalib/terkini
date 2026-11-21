@@ -1,0 +1,12 @@
+{
+  "name": "my-15--deepseek-v4-1-flash-1017",
+  "question_id": "my-15",
+  "question": "Are Malaysian employees covered by SOCSO for accidents outside work, and since when?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:41:49Z",
+  "answer": "Yes. Malaysian employees are covered by SOCSO (PERKESO) under the Employment Injury Scheme and the Invalidity Scheme. Since the **Employment Injury Scheme** covers accidents arising out of and in the course of employment, it generally does **not** cover accidents outside work. However, SOCSO's **Invalidity Scheme** provides 24-hour coverage for invalidity (including from non-work accidents or diseases) since its introduction in **1971**. Additionally, since **1 January 2019**, the **Self-Employment Social Security Scheme** covers self-employed persons for work-related accidents. For employees, non-work accidents are not covered under the Employment Injury Scheme, but may qualify under the Invalidity Scheme if they result in invalidity.",
+  "prompt_tokens": 2043,
+  "completion_tokens": 151,
+  "seconds": 3.68
+}

@@ -1,0 +1,12 @@
+{
+  "name": "my-15--kimi-k3-1-pro",
+  "question_id": "my-15",
+  "question": "Are Malaysian employees covered by SOCSO for accidents outside work, and since when?",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "answered_by": "moonshotai/Kimi-K3.1-Pro",
+  "asked_at": "2026-11-21T00:44:50Z",
+  "answer": "Yes, but **not for every off-duty accident**. Since **1 July 1992**, SOCSO’s Employment Injury Scheme has covered qualifying **commuting accidents**, including accidents while travelling:\n\n- Between home and the workplace;\n- Between the workplace and the place where the employee takes an authorised meal break; or\n- On a journey directly connected with work.\n\nCoverage may be lost if the employee makes a substantial personal detour or interruption. Accidents during purely private activities are not automatically treated as employment injuries. However, SOCSO’s separate **Invalidity Scheme** provides 24-hour protection for non-work-related invalidity or death, subject to contribution and eligibility requirements.",
+  "prompt_tokens": 2135,
+  "completion_tokens": 2742,
+  "seconds": 40.6
+}

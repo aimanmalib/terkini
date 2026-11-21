@@ -1,0 +1,12 @@
+{
+  "name": "my-23--kimi-k3-1-pro",
+  "question_id": "my-23",
+  "question": "What is the minimum retirement age for private sector employees in Malaysia?",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "answered_by": "moonshotai/Kimi-K3.1-Pro",
+  "asked_at": "2026-11-21T00:43:35Z",
+  "answer": "The minimum retirement age for private sector employees in Malaysia is **60 years**, under the **Minimum Retirement Age Act 2012**.\n\nAn employer generally cannot require an employee to retire before 60, even if the employment contract specifies a lower retirement age. Any contractual term that is less favourable than the Act is void to that extent. The law does not prevent an employee from choosing to retire earlier, and certain statutory exemptions apply.",
+  "prompt_tokens": 2131,
+  "completion_tokens": 405,
+  "seconds": 7.22
+}

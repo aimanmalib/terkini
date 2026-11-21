@@ -1,0 +1,12 @@
+{
+  "name": "my-09--deepseek-v4-1-flash-1017",
+  "question_id": "my-09",
+  "question": "Below what annual turnover are Malaysian businesses exempt from e-Invoicing?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:40:20Z",
+  "answer": "Under Malaysia’s e-Invoicing rules, businesses with annual turnover **below RM150,000** are exempt from implementing e-Invoicing. This threshold applies to taxpayers whose annual turnover or revenue does not exceed RM150,000. However, they may still voluntarily adopt e-Invoicing. Note that the exemption is based on the threshold set by LHDN (Inland Revenue Board of Malaysia), and businesses should verify current guidelines as implementation timelines and thresholds may be updated.",
+  "prompt_tokens": 2041,
+  "completion_tokens": 98,
+  "seconds": 1.55
+}

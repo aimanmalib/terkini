@@ -1,0 +1,12 @@
+{
+  "name": "my-01--deepseek-v4-1-flash-1017",
+  "question_id": "my-01",
+  "question": "What is the national minimum monthly wage in Malaysia?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:38:57Z",
+  "answer": "As of February 2025, Malaysia's national minimum wage is RM1,700 per month, effective from 1 February 2025 under the Minimum Wages Order 2024. For employers with fewer than five employees, the RM1,700 rate applies from 1 August 2025. The minimum wage also applies on a daily and hourly basis, and covers all workers regardless of nationality, except domestic servants and apprentices under contract.",
+  "prompt_tokens": 2037,
+  "completion_tokens": 90,
+  "seconds": 2.3
+}

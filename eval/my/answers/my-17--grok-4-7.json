@@ -1,0 +1,12 @@
+{
+  "name": "my-17--grok-4-7",
+  "question_id": "my-17",
+  "question": "What is the capital gains tax rate on the disposal of unlisted shares acquired in 2024 or later in Malaysia?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:42:32Z",
+  "answer": "In Malaysia, capital gains tax on disposal of unlisted shares acquired in 2024 or later depends on holding period (per Inland Revenue Board rules):\n- Held 2 years or less: 30% of the gain.\n- Held 2–5 years: 10% of the gain.\n- Held more than 5 years: 0% (no tax).\nThe rate is not fixed but tiered by ownership duration. No changes apply specifically for 2024 acquisitions.",
+  "prompt_tokens": 254,
+  "completion_tokens": 3216,
+  "seconds": 34.68
+}

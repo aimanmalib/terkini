@@ -1,0 +1,12 @@
+{
+  "name": "my-02--grok-4-7",
+  "question_id": "my-02",
+  "question": "Do Malaysian employers with fewer than five employees have to pay the national minimum wage, and from when?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:39:37Z",
+  "answer": "Yes, Malaysian employers with fewer than five employees must pay the national minimum wage to all their employees. This applies to every private-sector worker regardless of company size. The requirement has been in force since 1 January 2016 (initially RM920 per month) and the current rate is RM1,500 per month.",
+  "prompt_tokens": 250,
+  "completion_tokens": 2528,
+  "seconds": 41.5
+}

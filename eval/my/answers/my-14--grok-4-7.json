@@ -1,0 +1,12 @@
+{
+  "name": "my-14--grok-4-7",
+  "question_id": "my-14",
+  "question": "What is the monthly salary cap used to calculate EIS contributions in Malaysia?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:41:37Z",
+  "answer": "The monthly salary cap for calculating Employment Insurance Scheme (EIS) contributions in Malaysia is RM5,000. This means contributions are based only on the first RM5,000 of an employee's monthly salary, regardless of higher earnings. Both employers and employees pay the same rate on this capped amount. \n```",
+  "prompt_tokens": 244,
+  "completion_tokens": 1142,
+  "seconds": 13.28
+}

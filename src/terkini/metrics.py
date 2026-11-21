@@ -80,7 +80,7 @@ def compute_results(runs, labels: dict, key: AnswerKey, *, usage: dict, window_d
     tokens_out = sum(r.completion_tokens for r in runs)
     log = usage.get("runs", [])
     first, last = (log[0], log[-1]) if log else ({}, {})
-    used = lambda u: (u.get("account") or {}).get("plan_usage")  # noqa: E731
+    used = lambda u: (u.get("account") or {}).get("plan_usage")
     return {
         "pack": pack,
         "answers": len(runs),

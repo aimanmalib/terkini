@@ -1,0 +1,12 @@
+{
+  "name": "my-12--deepseek-v4-1-flash-1017",
+  "question_id": "my-12",
+  "question": "Do employers in Malaysia have to make EPF contributions for foreign (non-Malaysian) workers, and at what rate?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:41:07Z",
+  "answer": "Yes. Since 1 October 2025, employers in Malaysia must make EPF contributions for all foreign workers (non-Malaysian) under a valid employment pass or work permit, except domestic servants. The mandatory rate is 2% of the employee's monthly wages, contributed by the employer, with no employee share required. Employers must register with EPF and pay monthly. Previously, EPF contributions for foreign workers were voluntary; the new rule makes them compulsory. Note that domestic servants remain exempt, and the 2% rate applies to both employer and any voluntary employee contributions.",
+  "prompt_tokens": 2053,
+  "completion_tokens": 119,
+  "seconds": 3.0
+}

@@ -19,10 +19,10 @@ from string import Template
 import yaml
 from pydantic import BaseModel
 
+from terkini.budget import load_budget
 from terkini.cache import Cache
 from terkini.checker import AnswerReport
 from terkini.credits import CreditGuard
-from terkini.budget import load_budget
 from terkini.extractor import load_prompts
 from terkini.gateway import ChatResult, GatewayError
 from terkini.packs import REPO_ROOT, Pack, Question, load_questions

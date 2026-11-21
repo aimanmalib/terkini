@@ -1,0 +1,12 @@
+{
+  "name": "my-11--grok-4-7",
+  "question_id": "my-11",
+  "question": "How are new EPF contributions split between member accounts in Malaysia?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:40:48Z",
+  "answer": "New EPF contributions (both employee and employer) in Malaysia are split between the member's Savings Account and Investment Account based on age:\n\n- Under 55: 60% to Savings Account, 40% to Investment Account.\n- 55 and above: 100% to Savings Account.\n\nHousing Account contributions are allocated separately based on housing needs. This applies to standard new contributions only.",
+  "prompt_tokens": 243,
+  "completion_tokens": 1150,
+  "seconds": 14.59
+}

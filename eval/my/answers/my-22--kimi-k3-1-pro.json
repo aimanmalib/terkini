@@ -1,0 +1,12 @@
+{
+  "name": "my-22--kimi-k3-1-pro",
+  "question_id": "my-22",
+  "question": "Above what monthly wage are non-manual employees in Peninsular Malaysia not entitled to Employment Act overtime claims?",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "answered_by": "moonshotai/Kimi-K3.1-Pro",
+  "asked_at": "2026-11-21T00:43:28Z",
+  "answer": "**Above RM4,000 in monthly wages.**\n\nSince 1 January 2023, non-manual employees in Peninsular Malaysia earning **more than RM4,000 a month** are generally not entitled to statutory overtime payments under the Employment Act 1955. Those earning **RM4,000 or less** may qualify, subject to the Act’s conditions.\n\nEmployees above the threshold may still receive overtime if their employment contract or company policy provides for it. Manual employees remain covered by the relevant overtime provisions regardless of their wages.",
+  "prompt_tokens": 2140,
+  "completion_tokens": 503,
+  "seconds": 8.34
+}

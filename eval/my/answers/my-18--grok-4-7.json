@@ -1,0 +1,12 @@
+{
+  "name": "my-18--grok-4-7",
+  "question_id": "my-18",
+  "question": "What income tax rate do Malaysian small and medium companies pay on the first RM150,000 of chargeable income?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:43:46Z",
+  "answer": "Malaysian small and medium companies (with paid-up capital not exceeding RM2.5 million) pay 17% income tax on the first RM150,000 of chargeable income. The remaining income is taxed at 24%. \n```",
+  "prompt_tokens": 253,
+  "completion_tokens": 1518,
+  "seconds": 74.7
+}

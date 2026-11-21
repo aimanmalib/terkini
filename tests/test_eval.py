@@ -8,13 +8,24 @@ from datetime import date
 from pathlib import Path
 
 import pytest
-
 from conftest import TODAY, FakeGateway, FakeTavily, extract_body, search_body
+
 from terkini.cache import Cache
 from terkini.checker import AnswerReport
 from terkini.claims import Claim, ClaimResult
-from terkini.evaluate import (Answer, AnswerRun, Label, answer_name, ask_all, check_all, eval_dir, load_answers,
-                              load_eval_config, load_labels, load_runs)
+from terkini.evaluate import (
+    Answer,
+    AnswerRun,
+    Label,
+    answer_name,
+    ask_all,
+    check_all,
+    eval_dir,
+    load_answers,
+    load_eval_config,
+    load_labels,
+    load_runs,
+)
 from terkini.metrics import compute_results
 from terkini.packs import REPO_ROOT, AnswerKey, KeyEntry, load_key, load_pack
 

@@ -1,0 +1,12 @@
+{
+  "name": "my-09--grok-4-7",
+  "question_id": "my-09",
+  "question": "Below what annual turnover are Malaysian businesses exempt from e-Invoicing?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:40:24Z",
+  "answer": "RM20 million.  \nMalaysian businesses with annual turnover below this amount are exempt from e-Invoicing (mandatory for those at or above, per Royal Malaysian Customs Department rules).",
+  "prompt_tokens": 244,
+  "completion_tokens": 1174,
+  "seconds": 13.7
+}

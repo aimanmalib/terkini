@@ -1,0 +1,12 @@
+{
+  "name": "my-19--grok-4-7",
+  "question_id": "my-19",
+  "question": "How many days of maternity leave are employees entitled to under Malaysia's Employment Act?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:42:51Z",
+  "answer": "Female employees are entitled to 98 days of paid maternity leave under the Employment Act 1955 (as amended in 2022), if they have worked for at least 90 days. Leave is paid at 90% of salary. \n```",
+  "prompt_tokens": 246,
+  "completion_tokens": 1294,
+  "seconds": 16.78
+}

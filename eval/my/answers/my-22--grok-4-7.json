@@ -1,0 +1,12 @@
+{
+  "name": "my-22--grok-4-7",
+  "question_id": "my-22",
+  "question": "Above what monthly wage are non-manual employees in Peninsular Malaysia not entitled to Employment Act overtime claims?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:43:38Z",
+  "answer": "Non-manual employees in Peninsular Malaysia are not entitled to overtime pay under the Employment Act 1955 if their monthly salary exceeds RM2,000. This exemption covers higher-paid roles like office workers and professionals. Those earning RM2,000 or less per month can claim overtime after 48 hours at the Act's rates. The rule applies only in Peninsular Malaysia (Sabah and Sarawak have separate laws). \n```",
+  "prompt_tokens": 250,
+  "completion_tokens": 1933,
+  "seconds": 23.14
+}

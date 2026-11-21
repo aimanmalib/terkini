@@ -1,0 +1,12 @@
+{
+  "name": "my-13--grok-4-7",
+  "question_id": "my-13",
+  "question": "What is the Employment Insurance System (EIS) contribution rate in Malaysia?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:41:21Z",
+  "answer": "The Employment Insurance System (EIS) in Malaysia is a mandatory social security scheme for most employees.  \nContribution rate: 0.5% of the employee's monthly gross salary paid by the employee, and 0.5% paid by the employer.  \nThis totals 1% and applies to wages up to RM5,000 per month. Contributions help fund unemployment benefits and related insurance.  \n(As of 2024, rates remain unchanged.)",
+  "prompt_tokens": 245,
+  "completion_tokens": 1211,
+  "seconds": 13.9
+}

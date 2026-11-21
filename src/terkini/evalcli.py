@@ -59,7 +59,15 @@ def gateway_usage() -> dict:
 
 
 def eval_command(args) -> int:
-    from terkini.evaluate import check_all, eval_dir, load_answers, load_eval_config, load_labels, load_runs, write_json
+    from terkini.evaluate import (
+        check_all,
+        eval_dir,
+        load_answers,
+        load_eval_config,
+        load_labels,
+        load_runs,
+        write_json,
+    )
     from terkini.metrics import compute_results
     pack = load_pack(args.pack)
     cfg = load_eval_config()

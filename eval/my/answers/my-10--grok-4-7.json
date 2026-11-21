@@ -1,0 +1,12 @@
+{
+  "name": "my-10--grok-4-7",
+  "question_id": "my-10",
+  "question": "A Malaysian business whose annual revenue first reached RM3 million in YA2024: from what date must it implement e-Invoicing?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:40:50Z",
+  "answer": "**1 January 2025.**\nA Malaysian SST-registered business whose annual revenue first exceeded RM3 million in YA2024 (income earned in 2024) must begin issuing e-Invoices from 1 January 2025.  \nThe e-Invoicing mandate applies to businesses with annual revenue of RM3 million and above, but newly qualifying businesses start the requirement the following year. Businesses that already exceeded RM3 million in YA2023 must start on 1 January 2024.",
+  "prompt_tokens": 257,
+  "completion_tokens": 2403,
+  "seconds": 29.5
+}

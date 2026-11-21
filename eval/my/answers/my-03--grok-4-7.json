@@ -1,0 +1,12 @@
+{
+  "name": "my-03--grok-4-7",
+  "question_id": "my-03",
+  "question": "What is the standard service tax rate in Malaysia?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:39:15Z",
+  "answer": "The standard service tax rate in Malaysia is 6%. This applies to most taxable services provided by businesses (such as consulting, legal, accounting, and telecoms). It is collected from the service provider and added to the invoice. Certain services are exempt or have reduced rates, but 6% is the standard rate for taxable ones. Businesses must register if their turnover exceeds RM500,000 annually.",
+  "prompt_tokens": 240,
+  "completion_tokens": 659,
+  "seconds": 8.88
+}

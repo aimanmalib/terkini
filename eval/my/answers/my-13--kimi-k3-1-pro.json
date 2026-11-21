@@ -1,0 +1,12 @@
+{
+  "name": "my-13--kimi-k3-1-pro",
+  "question_id": "my-13",
+  "question": "What is the Employment Insurance System (EIS) contribution rate in Malaysia?",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "answered_by": "moonshotai/Kimi-K3.1-Pro",
+  "asked_at": "2026-11-21T00:41:27Z",
+  "answer": "The standard Employment Insurance System (EIS/SIP) contribution rate is:\n\n- **Employee:** 0.2% of monthly wages  \n- **Employer:** 0.2% of monthly wages  \n- **Combined total:** **0.4%**\n\nContributions are calculated using PERKESO’s official contribution table and are subject to the prevailing wage ceiling, so the actual amount may be rounded and capped. EIS is administered by the Social Security Organisation (SOCSO/PERKESO) under the Employment Insurance System Act 2017.",
+  "prompt_tokens": 2133,
+  "completion_tokens": 1202,
+  "seconds": 18.51
+}

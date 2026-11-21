@@ -1,0 +1,12 @@
+{
+  "name": "my-10--deepseek-v4-1-flash-1017",
+  "question_id": "my-10",
+  "question": "A Malaysian business whose annual revenue first reached RM3 million in YA2024: from what date must it implement e-Invoicing?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:40:33Z",
+  "answer": "Under Malaysia’s e-Invoicing rollout, a business whose annual revenue or turnover first reached RM3 million in YA2024 falls in the RM1 million–RM5 million band. It must implement e-Invoicing from **1 July 2025**.",
+  "prompt_tokens": 2054,
+  "completion_tokens": 54,
+  "seconds": 2.0
+}

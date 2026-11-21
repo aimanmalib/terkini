@@ -1,0 +1,12 @@
+{
+  "name": "my-06--grok-4-7",
+  "question_id": "my-06",
+  "question": "What are the sales tax rates on goods in Malaysia?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:40:09Z",
+  "answer": "Malaysia uses the Sales and Service Tax (SST) on goods at a standard rate of 6%. Many goods are zero-rated at 0%, including basic food items, books, newspapers, and certain medicines. Some goods are exempt from tax. Rates can change, so check the official Royal Malaysian Customs Department website for the latest details.",
+  "prompt_tokens": 241,
+  "completion_tokens": 2003,
+  "seconds": 31.99
+}

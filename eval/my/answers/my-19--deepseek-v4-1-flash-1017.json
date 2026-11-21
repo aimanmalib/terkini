@@ -1,0 +1,12 @@
+{
+  "name": "my-19--deepseek-v4-1-flash-1017",
+  "question_id": "my-19",
+  "question": "How many days of maternity leave are employees entitled to under Malaysia's Employment Act?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:42:54Z",
+  "answer": "Under Malaysia's Employment Act 1955, female employees are entitled to 98 consecutive days of paid maternity leave, increased from 60 days effective 1 January 2023. This applies to employees covered by the Act. Leave can start up to 30 days before confinement or as agreed with the employer. Employees must notify their employer within 60 days of expected confinement. To qualify for maternity pay, the employee must have worked at least 90 days in the 9 months before confinement. Note that Sabah and Sarawak have separate labour ordinances, though similar amendments apply.",
+  "prompt_tokens": 2043,
+  "completion_tokens": 117,
+  "seconds": 2.5
+}

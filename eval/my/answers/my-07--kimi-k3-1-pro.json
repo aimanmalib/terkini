@@ -1,0 +1,12 @@
+{
+  "name": "my-07--kimi-k3-1-pro",
+  "question_id": "my-07",
+  "question": "Above what annual sales value must a manufacturer of taxable goods register for sales tax in Malaysia?",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "answered_by": "moonshotai/Kimi-K3.1-Pro",
+  "asked_at": "2026-11-21T00:40:01Z",
+  "answer": "A manufacturer of taxable goods must register for sales tax when the total sales value of those goods **exceeds RM500,000 in any 12-month period**. This is not limited to a calendar year. Specific exemptions or special rules may apply to certain goods or manufacturing activities.",
+  "prompt_tokens": 2136,
+  "completion_tokens": 555,
+  "seconds": 8.37
+}

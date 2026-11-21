@@ -1,0 +1,12 @@
+{
+  "name": "my-04--grok-4-7",
+  "question_id": "my-04",
+  "question": "What service tax rate applies to food and beverage services in Malaysia?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:39:38Z",
+  "answer": "In Malaysia, food and beverage services (such as those from restaurants, cafes, and catering) are subject to a 6% service tax rate. This applies under the Service Tax Act 2018 to most commercial F&B outlets. Certain exemptions exist, like for school or hospital meals. Businesses collect the tax on top of their fees. For the latest rules, check the Royal Malaysian Customs Department website, as rates can change.",
+  "prompt_tokens": 243,
+  "completion_tokens": 1439,
+  "seconds": 20.48
+}

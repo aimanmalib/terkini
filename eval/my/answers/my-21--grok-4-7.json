@@ -1,0 +1,12 @@
+{
+  "name": "my-21--grok-4-7",
+  "question_id": "my-21",
+  "question": "What are the maximum normal working hours per week under Malaysia's Employment Act?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:43:20Z",
+  "answer": "Under Malaysia's Employment Act 1955, the maximum normal working hours per week is 48 hours for most employees (Section 30A). This covers standard shifts without overtime. Overtime is allowed separately but must follow rules on rest days, public holidays, and compensation. Limits may vary slightly by industry or contract—check the Act or consult a labour official for your case.",
+  "prompt_tokens": 245,
+  "completion_tokens": 731,
+  "seconds": 14.67
+}

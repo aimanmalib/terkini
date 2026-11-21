@@ -1,0 +1,12 @@
+{
+  "name": "my-08--grok-4-7",
+  "question_id": "my-08",
+  "question": "How much tourism tax is charged per room per night in Malaysia?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:40:17Z",
+  "answer": "The tourism tax in Malaysia is 10% of the room rate per night for hotels and homestays. This applies from 1 January 2023 and is charged on top of the 6% service tax. For example, a RM200 room rate means RM20 tourism tax. Rates can vary by property and may change—check directly with the hotel for current details.",
+  "prompt_tokens": 243,
+  "completion_tokens": 1215,
+  "seconds": 14.25
+}

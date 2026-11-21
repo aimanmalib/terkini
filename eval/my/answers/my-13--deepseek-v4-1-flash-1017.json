@@ -1,0 +1,12 @@
+{
+  "name": "my-13--deepseek-v4-1-flash-1017",
+  "question_id": "my-13",
+  "question": "What is the Employment Insurance System (EIS) contribution rate in Malaysia?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:41:23Z",
+  "answer": "In Malaysia, the Employment Insurance System (EIS) contribution rate is 0.2% of the employee's monthly wages, paid by both the employer and the employee respectively. This means each contributes 0.2%, for a combined total of 0.4%. The wage ceiling for EIS contributions is RM6,000 per month (raised from RM5,000 effective October 2024). Contributions are mandatory for most employees aged 18 to 60 under a contract of service.",
+  "prompt_tokens": 2042,
+  "completion_tokens": 101,
+  "seconds": 2.03
+}

@@ -1,0 +1,12 @@
+{
+  "name": "my-11--kimi-k3-1-pro",
+  "question_id": "my-11",
+  "question": "How are new EPF contributions split between member accounts in Malaysia?",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "answered_by": "moonshotai/Kimi-K3.1-Pro",
+  "asked_at": "2026-11-21T00:41:04Z",
+  "answer": "Since **11 May 2024**, new EPF (KWSP) contributions for members **below age 55** are split as follows:\n\n- **75% — Akaun Persaraan (Retirement Account):** Formerly Account 1; primarily intended for retirement savings.\n- **15% — Akaun Sejahtera (Well-being Account):** Formerly Account 2; can be used for approved purposes such as housing, education and healthcare.\n- **10% — Akaun Fleksibel (Flexible Account):** Also known as Account 3; withdrawals may be made at any time, subject to EPF withdrawal rules.\n\nThese percentages apply to the **total contribution**, including both employee and employer portions. They do not change the contribution rates themselves. Different account arrangements apply when a member reaches age 55.",
+  "prompt_tokens": 2131,
+  "completion_tokens": 1119,
+  "seconds": 16.39
+}

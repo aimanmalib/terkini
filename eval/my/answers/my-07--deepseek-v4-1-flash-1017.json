@@ -1,0 +1,12 @@
+{
+  "name": "my-07--deepseek-v4-1-flash-1017",
+  "question_id": "my-07",
+  "question": "Above what annual sales value must a manufacturer of taxable goods register for sales tax in Malaysia?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:40:03Z",
+  "answer": "In Malaysia, a manufacturer of taxable goods must register for sales tax if their annual sales value of taxable goods exceeds **RM500,000**. This threshold is set under the Sales Tax Act 2018. Manufacturers below this threshold are not required to register, but may choose to do so voluntarily if they meet certain conditions. Once registered, they must charge sales tax on taxable goods and comply with reporting and payment obligations to the Royal Malaysian Customs Department.",
+  "prompt_tokens": 2045,
+  "completion_tokens": 90,
+  "seconds": 1.45
+}

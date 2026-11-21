@@ -1,0 +1,12 @@
+{
+  "name": "my-16--grok-4-7",
+  "question_id": "my-16",
+  "question": "Is dividend income taxed for individuals in Malaysia, and at what rate?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:42:12Z",
+  "answer": "**No, dividend income is not taxed for individuals in Malaysia.**\nUnder Section 4A of the Income Tax Act 1967, dividends received by individuals (other than companies) from Malaysian companies are fully exempt from income tax. This applies to resident individuals and avoids double taxation, as companies already pay corporate tax on their profits before distributing dividends.\nThe tax rate is therefore 0%. Non-resident individuals may face 10% withholding tax instead, but the question refers to individuals in Malaysia (residents).",
+  "prompt_tokens": 244,
+  "completion_tokens": 2040,
+  "seconds": 22.69
+}

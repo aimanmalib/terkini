@@ -1,0 +1,12 @@
+{
+  "name": "my-03--deepseek-v4-1-flash-1017",
+  "question_id": "my-03",
+  "question": "What is the standard service tax rate in Malaysia?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:39:17Z",
+  "answer": "The standard service tax rate in Malaysia is 8%, effective from 1 March 2024 (raised from 6%). However, certain services remain at 6%, including food and beverage, telecommunications, parking, and logistics. The rate applies to taxable services prescribed under the Service Tax Regulations 2018, as amended.",
+  "prompt_tokens": 2037,
+  "completion_tokens": 66,
+  "seconds": 2.32
+}

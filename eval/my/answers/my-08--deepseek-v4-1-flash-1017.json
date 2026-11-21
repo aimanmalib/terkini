@@ -1,0 +1,12 @@
+{
+  "name": "my-08--deepseek-v4-1-flash-1017",
+  "question_id": "my-08",
+  "question": "How much tourism tax is charged per room per night in Malaysia?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:40:11Z",
+  "answer": "In Malaysia, the tourism tax is charged per room per night based on hotel rating: RM10 for five-star, RM5 for four-star, RM3 for three-star, RM2 for two-star, and RM1 for one-star or unrated accommodation. Foreign tourists pay this tax; Malaysian citizens and permanent residents are exempt.",
+  "prompt_tokens": 2040,
+  "completion_tokens": 67,
+  "seconds": 1.42
+}

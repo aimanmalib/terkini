@@ -1,0 +1,12 @@
+{
+  "name": "my-08--kimi-k3-1-pro",
+  "question_id": "my-08",
+  "question": "How much tourism tax is charged per room per night in Malaysia?",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "answered_by": "moonshotai/Kimi-K3.1-Pro",
+  "asked_at": "2026-11-21T00:40:19Z",
+  "answer": "Malaysia’s Tourism Tax (TTx) is a flat **RM10 per room, per night**. It generally applies to **foreign tourists** staying at registered accommodation premises, regardless of the accommodation’s star rating.\n\n**Malaysian citizens and permanent residents are exempt.** The tax is charged per room—not per person—and is separate from SST and any hotel service charges. Certain accommodation types may also be exempt.",
+  "prompt_tokens": 2131,
+  "completion_tokens": 1002,
+  "seconds": 14.8
+}

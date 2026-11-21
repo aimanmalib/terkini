@@ -1,0 +1,12 @@
+{
+  "name": "my-20--grok-4-7",
+  "question_id": "my-20",
+  "question": "How many days of paid paternity leave does a married male employee get under Malaysia's Employment Act?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:43:11Z",
+  "answer": "Under Malaysia's Employment Act 1955 (as amended), a married male employee is entitled to 2 days of paid paternity leave for the birth of his child. This is paid at his ordinary rate of pay and must be taken within 60 days of the child's birth (or adoption placement). \n```",
+  "prompt_tokens": 249,
+  "completion_tokens": 1175,
+  "seconds": 17.46
+}

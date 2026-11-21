@@ -1,0 +1,12 @@
+{
+  "name": "my-17--deepseek-v4-1-flash-1017",
+  "question_id": "my-17",
+  "question": "What is the capital gains tax rate on the disposal of unlisted shares acquired in 2024 or later in Malaysia?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:42:31Z",
+  "answer": "Malaysia does not have a general capital gains tax. However, from 1 March 2024, gains on the disposal of unlisted shares by companies, limited liability partnerships, trust bodies and co-operative societies are subject to tax under the Capital Gains Tax regime at the following rates:\n\n- **Companies, LLPs, trust bodies and co-operatives:** 10% on the gain, or 2% on the gross disposal price (whichever is higher), for shares acquired on or after 1 March 2024.\n- **Individuals:** Exempt on disposals of unlisted shares (unless treated as trading income).\n\nFor shares acquired before 1 March 2024, a lower rate of 2% on the gain applies (with conditions).",
+  "prompt_tokens": 2051,
+  "completion_tokens": 154,
+  "seconds": 2.02
+}

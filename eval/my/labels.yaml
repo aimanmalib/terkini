@@ -1,0 +1,173 @@
+# Hand labels for eval/my/answers (docs/EVAL.md). One entry per answer, written by reading each answer against
+# eval/my/key.yaml BEFORE the checker ran on it. stale: true = the answer states a value or rule for the question
+# that differs from the key (outdated or wrong); false = it states the key value; null = it gives no value.
+# The note says what the answer states when it is not the key value.
+pack: my
+labels:
+- answer: my-01--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-01--grok-4-7
+  stale: true
+  note: Says RM1,500 from 1 January 2024.
+- answer: my-01--kimi-k3-1-pro
+  stale: false
+- answer: my-02--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-02--grok-4-7
+  stale: true
+  note: Says the current rate is RM1,500.
+- answer: my-02--kimi-k3-1-pro
+  stale: false
+- answer: my-03--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-03--grok-4-7
+  stale: true
+  note: Says 6%.
+- answer: my-03--kimi-k3-1-pro
+  stale: false
+- answer: my-04--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-04--grok-4-7
+  stale: false
+- answer: my-04--kimi-k3-1-pro
+  stale: false
+- answer: my-05--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-05--grok-4-7
+  stale: true
+  note: Says 6% since 2018 with no change.
+- answer: my-05--kimi-k3-1-pro
+  stale: false
+- answer: my-06--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-06--grok-4-7
+  stale: true
+  note: Says a 6% standard rate on goods.
+- answer: my-06--kimi-k3-1-pro
+  stale: false
+- answer: my-07--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-07--grok-4-7
+  stale: false
+- answer: my-07--kimi-k3-1-pro
+  stale: false
+- answer: my-08--deepseek-v4-1-flash-1017
+  stale: true
+  note: Gives rates from RM1 to RM10 by star rating; the key is a flat RM10.
+- answer: my-08--grok-4-7
+  stale: true
+  note: Says 10% of the room rate.
+- answer: my-08--kimi-k3-1-pro
+  stale: false
+- answer: my-09--deepseek-v4-1-flash-1017
+  stale: true
+  note: Says below RM150,000.
+- answer: my-09--grok-4-7
+  stale: true
+  note: Says RM20 million.
+- answer: my-09--kimi-k3-1-pro
+  stale: true
+  note: Says below RM500,000.
+- answer: my-10--deepseek-v4-1-flash-1017
+  stale: true
+  note: Says 1 July 2025.
+- answer: my-10--grok-4-7
+  stale: true
+  note: Says 1 January 2025.
+- answer: my-11--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-11--grok-4-7
+  stale: true
+  note: Describes the old two-account split.
+- answer: my-11--kimi-k3-1-pro
+  stale: false
+- answer: my-12--deepseek-v4-1-flash-1017
+  stale: false
+  note: Mandatory at 2%; the employee share is described inconsistently.
+- answer: my-12--grok-4-7
+  stale: true
+  note: Says no EPF for foreign workers.
+- answer: my-12--kimi-k3-1-pro
+  stale: false
+- answer: my-13--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-13--grok-4-7
+  stale: true
+  note: Says 0.5% each, up to RM5,000.
+- answer: my-13--kimi-k3-1-pro
+  stale: false
+- answer: my-14--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-14--grok-4-7
+  stale: true
+  note: Says RM5,000.
+- answer: my-14--kimi-k3-1-pro
+  stale: false
+- answer: my-15--deepseek-v4-1-flash-1017
+  stale: true
+  note: Says accidents outside work are not covered except through the Invalidity Scheme; no mention of the scheme from 1
+    June 2026.
+- answer: my-15--grok-4-7
+  stale: true
+  note: Says no.
+- answer: my-16--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-16--grok-4-7
+  stale: true
+  note: Says dividends are fully exempt.
+- answer: my-16--kimi-k3-1-pro
+  stale: false
+- answer: my-17--deepseek-v4-1-flash-1017
+  stale: true
+  note: States 10% or 2% of the gross price, whichever is higher, for shares acquired from 1 March 2024; the 2% option only
+    applies to shares acquired before 2024.
+- answer: my-17--grok-4-7
+  stale: true
+  note: Gives a 30%/10%/0% schedule by holding period.
+- answer: my-17--kimi-k3-1-pro
+  stale: false
+- answer: my-18--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-18--grok-4-7
+  stale: true
+  note: Says 17%.
+- answer: my-18--kimi-k3-1-pro
+  stale: false
+- answer: my-19--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-19--grok-4-7
+  stale: false
+- answer: my-19--kimi-k3-1-pro
+  stale: false
+- answer: my-20--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-20--grok-4-7
+  stale: true
+  note: Says 2 days.
+- answer: my-20--kimi-k3-1-pro
+  stale: false
+- answer: my-21--deepseek-v4-1-flash-1017
+  stale: true
+  note: States 48 hours first, then says 45 hours since 1 January 2023 (mixed).
+- answer: my-21--grok-4-7
+  stale: true
+  note: Says 48 hours.
+- answer: my-21--kimi-k3-1-pro
+  stale: false
+- answer: my-22--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-22--grok-4-7
+  stale: true
+  note: Says RM2,000.
+- answer: my-22--kimi-k3-1-pro
+  stale: false
+- answer: my-23--deepseek-v4-1-flash-1017
+  stale: false
+- answer: my-23--grok-4-7
+  stale: true
+  note: Says there is no legal minimum retirement age.
+- answer: my-23--kimi-k3-1-pro
+  stale: false
+- answer: my-15--kimi-k3-1-pro
+  stale: true
+  note: Says only commuting accidents are covered; no mention of the scheme from 1 June 2026.

@@ -1,0 +1,12 @@
+{
+  "name": "my-06--deepseek-v4-1-flash-1017",
+  "question_id": "my-06",
+  "question": "What are the sales tax rates on goods in Malaysia?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:39:41Z",
+  "answer": "Malaysia's sales tax is set at 5% or 10% depending on the goods category. The 5% rate generally applies to food, beverages, building materials, and certain other goods, while 10% applies to most other taxable goods. Some items are exempt, such as certain agricultural products and essential foodstuffs. Since 1 September 2022, sales tax is administered under the Sales Tax Act 2018, following the reintroduction of SST. Note that sales tax applies at the manufacturer/import level, not at retail. Rates and exemptions can change, so verify with the Royal Malaysian Customs Department for current specifics.",
+  "prompt_tokens": 2038,
+  "completion_tokens": 132,
+  "seconds": 3.1
+}

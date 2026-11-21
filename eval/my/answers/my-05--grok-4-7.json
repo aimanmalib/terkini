@@ -1,0 +1,12 @@
+{
+  "name": "my-05--grok-4-7",
+  "question_id": "my-05",
+  "question": "When did Malaysia's standard service tax rate last change, and to what rate?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:40:31Z",
+  "answer": "Malaysia introduced the standard service tax (SST) rate of 6% on 1 April 2018. This was the initial rate, as no service tax existed before. It has remained at 6% since, with no further changes.",
+  "prompt_tokens": 246,
+  "completion_tokens": 3505,
+  "seconds": 62.02
+}

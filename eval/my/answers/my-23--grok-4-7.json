@@ -1,0 +1,12 @@
+{
+  "name": "my-23--grok-4-7",
+  "question_id": "my-23",
+  "question": "What is the minimum retirement age for private sector employees in Malaysia?",
+  "model": "gcli/grok-4.7",
+  "answered_by": "grok-4.7",
+  "asked_at": "2026-11-21T00:43:54Z",
+  "answer": "There is no legal minimum retirement age for private sector employees in Malaysia. The Employment Act 1955 does not set any retirement age. It is determined by the employment contract or company policy. However, EPF contributions stop at age 55, after which members can withdraw savings for retirement.",
+  "prompt_tokens": 243,
+  "completion_tokens": 2013,
+  "seconds": 31.71
+}

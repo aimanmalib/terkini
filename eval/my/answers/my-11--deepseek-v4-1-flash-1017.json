@@ -1,0 +1,12 @@
+{
+  "name": "my-11--deepseek-v4-1-flash-1017",
+  "question_id": "my-11",
+  "question": "How are new EPF contributions split between member accounts in Malaysia?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:40:53Z",
+  "answer": "Since May 2024, new EPF contributions are split: 75% to Akaun Persaraan (Retirement), 15% to Akaun Sejahtera (Well-being), and 10% to Akaun Fleksibel (Flexible). For members under 60, the employer's 13% and employee's 11% follow this allocation. Akaun Fleksibel allows withdrawals anytime, Akaun Sejahtera for housing/education/health, and Akaun Persaraan only at age 55/60.",
+  "prompt_tokens": 2040,
+  "completion_tokens": 115,
+  "seconds": 3.5
+}

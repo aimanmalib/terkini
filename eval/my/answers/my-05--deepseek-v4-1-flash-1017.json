@@ -1,0 +1,12 @@
+{
+  "name": "my-05--deepseek-v4-1-flash-1017",
+  "question_id": "my-05",
+  "question": "When did Malaysia's standard service tax rate last change, and to what rate?",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "asked_at": "2026-11-21T00:39:38Z",
+  "answer": "Malaysia's standard service tax rate last changed on 1 March 2024, when it was raised from 6% to 8%.",
+  "prompt_tokens": 2043,
+  "completion_tokens": 31,
+  "seconds": 1.1
+}

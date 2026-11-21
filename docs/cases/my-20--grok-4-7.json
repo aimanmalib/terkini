@@ -92,5 +92,84 @@
    ],
    "verdict": "unverifiable"
   }
- ]
+ ],
+ "trace": {
+  "tavily": {
+   "topic": "general",
+   "include_domains": [
+    "hasil.gov.my",
+    "customs.gov.my",
+    "mof.gov.my",
+    "kwsp.gov.my",
+    "perkeso.gov.my",
+    "mohr.gov.my",
+    "agc.gov.my",
+    "hrdcorp.gov.my",
+    "st.gov.my",
+    "motac.gov.my",
+    "kpdn.gov.my",
+    "tnb.com.my"
+   ],
+   "include_domains_mode": "restrict",
+   "max_results": 5,
+   "search_depth": "basic",
+   "retry_depth": "advanced",
+   "log": "settings",
+   "claims": [
+    {
+     "n": 1,
+     "query": "A married male employee is entitled to 2 days of paid paternity leave for the birth of his child under Malaysia's Employment Act 1955.",
+     "max_age_hours": null,
+     "cached_copy": false,
+     "depths": null,
+     "from_cache": false,
+     "credits": 1
+    },
+    {
+     "n": 2,
+     "query": "Paternity leave must be taken within 60 days of the child's birth or adoption placement.",
+     "max_age_hours": null,
+     "cached_copy": false,
+     "depths": null,
+     "from_cache": false,
+     "credits": 2
+    }
+   ],
+   "credits": 3
+  },
+  "gateway": {
+   "log": "totals",
+   "calls": [
+    {
+     "step": "answer",
+     "model": "gcli/grok-4.7",
+     "answered_by": "grok-4.7",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 249,
+     "tokens_out": 1175,
+     "seconds": 17.46
+    },
+    {
+     "step": "check",
+     "model": "rv/GLM-5.3",
+     "answered_by": null,
+     "fallback": null,
+     "calls": 3,
+     "tokens_in": 14681,
+     "tokens_out": 5927,
+     "seconds": 132.3
+    }
+   ],
+   "fallbacks": [
+    "rv/Qwen/Qwen3.8-27B-FP8",
+    "cf/@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "rv/zai-org/GLM-5.3-Flash"
+   ],
+   "total_calls": 4,
+   "tokens_in": 14930,
+   "tokens_out": 7102,
+   "spend_usd": 0
+  }
+ }
 }

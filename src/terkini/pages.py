@@ -20,6 +20,7 @@ from terkini.gateway import load_gateway_config
 from terkini.packs import REPO_ROOT, load_pack
 from terkini.replay import load_cassette
 from terkini.runner import replay, runs_dir
+from terkini.trace import trace_eval, trace_recording
 
 
 class CaseRef(BaseModel):
@@ -57,6 +58,7 @@ def build_case(ref: CaseRef, root: Path = REPO_ROOT) -> dict:
     if ref.source == "recording":
         c = load_cassette(runs_dir(root) / f"{ref.id}.json")
         report = replay(c, root)
+        trace = trace_recording(c, report, load_pack(c.pack, root), root)
         question, model, answer, run_at = c.question, c.answer_model, c.answer, c.recorded_at
     else:
         folder = eval_dir(load_pack(ref.pack, root), root)
@@ -64,6 +66,7 @@ def build_case(ref: CaseRef, root: Path = REPO_ROOT) -> dict:
         a = Answer.model_validate_json((folder / cfg.answers_dir / f"{ref.id}.json").read_text(encoding="utf-8"))
         run = AnswerRun.model_validate_json((folder / cfg.runs_dir / f"{ref.id}.json").read_text(encoding="utf-8"))
         report = run.report
+        trace = trace_eval(a, run, load_pack(ref.pack, root), root)
         question, model, answer, run_at = a.question, a.model, a.answer, run.checked_at
     return {
         "id": ref.id,
@@ -74,6 +77,7 @@ def build_case(ref: CaseRef, root: Path = REPO_ROOT) -> dict:
         "answer": answer,
         "report": (rep := report.model_dump(mode="json")),
         "spans": claim_spans(answer, rep["results"]),
+        "trace": trace,
     }
 
 

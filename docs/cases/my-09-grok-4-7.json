@@ -119,5 +119,129 @@
    ],
    "verdict": "unverifiable"
   }
- ]
+ ],
+ "trace": {
+  "tavily": {
+   "topic": "general",
+   "include_domains": [
+    "hasil.gov.my",
+    "customs.gov.my",
+    "mof.gov.my",
+    "kwsp.gov.my",
+    "perkeso.gov.my",
+    "mohr.gov.my",
+    "agc.gov.my",
+    "hrdcorp.gov.my",
+    "st.gov.my",
+    "motac.gov.my",
+    "kpdn.gov.my",
+    "tnb.com.my"
+   ],
+   "include_domains_mode": "restrict",
+   "max_results": 5,
+   "search_depth": "basic",
+   "retry_depth": "advanced",
+   "log": "recorded",
+   "claims": [
+    {
+     "n": 1,
+     "query": "Malaysian businesses with an annual turnover below RM 20 million are exempt from mandatory e-Invoicing under the MyInvois system.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": [
+      "basic"
+     ],
+     "from_cache": false,
+     "credits": 2
+    },
+    {
+     "n": 2,
+     "query": "From 1 January 2024, only Malaysian businesses with an annual turnover exceeding RM 20 million must issue e-invoices.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": [
+      "basic"
+     ],
+     "from_cache": false,
+     "credits": 1
+    },
+    {
+     "n": 3,
+     "query": "The Inland Revenue Board of Malaysia (IRBM) set the RM 20 million e-Invoicing exemption threshold.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": [
+      "basic"
+     ],
+     "from_cache": false,
+     "credits": 1
+    }
+   ],
+   "credits": 4
+  },
+  "gateway": {
+   "log": "recorded",
+   "calls": [
+    {
+     "step": "answer",
+     "model": "gcli/grok-4.7",
+     "answered_by": "grok-4.7",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 244,
+     "tokens_out": 1499,
+     "seconds": 27.4
+    },
+    {
+     "step": "extract",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 2392,
+     "tokens_out": 1367,
+     "seconds": 74.89
+    },
+    {
+     "step": "judge",
+     "model": "rv/GLM-5.3",
+     "answered_by": "Qwen/Qwen3.8-27B-FP8",
+     "fallback": true,
+     "calls": 1,
+     "tokens_in": 3264,
+     "tokens_out": 2561,
+     "seconds": 98.6
+    },
+    {
+     "step": "judge",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 2399,
+     "tokens_out": 761,
+     "seconds": 17.38
+    },
+    {
+     "step": "judge",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 3159,
+     "tokens_out": 1045,
+     "seconds": 25.1
+    }
+   ],
+   "fallbacks": [
+    "rv/Qwen/Qwen3.8-27B-FP8",
+    "cf/@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "rv/zai-org/GLM-5.3-Flash"
+   ],
+   "total_calls": 5,
+   "tokens_in": 11458,
+   "tokens_out": 7233,
+   "spend_usd": 0
+  }
+ }
 }

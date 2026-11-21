@@ -92,6 +92,32 @@
   .asof { margin-top: .25rem; color: var(--stale); font-weight: 600; }
   .credits { margin-top: .25rem; color: var(--muted); font-size: .9375rem; }
 
+  .trace { margin-top: 1rem; background: var(--sheet); border: 1px solid var(--line); border-radius: var(--radius); }
+  .trace summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: .125rem .75rem;
+    padding: .75rem 1rem .75rem 2.25rem; position: relative; border-radius: var(--radius); }
+  .trace summary::-webkit-details-marker { display: none; }
+  .trace summary::before { content: ""; position: absolute; left: 1rem; top: 1.15rem; width: .5rem; height: .5rem;
+    border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: rotate(-45deg); }
+  .trace[open] summary::before { transform: rotate(45deg); top: 1rem; }
+  .tr-title { font-weight: 700; }
+  .tr-hint { color: var(--muted); font-size: .875rem; }
+  .tr-sec { padding: .25rem 1rem 1rem; border-top: 1px solid var(--line); }
+  .tr-sec h4 { margin: .875rem 0 0; font-size: .8125rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); }
+  .tr-dl { margin: .5rem 0 0; display: grid; gap: .5rem; }
+  .tr-dl div { min-width: 0; }
+  .tr-dl dt { font-size: .8125rem; font-weight: 600; color: var(--muted); }
+  .tr-dl dd { margin: .125rem 0 0; font-size: .9375rem; overflow-wrap: anywhere; }
+  .tr-chips { display: flex; flex-wrap: wrap; gap: .25rem .375rem; }
+  .trace code { font: 400 .8125rem/1.5 var(--mono); overflow-wrap: anywhere; }
+  .tr-chips code { border: 1px solid var(--line); border-radius: 6px; padding: 0 .375rem; }
+  .tr-list { list-style: none; margin: .625rem 0 0; padding: 0; display: grid; gap: .625rem; }
+  .tr-list li { min-width: 0; padding-left: .75rem; border-left: 2px solid var(--line); }
+  .tr-k { font-size: .8125rem; font-weight: 600; color: var(--muted); }
+  .tr-q { margin-top: .125rem; }
+  .tr-meta { display: flex; flex-wrap: wrap; gap: .125rem .875rem; margin-top: .125rem; font-size: .875rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .tr-meta .tr-fb { color: var(--unsure); font-weight: 700; }
+  .tr-note { margin-top: .625rem; font-size: .875rem; color: var(--muted); overflow-wrap: anywhere; }
+  .tr-total { margin-top: .625rem; font-size: .9375rem; font-weight: 600; font-variant-numeric: tabular-nums; }
   .claims-h { margin-top: 2rem; }
   .claims { list-style: none; margin: .75rem 0 0; padding: 0; display: grid; gap: var(--gap); }
   .claim { background: var(--sheet); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.125rem 1.25rem; scroll-margin-top: 1rem; }

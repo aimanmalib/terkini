@@ -168,6 +168,60 @@ function claimCard(r, i) {
     r.verdict === "unverifiable" && r.reason && r.evidence_quote ? el("p", { class: "why", text: r.reason }) : null);
 }
 
+// --- How this check ran (Tavily + Bifrost requests saved with the run) -------------------------------------------------
+
+const num = (n) => new Intl.NumberFormat(state.lang === "ms" ? "ms-MY" : "en-GB").format(n);
+const code = (text) => el("code", { text });
+
+function traceClaim(q) {
+  const meta = [
+    q.depths ? t("trace_depths", { depths: q.depths.join(", ") || "—" }) : t("trace_depth_unlogged"),
+    q.max_age_hours !== null ? t("trace_max_age", { hours: q.max_age_hours }) : null,
+    q.cached_copy ? t("flag_cached") : null,
+    q.from_cache ? t("trace_from_cache") : t("trace_claim_credits", { credits: q.credits }),
+  ].filter((x) => x !== null);
+  return el("li", {},
+    el("p", { class: "tr-k", text: `${t("trace_claim", { n: q.n })} · ${t("trace_query")}` }),
+    el("p", { class: "tr-q" }, code(q.query)),
+    el("p", { class: "tr-meta" }, meta.map((m) => el("span", { text: m }))));
+}
+
+function traceCall(g) {
+  const fb = g.fallback === null ? (g.answered_by ? t("trace_fallback_unlogged") : null)
+    : t(g.fallback ? "trace_fallback_used" : "trace_fallback_none");
+  return el("li", {},
+    el("p", { class: "tr-k", text: t(`trace_step_${g.step}`) + (g.calls > 1 ? ` · ${t("trace_calls", { calls: g.calls })}` : "") }),
+    el("p", { class: "tr-q" }, code(g.model)),
+    el("p", { class: "tr-meta" },
+      el("span", { text: g.answered_by ? t("trace_answered_by", { model: g.answered_by }) : (g.step === "check" ? t("trace_fallback_unlogged") : t("trace_no_answer")) }),
+      fb && g.step !== "check" ? el("span", { class: g.fallback ? "tr-fb" : "", text: fb }) : null,
+      el("span", { text: t("trace_tokens", { tokens_in: num(g.tokens_in), tokens_out: num(g.tokens_out) }) }),
+      g.seconds !== null ? el("span", { text: t("trace_seconds", { seconds: num(g.seconds) }) }) : null));
+}
+
+function traceBox(tr, open) {
+  const tv = tr.tavily, gw = tr.gateway;
+  return el("details", { class: "trace", open },
+    el("summary", {}, el("span", { class: "tr-title", text: t("trace_summary") }), el("span", { class: "tr-hint", text: t("trace_hint") })),
+    el("section", { class: "tr-sec" },
+      el("h4", { text: t("trace_tavily") }),
+      el("dl", { class: "tr-dl" },
+        el("div", {}, el("dt", { text: t("trace_settings") }), el("dd", { text: t("trace_settings_value",
+          { topic: tv.topic, depth: tv.search_depth, retry: tv.retry_depth, max: tv.max_results }) })),
+        el("div", {}, el("dt", { text: t("trace_domains", { mode: tv.include_domains_mode }) }),
+          el("dd", { class: "tr-chips" }, tv.include_domains.map(code)))),
+      el("ol", { class: "tr-list" }, tv.claims.map(traceClaim)),
+      tv.log === "settings" ? el("p", { class: "tr-note", text: t("trace_eval_note") }) : null,
+      el("p", { class: "tr-total", text: t("trace_credits_total", { credits: tv.credits }) })),
+    el("section", { class: "tr-sec" },
+      el("h4", { text: t("trace_bifrost") }),
+      el("ol", { class: "tr-list" }, gw.calls.map(traceCall)),
+      el("p", { class: "tr-total", text: t("trace_gateway_total",
+        { calls: gw.total_calls, tokens_in: num(gw.tokens_in), tokens_out: num(gw.tokens_out) }) }),
+      el("p", { class: "tr-note" }, `${t("trace_fallbacks")}: `, gw.fallbacks.flatMap((f, i) => [i ? ", " : "", code(f)])),
+      gw.spend_usd !== null ? el("p", { class: "tr-note", text: t("trace_spend", { usd: gw.spend_usd }) }) : null));
+}
+
 function renderCase(c) {
   const r = c.report;
   const n = Object.fromEntries(VERDICTS.map((v) => [v, r.results.filter((x) => x.verdict === v).length]));
@@ -183,6 +237,7 @@ function renderCase(c) {
     el("p", { class: "summary", text: t("summary", { checked: r.results.length, ...n }) }),
     asof ? el("p", { class: "asof", text: asof }) : null,
     el("p", { class: "credits", text: t("credits", { credits: r.credits }) }),
+    c.trace ? traceBox(c.trace, Boolean(document.querySelector("details.trace[open]"))) : null,
     el("h3", { class: "claims-h", text: t("claims_heading") }),
     el("ol", { class: "claims" }, r.results.map(claimCard)),
     r.not_checked.map((x) => el("p", { class: "other", text: t("not_checked", { claim: x.claim }) })),

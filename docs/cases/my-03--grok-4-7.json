@@ -92,5 +92,84 @@
    ],
    "verdict": "unverifiable"
   }
- ]
+ ],
+ "trace": {
+  "tavily": {
+   "topic": "general",
+   "include_domains": [
+    "hasil.gov.my",
+    "customs.gov.my",
+    "mof.gov.my",
+    "kwsp.gov.my",
+    "perkeso.gov.my",
+    "mohr.gov.my",
+    "agc.gov.my",
+    "hrdcorp.gov.my",
+    "st.gov.my",
+    "motac.gov.my",
+    "kpdn.gov.my",
+    "tnb.com.my"
+   ],
+   "include_domains_mode": "restrict",
+   "max_results": 5,
+   "search_depth": "basic",
+   "retry_depth": "advanced",
+   "log": "settings",
+   "claims": [
+    {
+     "n": 1,
+     "query": "The standard service tax rate in Malaysia is 6%.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": null,
+     "from_cache": true,
+     "credits": 0
+    },
+    {
+     "n": 2,
+     "query": "Businesses must register for service tax if their annual turnover exceeds RM500,000.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": null,
+     "from_cache": false,
+     "credits": 1
+    }
+   ],
+   "credits": 1
+  },
+  "gateway": {
+   "log": "totals",
+   "calls": [
+    {
+     "step": "answer",
+     "model": "gcli/grok-4.7",
+     "answered_by": "grok-4.7",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 240,
+     "tokens_out": 659,
+     "seconds": 8.88
+    },
+    {
+     "step": "check",
+     "model": "rv/GLM-5.3",
+     "answered_by": null,
+     "fallback": null,
+     "calls": 2,
+     "tokens_in": 5699,
+     "tokens_out": 3350,
+     "seconds": 55.59
+    }
+   ],
+   "fallbacks": [
+    "rv/Qwen/Qwen3.8-27B-FP8",
+    "cf/@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "rv/zai-org/GLM-5.3-Flash"
+   ],
+   "total_calls": 3,
+   "tokens_in": 5939,
+   "tokens_out": 4009,
+   "spend_usd": 0
+  }
+ }
 }

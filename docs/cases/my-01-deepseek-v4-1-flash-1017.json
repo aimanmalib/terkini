@@ -105,5 +105,118 @@
    ],
    "verdict": "unverifiable"
   }
- ]
+ ],
+ "trace": {
+  "tavily": {
+   "topic": "general",
+   "include_domains": [
+    "hasil.gov.my",
+    "customs.gov.my",
+    "mof.gov.my",
+    "kwsp.gov.my",
+    "perkeso.gov.my",
+    "mohr.gov.my",
+    "agc.gov.my",
+    "hrdcorp.gov.my",
+    "st.gov.my",
+    "motac.gov.my",
+    "kpdn.gov.my",
+    "tnb.com.my"
+   ],
+   "include_domains_mode": "restrict",
+   "max_results": 5,
+   "search_depth": "basic",
+   "retry_depth": "advanced",
+   "log": "recorded",
+   "claims": [
+    {
+     "n": 1,
+     "query": "Malaysia's national minimum wage is RM1,700 per month, effective from 1 February 2025 under the Minimum Wages Order 2024.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": [
+      "basic"
+     ],
+     "from_cache": false,
+     "credits": 2
+    },
+    {
+     "n": 2,
+     "query": "The minimum wage also applies on a daily and hourly basis.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": [
+      "basic"
+     ],
+     "from_cache": false,
+     "credits": 2
+    }
+   ],
+   "credits": 4
+  },
+  "gateway": {
+   "log": "recorded",
+   "calls": [
+    {
+     "step": "answer",
+     "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+     "answered_by": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 2037,
+     "tokens_out": 90,
+     "seconds": 2.24
+    },
+    {
+     "step": "extract",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 2377,
+     "tokens_out": 1074,
+     "seconds": 12.08
+    },
+    {
+     "step": "judge",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 2749,
+     "tokens_out": 3244,
+     "seconds": 42.44
+    },
+    {
+     "step": "judge",
+     "model": "rv/GLM-5.3",
+     "answered_by": null,
+     "fallback": null,
+     "calls": 1,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "seconds": 0.0
+    },
+    {
+     "step": "judge",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 2642,
+     "tokens_out": 390,
+     "seconds": 6.54
+    }
+   ],
+   "fallbacks": [
+    "rv/Qwen/Qwen3.8-27B-FP8",
+    "cf/@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "rv/zai-org/GLM-5.3-Flash"
+   ],
+   "total_calls": 5,
+   "tokens_in": 9805,
+   "tokens_out": 4798,
+   "spend_usd": 0
+  }
+ }
 }

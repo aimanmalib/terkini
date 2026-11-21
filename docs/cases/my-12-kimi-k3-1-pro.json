@@ -146,5 +146,150 @@
    ],
    "verdict": "unverifiable"
   }
- ]
+ ],
+ "trace": {
+  "tavily": {
+   "topic": "general",
+   "include_domains": [
+    "hasil.gov.my",
+    "customs.gov.my",
+    "mof.gov.my",
+    "kwsp.gov.my",
+    "perkeso.gov.my",
+    "mohr.gov.my",
+    "agc.gov.my",
+    "hrdcorp.gov.my",
+    "st.gov.my",
+    "motac.gov.my",
+    "kpdn.gov.my",
+    "tnb.com.my"
+   ],
+   "include_domains_mode": "restrict",
+   "max_results": 5,
+   "search_depth": "basic",
+   "retry_depth": "advanced",
+   "log": "recorded",
+   "claims": [
+    {
+     "n": 1,
+     "query": "For non-Malaysian workers registered on or after 1 August 1998, the employer's EPF contribution was a flat RM5 per month.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": [
+      "basic"
+     ],
+     "from_cache": false,
+     "credits": 2
+    },
+    {
+     "n": 2,
+     "query": "Non-Malaysian workers registered on or after 1 August 1998 generally contributed 11% of monthly wages to EPF.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": [
+      "basic"
+     ],
+     "from_cache": false,
+     "credits": 2
+    },
+    {
+     "n": 3,
+     "query": "Under the newer phased mandatory scheme for non-Malaysian employees, the initial employer EPF contribution rate is 2% of wages.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": [
+      "basic"
+     ],
+     "from_cache": false,
+     "credits": 2
+    },
+    {
+     "n": 4,
+     "query": "Under the newer phased mandatory scheme for non-Malaysian employees, the initial employee EPF contribution rate is 2% of wages.",
+     "max_age_hours": 0,
+     "cached_copy": false,
+     "depths": [
+      "basic"
+     ],
+     "from_cache": false,
+     "credits": 2
+    }
+   ],
+   "credits": 8
+  },
+  "gateway": {
+   "log": "recorded",
+   "calls": [
+    {
+     "step": "answer",
+     "model": "rv/moonshotai/Kimi-K3.1-Pro",
+     "answered_by": "moonshotai/Kimi-K3.1-Pro",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 2144,
+     "tokens_out": 5207,
+     "seconds": 55.6
+    },
+    {
+     "step": "extract",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 2477,
+     "tokens_out": 2435,
+     "seconds": 26.3
+    },
+    {
+     "step": "judge",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 3084,
+     "tokens_out": 2149,
+     "seconds": 27.4
+    },
+    {
+     "step": "judge",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 3088,
+     "tokens_out": 5003,
+     "seconds": 33.37
+    },
+    {
+     "step": "judge",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 3086,
+     "tokens_out": 1077,
+     "seconds": 19.38
+    },
+    {
+     "step": "judge",
+     "model": "rv/GLM-5.3",
+     "answered_by": "GLM-5.3",
+     "fallback": false,
+     "calls": 1,
+     "tokens_in": 3086,
+     "tokens_out": 762,
+     "seconds": 6.49
+    }
+   ],
+   "fallbacks": [
+    "rv/Qwen/Qwen3.8-27B-FP8",
+    "cf/@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "rv/zai-org/GLM-5.3-Flash"
+   ],
+   "total_calls": 6,
+   "tokens_in": 16965,
+   "tokens_out": 16633,
+   "spend_usd": 0
+  }
+ }
 }

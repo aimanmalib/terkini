@@ -1,0 +1,109 @@
+{
+ "id": "my-01-deepseek-v4-1-flash-1017",
+ "source": "recording",
+ "run_at": "2026-11-20T23:13:51Z",
+ "question": "What is the national minimum monthly wage in Malaysia?",
+ "model": {
+  "id": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "name": "DeepSeek-V4.1-Flash-1017",
+  "vendor": "DeepSeek"
+ },
+ "answer": "As of February 2025, Malaysia's national minimum wage is RM1,700 per month, effective from 1 February 2025 under the Minimum Wages Order 2024. For employers with fewer than five employees, the RM1,700 rate applies from 1 August 2025. The minimum wage also applies on a daily and hourly basis, and covers all workers regardless of nationality, except domestic servants and apprentices under contract.",
+ "report": {
+  "pack": "my",
+  "checked_on": "2026-11-20",
+  "results": [
+   {
+    "claim": {
+     "claim": "Malaysia's national minimum wage is RM1,700 per month, effective from 1 February 2025 under the Minimum Wages Order 2024.",
+     "category": "wages",
+     "entity": "employers in Malaysia (national minimum wage)",
+     "value": "RM1,700",
+     "unit": "MYR per month",
+     "stated_date": "1 February 2025",
+     "time_sensitive": true
+    },
+    "verdict": "current",
+    "current_value": "RM1,700",
+    "evidence_quote": "Gaji minimum RM1,700 berkuat kuasa Februari 2025.",
+    "effective_date": "2025-02-01",
+    "source_url": "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025",
+    "source_published_date": null,
+    "source_label": "government",
+    "quote_ok": true,
+    "cached_copy": false,
+    "snippet_only": true,
+    "score": 80,
+    "reason": "",
+    "context": [],
+    "checked_on": "2026-11-20",
+    "credits": 2
+   },
+   {
+    "claim": {
+     "claim": "The minimum wage also applies on a daily and hourly basis.",
+     "category": "wages",
+     "entity": "workers covered by the minimum wage in Malaysia",
+     "value": "",
+     "unit": "",
+     "stated_date": "",
+     "time_sensitive": true
+    },
+    "verdict": "unverifiable",
+    "current_value": "",
+    "evidence_quote": "",
+    "effective_date": null,
+    "source_url": "",
+    "source_published_date": null,
+    "source_label": "",
+    "quote_ok": false,
+    "cached_copy": false,
+    "snippet_only": true,
+    "score": 40,
+    "reason": "The official pages do not settle this claim.",
+    "context": [],
+    "checked_on": "2026-11-20",
+    "credits": 2
+   }
+  ],
+  "not_checked": [],
+  "errors": [
+   {
+    "claim": {
+     "claim": "For employers with fewer than five employees, the RM1,700 minimum wage rate applies from 1 August 2025.",
+     "category": "wages",
+     "entity": "employers with fewer than five employees",
+     "value": "RM1,700",
+     "unit": "MYR per month",
+     "stated_date": "1 August 2025",
+     "time_sensitive": true
+    },
+    "error": "gateway request failed: ReadTimeout"
+   }
+  ],
+  "stopped": "",
+  "skipped": 1,
+  "credits": 4,
+  "outdated": 0,
+  "as_of_before": null,
+  "as_of_mixed": false
+ },
+ "spans": [
+  {
+   "start": 0,
+   "end": 142,
+   "claims": [
+    0
+   ],
+   "verdict": "current"
+  },
+  {
+   "start": 234,
+   "end": 399,
+   "claims": [
+    1
+   ],
+   "verdict": "unverifiable"
+  }
+ ]
+}

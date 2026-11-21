@@ -1,0 +1,150 @@
+{
+ "id": "my-12-kimi-k3-1-pro",
+ "source": "recording",
+ "run_at": "2026-11-20T23:06:25Z",
+ "question": "Do employers in Malaysia have to make EPF contributions for foreign (non-Malaysian) workers, and at what rate?",
+ "model": {
+  "id": "rv/moonshotai/Kimi-K3.1-Pro",
+  "name": "Kimi-K3.1-Pro",
+  "vendor": "Moonshot AI"
+ },
+ "answer": "It depends on the wage period and the worker’s EPF status. Under the long-standing rules, a non-Malaysian who was not a Malaysian permanent resident generally had to opt into EPF. Once covered, the employer also had to contribute. For workers registered on or after 1 August 1998, the employer’s contribution was a flat **RM5 per month**, while the employee generally contributed **11% of monthly wages**. Different rates apply to older memberships and permanent residents.\n\nUnder the newer phased mandatory scheme for non-Malaysian employees, the initial rate is **2% of wages from the employer and 2% from the employee**. Employers should check KWSP’s current foreign-worker notice for the effective wage month, exclusions and transitional rules, rather than applying either RM5 or 2% to every foreign worker.",
+ "report": {
+  "pack": "my",
+  "checked_on": "2026-11-20",
+  "results": [
+   {
+    "claim": {
+     "claim": "For non-Malaysian workers registered on or after 1 August 1998, the employer's EPF contribution was a flat RM5 per month.",
+     "category": "retirement-savings",
+     "entity": "employers of non-Malaysian workers registered on or after 1 August 1998",
+     "value": "RM5",
+     "unit": "MYR per month",
+     "stated_date": "1 August 1998",
+     "time_sensitive": true
+    },
+    "verdict": "outdated",
+    "current_value": "Employers are only required to register and contribute for their non-Malaysian citizen employees starting 1 October 2025",
+    "evidence_quote": "Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025.",
+    "effective_date": "2025-10-01",
+    "source_url": "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+    "source_published_date": null,
+    "source_label": "government",
+    "quote_ok": true,
+    "cached_copy": false,
+    "snippet_only": true,
+    "score": 0,
+    "reason": "",
+    "context": [],
+    "checked_on": "2026-11-20",
+    "credits": 2
+   },
+   {
+    "claim": {
+     "claim": "Non-Malaysian workers registered on or after 1 August 1998 generally contributed 11% of monthly wages to EPF.",
+     "category": "retirement-savings",
+     "entity": "non-Malaysian employees registered on or after 1 August 1998",
+     "value": "11%",
+     "unit": "percent",
+     "stated_date": "1 August 1998",
+     "time_sensitive": true
+    },
+    "verdict": "outdated",
+    "current_value": "",
+    "evidence_quote": "Employers are only required to register and contribute for their non-Malaysian citizen employees **starting** 1 October 2025.",
+    "effective_date": "2025-10-01",
+    "source_url": "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees",
+    "source_published_date": null,
+    "source_label": "government",
+    "quote_ok": true,
+    "cached_copy": false,
+    "snippet_only": true,
+    "score": 0,
+    "reason": "",
+    "context": [],
+    "checked_on": "2026-11-20",
+    "credits": 2
+   },
+   {
+    "claim": {
+     "claim": "Under the newer phased mandatory scheme for non-Malaysian employees, the initial employer EPF contribution rate is 2% of wages.",
+     "category": "retirement-savings",
+     "entity": "employers of non-Malaysian employees under the phased mandatory scheme",
+     "value": "2%",
+     "unit": "percent",
+     "stated_date": "",
+     "time_sensitive": true
+    },
+    "verdict": "unverifiable",
+    "current_value": "",
+    "evidence_quote": "",
+    "effective_date": null,
+    "source_url": "",
+    "source_published_date": null,
+    "source_label": "",
+    "quote_ok": false,
+    "cached_copy": false,
+    "snippet_only": true,
+    "score": 40,
+    "reason": "The official pages do not settle this claim.",
+    "context": [],
+    "checked_on": "2026-11-20",
+    "credits": 2
+   },
+   {
+    "claim": {
+     "claim": "Under the newer phased mandatory scheme for non-Malaysian employees, the initial employee EPF contribution rate is 2% of wages.",
+     "category": "retirement-savings",
+     "entity": "non-Malaysian employees under the phased mandatory scheme",
+     "value": "2%",
+     "unit": "percent",
+     "stated_date": "",
+     "time_sensitive": true
+    },
+    "verdict": "unverifiable",
+    "current_value": "",
+    "evidence_quote": "",
+    "effective_date": null,
+    "source_url": "",
+    "source_published_date": null,
+    "source_label": "",
+    "quote_ok": false,
+    "cached_copy": false,
+    "snippet_only": true,
+    "score": 40,
+    "reason": "The official pages do not settle this claim.",
+    "context": [],
+    "checked_on": "2026-11-20",
+    "credits": 2
+   }
+  ],
+  "not_checked": [],
+  "errors": [],
+  "stopped": "",
+  "skipped": 3,
+  "credits": 8,
+  "outdated": 2,
+  "as_of_before": "2025-10-01",
+  "as_of_mixed": false
+ },
+ "spans": [
+  {
+   "start": 231,
+   "end": 405,
+   "claims": [
+    0,
+    1
+   ],
+   "verdict": "outdated"
+  },
+  {
+   "start": 475,
+   "end": 623,
+   "claims": [
+    2,
+    3
+   ],
+   "verdict": "unverifiable"
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "id": "my-03--grok-4-7",
+ "source": "eval",
+ "run_at": "2026-11-21T00:57:35Z",
+ "question": "What is the standard service tax rate in Malaysia?",
+ "model": {
+  "id": "gcli/grok-4.7",
+  "name": "grok-4.7",
+  "vendor": "xAI"
+ },
+ "answer": "The standard service tax rate in Malaysia is 6%. This applies to most taxable services provided by businesses (such as consulting, legal, accounting, and telecoms). It is collected from the service provider and added to the invoice. Certain services are exempt or have reduced rates, but 6% is the standard rate for taxable ones. Businesses must register if their turnover exceeds RM500,000 annually.",
+ "report": {
+  "pack": "my",
+  "checked_on": "2026-11-21",
+  "results": [
+   {
+    "claim": {
+     "claim": "The standard service tax rate in Malaysia is 6%.",
+     "category": "indirect-tax",
+     "entity": "businesses providing taxable services in Malaysia (such as consulting, legal, accounting, and telecoms)",
+     "value": "6%",
+     "unit": "percent",
+     "stated_date": "",
+     "time_sensitive": true
+    },
+    "verdict": "outdated",
+    "current_value": "8%",
+    "evidence_quote": "In accordance with the announcement made by the Minister of Finance during the Budget 2024 speech on 13th October 2023, the service tax rate for most prescribed taxable services under Service Tax Act 2018 (“STA 2018”) including digital service provided by Foreign Registered Person will increase from 6% to 8%, effective from 01 March 2024.",
+    "effective_date": "2024-03-01",
+    "source_url": "https://mystods.customs.gov.my/storage/app/media/pdf/guide/guide-on-transitional-rules-for-the-change-in-st-rate-to-8-on-digital-service-provided-by-frp.pdf",
+    "source_published_date": null,
+    "source_label": "government",
+    "quote_ok": true,
+    "cached_copy": false,
+    "snippet_only": false,
+    "score": 0,
+    "reason": "",
+    "context": [],
+    "checked_on": "2026-11-21",
+    "credits": 0
+   },
+   {
+    "claim": {
+     "claim": "Businesses must register for service tax if their annual turnover exceeds RM500,000.",
+     "category": "indirect-tax",
+     "entity": "businesses providing taxable services",
+     "value": "RM500,000",
+     "unit": "MYR per year",
+     "stated_date": "",
+     "time_sensitive": true
+    },
+    "verdict": "unverifiable",
+    "current_value": "",
+    "evidence_quote": "Only FiAH that generates annual taxable turnover that exceed RM 500,000 are mandatorily required to register with RMCD.",
+    "effective_date": null,
+    "source_url": "https://www.tnb.com.my/faq/gst-for-feed-in-approval-holders-fia",
+    "source_published_date": null,
+    "source_label": "utility",
+    "quote_ok": true,
+    "cached_copy": false,
+    "snippet_only": false,
+    "score": 40,
+    "reason": "The official pages do not settle this claim.",
+    "context": [],
+    "checked_on": "2026-11-21",
+    "credits": 1
+   }
+  ],
+  "not_checked": [],
+  "errors": [],
+  "stopped": "",
+  "skipped": 2,
+  "credits": 1,
+  "outdated": 1,
+  "as_of_before": "2024-03-01",
+  "as_of_mixed": false
+ },
+ "spans": [
+  {
+   "start": 0,
+   "end": 48,
+   "claims": [
+    0
+   ],
+   "verdict": "outdated"
+  },
+  {
+   "start": 330,
+   "end": 400,
+   "claims": [
+    1
+   ],
+   "verdict": "unverifiable"
+  }
+ ]
+}

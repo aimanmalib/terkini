@@ -1,0 +1,70 @@
+{
+ "cases": [
+  {
+   "id": "my-09-grok-4-7",
+   "question": "Below what annual turnover are Malaysian businesses exempt from e-Invoicing?",
+   "model": "grok-4.7",
+   "run_at": "2026-11-20T23:37:55Z",
+   "counts": {
+    "outdated": 1,
+    "current": 0,
+    "unverifiable": 2
+   }
+  },
+  {
+   "id": "my-12-kimi-k3-1-pro",
+   "question": "Do employers in Malaysia have to make EPF contributions for foreign (non-Malaysian) workers, and at what rate?",
+   "model": "Kimi-K3.1-Pro",
+   "run_at": "2026-11-20T23:06:25Z",
+   "counts": {
+    "outdated": 2,
+    "current": 0,
+    "unverifiable": 2
+   }
+  },
+  {
+   "id": "my-03--grok-4-7",
+   "question": "What is the standard service tax rate in Malaysia?",
+   "model": "grok-4.7",
+   "run_at": "2026-11-21T00:57:35Z",
+   "counts": {
+    "outdated": 1,
+    "current": 0,
+    "unverifiable": 1
+   }
+  },
+  {
+   "id": "my-20--grok-4-7",
+   "question": "How many days of paid paternity leave does a married male employee get under Malaysia's Employment Act?",
+   "model": "grok-4.7",
+   "run_at": "2026-11-21T01:16:27Z",
+   "counts": {
+    "outdated": 1,
+    "current": 0,
+    "unverifiable": 1
+   }
+  },
+  {
+   "id": "my-21--grok-4-7",
+   "question": "What are the maximum normal working hours per week under Malaysia's Employment Act?",
+   "model": "grok-4.7",
+   "run_at": "2026-11-21T01:17:09Z",
+   "counts": {
+    "outdated": 1,
+    "current": 0,
+    "unverifiable": 0
+   }
+  },
+  {
+   "id": "my-01-deepseek-v4-1-flash-1017",
+   "question": "What is the national minimum monthly wage in Malaysia?",
+   "model": "DeepSeek-V4.1-Flash-1017",
+   "run_at": "2026-11-20T23:13:51Z",
+   "counts": {
+    "outdated": 0,
+    "current": 1,
+    "unverifiable": 1
+   }
+  }
+ ]
+}

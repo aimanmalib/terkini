@@ -1,0 +1,123 @@
+{
+ "id": "my-09-grok-4-7",
+ "source": "recording",
+ "run_at": "2026-11-20T23:37:55Z",
+ "question": "Below what annual turnover are Malaysian businesses exempt from e-Invoicing?",
+ "model": {
+  "id": "gcli/grok-4.7",
+  "name": "grok-4.7",
+  "vendor": "xAI"
+ },
+ "answer": "**RM 20 million.**\nIn Malaysia, businesses with an annual turnover below RM 20 million are exempt from mandatory e-Invoicing (MyInvois system). This applies to most companies and SMEs. From 1 January 2024, only larger businesses exceeding this threshold must issue e-invoices. The Inland Revenue Board of Malaysia (IRBM) set this limit to ease the transition for smaller firms. Exempt businesses can still choose to use e-Invoicing voluntarily.",
+ "report": {
+  "pack": "my",
+  "checked_on": "2026-11-20",
+  "results": [
+   {
+    "claim": {
+     "claim": "Malaysian businesses with an annual turnover below RM 20 million are exempt from mandatory e-Invoicing under the MyInvois system.",
+     "category": "e-invoice",
+     "entity": "Malaysian businesses with annual turnover below RM 20 million",
+     "value": "RM 20 million",
+     "unit": "MYR per year",
+     "stated_date": "",
+     "time_sensitive": true
+    },
+    "verdict": "outdated",
+    "current_value": "all taxpayers to be involved effective July 1, 2025",
+    "evidence_quote": "The second phase will start on Jan 1, 2025, and involve companies with annual revenue or sales of between RM25 million and RM100 million, with all taxpayers to be involved effective July 1, 2025.",
+    "effective_date": "2025-07-01",
+    "source_url": "https://www.mof.gov.my/portal/en/component/content/article/positive-response-for-myinvois-even-from-non-mandatory-companies-lim?catid=2&Itemid=220",
+    "source_published_date": null,
+    "source_label": "government",
+    "quote_ok": true,
+    "cached_copy": false,
+    "snippet_only": false,
+    "score": 0,
+    "reason": "",
+    "context": [],
+    "checked_on": "2026-11-20",
+    "credits": 2
+   },
+   {
+    "claim": {
+     "claim": "From 1 January 2024, only Malaysian businesses with an annual turnover exceeding RM 20 million must issue e-invoices.",
+     "category": "e-invoice",
+     "entity": "Malaysian businesses with annual turnover above RM 20 million",
+     "value": "RM 20 million",
+     "unit": "MYR per year",
+     "stated_date": "1 January 2024",
+     "time_sensitive": true
+    },
+    "verdict": "unverifiable",
+    "current_value": "",
+    "evidence_quote": "",
+    "effective_date": null,
+    "source_url": "",
+    "source_published_date": null,
+    "source_label": "",
+    "quote_ok": false,
+    "cached_copy": false,
+    "snippet_only": true,
+    "score": 40,
+    "reason": "The official pages do not settle this claim.",
+    "context": [],
+    "checked_on": "2026-11-20",
+    "credits": 1
+   },
+   {
+    "claim": {
+     "claim": "The Inland Revenue Board of Malaysia (IRBM) set the RM 20 million e-Invoicing exemption threshold.",
+     "category": "e-invoice",
+     "entity": "Inland Revenue Board of Malaysia (IRBM)",
+     "value": "RM 20 million",
+     "unit": "MYR per year",
+     "stated_date": "",
+     "time_sensitive": true
+    },
+    "verdict": "unverifiable",
+    "current_value": "",
+    "evidence_quote": "",
+    "effective_date": null,
+    "source_url": "",
+    "source_published_date": null,
+    "source_label": "",
+    "quote_ok": false,
+    "cached_copy": false,
+    "snippet_only": false,
+    "score": 40,
+    "reason": "The official pages do not settle this claim.",
+    "context": [],
+    "checked_on": "2026-11-20",
+    "credits": 1
+   }
+  ],
+  "not_checked": [],
+  "errors": [],
+  "stopped": "",
+  "skipped": 1,
+  "credits": 4,
+  "outdated": 1,
+  "as_of_before": "2025-07-01",
+  "as_of_mixed": false
+ },
+ "spans": [
+  {
+   "start": 19,
+   "end": 143,
+   "claims": [
+    0,
+    1
+   ],
+   "verdict": "outdated"
+  },
+  {
+   "start": 277,
+   "end": 377,
+   "claims": [
+    2
+   ],
+   "verdict": "unverifiable"
+  }
+ ]
+}

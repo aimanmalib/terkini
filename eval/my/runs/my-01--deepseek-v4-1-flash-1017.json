@@ -1,0 +1,76 @@
+{
+  "answer": "my-01--deepseek-v4-1-flash-1017",
+  "question_id": "my-01",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "checked_at": "2026-11-21T00:51:37Z",
+  "seconds": 244.39,
+  "prompt_tokens": 7906,
+  "completion_tokens": 5936,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Malaysia's national minimum wage is RM1,700 per month, effective from 1 February 2025 under the Minimum Wages Order 2024.",
+          "category": "wages",
+          "entity": "employers in Malaysia (national minimum wage)",
+          "value": "RM1,700",
+          "unit": "MYR per month",
+          "stated_date": "1 February 2025",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "RM1,700",
+        "evidence_quote": "Gaji minimum RM1,700 berkuat kuasa Februari 2025.",
+        "effective_date": "2025-02-01",
+        "source_url": "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "For employers with fewer than five employees, the RM1,700 minimum wage rate applies from 1 August 2025.",
+          "category": "wages",
+          "entity": "employers with fewer than five employees",
+          "value": "RM1,700",
+          "unit": "MYR per month",
+          "stated_date": "1 August 2025",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "RM1,700",
+        "evidence_quote": "Gaji minimum RM1,700 berkuat kuasa Februari 2025.",
+        "effective_date": null,
+        "source_url": "https://jtksm.mohr.gov.my/ms/media/keratan-akhbar/gaji-minimum-rm1700-berkuat-kuasa-februari-2025",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The effective date is not in the evidence quote.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 2,
+    "credits": 2,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

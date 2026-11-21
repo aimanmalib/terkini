@@ -1,0 +1,86 @@
+{
+  "pack": "my",
+  "answers": 68,
+  "unlabelled": [],
+  "models": [
+    "gcli/grok-4.7",
+    "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "rv/moonshotai/Kimi-K3.1-Pro"
+  ],
+  "checked_from": "2026-11-21T00:49:57Z",
+  "checked_to": "2026-11-21T01:22:33Z",
+  "detection": {
+    "labelled": 68,
+    "stale": 28,
+    "current": 40,
+    "no_value": 0,
+    "flagged": 17,
+    "true_positive": 10,
+    "false_positive": 7,
+    "false_negative": 18,
+    "true_negative": 33,
+    "precision": 0.588,
+    "recall": 0.357
+  },
+  "per_model": {
+    "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017": {
+      "answers": 23,
+      "flagged": 4,
+      "stale_label": 6,
+      "true_positive": 1
+    },
+    "gcli/grok-4.7": {
+      "answers": 23,
+      "flagged": 9,
+      "stale_label": 20,
+      "true_positive": 9
+    },
+    "rv/moonshotai/Kimi-K3.1-Pro": {
+      "answers": 22,
+      "flagged": 4,
+      "stale_label": 2,
+      "true_positive": 0
+    }
+  },
+  "claims": {
+    "checked": 214,
+    "current": 59,
+    "outdated": 20,
+    "unverifiable": 135,
+    "unverifiable_reasons": {
+      "The official pages do not settle this claim.": 121,
+      "The evidence quote is not on the official page.": 13,
+      "The effective date is not in the evidence quote.": 1
+    },
+    "not_checked": 0,
+    "errors": 0,
+    "skipped_not_time_sensitive": 112
+  },
+  "evidence": {
+    "decided_with_exact_quote": 79,
+    "share_of_checked": 0.369
+  },
+  "effective_dates": {
+    "flagged_stale": 10,
+    "date_quoted": 5,
+    "exact": 1,
+    "within_window": 0,
+    "different": 1,
+    "key_has_no_date": 3,
+    "window_days": 31
+  },
+  "cost": {
+    "tavily_credits_from_responses": 276,
+    "claims_needing_tavily": 205,
+    "credits_per_claim_needing_tavily": 1.346,
+    "credits_per_checked_claim": 1.29,
+    "tavily_plan_usage_before": 65,
+    "tavily_plan_usage_after": 65,
+    "gateway_calls": 273,
+    "prompt_tokens": 974445,
+    "completion_tokens": 750730,
+    "tokens_per_checked_claim": 8061.565,
+    "gateway_budget_usd_after": 0,
+    "p50_seconds_per_answer": 151.8
+  }
+}

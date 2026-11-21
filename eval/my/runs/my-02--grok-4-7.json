@@ -1,0 +1,102 @@
+{
+  "answer": "my-02--grok-4-7",
+  "question_id": "my-02",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T00:54:56Z",
+  "seconds": 299.86,
+  "prompt_tokens": 10595,
+  "completion_tokens": 8286,
+  "gateway_calls": 4,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "The national minimum wage requirement has been in force since 1 January 2016.",
+          "category": "wages",
+          "entity": "Malaysian private-sector employers",
+          "value": "",
+          "unit": "",
+          "stated_date": "1 January 2016",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "The initial national minimum wage was RM920 per month.",
+          "category": "wages",
+          "entity": "private-sector workers in Malaysia",
+          "value": "RM920",
+          "unit": "MYR per month",
+          "stated_date": "1 January 2016",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "The current national minimum wage rate is RM1,500 per month.",
+          "category": "wages",
+          "entity": "private-sector workers in Malaysia",
+          "value": "RM1,500",
+          "unit": "MYR per month",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "these occupations often remain below the RM2,000–RM3,000 wage threshold, bordering on the minimum wage (RM1,500 as of 2024).",
+        "effective_date": null,
+        "source_url": "https://lmx.perkeso.gov.my/wp-content/uploads/2025/09/Sunrise-Sunset-EPF.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 2,
+    "credits": 5,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

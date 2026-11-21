@@ -1,0 +1,60 @@
+{
+  "runs": [
+    {
+      "at": "2026-11-21T01:22:33Z",
+      "credits_from_responses": 262,
+      "tavily_usage_before": {
+        "key": {
+          "usage": 65,
+          "search_usage": 52,
+          "crawl_usage": 0,
+          "extract_usage": 13,
+          "map_usage": 0,
+          "research_usage": 0
+        },
+        "account": {
+          "plan_usage": 65,
+          "plan_limit": 1000,
+          "search_usage": 52,
+          "crawl_usage": 0,
+          "extract_usage": 13,
+          "map_usage": 0,
+          "research_usage": 0,
+          "paygo_usage": 0
+        }
+      },
+      "tavily_usage_after": {
+        "key": {
+          "usage": 65,
+          "search_usage": 52,
+          "crawl_usage": 0,
+          "extract_usage": 13,
+          "map_usage": 0,
+          "research_usage": 0
+        },
+        "account": {
+          "plan_usage": 65,
+          "plan_limit": 1000,
+          "search_usage": 52,
+          "crawl_usage": 0,
+          "extract_usage": 13,
+          "map_usage": 0,
+          "research_usage": 0,
+          "paygo_usage": 0
+        }
+      },
+      "gateway_before": {
+        "budget_usd": 0,
+        "tokens_this_window": 361316,
+        "requests_this_window": 99,
+        "window": "1h"
+      },
+      "gateway_after": {
+        "budget_usd": 0,
+        "tokens_this_window": 1993083,
+        "requests_this_window": 355,
+        "window": "1h"
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "answer": "my-05--deepseek-v4-1-flash-1017",
+  "question_id": "my-05",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "checked_at": "2026-11-21T00:58:46Z",
+  "seconds": 70.9,
+  "prompt_tokens": 15204,
+  "completion_tokens": 5687,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Malaysia's standard service tax rate was raised to 8% on 1 March 2024.",
+          "category": "indirect-tax",
+          "entity": "taxable services in Malaysia subject to the standard service tax rate",
+          "value": "8%",
+          "unit": "percent",
+          "stated_date": "1 March 2024",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "8%",
+        "evidence_quote": "In accordance with the announcement made by the Minister of Finance during the Budget 2024 speech on 13th October 2023, the service tax rate for most prescribed taxable services under Service Tax Act 2018 (“STA 2018”) including digital service provided by Foreign Registered Person will increase from 6% to 8%, effective from 01 March 2024.",
+        "effective_date": "2024-03-01",
+        "source_url": "https://mystods.customs.gov.my/storage/app/media/pdf/guide/guide-on-transitional-rules-for-the-change-in-st-rate-to-8-on-digital-service-provided-by-frp.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 3
+      },
+      {
+        "claim": {
+          "claim": "Malaysia's standard service tax rate was 6% before the increase on 1 March 2024.",
+          "category": "indirect-tax",
+          "entity": "taxable services in Malaysia subject to the standard service tax rate",
+          "value": "6%",
+          "unit": "percent",
+          "stated_date": "1 March 2024",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 0,
+    "credits": 4,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

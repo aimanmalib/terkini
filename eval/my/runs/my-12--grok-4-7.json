@@ -1,0 +1,102 @@
+{
+  "answer": "my-12--grok-4-7",
+  "question_id": "my-12",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:09:07Z",
+  "seconds": 378.09,
+  "prompt_tokens": 10514,
+  "completion_tokens": 13840,
+  "gateway_calls": 4,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "The total EPF contribution rate is 12%.",
+          "category": "retirement-savings",
+          "entity": "EPF contributors",
+          "value": "12%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "13%",
+        "evidence_quote": "13% minimum age to register and contribute as an EPF member is age 14. Meanwhile, maximum age of contribution is 75 years old.",
+        "effective_date": null,
+        "source_url": "https://www.kwsp.gov.my/en/employer/responsibilities/contributing-more-than-the-statutory-rate",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "The employee EPF contribution rate is 8%.",
+          "category": "retirement-savings",
+          "entity": "employees",
+          "value": "8%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "11%",
+        "evidence_quote": "For wages exceeding RM20,000.00 for a particular month, the employee's contribution rate shall be 11% of the total wages for the month",
+        "effective_date": null,
+        "source_url": "https://www.kwsp.gov.my/en/employer/introduction",
+        "source_published_date": "2026-04-06",
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "The employer EPF contribution rate is 4%.",
+          "category": "retirement-savings",
+          "entity": "employers",
+          "value": "4%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "4%",
+        "evidence_quote": "Employer's share: 4% (Ref Third Schedule – Part E)",
+        "effective_date": null,
+        "source_url": "https://www.kwsp.gov.my/en/member/overview/contribution",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 4,
+    "credits": 3,
+    "outdated": 2,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

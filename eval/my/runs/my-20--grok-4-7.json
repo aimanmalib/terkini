@@ -1,0 +1,76 @@
+{
+  "answer": "my-20--grok-4-7",
+  "question_id": "my-20",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:16:27Z",
+  "seconds": 132.3,
+  "prompt_tokens": 14681,
+  "completion_tokens": 5927,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "A married male employee is entitled to 2 days of paid paternity leave for the birth of his child under Malaysia's Employment Act 1955.",
+          "category": "employment",
+          "entity": "married male employees",
+          "value": "2",
+          "unit": "days",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "7 days",
+        "evidence_quote": "7 days paternity leave.",
+        "effective_date": null,
+        "source_url": "https://jtksm.mohr.gov.my/sites/default/files/2023-02/Employment%20Act%20%28Amendment%29%202022%20.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "Paternity leave must be taken within 60 days of the child's birth or adoption placement.",
+          "category": "employment",
+          "entity": "married male employees",
+          "value": "60",
+          "unit": "days",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 1,
+    "credits": 3,
+    "outdated": 1,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

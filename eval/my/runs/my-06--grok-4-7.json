@@ -1,0 +1,76 @@
+{
+  "answer": "my-06--grok-4-7",
+  "question_id": "my-06",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:01:07Z",
+  "seconds": 152.92,
+  "prompt_tokens": 11566,
+  "completion_tokens": 7410,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Malaysia applies a standard Sales and Service Tax (SST) rate of 6% on goods.",
+          "category": "indirect-tax",
+          "entity": "goods in Malaysia",
+          "value": "6%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 3
+      },
+      {
+        "claim": {
+          "claim": "Many goods in Malaysia are zero-rated at 0% for sales tax, including basic food items, books, newspapers, and certain medicines.",
+          "category": "indirect-tax",
+          "entity": "basic food items, books, newspapers, and certain medicines",
+          "value": "0%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "The Sales Tax rate will remain unchanged for essential daily goods such as chicken, beef, mutton, fish, prawns, squid, vegetables, and local fruits.",
+        "effective_date": null,
+        "source_url": "https://www.mof.gov.my/portal/en/news/press-citations/govt-expects-inflation-to-rise-less-than-0-25-pct-following-sst-review",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 1,
+    "credits": 5,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

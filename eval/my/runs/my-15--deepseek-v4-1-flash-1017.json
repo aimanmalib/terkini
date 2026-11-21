@@ -1,0 +1,76 @@
+{
+  "answer": "my-15--deepseek-v4-1-flash-1017",
+  "question_id": "my-15",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "checked_at": "2026-11-21T01:11:40Z",
+  "seconds": 177.49,
+  "prompt_tokens": 8621,
+  "completion_tokens": 12023,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "The SOCSO Invalidity Scheme provides 24-hour coverage for invalidity, including from non-work accidents or diseases, since its introduction in 1971.",
+          "category": "social-security",
+          "entity": "Malaysian employees",
+          "value": "24-hour",
+          "unit": "hours",
+          "stated_date": "1971",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "24-hour",
+        "evidence_quote": "The scheme provides 24-hour coverage to employee who suffers from invalidity or death due to any cause a",
+        "effective_date": null,
+        "source_url": "https://perkeso.gov.my/en/our-services/protection/invalidity-scheme.html",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "The Self-Employment Social Security Scheme covers self-employed persons for work-related accidents since 1 January 2019.",
+          "category": "social-security",
+          "entity": "self-employed persons in Malaysia",
+          "value": "",
+          "unit": "",
+          "stated_date": "1 January 2019",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "https://www.mof.gov.my/portal/en/news/press-citations/social-security-contributions-compulsory-for-self-employed-from-next-year",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The evidence quote is not on the official page.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 3,
+    "credits": 2,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

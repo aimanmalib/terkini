@@ -1,0 +1,23 @@
+{
+  "answer": "my-15--grok-4-7",
+  "question_id": "my-15",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:09:25Z",
+  "seconds": 30.79,
+  "prompt_tokens": 2395,
+  "completion_tokens": 4026,
+  "gateway_calls": 1,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 4,
+    "credits": 0,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

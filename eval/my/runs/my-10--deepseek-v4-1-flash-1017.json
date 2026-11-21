@@ -1,0 +1,76 @@
+{
+  "answer": "my-10--deepseek-v4-1-flash-1017",
+  "question_id": "my-10",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "checked_at": "2026-11-21T01:02:19Z",
+  "seconds": 71.57,
+  "prompt_tokens": 8989,
+  "completion_tokens": 6195,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "A business whose annual revenue or turnover first reached RM3 million in YA2024 falls in the RM1 million–RM5 million band.",
+          "category": "e-invoice",
+          "entity": "businesses whose annual revenue first reached RM3 million in YA2024",
+          "value": "RM1 million–RM5 million",
+          "unit": "MYR per year",
+          "stated_date": "YA2024",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "between RM1 million and RM5 million",
+        "evidence_quote": "Previously, the government implemented e-invoice relaxation with an additional transition period of 12 months for the implementation of Phase 4 e-Invoice until Dec 31, 2027 for businesses with annual sales between RM1 million and RM5 million, including permission to issue consolidated e-invoices without penalty during that period.",
+        "effective_date": null,
+        "source_url": "https://mof.gov.my/portal/en/news/press-citations/pm-anwar-announces-additional-rm5-bln-facilities-for-msmes",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "A business whose annual revenue first reached RM3 million in YA2024 must implement e-Invoicing from 1 July 2025.",
+          "category": "e-invoice",
+          "entity": "businesses whose annual revenue first reached RM3 million in YA2024",
+          "value": "1 July 2025",
+          "unit": "",
+          "stated_date": "1 July 2025",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 0,
+    "credits": 3,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

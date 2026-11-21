@@ -1,0 +1,102 @@
+{
+  "answer": "my-03--deepseek-v4-1-flash-1017",
+  "question_id": "my-03",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "checked_at": "2026-11-21T00:57:39Z",
+  "seconds": 59.31,
+  "prompt_tokens": 8847,
+  "completion_tokens": 6071,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "The standard service tax rate in Malaysia is 8% effective from 1 March 2024.",
+          "category": "indirect-tax",
+          "entity": "standard-rated taxable services in Malaysia",
+          "value": "8%",
+          "unit": "percent",
+          "stated_date": "1 March 2024",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "",
+        "evidence_quote": "| 17/03/2026 | Service Tax (Rate Of Tax) (Amendment) Order 2026 | More |",
+        "effective_date": "2026-03-17",
+        "source_url": "https://mysst.customs.gov.my",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 0
+      },
+      {
+        "claim": {
+          "claim": "The standard service tax rate in Malaysia was raised from 6%.",
+          "category": "indirect-tax",
+          "entity": "standard-rated taxable services in Malaysia",
+          "value": "6%",
+          "unit": "percent",
+          "stated_date": "1 March 2024",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "8%",
+        "evidence_quote": "Effective March 1,2024, the ser-vice tax in Malaysia will be revised to 8% from 6%.",
+        "effective_date": "2024-03-01",
+        "source_url": "https://www.tnb.com.my/assets/newsclip/29022024b.pdf",
+        "source_published_date": null,
+        "source_label": "utility",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 64,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "Certain services, including food and beverage, telecommunications, parking, and logistics, remain at a 6% service tax rate.",
+          "category": "indirect-tax",
+          "entity": "food and beverage, telecommunications, parking, and logistics services",
+          "value": "6%",
+          "unit": "percent",
+          "stated_date": "1 March 2024",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 1,
+    "credits": 2,
+    "outdated": 1,
+    "as_of_before": "2026-03-17",
+    "as_of_mixed": false
+  }
+}

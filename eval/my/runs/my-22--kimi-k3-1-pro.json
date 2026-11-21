@@ -1,0 +1,76 @@
+{
+  "answer": "my-22--kimi-k3-1-pro",
+  "question_id": "my-22",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "checked_at": "2026-11-21T01:18:17Z",
+  "seconds": 90.69,
+  "prompt_tokens": 12227,
+  "completion_tokens": 9809,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Non-manual employees in Peninsular Malaysia earning more than RM4,000 a month are generally not entitled to statutory overtime payments under the Employment Act 1955.",
+          "category": "employment",
+          "entity": "non-manual employees in Peninsular Malaysia",
+          "value": "RM4,000",
+          "unit": "MYR per month",
+          "stated_date": "1 January 2023",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "RM4,000",
+        "evidence_quote": "EMPLOYEES EARNING MORE THAN RM4,000 (EXCEPT MANUAL EMPLOYEES) ARE NOT ELIGIBLE TO CLAIM FOR:",
+        "effective_date": null,
+        "source_url": "http://jtksm.mohr.gov.my/en/services/labour-case",
+        "source_published_date": "2026-10-02",
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 90,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "Non-manual employees in Peninsular Malaysia earning RM4,000 or less a month may qualify for statutory overtime payments, subject to the Employment Act's conditions.",
+          "category": "employment",
+          "entity": "non-manual employees in Peninsular Malaysia",
+          "value": "RM4,000",
+          "unit": "MYR per month",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "RM4,000",
+        "evidence_quote": "EMPLOYEES EARNING MORE THAN RM4,000 (EXCEPT MANUAL EMPLOYEES) ARE NOT ELIGIBLE TO CLAIM FOR:",
+        "effective_date": null,
+        "source_url": "http://jtksm.mohr.gov.my/en/services/labour-case",
+        "source_published_date": "2026-10-02",
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 90,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 2,
+    "credits": 2,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "answer": "my-18--kimi-k3-1-pro",
+  "question_id": "my-18",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "checked_at": "2026-11-21T01:14:32Z",
+  "seconds": 171.41,
+  "prompt_tokens": 14286,
+  "completion_tokens": 14445,
+  "gateway_calls": 4,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "A qualifying Malaysian small or medium-sized company pays 15% income tax on its first RM150,000 of chargeable income.",
+          "category": "income-tax",
+          "entity": "qualifying Malaysian small or medium-sized companies",
+          "value": "15%",
+          "unit": "percent",
+          "stated_date": "Year of Assessment 2023",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "The next RM450,000 of chargeable income (RM150,001–RM600,000) is taxed at 17%.",
+          "category": "income-tax",
+          "entity": "qualifying Malaysian small or medium-sized companies",
+          "value": "17%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "Chargeable income above RM600,000 is taxed at 24%.",
+          "category": "income-tax",
+          "entity": "qualifying Malaysian small or medium-sized companies",
+          "value": "24%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "https://www.tnb.com.my/assets/newsclip/10102022b.pdf",
+        "source_published_date": null,
+        "source_label": "utility",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The evidence quote is not on the official page.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 1,
+    "credits": 3,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

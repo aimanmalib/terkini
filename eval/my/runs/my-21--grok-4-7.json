@@ -1,0 +1,50 @@
+{
+  "answer": "my-21--grok-4-7",
+  "question_id": "my-21",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:17:09Z",
+  "seconds": 82.09,
+  "prompt_tokens": 7013,
+  "completion_tokens": 9489,
+  "gateway_calls": 2,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Under Section 30A of Malaysia's Employment Act 1955, the maximum normal working hours per week is 48 hours for most employees, covering standard shifts without overtime.",
+          "category": "employment",
+          "entity": "most employees",
+          "value": "48",
+          "unit": "hours per week",
+          "stated_date": "1955",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "45 hours per week",
+        "evidence_quote": "Maximum working hours of 45 hours per week.",
+        "effective_date": null,
+        "source_url": "https://jtksm.mohr.gov.my/sites/default/files/2023-02/Employment%20Act%20%28Amendment%29%202022%20.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 2,
+    "credits": 2,
+    "outdated": 1,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

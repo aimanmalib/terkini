@@ -1,7 +1,7 @@
-"""Eval metrics (PRD §2 H3-H6) from saved runs, hand labels and the answer key. Pure: no network, no clock.
+"""Eval metrics (PRD §2 H3-H6) from saved runs, labels and the answer key. Pure: no network, no clock.
 
 Detection is scored per answer. An answer is "flagged" when the checker marks at least one of its claims outdated.
-A flagged answer is a true positive when its hand label says it states an older value than the key.
+A flagged answer is a true positive when its label says it states an older value than the key.
 """
 
 from __future__ import annotations

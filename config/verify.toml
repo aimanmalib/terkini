@@ -43,11 +43,12 @@ runs_dir = "tests/fixtures/runs"
 
 [eval]
 # `terkini ask` and `terkini eval` (src/terkini/evaluate.py). Folders are inside the pack's eval folder (eval/<pack>/).
-# Answers checked at the same time. Each worker waits mostly on the gateway, not on the CPU.
-workers = 4
+# Answers checked (and questions asked) at the same time. Workers wait mostly on model answers, not on the CPU;
+# judge calls that hit the gateway timeout took about 110 s each (measured 2026-11-21).
+workers = 8
 answers_dir = "answers"
 runs_dir = "runs"
-# Hand labels: for each answer, whether it states an older value than the answer key (docs/EVAL.md).
+# Labels: for each answer, whether it states an older value than the answer key (docs/EVAL.md).
 labels = "labels.yaml"
 results = "results.json"
 # An effective date the checker quotes counts as close when it is within this many days of the key's date (PRD H5).

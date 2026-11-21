@@ -1,0 +1,102 @@
+{
+  "answer": "my-20--deepseek-v4-1-flash-1017",
+  "question_id": "my-20",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "checked_at": "2026-11-21T01:15:47Z",
+  "seconds": 142.4,
+  "prompt_tokens": 22328,
+  "completion_tokens": 7135,
+  "gateway_calls": 4,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "A married male employee is entitled to 7 days of paid paternity leave for each birth under Malaysia's Employment Act 1955.",
+          "category": "employment",
+          "entity": "married male employees",
+          "value": "7 days",
+          "unit": "days",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "7 days",
+        "evidence_quote": "7 days paternity leave.",
+        "effective_date": null,
+        "source_url": "https://jtksm.mohr.gov.my/sites/default/files/2023-02/Employment%20Act%20%28Amendment%29%202022%20.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "To qualify for paid paternity leave, a married male employee must have worked for the employer for at least 12 months.",
+          "category": "employment",
+          "entity": "married male employees",
+          "value": "12 months",
+          "unit": "months",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "Paid paternity leave must be taken within 60 days from the date of birth.",
+          "category": "employment",
+          "entity": "married male employees",
+          "value": "60 days",
+          "unit": "days",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 1,
+    "credits": 4,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

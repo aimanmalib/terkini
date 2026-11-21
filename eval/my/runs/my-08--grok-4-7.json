@@ -1,0 +1,76 @@
+{
+  "answer": "my-08--grok-4-7",
+  "question_id": "my-08",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:00:44Z",
+  "seconds": 32.91,
+  "prompt_tokens": 8126,
+  "completion_tokens": 2737,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "The tourism tax in Malaysia is 10% of the room rate per night for hotels and homestays.",
+          "category": "indirect-tax",
+          "entity": "hotels and homestays",
+          "value": "10%",
+          "unit": "percent",
+          "stated_date": "1 January 2023",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "The tourism tax is charged on top of a 6% service tax.",
+          "category": "indirect-tax",
+          "entity": "hotels and homestays",
+          "value": "6%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 0,
+    "credits": 3,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

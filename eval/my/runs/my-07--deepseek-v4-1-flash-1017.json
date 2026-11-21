@@ -1,0 +1,76 @@
+{
+  "answer": "my-07--deepseek-v4-1-flash-1017",
+  "question_id": "my-07",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "checked_at": "2026-11-21T00:59:48Z",
+  "seconds": 61.81,
+  "prompt_tokens": 8456,
+  "completion_tokens": 5600,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "A manufacturer of taxable goods in Malaysia must register for sales tax if their annual sales value of taxable goods exceeds RM500,000.",
+          "category": "indirect-tax",
+          "entity": "manufacturers of taxable goods",
+          "value": "RM500,000",
+          "unit": "MYR per year",
+          "stated_date": "2018",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "RM500,000 for 12 months period",
+        "evidence_quote": "SALES VALUE OF TAXABLE GOODS has exceeded RM500,000 for 12 months period;",
+        "effective_date": null,
+        "source_url": "https://mysst.customs.gov.my/RegisterBussiness",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "Manufacturers of taxable goods whose annual sales value is below RM500,000 are not required to register for sales tax.",
+          "category": "indirect-tax",
+          "entity": "manufacturers of taxable goods with annual sales below the threshold",
+          "value": "RM500,000",
+          "unit": "MYR per year",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "RM500,000 for 12 months period",
+        "evidence_quote": "Taxable goods manufacturers are required / liable to be registered when;. + SALES VALUE OF TAXABLE GOODS has exceeded RM500,000 for 12 months period;.",
+        "effective_date": null,
+        "source_url": "https://mysst.customs.gov.my/RegisterBussiness",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 4,
+    "credits": 2,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

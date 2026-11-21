@@ -1,0 +1,102 @@
+{
+  "answer": "my-19--grok-4-7",
+  "question_id": "my-19",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:16:25Z",
+  "seconds": 229.49,
+  "prompt_tokens": 22784,
+  "completion_tokens": 23075,
+  "gateway_calls": 4,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Female employees are entitled to 98 days of paid maternity leave under the Employment Act 1955 as amended in 2022.",
+          "category": "employment",
+          "entity": "female employees",
+          "value": "98",
+          "unit": "days",
+          "stated_date": "2022",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "98 days",
+        "evidence_quote": "Entitlement of 98 days maternity leave.",
+        "effective_date": null,
+        "source_url": "https://jtksm.mohr.gov.my/sites/default/files/2023-02/Employment%20Act%20%28Amendment%29%202022%20.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "Female employees must have worked for at least 90 days to be entitled to maternity leave.",
+          "category": "employment",
+          "entity": "female employees",
+          "value": "90",
+          "unit": "days",
+          "stated_date": "2022",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "not less than ninety days",
+        "evidence_quote": "Section 37 of the principal Act is amended— (a) by substituting for paragraph (1)(a) the following paragraph: “(1)(a) Every female employee shall be entitled— (i) to maternity leave for an eligible period in respect of each confinement; and (ii) subject to this Part, to receive from her employer a maternity allowance to be calculated or prescribed as provided in subsection (2) in respect of the eligible period.”; (b) in paragraph (1)(aa), by substituting for the words “paragraph (a)” the words “",
+        "effective_date": null,
+        "source_url": "https://lom.agc.gov.my/ilims/upload/portal/akta/outputaktap/850_BI/18.%20A1419%20EMPLOYMENT%202012%20AMEND_unlocked.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "Maternity leave is paid at 90% of salary.",
+          "category": "employment",
+          "entity": "female employees on maternity leave",
+          "value": "90%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 0,
+    "credits": 5,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

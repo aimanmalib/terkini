@@ -1,0 +1,102 @@
+{
+  "answer": "my-16--grok-4-7",
+  "question_id": "my-16",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:13:21Z",
+  "seconds": 237.12,
+  "prompt_tokens": 10931,
+  "completion_tokens": 9970,
+  "gateway_calls": 4,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Dividends received by individuals from Malaysian companies are fully exempt from income tax under Section 4A of the Income Tax Act 1967.",
+          "category": "income-tax",
+          "entity": "individuals (other than companies) receiving dividends from Malaysian companies",
+          "value": "fully exempt",
+          "unit": "",
+          "stated_date": "Income Tax Act 1967",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "Tax is imposed annually on individuals who receive income in respect of :. a) Gains / profit from a business;. b) Gains / profit from employment;. c) Dividends, interest or discounts;. d) Rent, royalties or premiums;. e) Pensions, annuities or other periodic payments; and. f) Gains / profit not falling under any of the foregoing paragraphs.",
+        "evidence_quote": "Tax is imposed annually on individuals who receive income in respect of :. a) Gains / profit from a business;. b) Gains / profit from employment;. c) Dividends, interest or discounts;. d) Rent, royalties or premiums;. e) Pensions, annuities or other periodic payments; and. f) Gains / profit not falling under any of the foregoing paragraphs.",
+        "effective_date": null,
+        "source_url": "https://www.hasil.gov.my/en/individual/introduction-individual-income-tax/what-is-income-tax",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "The tax rate on dividend income for resident individuals in Malaysia is 0%.",
+          "category": "income-tax",
+          "entity": "resident individuals in Malaysia",
+          "value": "0%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "Non-resident individuals may face 10% withholding tax on dividends instead.",
+          "category": "income-tax",
+          "entity": "non-resident individuals",
+          "value": "10%",
+          "unit": "percent",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "all dividends are tax free in the hands of the shareholders",
+        "evidence_quote": "With the introduction of the single tier dividend system effective 1.1.2008, all dividends are tax free in the hands of the shareholders.",
+        "effective_date": "2008-01-01",
+        "source_url": "https://www.hasil.gov.my/en/company/non-resident-company",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 0,
+    "credits": 4,
+    "outdated": 2,
+    "as_of_before": "2008-01-01",
+    "as_of_mixed": false
+  }
+}

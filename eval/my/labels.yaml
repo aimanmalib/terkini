@@ -1,4 +1,4 @@
-# Hand labels for eval/my/answers (docs/EVAL.md). One entry per answer, written by reading each answer against
+# Labels for eval/my/answers (docs/EVAL.md). One entry per answer, written with Claude Code by reading each answer against
 # eval/my/key.yaml BEFORE the checker ran on it. stale: true = the answer states a value or rule for the question
 # that differs from the key (outdated or wrong); false = it states the key value; null = it gives no value.
 # The note says what the answer states when it is not the key value.

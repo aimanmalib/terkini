@@ -1,0 +1,76 @@
+{
+  "answer": "my-23--grok-4-7",
+  "question_id": "my-23",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:18:54Z",
+  "seconds": 104.39,
+  "prompt_tokens": 7634,
+  "completion_tokens": 11216,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "EPF contributions stop at age 55.",
+          "category": "retirement-savings",
+          "entity": "EPF members",
+          "value": "55",
+          "unit": "years",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "All contributions received after members reach the age of 55 will be credited to their Akaun Emas and can only be withdrawn when they reach the age of 60",
+        "evidence_quote": "All contributions received after members reach the age of 55 will be credited to their Akaun Emas and can only be withdrawn when they reach the age of 60",
+        "effective_date": null,
+        "source_url": "https://www.kwsp.gov.my/en/others/terms-and-conditions",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "EPF members can withdraw their savings for retirement after age 55.",
+          "category": "retirement-savings",
+          "entity": "EPF members",
+          "value": "55",
+          "unit": "years",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "Age 55",
+        "evidence_quote": "Through i-Emas, members may opt to receive monthly payments from their Age 55 and Age 60 Withdrawals instead of making a full withdrawal.",
+        "effective_date": null,
+        "source_url": "https://www.kwsp.gov.my/en/w/news/budget-2027-drives-sustainable-economic-growth",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 3,
+    "credits": 3,
+    "outdated": 1,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

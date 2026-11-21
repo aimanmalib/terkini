@@ -1,0 +1,102 @@
+{
+  "answer": "my-19--kimi-k3-1-pro",
+  "question_id": "my-19",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "checked_at": "2026-11-21T01:17:06Z",
+  "seconds": 225.79,
+  "prompt_tokens": 21874,
+  "completion_tokens": 6891,
+  "gateway_calls": 4,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Female employees covered by Malaysia's Employment Act 1955 are entitled to at least 98 consecutive days of maternity leave for each confinement.",
+          "category": "employment",
+          "entity": "female employees covered by Malaysia's Employment Act 1955",
+          "value": "98",
+          "unit": "consecutive days per confinement",
+          "stated_date": "1 January 2023",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "98 days maternity leave",
+        "evidence_quote": "Entitlement of 98 days maternity leave.",
+        "effective_date": null,
+        "source_url": "https://jtksm.mohr.gov.my/sites/default/files/2023-02/Employment%20Act%20%28Amendment%29%202022%20.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "The 98-day maternity leave entitlement increased from 60 days.",
+          "category": "employment",
+          "entity": "female employees covered by Malaysia's Employment Act 1955",
+          "value": "60",
+          "unit": "days per confinement",
+          "stated_date": "1 January 2023",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "The 98-day maternity leave entitlement took effect on 1 January 2023.",
+          "category": "employment",
+          "entity": "female employees covered by Malaysia's Employment Act 1955",
+          "value": "98",
+          "unit": "days per confinement",
+          "stated_date": "1 January 2023",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 2,
+    "credits": 5,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

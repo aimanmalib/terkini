@@ -1,0 +1,50 @@
+{
+  "answer": "my-04--grok-4-7",
+  "question_id": "my-04",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T00:57:38Z",
+  "seconds": 58.28,
+  "prompt_tokens": 5916,
+  "completion_tokens": 3672,
+  "gateway_calls": 2,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Food and beverage services in Malaysia are subject to a 6% service tax rate.",
+          "category": "indirect-tax",
+          "entity": "food and beverage service providers such as restaurants, cafes, and catering",
+          "value": "6%",
+          "unit": "percent",
+          "stated_date": "2018",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "6%",
+        "evidence_quote": "For example, the tax rate for services that are widely used by the rakyat such as food and bev-erage, telecommunications and parking remains unchanged at 6%.",
+        "effective_date": null,
+        "source_url": "https://www.tnb.com.my/assets/newsclip/29022024b.pdf",
+        "source_published_date": null,
+        "source_label": "utility",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 64,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 3,
+    "credits": 1,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

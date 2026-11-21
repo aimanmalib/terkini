@@ -1,0 +1,102 @@
+{
+  "answer": "my-10--grok-4-7",
+  "question_id": "my-10",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:05:44Z",
+  "seconds": 275.89,
+  "prompt_tokens": 11236,
+  "completion_tokens": 17811,
+  "gateway_calls": 4,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "A Malaysian SST-registered business whose annual revenue first exceeded RM3 million in YA2024 must begin issuing e-Invoices from 1 January 2025.",
+          "category": "e-invoice",
+          "entity": "Malaysian SST-registered businesses whose annual revenue first exceeded RM3 million in YA2024",
+          "value": "RM3 million",
+          "unit": "MYR per year",
+          "stated_date": "1 January 2025",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "The e-Invoicing mandate applies to businesses with annual revenue of RM3 million and above.",
+          "category": "e-invoice",
+          "entity": "businesses with annual revenue of RM3 million and above",
+          "value": "RM3 million",
+          "unit": "MYR per year",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "Businesses that already exceeded RM3 million in annual revenue in YA2023 must start e-Invoicing on 1 January 2024.",
+          "category": "e-invoice",
+          "entity": "businesses whose annual revenue exceeded RM3 million in YA2023",
+          "value": "RM3 million",
+          "unit": "MYR per year",
+          "stated_date": "1 January 2024",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "Aug 2024 to July 2025",
+        "evidence_quote": "Malaysia is to become the latest country to introduce mandatory electronic invoicing for Sales and Services Taxes from Aug 2024 to July 2025 (with latest update).",
+        "effective_date": "2024-08-01",
+        "source_url": "https://elatih.hrdcorp.gov.my/courses-details/an-overview-of-e-invoicing-in-malaysia",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 1,
+    "credits": 3,
+    "outdated": 1,
+    "as_of_before": "2024-08-01",
+    "as_of_mixed": false
+  }
+}

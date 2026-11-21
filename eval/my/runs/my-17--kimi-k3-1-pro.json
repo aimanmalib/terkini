@@ -1,0 +1,76 @@
+{
+  "answer": "my-17--kimi-k3-1-pro",
+  "question_id": "my-17",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "checked_at": "2026-11-21T01:11:20Z",
+  "seconds": 27.31,
+  "prompt_tokens": 8625,
+  "completion_tokens": 2275,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "For unlisted shares acquired on or after 1 January 2024, Malaysia's capital gains tax rate is generally 10% of the chargeable gain (the net gain after allowable deductions).",
+          "category": "income-tax",
+          "entity": "companies, limited liability partnerships, trust bodies and co-operative societies disposing of unlisted shares in Malaysian-incorporated companies acquired on or after 1 January 2024",
+          "value": "10%",
+          "unit": "percent",
+          "stated_date": "on or after 1 January 2024",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "The alternative of paying 2% of the gross disposal price is available only for qualifying shares acquired before 1 January 2024.",
+          "category": "income-tax",
+          "entity": "entities disposing of qualifying unlisted shares acquired before 1 January 2024",
+          "value": "2%",
+          "unit": "percent",
+          "stated_date": "before 1 January 2024",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 1,
+    "credits": 4,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

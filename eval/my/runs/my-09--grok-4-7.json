@@ -1,0 +1,76 @@
+{
+  "answer": "my-09--grok-4-7",
+  "question_id": "my-09",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:01:25Z",
+  "seconds": 40.9,
+  "prompt_tokens": 11447,
+  "completion_tokens": 1307,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Malaysian businesses with annual turnover below RM20 million are exempt from e-Invoicing.",
+          "category": "e-invoice",
+          "entity": "Malaysian businesses with annual turnover below RM20 million",
+          "value": "RM20 million",
+          "unit": "MYR per year",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "e-Invoicing is mandatory for Malaysian businesses with annual turnover at or above RM20 million, per Royal Malaysian Customs Department rules.",
+          "category": "e-invoice",
+          "entity": "Malaysian businesses with annual turnover at or above RM20 million",
+          "value": "RM20 million",
+          "unit": "MYR per year",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 0,
+    "credits": 2,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

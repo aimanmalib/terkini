@@ -1,0 +1,76 @@
+{
+  "answer": "my-23--deepseek-v4-1-flash-1017",
+  "question_id": "my-23",
+  "model": "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "checked_at": "2026-11-21T01:17:59Z",
+  "seconds": 52.11,
+  "prompt_tokens": 19121,
+  "completion_tokens": 3883,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "The minimum retirement age for private sector employees in Malaysia is 60 years, as set under the Minimum Retirement Age Act 2012 (Act 753).",
+          "category": "employment",
+          "entity": "private sector employees in Malaysia",
+          "value": "60",
+          "unit": "years",
+          "stated_date": "2012",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "sixty years",
+        "evidence_quote": "Notwithstanding any other written law, the minimum retirement age of an employee shall be upon the employee attaining the age of sixty years.",
+        "effective_date": null,
+        "source_url": "https://jtksm.mohr.gov.my/sites/default/files/2023-03/6.%20Minimum%20Retirement%20Age%20Act%202012.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "Employers cannot require employees to retire before age 60.",
+          "category": "employment",
+          "entity": "employers of private sector employees",
+          "value": "60",
+          "unit": "years",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 3,
+    "credits": 3,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

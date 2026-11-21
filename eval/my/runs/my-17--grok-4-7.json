@@ -1,0 +1,102 @@
+{
+  "answer": "my-17--grok-4-7",
+  "question_id": "my-17",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T01:15:50Z",
+  "seconds": 316.09,
+  "prompt_tokens": 14457,
+  "completion_tokens": 18103,
+  "gateway_calls": 4,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "In Malaysia, the capital gains tax on the disposal of unlisted shares acquired in 2024 or later is 30% of the gain if the shares are held for 2 years or less.",
+          "category": "income-tax",
+          "entity": "taxpayers disposing of unlisted shares acquired in 2024 or later and held 2 years or less",
+          "value": "30%",
+          "unit": "percent",
+          "stated_date": "2024 or later",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "Effective from 1st January 2024, company, limited liability partnership, trust body and co-operative society which receives gains or profits from the disposal of capital asset consisting of:.",
+        "effective_date": "2024-01-01",
+        "source_url": "https://www.hasil.gov.my/en/forms/cgt-return-form-filing-programme",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 2
+      },
+      {
+        "claim": {
+          "claim": "In Malaysia, the capital gains tax on the disposal of unlisted shares acquired in 2024 or later is 10% of the gain if the shares are held for 2 to 5 years.",
+          "category": "income-tax",
+          "entity": "taxpayers disposing of unlisted shares acquired in 2024 or later and held 2 to 5 years",
+          "value": "10%",
+          "unit": "percent",
+          "stated_date": "2024 or later",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "https://www.hasil.gov.my/en/forms/cgt-return-form-filing-programme",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": true,
+        "score": 40,
+        "reason": "The evidence quote is not on the official page.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "In Malaysia, the capital gains tax on the disposal of unlisted shares acquired in 2024 or later is 0% (no tax) if the shares are held for more than 5 years.",
+          "category": "income-tax",
+          "entity": "taxpayers disposing of unlisted shares acquired in 2024 or later and held more than 5 years",
+          "value": "0%",
+          "unit": "percent",
+          "stated_date": "2024 or later",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "",
+        "source_published_date": null,
+        "source_label": "",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The official pages do not settle this claim.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 4
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 2,
+    "credits": 7,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

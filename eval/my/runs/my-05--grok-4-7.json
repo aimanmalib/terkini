@@ -1,0 +1,76 @@
+{
+  "answer": "my-05--grok-4-7",
+  "question_id": "my-05",
+  "model": "gcli/grok-4.7",
+  "checked_at": "2026-11-21T00:58:34Z",
+  "seconds": 56.19,
+  "prompt_tokens": 17218,
+  "completion_tokens": 4761,
+  "gateway_calls": 3,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Malaysia introduced the standard service tax (SST) rate of 6% on 1 April 2018.",
+          "category": "indirect-tax",
+          "entity": "Malaysia's standard service tax (SST)",
+          "value": "6%",
+          "unit": "percent",
+          "stated_date": "1 April 2018",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "8%",
+        "evidence_quote": "In accordance with the announcement made by the Minister of Finance during the Budget 2024 speech on 13th October 2023, the service tax rate for most prescribed taxable services under Service Tax Act 2018 (“STA 2018”) including digital service provided by Foreign Registered Person will increase from 6% to 8%, effective from 01 March 2024.",
+        "effective_date": "2024-03-01",
+        "source_url": "https://mystods.customs.gov.my/storage/app/media/pdf/guide/guide-on-transitional-rules-for-the-change-in-st-rate-to-8-on-digital-service-provided-by-frp.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 4
+      },
+      {
+        "claim": {
+          "claim": "Malaysia's standard service tax rate has remained at 6% since 1 April 2018, with no further changes.",
+          "category": "indirect-tax",
+          "entity": "Malaysia's standard service tax (SST)",
+          "value": "6%",
+          "unit": "percent",
+          "stated_date": "since 1 April 2018",
+          "time_sensitive": true
+        },
+        "verdict": "outdated",
+        "current_value": "8%",
+        "evidence_quote": "Leasing or Rental Services – Service Tax will be imposed at a rate of 8% on service providers whose total leasing or rental revenue exceeds the threshold of RM500,000.",
+        "effective_date": null,
+        "source_url": "https://www.mof.gov.my/portal/pdf/siaran-media/expansion-sst-scope.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 0,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 4
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 1,
+    "credits": 8,
+    "outdated": 2,
+    "as_of_before": "2024-03-01",
+    "as_of_mixed": false
+  }
+}

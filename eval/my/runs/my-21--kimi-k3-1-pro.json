@@ -1,0 +1,102 @@
+{
+  "answer": "my-21--kimi-k3-1-pro",
+  "question_id": "my-21",
+  "model": "rv/moonshotai/Kimi-K3.1-Pro",
+  "checked_at": "2026-11-21T01:18:51Z",
+  "seconds": 181.02,
+  "prompt_tokens": 25329,
+  "completion_tokens": 11953,
+  "gateway_calls": 4,
+  "report": {
+    "pack": "my",
+    "checked_on": "2026-11-21",
+    "results": [
+      {
+        "claim": {
+          "claim": "Under section 60A of Malaysia's Employment Act 1955, an employee generally cannot be required to work more than 45 normal working hours per week.",
+          "category": "employment",
+          "entity": "employees covered by Malaysia's Employment Act 1955",
+          "value": "45",
+          "unit": "hours per week",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "45 hours per week",
+        "evidence_quote": "Maximum working hours of 45 hours per week.",
+        "effective_date": null,
+        "source_url": "https://jtksm.mohr.gov.my/sites/default/files/2023-02/Employment%20Act%20%28Amendment%29%202022%20.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "The 45-hour weekly limit replaced the previous 48-hour limit on 1 January 2023.",
+          "category": "employment",
+          "entity": "employees covered by Malaysia's Employment Act 1955",
+          "value": "48",
+          "unit": "hours per week",
+          "stated_date": "1 January 2023",
+          "time_sensitive": true
+        },
+        "verdict": "unverifiable",
+        "current_value": "",
+        "evidence_quote": "",
+        "effective_date": null,
+        "source_url": "https://lom.agc.gov.my/ilims/upload/portal/akta/outputaktap/1744567_BI/Reprint%20Act%20265%20%28Final%29.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": false,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 40,
+        "reason": "The evidence quote is not on the official page.",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      },
+      {
+        "claim": {
+          "claim": "Normal working hours are generally capped at 8 hours per day.",
+          "category": "employment",
+          "entity": "employees covered by Malaysia's Employment Act 1955",
+          "value": "8",
+          "unit": "hours per day",
+          "stated_date": "",
+          "time_sensitive": true
+        },
+        "verdict": "current",
+        "current_value": "eight hours in one day or forty eight hours in one week",
+        "evidence_quote": "Where the normal hours of work of a full time employee cannot be ascertained or there is no full time employee employed in a similar capacity in the same enterprise, the normal hours of work of a full time employee shall be deemed to be eight hours in one day or forty eight hours in one week.",
+        "effective_date": null,
+        "source_url": "https://jtksm.mohr.gov.my/sites/default/files/2023-03/10.%20Employment%20-%20Part-time%20Employees%20-%20Regulations%202010%20%20%281%29.pdf",
+        "source_published_date": null,
+        "source_label": "government",
+        "quote_ok": true,
+        "cached_copy": false,
+        "snippet_only": false,
+        "score": 80,
+        "reason": "",
+        "context": [],
+        "checked_on": "2026-11-21",
+        "credits": 1
+      }
+    ],
+    "not_checked": [],
+    "errors": [],
+    "stopped": "",
+    "skipped": 3,
+    "credits": 3,
+    "outdated": 0,
+    "as_of_before": null,
+    "as_of_mixed": false
+  }
+}

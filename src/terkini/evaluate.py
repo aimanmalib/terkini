@@ -2,7 +2,7 @@
 
 `terkini ask` writes one file per (question, model) to eval/<pack>/answers/. `terkini eval` checks each answer with
 the real checker (Tavily + Bifrost), keeps one report per answer in eval/<pack>/runs/, and computes
-eval/<pack>/results.json from the runs, the hand labels (labels.yaml) and the answer key (metrics.py).
+eval/<pack>/results.json from the runs, the labels (labels.yaml) and the answer key (metrics.py).
 """
 
 from __future__ import annotations
@@ -65,7 +65,7 @@ class Answer(BaseModel):
 
 
 class Label(BaseModel):
-    """Hand label for one answer, written against the answer key before the checker ran (docs/EVAL.md)."""
+    """Label for one answer, written against the answer key before the checker ran (docs/EVAL.md)."""
 
     answer: str
     stale: bool | None  # True: states an older value than the key; False: states the key value; None: no value

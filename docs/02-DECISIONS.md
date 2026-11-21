@@ -256,3 +256,19 @@ change it.
   README and `docs/EVAL.md` show the baseline next to them and say what each method can and cannot show.
 - **Not changed.** The deck and the video. The deck's eval slide has no room for a third row without dropping text.
 
+
+## D-021 · "How this check ran" panel on the replay page
+
+- **What it shows.** For each run: the Tavily search settings (`topic`, depth and retry depth, `max_results`,
+  `include_domains` with its mode), each claim's query, `max_age_hours` when the category is volatile, and the credits.
+  For Bifrost: each gateway call with the model asked for, the model that answered, tokens and seconds, the fallback
+  order, and the virtual-key spend after the eval run.
+- **Source.** Saved data only, no new calls (`src/terkini/trace.py`, built by `scripts/build-pages.py`). Settings come
+  from `config/verify.toml` and the pack, which the checker sends unchanged. The query is `build_query(claim)`, the
+  same string the checker sends.
+- **Fallback.** A call used a fallback when the model that answered differs from the one asked for, without the
+  gateway's provider prefix. One recorded judge call (my-09) was answered by Qwen.
+- **Eval runs.** They saved credits per claim and the token totals of the check, not each search or call. The panel
+  says "not saved" for search depth and fallbacks there instead of guessing.
+- **Spend.** Bifrost reported US$0 because it has no price list for these model ids (see `docs/EVAL.md`), so the panel
+  shows token counts as the cost measure.

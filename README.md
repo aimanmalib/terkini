@@ -16,7 +16,7 @@ calls go through a Bifrost gateway.
 
 **Eval, 21 Nov 2026:** 28 of 68 answers from 3 models stated a Malaysian rule that differs from the current official value; Terkini flagged 10 of them against official pages (precision 59%, recall 36%). Details and failures: [`docs/EVAL.md`](docs/EVAL.md).
 
-- Replay page: <https://aimanmalib.github.io/terkini/> (six recorded runs, English and Bahasa Melayu, no key)
+- Replay page: <https://aimanmalib.github.io/terkini/> (six recorded runs, English and Bahasa Melayu, no key). Open "How this check ran" under a run to see each Tavily query, its `include_domains` and credits, and each Bifrost call with the model asked for, the model that answered and the tokens.
 - Slides (PDF): <https://aimanmalib.github.io/terkini/deck.pdf>
 - Video (72 s, captions burned in, `.srt` beside it): <https://aimanmalib.github.io/terkini/media/terkini-demo.mp4>
 

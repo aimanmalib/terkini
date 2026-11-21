@@ -42,7 +42,7 @@ uv run terkini check --pack my --case my-12-kimi-k3-1-pro
 uv run terkini serve   # halaman ulang tayang di http://127.0.0.1:8710
 ```
 
-Halaman ulang tayang yang sama (enam larian dirakam, BM dan Inggeris): <https://aimanmalib.github.io/terkini/>
+Halaman ulang tayang yang sama (enam larian dirakam, BM dan Inggeris): <https://aimanmalib.github.io/terkini/>. Buka "Cara semakan ini dijalankan" di bawah setiap larian untuk melihat setiap pertanyaan Tavily, `include_domains` dan kreditnya, serta setiap panggilan Bifrost dengan model yang diminta, model yang menjawab dan token.
 
 ## Demo satu arahan (Docker)
 

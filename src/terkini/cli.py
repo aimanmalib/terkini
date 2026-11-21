@@ -44,6 +44,9 @@ def build_parser() -> argparse.ArgumentParser:
     e.add_argument("--score-only", action="store_true", help="recompute results.json from saved runs (no network)")
     e.add_argument("--force", action="store_true", help="check answers again even if a run is saved")
     e.add_argument("--keep-errors", action="store_true", help="save runs that had failed claims")
+    s = sub.add_parser("serve", help="serve the recorded-run page on this machine (config/pages.toml [serve])")
+    s.add_argument("--host", help="address to listen on (default from config)")
+    s.add_argument("--port", type=int, help="port (default from config)")
     return parser
 
 
@@ -55,6 +58,10 @@ def main(argv: list[str] | None = None) -> int:
     if args.command in ("ask", "eval"):
         from terkini.evalcli import ask_command, eval_command
         return ask_command(args) if args.command == "ask" else eval_command(args)
+    if args.command == "serve":
+        from terkini.web import serve
+        serve(args.host, args.port)
+        return 0
     parser.print_help()
     return 0
 

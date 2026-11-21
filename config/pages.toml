@@ -1,0 +1,42 @@
+# The recorded-run page (docs/index.html on GitHub Pages, also served by `terkini serve`). PRD §3 P0.12, D10.
+# scripts/build-pages.py reads this file and writes docs/cases/*.json and docs/i18n.json. Run it after changing
+# a case, a recording, an eval run or a string in i18n/.
+
+# Where the page data goes, relative to the repo root.
+out_dir = "docs"
+# UI languages: one i18n/<code>.json each, same keys. The first is the default when the browser asks for neither.
+languages = ["en", "ms"]
+
+# `terkini serve`: the same page on your machine (FastAPI). Only these files and folders of out_dir are served.
+[serve]
+host = "127.0.0.1"
+port = 8710
+files = ["index.html", "app.js", "i18n.json", "deck.pdf"]
+folders = ["cases", "fonts", "images"]
+
+# Each case is a run that really happened. "recording" = a recorded run in config/verify.toml [replay] runs_dir; the
+# report shown is produced again by replaying it through the checker at build time. "eval" = a saved eval run in
+# eval/<pack>/runs, shown as it was checked live.
+[[cases]]
+id = "my-09-grok-4-7"
+source = "recording"
+
+[[cases]]
+id = "my-12-kimi-k3-1-pro"
+source = "recording"
+
+[[cases]]
+id = "my-03--grok-4-7"
+source = "eval"
+
+[[cases]]
+id = "my-20--grok-4-7"
+source = "eval"
+
+[[cases]]
+id = "my-21--grok-4-7"
+source = "eval"
+
+[[cases]]
+id = "my-01-deepseek-v4-1-flash-1017"
+source = "recording"

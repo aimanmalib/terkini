@@ -239,3 +239,20 @@ change it.
 - **Scene order.** Frame 0 already shows the question and the stale answer, with no fade-in. The real replay page
   starts at 7 s, straight after the hook. The eval chart comes after Bifrost, just before the precision and recall
   numbers. The narration lines did not change; only their order did.
+
+## D-020 · Eval baselines: model alone and a naive page rule
+
+- **Why.** Precision and recall alone do not show what the Tavily evidence adds. Two baselines run on the same 68
+  answers and the same 214 claims, and are stored next to the main result in `eval/my/results.json`.
+- **Model alone.** The judge model (`rv/GLM-5.3`) gets each claim with no pages and its own prompt
+  (`[judge_no_evidence]`). Same fallbacks as the checker. Verdicts are saved per claim so the row can be recomputed
+  with no network. No Tavily credits.
+- **Naive rule.** The plan named "the top official result decides". The saved runs keep the page the judge cited and
+  its quote, not Tavily's ranked list, so that rule cannot be replayed for free. The rule used instead: flag a claim
+  when its value (lower case, no spaces or commas) is not in the official quote. Claims with no quote are not flagged.
+- **Intervals.** Each precision and recall is reported as "x of y" with a 95% Wilson score interval (`ci_z` in
+  `config/verify.toml`).
+- **Result.** The model alone scored higher than Terkini on both measures. The headline numbers do not change; the
+  README and `docs/EVAL.md` show the baseline next to them and say what each method can and cannot show.
+- **Not changed.** The deck and the video. The deck's eval slide has no room for a third row without dropping text.
+

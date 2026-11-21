@@ -25,6 +25,8 @@ naratif ialah klon AI suara saya sendiri (ElevenLabs), dinyatakan pada kad akhir
 - **Penilaian, 21 Nov 2026:** 28 daripada 68 jawapan daripada 3 model menyatakan peraturan Malaysia
   yang berbeza daripada nilai rasmi semasa; Terkini menanda 10 daripadanya dengan laman rasmi
   (precision 59%, recall 36%). Butiran dan kegagalan: [`docs/EVAL.md`](docs/EVAL.md) (Inggeris).
+- **Garis asas:** model hakim sahaja, tanpa laman rasmi, menanda 24 daripada 28 jawapan basi (precision 73%,
+  recall 86%), tetapi tanpa sumber. Terkini menanda lebih sedikit, setiap satu dengan petikan rasmi tepat.
 - **Juga berfungsi:** halaman ulang tayang (enam larian dirakam, BM dan Inggeris), `POST /api/check`, yang
   memulangkan laporan yang sama sebagai JSON, dan demo satu arahan dengan Docker.
 - **Tidak dibina:** pek India (digugurkan supaya kekal dalam bajet kredit Tavily, D-017).

@@ -47,6 +47,41 @@ An answer counts as flagged when Terkini marks at least one of its claims `outda
 | `rv/deepseek-ai/DeepSeek-V4.1-Flash-1017` | DeepSeek | 23 | 6 | 4 | 1 |
 | `rv/moonshotai/Kimi-K3.1-Pro` | Moonshot AI | 22 | 2 | 4 | 0 |
 
+## Baselines
+
+The same 68 answers and the same 214 claims, scored two other ways. Both rows come from
+[`eval/my/results.json`](../eval/my/results.json) (`baselines`), written by `terkini baseline --pack my`.
+
+- **Judge model alone.** `rv/GLM-5.3`, the judge Terkini uses, decides each claim from its own knowledge. No
+  official pages, no quote check, 0 Tavily credits. One call per claim (prompt `[judge_no_evidence]` in
+  `config/prompts.toml`); 11 of 214 calls were answered by a fallback model. Verdicts are saved per claim in
+  [`eval/my/baseline-model-only.json`](../eval/my/baseline-model-only.json). Run on 21 Nov 2026, after the main eval.
+- **Naive page rule.** Trust the official page Terkini's checker found, and flag a claim when its value is not
+  written in that page's quote. Computed from the saved runs, 0 credits. Claims with no quoted official page are not
+  flagged. The runs do not keep Tavily's ranked result list, so a "top search result decides" rule could not be
+  replayed without new credits (D-020).
+
+| Method | Flagged | Precision (95% CI) | Recall (95% CI) |
+|---|---|---|---|
+| Terkini (Tavily evidence, judge, exact-quote check) | 17 of 68 | 10 of 17, 59% (36%-78%) | 10 of 28, 36% (21%-54%) |
+| Judge model alone, no official pages | 33 of 68 | 24 of 33, 73% (56%-85%) | 24 of 28, 86% (68%-94%) |
+| Naive rule: value missing from the official quote | 24 of 68 | 10 of 24, 42% (24%-61%) | 10 of 28, 36% (21%-54%) |
+
+Intervals are 95% Wilson score intervals; n is small, so they are wide.
+
+What this says:
+
+- On these questions the judge model alone found more stale answers than Terkini did. The rule changes in the
+  answer key date from 2024 and 2025, so a 2026 model can know many of them. Terkini's recall is limited by search:
+  most misses end `unverifiable` because the pages returned did not settle the claim (see "Where it fails").
+- The model-alone verdicts come with no source. It returned `unverifiable` for 1 of 214 claims, so a reader cannot
+  tell its sure answers from its guesses. Each Terkini `outdated` verdict carries an exact quote from an official
+  page that the code checked.
+- The naive rule flags 7 more current answers than Terkini: an official page that does not repeat the claim's value
+  is not evidence that the value changed. The judge step removes half of them.
+- A practical next step is to combine them: let the model propose, and keep the official quote check before a verdict
+  is shown. This is not built or measured.
+
 ## Claims
 
 | Claims | Count |
@@ -176,6 +211,7 @@ Every answer that was labelled stale or flagged by Terkini.
 
 ```bash
 uv run terkini eval --pack my --score-only   # recompute results.json from the saved runs; no keys, no network
+uv run terkini baseline --pack my --score-only   # recompute the baseline rows from the saved files
 uv run scripts/eval-tables.py                # print the tables above
 ```
 

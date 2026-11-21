@@ -146,6 +146,17 @@ dropped questions and failures in [`docs/EVAL.md`](docs/EVAL.md).
 
 Most misses end `unverifiable`: the official pages returned for a claim did not settle it, so no verdict was given.
 
+Baselines on the same answers and claims (95% Wilson intervals in [`docs/EVAL.md`](docs/EVAL.md#baselines)):
+
+| Method | Precision | Recall |
+|---|---|---|
+| Terkini | 10 of 17 (59%) | 10 of 28 (36%) |
+| Judge model alone, no official pages, no source | 24 of 33 (73%) | 24 of 28 (86%) |
+| Naive rule: value missing from the official quote | 10 of 24 (42%) | 10 of 28 (36%) |
+
+The model alone found more stale answers here, but gave no source and said "unsure" for 1 of 214 claims. Terkini
+shows fewer verdicts, each with an exact official quote.
+
 ## How it works
 
 ```mermaid

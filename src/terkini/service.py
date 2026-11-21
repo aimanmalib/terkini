@@ -73,6 +73,7 @@ def run(answer: str | None, *, pack: str, case: str | None = None, root: Path = 
 def _live(answer: str, pack_id: str, root: Path) -> AnswerReport:
     from terkini.cache import Cache
     from terkini.gateway import Gateway, load_env_file
+    from terkini.hybrid import load_hybrid_config
     from terkini.runner import run_check
     from terkini.tavily import Tavily
     from terkini.verify import load_verify_config
@@ -80,4 +81,5 @@ def _live(answer: str, pack_id: str, root: Path) -> AnswerReport:
     load_env_file(root / ".env.bifrost")
     today = datetime.now(UTC).date()
     with closing(Cache(root / load_verify_config(root).cache_path)) as cache:
-        return run_check(answer, pack_id=pack_id, tavily=Tavily(), gateway=Gateway(), cache=cache, today=today, root=root)
+        return run_check(answer, pack_id=pack_id, tavily=Tavily(), gateway=Gateway(), cache=cache, today=today, root=root,
+                         hybrid=load_hybrid_config(root).enabled)

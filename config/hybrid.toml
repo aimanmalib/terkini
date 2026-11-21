@@ -1,0 +1,69 @@
+# Hybrid check (docs/02-DECISIONS.md D-022): the model proposes, an official page proves.
+# For a time-sensitive claim the main check did not flag, the judge model guesses the value that applies today
+# (config/prompts.toml [judge_no_evidence], no pages). Terkini then searches the pack's official domains for that
+# value. The claim becomes "outdated" only when code finds the proposed value, written on an official page, in a
+# sentence that shares words with the claim. A model guess alone never decides a verdict.
+# src/terkini/hybrid.py reads these values.
+
+# Live `terkini check` runs the hybrid step when true. Replays of recorded runs never do (they hold no such calls).
+enabled = false
+# Tavily Search depth for the one search per proposed value.
+search_depth = "basic"
+# Official result pages extracted for a proposed value.
+max_urls = 3
+# A sentence on the page must contain the proposed value and at least this many words of the claim.
+min_shared_words = 2
+# Words shorter than this, and the stop words below, are not counted as shared words.
+min_word_chars = 4
+# Characters on each side of the matched sentence searched for a document date.
+date_window_chars = 300
+# A quote longer than this is cut around the value (it stays an exact substring of the page, D7).
+max_quote_chars = 500
+
+[eval]
+# `terkini hybrid --pack my`: proposals come from the saved model-only baseline (same model, same prompt).
+# Tavily credits for one hybrid eval run, drawn from the reserve (config/budget.toml).
+max_credits = 150
+workers = 6
+results = "hybrid.json"
+
+[words]
+stop = ["with", "from", "that", "this", "than", "have", "been", "were", "will", "must", "under", "their", "they",
+        "which", "into", "only", "more", "less", "each", "every", "also", "such", "applies", "apply", "malaysia",
+        "malaysian", "current", "currently", "rate", "rates", "year", "years", "month", "months", "per", "since",
+        "effective", "from", "after", "before", "until", "above", "below", "least", "most", "over", "other"]
+
+# Month names in the languages official pages use (English and Malay), for document dates in page text.
+[months]
+january = 1
+jan = 1
+januari = 1
+february = 2
+feb = 2
+februari = 2
+march = 3
+mar = 3
+mac = 3
+april = 4
+apr = 4
+may = 5
+mei = 5
+june = 6
+jun = 6
+july = 7
+jul = 7
+julai = 7
+august = 8
+aug = 8
+ogos = 8
+september = 9
+sep = 9
+sept = 9
+october = 10
+oct = 10
+oktober = 10
+november = 11
+nov = 11
+december = 12
+dec = 12
+disember = 12

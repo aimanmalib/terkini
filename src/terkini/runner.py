@@ -26,15 +26,20 @@ def runs_dir(root: Path = REPO_ROOT) -> Path:
 
 
 def run_check(answer: str, *, pack_id: str, tavily, gateway, cache: Cache, today: date, question: str = "",
-              root: Path = REPO_ROOT, guard: CreditGuard | None = None) -> AnswerReport:
+              root: Path = REPO_ROOT, guard: CreditGuard | None = None, hybrid: bool = False) -> AnswerReport:
+    """Check one answer. `hybrid` adds the second look of D-022 (live checks only; recordings hold no such calls)."""
     pack = load_pack(pack_id, root)
     models = load_gateway_config(root).models
     prompts = load_prompts(root)
     verifier = Verifier(tavily, gateway, pack, guard or CreditGuard(load_budget(root), cache, today), cfg=load_verify_config(root),
                         score_cfg=load_score_config(root), judge_model=models.judge, today=today,
                         fallbacks=models.fallbacks, prompts=prompts)
+    second = None
+    if hybrid:
+        from terkini.hybrid import Hybrid, load_hybrid_config
+        second = Hybrid(verifier, load_hybrid_config(root))
     return check_answer(answer, gateway=gateway, extractor_model=models.extractor, verifier=verifier, cache=cache,
-                        question=question, fallbacks=models.fallbacks, prompts=prompts)
+                        question=question, fallbacks=models.fallbacks, prompts=prompts, hybrid=second)
 
 
 def replay(c: Cassette, root: Path = REPO_ROOT) -> AnswerReport:

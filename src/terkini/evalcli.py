@@ -121,3 +121,52 @@ def baseline_command(args) -> int:
         print(f"baseline: {r['name']}: precision {r['precision_text']} {r['precision_ci95']} · "
               f"recall {r['recall_text']} {r['recall_ci95']}")
     return 1 if failed else 0
+
+
+def hybrid_command(args) -> int:
+    """Run the hybrid step (D-022) over the saved runs: Tavily only, proposals from the model-only baseline."""
+    import json
+
+    from terkini.baseline import saved_results
+    from terkini.evaluate import eval_dir, load_eval_config, load_runs, write_json
+    from terkini.hybrid import load_hybrid_config
+    pack = load_pack(args.pack)
+    cfg, hcfg = load_eval_config(), load_hybrid_config()
+    failed = []
+    if not args.score_only:
+        from terkini.budget import load_budget
+        from terkini.cache import Cache
+        from terkini.credits import CreditGuard
+        from terkini.hybrideval import run_hybrid
+        from terkini.score import load_score_config
+        from terkini.tavily import Tavily
+        from terkini.verify import Verifier, load_verify_config
+        _env()
+        if not os.environ.get("TAVILY_API_KEY"):
+            print("hybrid: needs TAVILY_API_KEY (use --score-only to recompute results)", file=sys.stderr)
+            return 2
+        mo = eval_dir(pack) / cfg.baseline_model_only
+        if not mo.exists():
+            print("hybrid: run `terkini baseline` first (the proposals come from it)", file=sys.stderr)
+            return 2
+        tavily, today = Tavily(), datetime.now(UTC).date()
+        budget = load_budget()
+        # The hybrid eval spends from the reserve under its own cap (config/hybrid.toml [eval] max_credits).
+        cap = hcfg.eval.max_credits
+        budget = budget.model_copy(update={"limits": budget.limits.model_copy(
+            update={"per_run": cap, "per_day": budget.limits.per_day + cap})})
+        before = usage_numbers(tavily.usage())
+        with closing(Cache(REPO_ROOT / load_verify_config().cache_path)) as cache:
+            verifier = Verifier(tavily, None, pack, CreditGuard(budget, cache, today), cfg=load_verify_config(),
+                                score_cfg=load_score_config(), judge_model="", today=today)
+            failed = run_hybrid(load_runs(pack), json.loads(mo.read_text()), verifier, hcfg,
+                                eval_dir(pack) / hcfg.eval.results, usage_before=before,
+                                usage=lambda: usage_numbers(tavily.usage()))
+        for f in failed:
+            print(f"hybrid: failed {f}", file=sys.stderr)
+    results = saved_results(pack, REPO_ROOT)
+    write_json(eval_dir(pack) / cfg.results, results)
+    for r in results["baselines"]["rows"]:
+        print(f"hybrid: {r['name']}: precision {r['precision_text']} {r['precision_ci95']} · "
+              f"recall {r['recall_text']} {r['recall_ci95']}")
+    return 1 if failed else 0

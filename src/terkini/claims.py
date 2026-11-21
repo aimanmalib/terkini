@@ -6,7 +6,7 @@ import re
 from datetime import date
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_serializer
 
 Verdict = Literal["current", "outdated", "unverifiable"]
 
@@ -54,6 +54,24 @@ class Judgement(BaseModel):
     source_url: str = ""
 
 
+class HybridEvidence(BaseModel):
+    """Second look at a claim (D-022): the value the model proposed and what the official pages showed for it."""
+
+    proposed_value: str
+    query: str = ""
+    urls: list[str] = []
+    quote: str = ""  # exact sentence from an official page that states the proposed value; empty when none
+    source_url: str = ""
+    page_date: date | None = None
+    date_estimated: bool = False  # True: no date in the page text, Tavily's published date was used
+    credits: int = 0
+    previous_verdict: Verdict = "unverifiable"
+    previous_quote: str = ""
+    previous_url: str = ""
+    previous_date: date | None = None
+    decision: str = ""  # why the verdict changed or stayed, in plain words
+
+
 class ClaimResult(BaseModel):
     claim: Claim
     verdict: Verdict
@@ -71,3 +89,12 @@ class ClaimResult(BaseModel):
     context: list[SearchHit] = []  # non-official pages: shown, never decide (D5)
     checked_on: date
     credits: int = 0
+    hybrid: HybridEvidence | None = None  # set when the hybrid step ran for this claim (D-022)
+
+    @model_serializer(mode="wrap")
+    def _omit_empty_hybrid(self, handler):
+        """Results without a hybrid step serialise exactly as before D-022 (saved runs, recordings, Pages data)."""
+        data = handler(self)
+        if data.get("hybrid") is None:
+            data.pop("hybrid", None)
+        return data

@@ -125,10 +125,16 @@ def _flags(runs, verdicts: dict[str, str]) -> dict[str, bool]:
             for r in runs}
 
 
-def compute_baselines(runs, labels: dict, model_only: dict | None, *, z: float) -> dict:
-    """Terkini, model-only and naive-rule detection on the same answers and the same claims."""
+def compute_baselines(runs, labels: dict, model_only: dict | None, *, z: float, hybrid: dict | None = None) -> dict:
+    """Terkini, hybrid, model-only and naive-rule detection on the same answers and the same claims."""
     terkini = {r.answer: r.report.outdated > 0 for r in runs}
     rows = [_row("terkini", terkini, runs, labels, z, "Tavily evidence, judge, exact-quote check (the main result).")]
+    if model_only and hybrid:
+        from terkini.hybrideval import hybrid_verdicts
+        v, counts = hybrid_verdicts(runs, model_only, hybrid)
+        rows.append(_row("hybrid", _flags(runs, v), runs, labels, z,
+                         "Main check, then the model proposes a current value and an official sentence must state it "
+                         "(D-022).") | {"claims": counts, "credits_from_responses": hybrid["credits_from_responses"]})
     if model_only:
         v = {k: x["verdict"] for k, x in model_only["verdicts"].items()}
         r = _row("model_only", _flags(runs, v), runs, labels, z,
@@ -155,7 +161,10 @@ def saved_results(pack, root: Path) -> dict:
     usage = json.loads((d / "usage.json").read_text()) if (d / "usage.json").exists() else {"runs": []}
     runs, labels = load_runs(pack, root), load_labels(pack, root)
     mo = d / cfg.baseline_model_only
+    from terkini.hybrid import load_hybrid_config
+    hy = d / load_hybrid_config(root).eval.results
     results = compute_results(runs, labels, load_key(pack, root), usage=usage, window_days=cfg.date_window_days,
                               pack=pack.id)
     return results | {"baselines": compute_baselines(runs, labels, json.loads(mo.read_text()) if mo.exists() else None,
-                                                     z=cfg.ci_z)}
+                                                     z=cfg.ci_z,
+                                                     hybrid=json.loads(hy.read_text()) if hy.exists() else None)}

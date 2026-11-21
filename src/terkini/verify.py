@@ -133,8 +133,8 @@ class Verifier:
         ]
         return hits, cached, res.credits
 
-    def _extract(self, hits: list[SearchHit]) -> tuple[list[Page], int]:
-        urls = [h.url for h in hits[: self.cfg.extract_max_urls]]
+    def _extract(self, hits: list[SearchHit], max_urls: int | None = None) -> tuple[list[Page], int]:
+        urls = [h.url for h in hits[: max_urls or self.cfg.extract_max_urls]]
         self.guard.allow(self.guard.extract_cost(len(urls)))
         ext = self.tavily.extract(urls)
         self.guard.record(ext.credits)

@@ -44,6 +44,9 @@ def build_parser() -> argparse.ArgumentParser:
     b = sub.add_parser("baseline", help="eval baselines: judge model without official pages, naive page rule")
     b.add_argument("--pack", default="my")
     b.add_argument("--score-only", action="store_true", help="recompute results.json from saved files (no network)")
+    h = sub.add_parser("hybrid", help="eval of the hybrid step (D-022): search official pages for model-proposed values")
+    h.add_argument("--pack", default="my")
+    h.add_argument("--score-only", action="store_true", help="recompute results.json from saved files (no network)")
     s = sub.add_parser("serve", help="serve the recorded-run page on this machine (config/pages.toml [serve])")
     s.add_argument("--host", help="address to listen on (default from config)")
     s.add_argument("--port", type=int, help="port (default from config)")
@@ -61,6 +64,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "baseline":
         from terkini.evalcli import baseline_command
         return baseline_command(args)
+    if args.command == "hybrid":
+        from terkini.evalcli import hybrid_command
+        return hybrid_command(args)
     if args.command == "serve":
         from terkini.web import serve
         serve(args.host, args.port)

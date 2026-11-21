@@ -39,7 +39,8 @@ class AnswerReport(BaseModel):
     as_of_mixed: bool = False
 
 
-def check_claims(claims: list[Claim], verifier: Verifier, cache: Cache, *, skipped: int = 0) -> AnswerReport:
+def check_claims(claims: list[Claim], verifier: Verifier, cache: Cache, *, skipped: int = 0,
+                 hybrid=None) -> AnswerReport:
     pack, today = verifier.pack.id, verifier.today
     report = AnswerReport(pack=pack, checked_on=today, results=[], skipped=skipped)
     seen: dict[str, ClaimResult] = {}
@@ -54,6 +55,8 @@ def check_claims(claims: list[Claim], verifier: Verifier, cache: Cache, *, skipp
         else:
             try:
                 result = verifier.verify(claim)
+                if hybrid is not None:
+                    result = hybrid.apply(result)  # D-022: model proposes, an official page has to prove it
             except CreditLimitReached as e:
                 report.stopped = str(e)
                 report.not_checked.append(claim)
@@ -74,7 +77,8 @@ def check_claims(claims: list[Claim], verifier: Verifier, cache: Cache, *, skipp
 
 
 def check_answer(answer: str, *, gateway: ChatClient, extractor_model: str, verifier: Verifier, cache: Cache,
-                 question: str = "", fallbacks: list[str] | None = None, prompts: dict | None = None) -> AnswerReport:
+                 question: str = "", fallbacks: list[str] | None = None, prompts: dict | None = None,
+                 hybrid=None) -> AnswerReport:
     ex = extract_claims(gateway, extractor_model, verifier.pack, answer, question=question, fallbacks=fallbacks,
                         prompts=prompts)
-    return check_claims(ex.claims, verifier, cache, skipped=len(ex.skipped))
+    return check_claims(ex.claims, verifier, cache, skipped=len(ex.skipped), hybrid=hybrid)

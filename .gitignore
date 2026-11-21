@@ -25,3 +25,8 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+# Demo video: build output and captures are regenerated (demo/video/README.md); the stage source is kept
+/demo/video/work/*
+!/demo/video/work/stage.html
+/demo/video/keluar/
+/demo/video/__pycache__/

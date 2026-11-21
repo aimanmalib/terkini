@@ -1,0 +1,7 @@
+Terkini checks AI answers about Malaysian rules against official government pages, through Tavily Search and Extract restricted to official domains, with model calls through Bifrost. Every verdict carries the exact quote it rests on. Eval on 68 answers from 3 models: 17 flagged, 10 really stale (precision 59%, recall 36%).
+
+Try the recorded runs: https://aimanmalib.github.io/terkini/
+Code: https://github.com/aimanmalib/terkini
+
+Narration is an AI clone of my own voice.
+Music: Sascha Ende, ende.app (CC BY 4.0)

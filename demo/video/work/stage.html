@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Terkini demo video, stage</title>
+<!-- Stage for the Terkini demo video. A pure function of time: seek(t). Screens are real captures of the replay page
+     (tangkap.py); every number comes from data.js (eval/my/results.json via kotak.json) or garis.json. Identity = the
+     replay page: Barlow + Plex Mono, ink #14213d, paper #fbfaf6, verdict colours stale/fresh/unsure. -->
+<link rel="stylesheet" href="pentas.css">
+<style>
+@font-face{font-family:Barlow;src:url(../../../docs/fonts/barlow-400.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Barlow;src:url(../../../docs/fonts/barlow-600.woff2) format('woff2');font-weight:600}
+@font-face{font-family:Barlow;src:url(../../../docs/fonts/barlow-800.woff2) format('woff2');font-weight:800}
+@font-face{font-family:Mono;src:url(../../../docs/fonts/plex-mono-400.woff2) format('woff2');font-weight:400}
+:root{--ink:#14213d;--night:#0c1528;--paper:#fbfaf6;--line:#d9d4c7;--stale:#b3261e;--stale-hi:#ff6b5e;--fresh:#1f7a4d;--fresh-hi:#4cc98a;
+  --unsure:#8a5c00;--unsure-hi:#e0a53a;--muted:#9aa6bf;
+  --latar:var(--night);--aksen:var(--fresh-hi);--aksen-t:#9fe7c1;--teks:var(--paper);--kabur:var(--muted);--garis:rgba(251,250,246,.14)}
+#p{font-family:Barlow,sans-serif}
+#bg{background:radial-gradient(ellipse 70% 60% at 10% 0%,rgba(46,60,92,.75),rgba(46,60,92,0) 70%),
+  radial-gradient(ellipse 55% 50% at 95% 100%,rgba(31,122,77,.18),rgba(31,122,77,0) 70%),linear-gradient(180deg,#101b33,#0a1223)}
+.kicker{font-family:Mono;letter-spacing:.2em;color:var(--fresh-hi);text-transform:uppercase}
+.big{font-weight:800;line-height:1.04;letter-spacing:-.02em}
+.sheet{position:absolute;background:var(--paper);color:var(--ink);border-radius:18px;box-shadow:0 40px 110px rgba(0,0,0,.55)}
+.dots{display:inline-flex;gap:12px}.dots i{width:22px;height:22px;border-radius:50%;display:block}
+.ring{position:absolute;border-radius:10px;box-shadow:0 0 0 4px var(--c,#ff6b5e),0 0 30px var(--c,#ff6b5e);pointer-events:none;opacity:0}
+.node{position:absolute;width:310px;height:190px;border-radius:16px;border:2px solid rgba(251,250,246,.18);background:rgba(20,33,61,.9);padding:22px 24px}
+.node b{display:block;font-size:38px;font-weight:800}.node span{display:block;font-family:Mono;font-size:22px;color:var(--muted);margin-top:10px}
+.chip{display:inline-flex;align-items:center;gap:14px;border-radius:999px;font-weight:600;white-space:nowrap}
+.dom{position:absolute;font-family:Mono;font-size:26px;color:var(--muted);border:1px solid rgba(251,250,246,.16);border-radius:999px;padding:6px 16px;white-space:nowrap}
+.stat{position:absolute;width:390px;height:300px;border-radius:20px;background:rgba(20,33,61,.9);border:2px solid rgba(251,250,246,.14);padding:34px 36px}
+.stat b{display:block;font-size:150px;font-weight:800;line-height:1;letter-spacing:-.03em}.stat span{display:block;font-size:34px;color:var(--muted);margin-top:22px;font-weight:600}
+</style></head>
+<body><div id="p"></div>
+<script src="data.js"></script>
+<script src="pentas.js"></script>
+<script>
+const EV = KO.eval, DET = EV.detection;
+const bg = el('div', 'lap'); bg.id = 'bg';
+const LOGO = '<span class="dots"><i style="background:#1f7a4d"></i><i style="background:#8a5c00"></i><i style="background:#b3261e"></i></span>';
+const masuk = (t, a, d = .35) => eo(pr(t, a, a + d));
+const ring = (ibu, b, c, pad = 6) => { const r = el('div', 'ring', {left: px(b.x - pad), top: px(b.y - pad), width: px(b.w + pad * 2), height: px(b.h + pad * 2)}, null, ibu);
+  r.style.setProperty('--c', c); return r; };
+const kick = (ibu, teks, top = 96) => el('div', 'kicker', {position: 'absolute', left: '120px', top: px(top), fontSize: '24px'}, teks, ibu);
+
+// ---------- 1 HOOK: the question, the confident answer, the stamp ----------
+const bHook = el('div', 'b');
+const hq = el('div', 'sheet', {left: '260px', top: '150px', width: '1400px', padding: '46px 56px'}, null, bHook);
+el('div', '', {fontFamily: 'Mono', fontSize: '22px', color: '#4a5568', letterSpacing: '.12em'}, 'QUESTION', hq);
+const hQ = el('div', 'big', {fontSize: '64px', marginTop: '14px'}, null, hq);
+const hQk = kinetik(hQ, X.q);
+const ha = el('div', '', {position: 'absolute', left: '316px', top: '500px', width: '1100px'}, null, bHook);
+el('div', '', {fontFamily: 'Mono', fontSize: '22px', color: 'var(--muted)', letterSpacing: '.12em'}, X.model.toUpperCase(), ha);
+const hA = el('div', 'big', {fontSize: '120px', marginTop: '10px', color: 'var(--paper)'}, '', ha);
+const cop = el('div', '', {position: 'absolute', left: '1130px', top: '520px', border: '6px solid var(--stale-hi)', color: 'var(--stale-hi)',
+  borderRadius: '14px', padding: '14px 30px', transform: 'rotate(-6deg)', background: 'rgba(12,21,40,.85)'}, null, bHook);
+el('div', 'big', {fontSize: '76px', textTransform: 'uppercase', letterSpacing: '.04em'}, X.cop, cop);
+el('div', '', {fontSize: '28px', fontWeight: 600, marginTop: '6px'}, X.cop_sub, cop);
+
+// ---------- 2 SKALA: 68 answers, one row per model, stale ones turn red ----------
+const bSk = el('div', 'b');
+kick(bSk, X.k_skala);
+const skN = el('div', 'big', {position: 'absolute', left: '120px', top: '150px', fontSize: '210px'}, null, bSk);
+const skCap = el('div', '', {position: 'absolute', left: '120px', top: '380px', fontSize: '44px', fontWeight: 600, color: 'var(--paper)'}, X.skala_cap, bSk);
+const skQ = el('div', 'chip', {position: 'absolute', right: '120px', top: '214px', fontSize: '34px', padding: '14px 30px', border: '2px solid rgba(251,250,246,.2)'},
+  `${EV.answers} answers · 3 models · 23 questions`, bSk);
+const rows = Object.entries(EV.per_model).sort((a, b) => b[1].stale_label - a[1].stale_label).map(([id, m], r) => {
+  const y = 520 + r * 120;
+  const lab = el('div', '', {position: 'absolute', left: '120px', top: px(y + 6), fontSize: '32px', fontWeight: 600, width: '420px'}, X.model_nama[id] || id, bSk);
+  const cnt = el('div', '', {position: 'absolute', left: '1640px', top: px(y + 6), fontSize: '32px', fontWeight: 800, color: 'var(--stale-hi)'}, `${m.stale_label} / ${m.answers}`, bSk);
+  const dots = Array.from({length: m.answers}, (_, i) => el('i', '', {position: 'absolute', left: px(560 + i * 46), top: px(y), width: '36px', height: '36px',
+    borderRadius: '50%', background: 'rgba(251,250,246,.18)', display: 'block'}, null, bSk));
+  return {m, lab, cnt, dots, y};
+});
+
+// ---------- 3 REVEAL ----------
+const bRev = el('div', 'b');
+const rv = el('div', '', {position: 'absolute', left: 0, right: 0, top: '300px', textAlign: 'center'}, null, bRev);
+const rLogo = el('div', '', {transform: 'scale(2.2)', display: 'inline-block'}, LOGO, rv);
+const rJ = el('div', 'big', {fontSize: '190px', marginTop: '50px'}, X.jenama, rv);
+const rT = el('div', '', {fontSize: '46px', fontWeight: 600, color: '#d6dbe8', marginTop: '20px'}, null, rv);
+const rTk = kinetik(rT, X.tagline);
+
+// ---------- 4 TAVILY: the check, step by step ----------
+const bTv = el('div', 'b');
+kick(bTv, X.k_tavily);
+const NX = [120, 470, 820, 1170, 1520];
+const nodes = X.nod.map(([h, s], i) => { const n = el('div', 'node', {left: px(NX[i]), top: '260px'}, `<b>${h}</b><span>${s}</span>`, bTv); return n; });
+const arrows = NX.slice(0, -1).map(x => el('div', '', {position: 'absolute', left: px(x + 312), top: '352px', width: '38px', height: '6px', borderRadius: '3px', background: 'var(--fresh-hi)', opacity: .2}, null, bTv));
+const doms = KO.domains.map((d, i) => el('div', 'dom', {left: px(120 + (i % 6) * 290), top: px(560 + Math.floor(i / 6) * 84)}, d, bTv));
+
+// ---------- 5 PUTUSAN: the real replay page, then the claim card ----------
+const bPu = el('div', 'b');
+kick(bPu, X.k_putusan, 50);
+const BR = {x: 160, y: 100, w: 1600, h: 820};
+const br = pelayar(bPu, BR, X.url_bar);
+const SC = BR.w / 1440;                                   // capture CSS px → stage px
+const topSk = el('div', 'skrin', {width: '1440px', height: px(br.vh / SC), transform: `scale(${SC})`}, null, br.view);
+const topImg = el('img', '', {width: '1440px'}, null, topSk); topImg.src = 'aset/d-top.png';
+const ringHl = ring(topSk, KO['d-top'].hl, '#ff6b5e', 4);
+const CK = KO['d-card'];
+const CS = 1.75;                                          // card zoom
+const card = el('div', '', {position: 'absolute', left: px((1920 - CK.size.w * CS) / 2), top: '150px', width: px(CK.size.w), height: px(CK.size.h),
+  transformOrigin: '0 0', borderRadius: '14px', overflow: 'hidden', boxShadow: '0 40px 120px rgba(0,0,0,.65)'}, null, bPu);
+el('img', '', {width: px(CK.size.w), display: 'block'}, null, card).src = 'aset/d-card.png';
+const ringStated = ring(card, CK.stated, '#ff6b5e', 4), ringNow = ring(card, CK.now, '#4cc98a', 4), ringBadge = ring(card, CK.badge, '#ff6b5e', 4);
+
+// ---------- 6 PETIKAN: the quote, checked in code ----------
+const bPe = el('div', 'b');
+kick(bPe, X.k_petikan);
+const QS = 2.2;
+const qv = el('div', '', {position: 'absolute', left: px((1920 - CK.quote.w * QS) / 2), top: '190px', width: px(CK.quote.w), height: px(CK.quote.h + CK.source.h + 22),
+  transform: `scale(${QS})`, transformOrigin: '0 0', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 30px 90px rgba(0,0,0,.6)'}, null, bPe);
+el('img', '', {position: 'absolute', left: px(-CK.quote.x), top: px(-CK.quote.y), width: px(CK.size.w)}, null, qv).src = 'aset/d-card.png';
+const ok = el('div', 'chip', {position: 'absolute', left: '200px', top: '600px', fontSize: '40px', padding: '18px 36px', background: 'rgba(31,122,77,.25)',
+  border: '3px solid var(--fresh-hi)', color: '#c9f2dc'}, `<span style="font-size:46px">✓</span>${X.ok}`, bPe);
+const no = el('div', 'chip', {position: 'absolute', left: '200px', top: '730px', fontSize: '40px', padding: '18px 36px', background: 'rgba(138,92,0,.25)',
+  border: '3px solid var(--unsure-hi)', color: '#f7e1b5'}, `<span style="font-size:46px">✗</span>${X.tolak}`, bPe);
+const noN = el('div', '', {position: 'absolute', left: '1140px', top: '748px', fontSize: '30px', color: 'var(--muted)', fontWeight: 600}, X.tolak_n, bPe);
+
+// ---------- 7 BIFROST ----------
+const bBf = el('div', 'b');
+kick(bBf, X.k_bifrost);
+const app = el('div', 'node', {left: '120px', top: '380px', width: '300px', height: '170px'}, `<b>Terkini</b><span>one app, one key</span>`, bBf);
+const gw = el('div', 'node', {left: '560px', top: '230px', width: '560px', height: '470px', borderColor: 'rgba(76,201,138,.45)'}, '<b style="font-size:52px">Bifrost</b>', bBf);
+const bfRows = X.bf_rows.map((r, i) => el('div', 'chip', {position: 'absolute', left: '600px', top: px(360 + i * 100), fontSize: '32px', padding: '12px 26px',
+  border: '2px solid rgba(251,250,246,.2)'}, `<span style="width:14px;height:14px;border-radius:50%;background:var(--fresh-hi);display:block"></span>${r}`, bBf));
+const mods = X.bf_models.map(([n, v], i) => el('div', '', {position: 'absolute', left: '1260px', top: px(240 + i * 118), width: '540px', height: '96px', borderRadius: '14px',
+  background: 'rgba(20,33,61,.9)', border: '2px solid rgba(251,250,246,.16)', padding: '14px 24px'}, `<div style="font-size:32px;font-weight:800">${n}</div><div style="font-family:Mono;font-size:19px;color:var(--muted);margin-top:4px">${v}</div>`, bBf));
+const ln = [el('div', '', {position: 'absolute', left: '426px', top: '462px', width: '128px', height: '6px', borderRadius: '3px', background: 'var(--fresh-hi)'}, null, bBf),
+  ...mods.map((m, i) => el('div', '', {position: 'absolute', left: '1126px', top: px(285 + i * 118), width: '128px', height: '6px', borderRadius: '3px', background: 'var(--fresh-hi)'}, null, bBf))];
+
+// ---------- 8 JUJUR: the honest numbers ----------
+const bJu = el('div', 'b');
+kick(bJu, X.k_jujur);
+const SV = {flagged: DET.flagged, true_positive: DET.true_positive, precision: Math.round(DET.precision * 100) + '%', recall: Math.round(DET.recall * 100) + '%'};
+const SCOL = {flagged: 'var(--paper)', true_positive: 'var(--stale-hi)', precision: 'var(--fresh-hi)', recall: 'var(--unsure-hi)'};
+const stats = X.stat.map(([k, lab], i) => el('div', 'stat', {left: px(120 + i * 430), top: '220px'}, `<b style="color:${SCOL[k]}">${SV[k]}</b><span>${lab}</span>`, bJu));
+const juG = el('div', '', {position: 'absolute', left: '120px', top: '600px', fontSize: '40px', fontWeight: 600}, X.gagal, bJu);
+
+// ---------- 9 TUTUP ----------
+const bTu = el('div', 'b');
+const tt = el('div', '', {position: 'absolute', left: 0, right: 0, top: '240px', textAlign: 'center'}, null, bTu);
+el('div', '', {transform: 'scale(2.2)', display: 'inline-block'}, LOGO, tt);
+const t1 = el('div', 'big', {fontSize: '170px', marginTop: '46px'}, X.jenama, tt);
+const t2 = el('div', '', {fontFamily: 'Mono', fontSize: '50px', color: 'var(--fresh-hi)', marginTop: '26px'}, X.tutup_2, tt);
+const t3 = el('div', '', {fontSize: '34px', color: '#d6dbe8', marginTop: '26px', fontWeight: 600}, X.tutup_3, tt);
+const tAi = el('div', '', {position: 'absolute', left: 0, right: 0, bottom: '70px', textAlign: 'center', fontSize: '26px', color: 'var(--muted)', fontWeight: 600}, X.label_ai, bTu);
+
+const sari = sariKata({semasa: '#4cc98a', lepas: '#fbfaf6', belum: 'rgba(251,250,246,.5)', atas: 966, lebar: 1500, saiz: 40, had: 9});
+
+function seek(t) {
+  // 1 HOOK
+  let k = babakK(t, B.hook, .3, .3); bHook.style.opacity = k.o;
+  hq.style.transform = `translateY(${(1 - k.k) * 40}px)`;
+  kinetikMain(hQk, t, .25, .045, .35);
+  const n = Math.round(X.a.length * pr(t, T.jawab, T.jawab + .7)); hA.textContent = X.a.slice(0, n);
+  const c = pr(t, T.cop, T.cop + .28);
+  cop.style.opacity = c > 0 ? 1 : 0; cop.style.transform = `rotate(-6deg) scale(${1.6 - .6 * eo(c)})`;
+  hA.style.textDecoration = t > T.cop + .2 ? 'line-through' : 'none'; hA.style.textDecorationColor = 'var(--stale-hi)';
+
+  // 2 SKALA
+  k = babakK(t, B.skala); bSk.style.opacity = k.o;
+  const red = pr(t, T.merah, T.merah + 1.6);
+  skN.innerHTML = `<span style="color:var(--stale-hi)">${Math.round(DET.stale * red)}</span><span style="color:var(--muted)"> / ${EV.answers}</span>`;
+  skCap.style.opacity = masuk(t, T.merah + .3);
+  skQ.style.opacity = masuk(t, T.soalan);
+  rows.forEach(({m, lab, cnt, dots}, r) => { const a = masuk(t, T.model + r * .15);
+    lab.style.opacity = a; dots.forEach((d, i) => { d.style.opacity = masuk(t, T.model + r * .15 + i * .012);
+      d.style.background = i < m.stale_label && red * 23 > i ? 'var(--stale-hi)' : 'rgba(251,250,246,.18)'; });
+    cnt.style.opacity = masuk(t, T.merah + 1.4); });
+
+  // 3 REVEAL
+  k = babakK(t, B.reveal, .45, .3); bRev.style.opacity = k.o;
+  rLogo.style.transform = `scale(${2.2 * (.6 + .4 * eb(pr(t, B.reveal[0], B.reveal[0] + .6)))})`;
+  rJ.style.transform = `translateY(${(1 - k.k) * 30}px)`;
+  kinetikMain(rTk, t, D.kata.reveal[2].a - .1, .05);
+
+  // 4 TAVILY
+  k = babakK(t, B.tavily); bTv.style.opacity = k.o;
+  nodes.forEach((nd, i) => { const a = masuk(t, T.nod[i]); nd.style.opacity = .25 + .75 * a;
+    nd.style.transform = `translateY(${(1 - a) * 20}px)`; nd.style.borderColor = a > .5 && t < (T.nod[i + 1] || B.tavily[1]) ? 'var(--fresh-hi)' : 'rgba(251,250,246,.18)'; });
+  arrows.forEach((ar, i) => { ar.style.opacity = .2 + .8 * masuk(t, T.nod[i + 1]); });
+  doms.forEach((d, i) => { const a = masuk(t, T.nod[2] + i * .06); d.style.opacity = a; d.style.transform = `translateY(${(1 - a) * 16}px)`;
+    d.style.borderColor = a > .5 && t < T.nod[3] ? 'rgba(76,201,138,.6)' : 'rgba(251,250,246,.16)'; });
+
+  // 5 PUTUSAN
+  k = babakK(t, B.putusan); bPu.style.opacity = k.o;
+  const sw = eio(pr(t, T.kad, T.kad + .6));
+  br.w.style.opacity = 1 - sw; br.w.style.transform = `translateY(${(1 - k.k) * 50}px) scale(${1 - .06 * sw})`;
+  ringHl.style.opacity = masuk(t, T.sorot_jawapan) * (1 - sw);
+  card.style.opacity = sw; card.style.transform = `scale(${CS * (.94 + .06 * sw)})`;
+  ringStated.style.opacity = masuk(t, T.kad + .7) * (1 - pr(t, T.lencana - .3, T.lencana));
+  ringNow.style.opacity = masuk(t, T.kad + 1.8) * (1 - pr(t, T.lencana - .3, T.lencana));
+  ringBadge.style.opacity = masuk(t, T.lencana);
+
+  // 6 PETIKAN
+  k = babakK(t, B.petikan); bPe.style.opacity = k.o;
+  qv.style.transform = `translateY(${(1 - k.k) * 40}px) scale(${QS})`;
+  ok.style.opacity = masuk(t, T.semak); ok.style.transform = `translateX(${(1 - masuk(t, T.semak)) * 30}px)`;
+  no.style.opacity = masuk(t, T.tolak); no.style.transform = `translateX(${(1 - masuk(t, T.tolak)) * 30}px)`;
+  noN.style.opacity = masuk(t, T.tolak + .6);
+
+  // 7 BIFROST
+  k = babakK(t, B.bifrost); bBf.style.opacity = k.o;
+  app.style.opacity = masuk(t, B.bifrost[0] + .1); gw.style.opacity = masuk(t, B.bifrost[0] + .3);
+  bfRows.forEach((r, i) => { const a = masuk(t, T.bf[i]); r.style.opacity = a; r.style.transform = `translateX(${(1 - a) * 24}px)`; });
+  mods.forEach((m, i) => { m.style.opacity = masuk(t, B.bifrost[0] + .5 + i * .12); });
+  ln.forEach((l, i) => { l.style.opacity = i === 0 ? masuk(t, B.bifrost[0] + .4) : .25 + .75 * masuk(t, T.bf[2] + (i - 1) * .12); });
+
+  // 8 JUJUR
+  k = babakK(t, B.jujur); bJu.style.opacity = k.o;
+  stats.forEach((s, i) => { const a = masuk(t, T.angka[i]); s.style.opacity = a; s.style.transform = `translateY(${(1 - a) * 30}px)`; });
+  juG.style.opacity = masuk(t, T.gagal);
+
+  // 9 TUTUP
+  bTu.style.opacity = t >= B.tutup[0] ? Math.min(masuk(t, B.tutup[0], .45), 1 - pr(t, G.video.panjang - .5, G.video.panjang)) : 0;
+  t1.style.transform = `scale(${.92 + .08 * eb(pr(t, B.tutup[0] + .1, B.tutup[0] + .8))})`;
+  t2.style.opacity = masuk(t, B.tutup[0] + 1.2, .5); t3.style.opacity = masuk(t, B.tutup[0] + 2.2, .5);
+  tAi.style.opacity = masuk(t, B.tutup[0] + .8, .5);
+  sari(t);
+}
+mula(seek);
+</script></body></html>

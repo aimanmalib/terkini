@@ -1,0 +1,64 @@
+{
+ "_note": "Narration for the Terkini demo video. Every number comes from eval/my/results.json (21 Nov 2026) or a recorded run in docs/cases/. Voice: AI clone of the builder's own voice, labelled on the end card.",
+ "baris": [
+  {
+   "id": "hook",
+   "sari": "Ask an AI about a Malaysian rule, and it answers with confidence. Sometimes the rule changed a year ago."
+  },
+  {
+   "id": "skala",
+   "sari": "We asked 3 models 23 questions. 28 of 68 answers stated a rule that is no longer current.",
+   "baca": "We asked three models, twenty-three questions. Twenty-eight of sixty-eight answers, stated a rule that is no longer current."
+  },
+  {
+   "id": "reveal",
+   "sari": "Terkini checks those answers against official government pages."
+  },
+  {
+   "id": "tavily",
+   "sari": "Each claim goes to Tavily Search, restricted to official domains, with live results for rules that change. Then Tavily Extract reads the page itself.",
+   "baca": "Each claim goes to Tavvily Search, restricted to official domains, with live results for rules that change. Then, Tavvily Extract reads the page itself."
+  },
+  {
+   "id": "putusan",
+   "sari": "Here the answer says RM 20 million. The official page says all taxpayers were included from July 2025. Outdated.",
+   "baca": "Here, the answer says twenty million ringgit. The official page says all taxpayers were included from July twenty twenty-five. Outdated."
+  },
+  {
+   "id": "petikan",
+   "sari": "Every verdict must quote the page word for word. Terkini then checks that the quote is really there. No exact quote, no verdict.",
+   "baca": "Every verdict must quote the page, word for word. Terkini then checks that the quote is really there. No exact quote, no verdict."
+  },
+  {
+   "id": "bifrost",
+   "sari": "The models run through Bifrost: one virtual key, a daily budget, and fallbacks across vendors.",
+   "baca": "The models run through Bifrost: one virtual key, a daily budget, and fallbacks across vendors."
+  },
+  {
+   "id": "jujur",
+   "sari": "Terkini flagged 17 answers, and 10 were really stale. That is 59% precision and 36% recall. The misses are published too.",
+   "baca": "Terkini flagged seventeen answers, and ten were really stale. That is fifty-nine percent precision, and thirty-six percent recall. The misses are published too."
+  },
+  {
+   "id": "tutup",
+   "sari": "Terkini is open source. Try the recorded runs on the project page.",
+   "baca": "Terkini, is open source. Try the recorded runs on the project page."
+  }
+ ],
+ "peta": {
+  "3": "three",
+  "23": "twenty-three",
+  "28": "twenty-eight",
+  "68": "sixty-eight",
+  "RM": "twenty",
+  "20": "million",
+  "million.": "ringgit.",
+  "2025.": "twenty twenty-five.",
+  "17": "seventeen",
+  "10": "ten",
+  "59%": "fifty-nine percent",
+  "36%": "thirty-six percent",
+  "Tavily": "Tavvily"
+ },
+ "sebut": {}
+}

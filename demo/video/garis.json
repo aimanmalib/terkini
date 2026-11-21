@@ -1,0 +1,437 @@
+{
+ "video": {
+  "nama": "terkini-demo",
+  "awalan_filedrop": "globalai-terkini-video-",
+  "fps": 30,
+  "panjang": 72.0,
+  "poster": 36.6,
+  "format": {
+   "l": {
+    "saiz": [
+     1920,
+     1080
+    ],
+    "nama": "16x9"
+   }
+  },
+  "suara": {
+   "id": "Ote1SdIQw1HEueVQdGnX",
+   "model": "eleven_v3",
+   "bahasa": "en"
+  },
+  "muzik": {
+   "fail": "happy-beats-business-moves-vol-9-by-ende-dot-app.mp3",
+   "db": -9,
+   "kredit": "Music: Sascha Ende, ende.app (CC BY 4.0)"
+  }
+ },
+ "babak": {
+  "hook": [
+   0,
+   7.0
+  ],
+  "skala": [
+   7.0,
+   15.0
+  ],
+  "reveal": [
+   15.0,
+   19.6
+  ],
+  "tavily": [
+   19.6,
+   30.2
+  ],
+  "putusan": [
+   30.2,
+   38.8
+  ],
+  "petikan": [
+   38.8,
+   47.2
+  ],
+  "bifrost": [
+   47.2,
+   54.2
+  ],
+  "jujur": [
+   54.2,
+   63.8
+  ],
+  "tutup": [
+   63.8,
+   72.0
+  ]
+ },
+ "suara": {
+  "hook": 0.4,
+  "skala": 7.3,
+  "reveal": 15.4,
+  "tavily": 20.0,
+  "putusan": 30.6,
+  "petikan": 39.2,
+  "bifrost": 47.6,
+  "jujur": 54.6,
+  "tutup": 64.3
+ },
+ "sari_kata": [
+  "hook",
+  "skala",
+  "reveal",
+  "tavily",
+  "putusan",
+  "petikan",
+  "bifrost",
+  "jujur"
+ ],
+ "peristiwa": {
+  "jawab": {
+   "kata": [
+    "hook",
+    "answers"
+   ],
+   "anjak": -0.1
+  },
+  "cop": {
+   "kata": [
+    "hook",
+    "changed"
+   ],
+   "anjak": -0.05
+  },
+  "model": {
+   "kata": [
+    "skala",
+    "models"
+   ],
+   "anjak": -0.1
+  },
+  "soalan": {
+   "kata": [
+    "skala",
+    "questions"
+   ],
+   "anjak": -0.15
+  },
+  "merah": {
+   "kata": [
+    "skala",
+    "28"
+   ],
+   "anjak": -0.1
+  },
+  "nod": [
+   {
+    "kata": [
+     "tavily",
+     "claim"
+    ],
+    "anjak": -0.1
+   },
+   {
+    "kata": [
+     "tavily",
+     "search"
+    ],
+    "anjak": -0.1
+   },
+   {
+    "kata": [
+     "tavily",
+     "official"
+    ],
+    "anjak": -0.1
+   },
+   {
+    "kata": [
+     "tavily",
+     "live"
+    ],
+    "anjak": -0.1
+   },
+   {
+    "kata": [
+     "tavily",
+     "extract"
+    ],
+    "anjak": -0.1
+   }
+  ],
+  "sorot_jawapan": {
+   "kata": [
+    "putusan",
+    "answer"
+   ],
+   "anjak": -0.05
+  },
+  "kad": {
+   "kata": [
+    "putusan",
+    "official"
+   ],
+   "anjak": -0.2
+  },
+  "lencana": {
+   "kata": [
+    "putusan",
+    "outdated"
+   ],
+   "anjak": -0.05
+  },
+  "petik": {
+   "kata": [
+    "petikan",
+    "quote"
+   ],
+   "anjak": -0.1
+  },
+  "semak": {
+   "kata": [
+    "petikan",
+    "checks"
+   ],
+   "anjak": -0.05
+  },
+  "tolak": {
+   "kata": [
+    "petikan",
+    "no"
+   ],
+   "anjak": -0.05
+  },
+  "bf": [
+   {
+    "kata": [
+     "bifrost",
+     "virtual"
+    ],
+    "anjak": -0.1
+   },
+   {
+    "kata": [
+     "bifrost",
+     "daily"
+    ],
+    "anjak": -0.1
+   },
+   {
+    "kata": [
+     "bifrost",
+     "fallbacks"
+    ],
+    "anjak": -0.1
+   }
+  ],
+  "angka": [
+   {
+    "kata": [
+     "jujur",
+     "17"
+    ],
+    "anjak": -0.1
+   },
+   {
+    "kata": [
+     "jujur",
+     "10"
+    ],
+    "anjak": -0.1
+   },
+   {
+    "kata": [
+     "jujur",
+     "59%"
+    ],
+    "anjak": -0.1
+   },
+   {
+    "kata": [
+     "jujur",
+     "36%"
+    ],
+    "anjak": -0.1
+   }
+  ],
+  "gagal": {
+   "kata": [
+    "jujur",
+    "misses"
+   ],
+   "anjak": -0.1
+  }
+ },
+ "bunyi": [
+  {
+   "taip_kata": "hook",
+   "db": -21
+  },
+  {
+   "t": "cop",
+   "fail": "impact/impactSoft_heavy_001.ogg",
+   "db": -8
+  },
+  {
+   "t": "babak.skala",
+   "fail": "impact/impactSoft_medium_001.ogg",
+   "db": -13
+  },
+  {
+   "t": "merah",
+   "fail": "interface/switch_002.ogg",
+   "db": -15
+  },
+  {
+   "t": "babak.reveal",
+   "fail": "impact/impactSoft_medium_001.ogg",
+   "db": -9
+  },
+  {
+   "t": {
+    "ruj": "babak.reveal",
+    "anjak": 0.02
+   },
+   "fail": "impact/impactBell_heavy_003.ogg",
+   "db": -13
+  },
+  {
+   "t": "nod",
+   "fail": "interface/select_008.ogg",
+   "db": -16
+  },
+  {
+   "t": "kad",
+   "fail": "interface/drop_002.ogg",
+   "db": -13
+  },
+  {
+   "t": "lencana",
+   "fail": "interface/click_002.ogg",
+   "db": -8
+  },
+  {
+   "t": "semak",
+   "fail": "ui/rollover2.ogg",
+   "db": -13
+  },
+  {
+   "t": "tolak",
+   "fail": "interface/select_008.ogg",
+   "db": -14
+  },
+  {
+   "t": "bf",
+   "fail": "interface/switch_002.ogg",
+   "db": -16
+  },
+  {
+   "t": "angka",
+   "fail": "interface/click_002.ogg",
+   "db": -12
+  },
+  {
+   "t": "babak.tutup",
+   "fail": "impact/impactSoft_heavy_001.ogg",
+   "db": -7
+  },
+  {
+   "t": {
+    "ruj": "babak.tutup",
+    "anjak": 0.02
+   },
+   "fail": "impact/impactBell_heavy_003.ogg",
+   "db": -10
+  }
+ ],
+ "teks": {
+  "q": "Below what annual turnover are Malaysian businesses exempt from e-Invoicing?",
+  "a": "RM 20 million.",
+  "model": "grok-4.7 (xAI) · recorded 20 Nov 2026",
+  "cop": "Outdated",
+  "cop_sub": "Official since 1 Jul 2025: all taxpayers",
+  "k_skala": "Eval · 21 Nov 2026",
+  "skala_cap": "answers stated a rule that is no longer current",
+  "model_nama": {
+   "gcli/grok-4.7": "grok-4.7",
+   "rv/deepseek-ai/DeepSeek-V4.1-Flash-1017": "DeepSeek-V4.1-Flash",
+   "rv/moonshotai/Kimi-K3.1-Pro": "Kimi-K3.1-Pro"
+  },
+  "jenama": "Terkini",
+  "tagline": "Checks AI answers about Malaysian rules against official government pages.",
+  "k_tavily": "How a claim is checked",
+  "nod": [
+   [
+    "Claims",
+    "pulled from the answer"
+   ],
+   [
+    "Tavily Search",
+    "include_domains, restrict"
+   ],
+   [
+    "Official domains only",
+    "from packs/my.toml"
+   ],
+   [
+    "Live results",
+    "max_age_hours = 0"
+   ],
+   [
+    "Tavily Extract",
+    "reads the page itself"
+   ]
+  ],
+  "url_bar": "aimanmalib.github.io/terkini",
+  "k_putusan": "Recorded run · replay page",
+  "k_petikan": "Exact quote, checked in code",
+  "ok": "Quote found on the official page",
+  "tolak": "Not on the page → unverifiable",
+  "tolak_n": "13 judge quotes rejected this way in the eval",
+  "k_bifrost": "Every model call goes through Bifrost",
+  "bf_rows": [
+   "Virtual key, x-bf-vk",
+   "Daily budget + rate limits",
+   "Fallbacks across vendors"
+  ],
+  "bf_models": [
+   [
+    "grok-4.7",
+    "xAI"
+   ],
+   [
+    "Kimi-K3.1-Pro",
+    "Moonshot AI"
+   ],
+   [
+    "DeepSeek-V4.1-Flash",
+    "DeepSeek"
+   ],
+   [
+    "GLM-5.3 · claims + judge",
+    "Zhipu AI"
+   ]
+  ],
+  "k_jujur": "Eval · 68 answers · eval/my/results.json",
+  "stat": [
+   [
+    "flagged",
+    "answers flagged"
+   ],
+   [
+    "true_positive",
+    "really stale"
+   ],
+   [
+    "precision",
+    "precision"
+   ],
+   [
+    "recall",
+    "recall"
+   ]
+  ],
+  "gagal": "Misses and failures: docs/EVAL.md",
+  "tutup_2": "aimanmalib.github.io/terkini",
+  "tutup_3": "github.com/aimanmalib/terkini · Apache-2.0 · Built with Tavily and Bifrost",
+  "label_ai": "Narration: AI clone of the builder's voice · Music: Sascha Ende, ende.app (CC BY 4.0)"
+ }
+}
